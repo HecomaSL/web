@@ -1,0 +1,32 @@
+#feed-titulo { display: flex; background-color: #0009ad; color: white; height: 2cm; align-items: center; justify-content: center; }
+#feed-titulo h1 { color: white; margin: 0; font-size: 2rem; font-weight: bold; }
+
+.botones { display: flex; gap: 15px; justify-content: center; margin-bottom: 30px; padding: 10px; margin-top: 20px; }
+.botones label { cursor: pointer; font-weight: bold; color: #0009ad; padding: 8px 18px; border: 2px solid #0009ad; border-radius: 25px; transition: all 0.3s ease; display: flex; align-items: center; }
+.botones input[type="checkbox"] { margin-right: 8px; }
+.botones label.checked { background-color: #0009ad; color: white; }
+
+#news-feed { max-width: 650px; margin: 0 auto; padding-bottom: 50px; }
+.news-card { display: flex; background: #ffffff; margin-bottom: 16px; border: 1px solid #eff3f4; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+
+.news-image-wrapper { width: 25%; min-width: 25%; height: 140px; }
+.news-image-wrapper img { width: 100% !important; height: 100% !important; object-fit: cover; }
+
+.news-content-wrapper { width: 75%; padding: 15px; }
+.news-content-wrapper h2 { margin: 0 !important; font-size: 1.1rem !important; line-height: 1.2; }
+.news-content-wrapper h2 a { text-decoration: none; color: #0005fc !important; }
+.news-content-wrapper p { margin-top: 8px; color: #536471; font-size: 0.95rem; line-height: 1.4; }
+
+.loader { border: 3px solid #f3f3f3; border-top: 3px solid #0009ad; border-radius: 50%; width: 24px; height: 24px; animation: spin 0.8s linear infinite; margin: 0 auto; }
+.loader-text { text-align: center; color: #536471; margin-top: 10px; }
+#final-text { text-align: center; padding: 20px; font-weight: bold; color: #536471; }
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+@media (max-width: 480px) {
+    .botones { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; max-width: 90%; margin: 0 auto; }
+    .botones label:nth-child(3) { grid-column: span 2; justify-content: center; }
+    .news-card { flex-direction: column; }
+    .news-image-wrapper { width: 100%; height: 180px; }
+    .news-content-wrapper { width: 100%; }
+}
