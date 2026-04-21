@@ -1,7 +1,7 @@
 <script setup>
-import MainLayout from '@/Layouts/MainLayout.vue';
 import { computed } from 'vue';
-import { usePage, Link } from '@inertiajs/vue3';
+import { usePage, Link, Head } from '@inertiajs/vue3'; // <--- FALTA IMPORTAR Head
+import MainLayout from '@/Layouts/MainLayout.vue';
 
 // Accedemos a las propiedades compartidas de Inertia
 const page = usePage();
@@ -13,8 +13,8 @@ const areaTecnicaLink = computed(() => {
 </script>
 
 <template>
+    <Head title="Herramientas Corte Madera" />
     <MainLayout>
-        <p></p>
         <section class="sectionColor bg-[#0000BB] text-white py-16 px-6">
             <div class="container mx-auto max-w-5xl text-center">
                 <div class="mb-8 flex justify-center">
