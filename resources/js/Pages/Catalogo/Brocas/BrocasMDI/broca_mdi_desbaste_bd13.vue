@@ -357,4 +357,7 @@ h2 {
 h3 {
   line-height: 1.2;
 }
+a {
+  color: blue;
+}
 </style>
