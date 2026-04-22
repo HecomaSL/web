@@ -1,8 +1,52 @@
 <script setup>
-import MainLayout from '@/Layouts/MainLayout.vue';
-import { Head } from '@inertiajs/vue3';
-</script>
+import { computed } from 'vue'
+import { Head } from '@inertiajs/vue3'
+import MainLayout from '@/Layouts/MainLayout.vue'
+import { useCartStore } from '@/stores/cartStore'
 
+const cart = useCartStore()
+const props = defineProps({ products: { type: Array, default: () => [] } })
+
+const groupedProducts = computed(() => {
+  const groups = { 'Serie 3.4': [] }
+  for (const item of props.products) {
+    const parsed = parseRef(item.referencia)
+    const key = parsed.B === 32 ? 'Serie 3.4' : 'Serie 3.4'
+    groups[key].push(item)
+  }
+  return groups
+})
+
+function parseRef(ref) {
+  const match = ref.match(/^DE(\d{3})(\d{2})(\d{2})Z(\d{2})([A-Z])$/)
+  if (!match) return { diametro: '-', espesor: '-', eje: '-', z: '-', tipo: '-' }
+
+  const tipo = match[5] === 'A' ? 'Alterno'
+             : match[5] === 'R' ? 'Recto'
+             : 'Sx'
+
+  const espesor = parseInt(match[2]) === 28 ? '2.8/3.6' : parseInt(match[2]) === 35 ? '3.5/4.5' : '4.4/5.5'
+  return { diametro: parseInt(match[1]), espesor, eje: parseInt(match[3]), z: parseInt(match[4]), tipo }
+}
+
+function agregarAlCarrito(product) {
+  if (!product) return
+  cart.addToCart({
+    id: product.id,
+    referencia: product.referencia,
+    tipo: product.tipo,
+    familia: product.familia,
+    precio: product.precio,
+    stock: product.stock
+  })
+}
+
+function formatearPrecio(precio) {
+  return precio
+    ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + ' €'
+    : '---'
+}
+</script>
 <template>
   <Head title="Serie 3.4 Incisores ajustables - HECOMA" />
 
@@ -19,12 +63,14 @@ import { Head } from '@inertiajs/vue3';
           <img src="/images/discos/discos.jpg" alt="" style="width: 75%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de Incisores, ponemos a su disposición la Serie 3.4, compuesta por incisores ajustables diseñados para ofrecer la máxima versatilidad y precisión en el pre-corte de paneles. Gracias a su sistema de ajuste, esta herramienta permite adaptar el ancho de corte a distintas configuraciones de disco principal, garantizando un acabado limpio y sin astillados.</p>
+          <p>Dentro de nuestra gama de Incisores, ponemos a su disposición la Serie 3.4, compuesta por incisores ajustables diseñados para ofrecer la máxima versatilidad y precisión en el pre-corte de paneles.</p>
+          <p>Gracias a su sistema de ajuste, esta herramienta permite adaptar el ancho de corte a distintas configuraciones de disco principal, garantizando un acabado limpio y sin astillados.</p>
           <p>La ingeniería de los incisores ajustables permite una regulación micrométrica mediante juegos de arandelas de precisión, lo que asegura una coincidencia exacta con el espesor del diente de la sierra principal en cada afilado.</p>
-          <p>Este diseño extensible es crucial para talleres que manejan diversos tipos de tableros y requieren una flexibilidad total sin comprometer la rigidez del conjunto. Es la inversión más rentable para entornos de producción variables donde la agilidad en el cambio de herramientas y la precisión absoluta en melaminas y laminados son prioridades críticas.</p>
+          <p>Este diseño extensible es crucial para talleres que manejan diversos tipos de tableros y requieren una flexibilidad total sin comprometer la rigidez del conjunto.</p>
         </div>
       </div>
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed">
+        <p> Es la inversión más rentable para entornos de producción variables donde la agilidad en el cambio de herramientas y la precisión absoluta en melaminas y laminados son prioridades críticas.</p>
         <p>Desarrollados por HECOMA®, estos incisores son la solución técnica ideal para trabajar con materiales revestidos y superficies decorativas, permitiendo cambios rápidos de configuración sin sacrificar la calidad profesional del seccionado.</p>
       </div>
     </section>
@@ -42,6 +88,44 @@ import { Head } from '@inertiajs/vue3';
         <p>Las referencias marcadas están en stock permanente y seran entregadas en un plazo estimado de entrega de 48–72 horas laborables desde la confirmación del pago. El resto de las referencias se entregan en un plazo máximo entre 3 y 9 semanas. Si necesitas un tamaño o perfil especial, por favor, contáctanos.</p>
       </div>
     </section>
+    <section class="container mx-auto px-6 mb-16">
+      <div class="max-w-6xl mx-auto">
+        <template v-for="(items, familia) in groupedProducts" :key="familia">
+          <div class="group-header">{{ familia }}</div>
+          <table class="product-table">
+            <thead>
+              <tr>
+                <th>Ref</th>
+                <th>Ø</th>
+                <th>Espesor</th>
+                <th>Eje</th>
+                <th>Z</th>
+                <th>Tipo de diente</th>
+                <th>Precio</th>
+                <th>Añadir al carrito</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in items" :key="item.referencia">
+                <td class="ref">{{ item.referencia }}</td>
+                <td>{{ parseRef(item.referencia).diametro }}</td>
+                <td>{{ parseRef(item.referencia).espesor }}</td>
+                <td>{{ parseRef(item.referencia).eje }}</td>
+                <td>{{ parseRef(item.referencia).z }}</td>
+                <td>{{ parseRef(item.referencia).tipo }}</td>
+                <td class="precio">{{ formatearPrecio(item.precio) }}</td>
+                
+                <td v-if="$page.props.auth.user">
+                  <button :disabled="item.stock !== 'si'" @click="agregarAlCarrito(item)">
+                    🛒
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </template>
+      </div>
+    </section>
   </MainLayout>
 </template>
 
@@ -51,4 +135,92 @@ import { Head } from '@inertiajs/vue3';
   h2 { line-height: 1.2; }
   h3 { line-height: 1.2; }
   .img { display: flex; justify-content: center; }
+/* Tabla */
+.group-header {
+  background-color: #cce0f0;
+  padding: 6px 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #1a3a5c;
+  border-top: 1px solid #a8c8e8;
+  border-bottom: 1px solid #a8c8e8;
+  margin-top: 16px;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.product-table thead tr {
+  background: #f5f5f5;
+  border-bottom: 2px solid #ddd;
+}
+
+.product-table th {
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+  white-space: nowrap;
+}
+
+.product-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background 0.15s;
+}
+
+.product-table tbody tr:hover {
+  background: #f9f9f9;
+}
+
+.product-table td {
+  padding: 7px 12px;
+  color: #333;
+}
+
+.ref {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.precio {
+  font-weight: 600;
+  color: #1a3a5c;
+}
+
+.stock-badge {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.stock-badge.in-stock {
+  color: #2e7d32;
+}
+
+.stock-badge.no-stock {
+  color: #c62828;
+}
+
+.cart-btn {
+  background: #010cf7;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.15s;
+}
+
+.cart-btn:hover:not(:disabled) {
+  background: #0009c0;
+}
+
+.cart-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
 </style>

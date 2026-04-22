@@ -189,11 +189,13 @@ Route::get('/discos_extremadamente_finos_cuerpo_reforzado', [DiscosController::c
 
 
 Route::get('/incisores', function () { return Inertia::render('Catalogo/Discos/incisores'); })->name('incisores');
-Route::get('/incisores_para_escuadradora', function () { return Inertia::render('Catalogo/Discos/incisores/incisores-para-escuadradora'); })->name('incisores_para_escuadradora');
-Route::get('/incisores_conicos_para_marcos', function () { return Inertia::render('Catalogo/Discos/incisores/incisores-conicos-para-marcos'); })->name('incisores_conicos_para_marcos');
-Route::get('/incisores_para_refrentado', function () { return Inertia::render('Catalogo/Discos/incisores/incisores-para-refrentado'); })->name('incisores_para_refrentado');
-Route::get('/incisores_ajustables', function () { return Inertia::render('Catalogo/Discos/incisores/incisores-ajustables'); })->name('incisores_ajustables');
-Route::get('/incisores_para_canteadoras', function () { return Inertia::render('Catalogo/Discos/incisores/incisores-para-canteadoras'); })->name('incisores_para_canteadoras');
+Route::get('/incisores_para_escuadradora', [DiscosController::class, 'showSerie3_1'])->name('incisores_para_escuadradora');
+Route::get('/incisores_conicos_para_marcos', [DiscosController::class, 'showSerie3_2'])->name('incisores_conicos_para_marcos');
+Route::get('/incisores_para_refrentado', [DiscosController::class, 'showSerie3_3'])->name('incisores_para_refrentado');
+Route::get('/incisores_ajustables', [DiscosController::class, 'showSerie3_4'])->name('incisores_ajustables');
+Route::get('/incisores_para_canteadoras', [DiscosController::class, 'showSerie3_5'])->name('incisores_para_canteadoras');
+
+
 
 Route::get('/discos-para-seccionadora-y-tableros-laminados', function () { return Inertia::render('Catalogo/Discos/seccionadora'); })->name('discos-para-seccionadora');
 Route::get('/discos_para_seccionadora', function () { return Inertia::render('Catalogo/Discos/discos-seccionadora/discos-para-seccionadora'); })->name('discos_para_seccionadora');

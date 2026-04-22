@@ -112,4 +112,53 @@ class DiscosController extends Controller {
             'products' => $productos
         ]);
     }
+
+    public function showSerie3_1() {
+        $productos = Producto::where('familia', 'Serie 3.1')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/incisores/incisores-para-escuadradora', [
+            'products' => $productos
+        ]);
+    }
+
+    public function showSerie3_2() {
+        $productos = Producto::where('familia', 'Serie 3.2')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/incisores/incisores-conicos-para-marcos', [
+            'products' => $productos
+        ]);
+    }
+
+    public function showSerie3_3() {
+        $productos = Producto::where('familia', 'Serie 3.3')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/incisores/incisores-para-refrentado', [
+            'products' => $productos
+        ]);
+    }
+
+    public function showSerie3_4() {
+        $productos = Producto::where('familia', 'Serie 3.4')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/incisores/incisores-ajustables', [
+            'products' => $productos
+        ]);
+    }
+    public function showSerie3_5() {
+        $productos = Producto::where('familia', 'Serie 3.5')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/incisores/incisores-para-canteadoras', [
+            'products' => $productos
+        ]);
+    }
 }
