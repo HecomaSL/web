@@ -183,10 +183,10 @@ Route::get('/discos-aplicaciones-especiales', function () { return Inertia::rend
 Route::get('/discos_para_corte_de_marcos', [DiscosController::class, 'showSerie2_1'])->name('discos_para_corte_de_marcos');
 Route::get('/discos_plasticos_derivados', [DiscosController::class, 'showSerie2_2'])->name('discos_plasticos_derivados');
 Route::get('/discos_para_cortes_alta_precision', [DiscosController::class, 'showSerie2_3'])->name('discos_para_cortes_alta_precision');
+Route::get('/discos_finos_para_maderas_de_calidad', [DiscosController::class, 'showSerie2_4'])->name('discos_finos_para_maderas_de_calidad');
+Route::get('/discos_muy_finos_cuerpo_de_alta_tenacidad', [DiscosController::class, 'showSerie2_5'])->name('discos_muy_finos_cuerpo_de_alta_tenacidad');
+Route::get('/discos_extremadamente_finos_cuerpo_reforzado', [DiscosController::class, 'showSerie2_6'])->name('discos_extremadamente_finos_cuerpo_reforzado');
 
-Route::get('/discos_finos_para_maderas_de_calidad', function () { return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-finos-para-maderas-de-calidad'); })->name('discos_finos_para_maderas_de_calidad');
-Route::get('/discos_muy_finos_cuerpo_de_alta_tenacidad', function () { return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-muy-finos-con-cuerpo-de-alta-tenacidad'); })->name('discos_muy_finos_cuerpo_de_alta_tenacidad');
-Route::get('/discos_extremadamente_finos_cuerpo_reforzado', function () { return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-extremadamente-finos-con-cuerpo-reforzado'); })->name('discos_extremadamente_finos_cuerpo_reforzado');
 
 Route::get('/incisores', function () { return Inertia::render('Catalogo/Discos/incisores'); })->name('incisores');
 Route::get('/incisores_para_escuadradora', function () { return Inertia::render('Catalogo/Discos/incisores/incisores-para-escuadradora'); })->name('incisores_para_escuadradora');

@@ -85,4 +85,31 @@ class DiscosController extends Controller {
             'products' => $productos
         ]);
     }
+    public function showSerie2_4() {
+        $productos = Producto::where('familia', 'Serie 2.4')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-finos-para-maderas-de-calidad', [
+            'products' => $productos
+        ]);
+    }
+    public function showSerie2_5() {
+        $productos = Producto::where('familia', 'Serie 2.5')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-muy-finos-con-cuerpo-de-alta-tenacidad', [
+            'products' => $productos
+        ]);
+    }
+    public function showSerie2_6() {
+        $productos = Producto::where('familia', 'Serie 2.6')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-extremadamente-finos-con-cuerpo-reforzado', [
+            'products' => $productos
+        ]);
+    }
 }
