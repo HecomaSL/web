@@ -2,11 +2,12 @@
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Head, useForm, usePage } from '@inertiajs/vue3';
 import { useCartStore } from '@/stores/cartStore';
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 
 const cart = useCartStore();
 const user = usePage().props.auth.user;
 
+// Formulario de Inertia con todos los campos necesarios
 const form = useForm({
     nombre: user.nombre || '',
     email: user.email || '',
@@ -15,103 +16,148 @@ const form = useForm({
     ciudad: '',
     cp: '',
     metodo_pago: 'transferencia',
-    items: [], // Se llenará antes de enviar
-    total: 0   // Se llenará antes de enviar
+    items: [],
+    nombre_cupon: cart.cupon ? cart.cupon.nombre : null, 
+    descuento_total: 0,
+    total: 0   
 });
 
-const totalCarrito = computed(() => {
-    return cart.items.reduce((total, item) => {
-        // Aseguramos que pillamos el precio y la cantidad, se llamen como se llamen
-        const precio = parseFloat(item.precio || item.price || 0);
-        const cantidad = parseInt(item.quantity || item.cantidad || 0);
-        
-        return total + (precio * cantidad);
-    }, 0);
-});
+// Helpers para formateo
+const formatearPrecio = (valor) => {
+    const numero = parseFloat(valor);
+    if (isNaN(numero)) return '0,00 €';
+    return numero.toLocaleString('es-ES', { 
+        style: 'currency', 
+        currency: 'EUR' 
+    });
+};
 
 const enviarPedido = () => {
-    // 1. Mapeamos los datos del carrito al formato que espera el nuevo PedidoController
-    form.items = cart.items.map(item => {
-        return {
-            id: item.id, // Se convertirá en idProducto en el servidor
-            referencia: item.referencia, // Info extra para el controlador
-            // Forzamos que sean números para evitar errores de tipo en la DB
-            precio: parseFloat(item.precio || item.price || 0), // Se convertirá en precioUnitario
-            cantidad: parseInt(item.quantity || item.cantidad || 0) // Se convertirá en cantidadProducto
-        };
-    });
+    // Preparar items para el servidor
+    form.items = cart.items.map(item => ({
+        id: item.id,
+        referencia: item.referencia,
+        precio: parseFloat(item.precio || 0),
+        cantidad: parseInt(item.cantidad || 0)
+    }));
     
-    // 2. Asignamos el total calculado del carrito al formulario
-    form.total = totalCarrito.value;
+    // Capturar valores del store en el momento del envío
+    form.nombre_cupon = cart.cupon ? cart.cupon.nombre : null;
+    form.descuento_total = cart.descuentoImporte;
+    form.total = cart.totalFinal;
 
-    // 3. Enviamos la petición POST al controlador
     form.post(route('pedido.store'), {
-        // Solo si el servidor responde con éxito (200 OK)
         onSuccess: () => {
             cart.clearCart();
-            // Rediriges a una página que tú crees o al dashboard con un modal
             window.location.href = '/pedido-confirmado'; 
         },
-        // Si hay errores de validación (ej: tlfn vacío)
         onError: (errors) => {
-            console.error("Errores en el formulario:", errors);
+            console.error("Errores en el envío:", errors);
         },
-        // Evitamos que se pueda pulsar el botón mil veces mientras carga
         preserveScroll: true,
     });
 };
 
-const formatearPrecio = (valor) => {
-    const numero = parseFloat(valor);
-    if (isNaN(numero)) return '0,00€';
-    return numero.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '€';
-};
-
+// Seguridad: Si recargan y el carrito está vacío, volver atrás
+onMounted(() => {
+    if (cart.items.length === 0) {
+        window.location.href = '/carrito';
+    }
+});
 </script>
 
 <template>
     <Head title="Tramitar Pedido" />
     <MainLayout>
-        <div class="py-12 bg-gray-100">
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="py-12 bg-gray-50 min-h-screen">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
                 
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h2 class="text-xl font-bold mb-4">Datos de Entrega</h2>
-                    <form @submit.prevent="enviarPedido" class="space-y-4">
-                        <input v-model="form.nombre" placeholder="Nombre" class="w-full border p-2 rounded" required />
-                        <input v-model="form.tlfn" placeholder="Teléfono" class="w-full border p-2 rounded" required />
-                        <input v-model="form.direccion" placeholder="Dirección" class="w-full border p-2 rounded" required />
-                        <div class="flex gap-2">
-                            <input v-model="form.ciudad" placeholder="Ciudad" class="w-1/2 border p-2 rounded" required />
-                            <input v-model="form.cp" placeholder="C.P." class="w-1/2 border p-2 rounded" required />
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-4">DATOS DE ENTREGA</h2>
+                    
+                    <form @submit.prevent="enviarPedido" class="space-y-5">
+                        <div class="grid grid-cols-1 gap-4">
+                            <div class="flex flex-col">
+                                <label class="text-xs font-bold text-gray-400 uppercase mb-1">Nombre y Apellidos</label>
+                                <input v-model="form.nombre" type="text" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" required />
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label class="text-xs font-bold text-gray-400 uppercase mb-1">Teléfono</label>
+                                <input v-model="form.tlfn" type="text" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" required />
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label class="text-xs font-bold text-gray-400 uppercase mb-1">Dirección Completa</label>
+                                <input v-model="form.direccion" type="text" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" required />
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="flex-1 flex flex-col">
+                                    <label class="text-xs font-bold text-gray-400 uppercase mb-1">Ciudad</label>
+                                    <input v-model="form.ciudad" type="text" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" required />
+                                </div>
+                                <div class="w-1/3 flex flex-col">
+                                    <label class="text-xs font-bold text-gray-400 uppercase mb-1">C.P.</label>
+                                    <input v-model="form.cp" type="text" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" required />
+                                </div>
+                            </div>
                         </div>
                         
-                        <div class="mt-4">
-                            <label class="block font-bold">Método de Pago</label>
-                            <select v-model="form.metodo_pago" class="w-full border p-2 rounded">
-                                <option value="transferencia">Transferencia Bancaria</option>
-                                <option value="tarjeta">Tarjeta de Crédito</option>
-                            </select>
+                        <div class="pt-4">
+                            <label class="block font-bold text-gray-700 mb-3">MÉTODO DE PAGO</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors" :class="{'border-blue-600 bg-blue-50': form.metodo_pago === 'transferencia'}">
+                                    <input type="radio" v-model="form.metodo_pago" value="transferencia" class="w-4 h-4 text-blue-600">
+                                    <span class="text-sm font-medium">Transferencia Bancaria</span>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors" :class="{'border-blue-600 bg-blue-50': form.metodo_pago === 'tarjeta'}">
+                                    <input type="radio" v-model="form.metodo_pago" value="tarjeta" class="w-4 h-4 text-blue-600">
+                                    <span class="text-sm font-medium">Tarjeta de Crédito</span>
+                                </label>
+                            </div>
                         </div>
 
-                        <button type="submit" class="w-full bg-[#010cf7] text-white py-3 rounded font-bold hover:bg-blue-800 mt-4">
-                            FINALIZAR Y PAGAR ({{ formatearPrecio(totalCarrito) }})
+                        <button type="submit" :disabled="form.processing"
+                            class="w-full bg-[#010cf7] text-white py-4 rounded-xl font-bold uppercase hover:bg-blue-800 transition-all shadow-lg active:scale-95 disabled:opacity-50 mt-4">
+                            {{ form.processing ? 'PROCESANDO PEDIDO...' : `FINALIZAR Y PAGAR ${formatearPrecio(cart.totalFinal)}` }}
                         </button>
                     </form>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow h-fit">
-                    <h2 class="text-xl font-bold mb-4">Tu Pedido</h2>
-                    <div v-for="item in cart.items" :key="item.id" class="flex justify-between border-b py-2">
-                        <span>{{ item.referencia }} (x{{ item.quantity || item.cantidad }})</span>
-                        
-                        <span class="font-bold">
-                            {{ formatearPrecio((item.precio || item.price) * (item.quantity || item.cantidad)) }}
-                        </span>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 h-fit sticky top-24">
+                    <h2 class="text-xl font-bold mb-6 text-gray-800 uppercase tracking-tight">RESUMEN DEL PEDIDO</h2>
+                    
+                    <div class="max-h-64 overflow-y-auto mb-6 pr-2 space-y-4">
+                        <div v-for="item in cart.items" :key="item.id" class="flex justify-between items-start">
+                            <div class="flex flex-col">
+                                <span class="font-bold text-gray-800 text-sm uppercase">{{ item.referencia }}</span>
+                                <span class="text-gray-400 text-xs italic">Cantidad: {{ item.cantidad }}</span>
+                            </div>
+                            <span class="font-bold text-gray-900">{{ formatearPrecio(item.precio * item.cantidad) }}</span>
+                        </div>
                     </div>
-                    <div class="flex justify-between text-xl font-bold mt-4 text-[#010cf7]">
-                        <span>Total:</span>
-                        <span>{{formatearPrecio(totalCarrito) }}</span>
+
+                    <div class="border-t pt-6 space-y-3">
+                        <div class="flex justify-between text-gray-500">
+                            <span>Subtotal</span>
+                            <span>{{ formatearPrecio(cart.subtotal) }}</span>
+                        </div>
+                        
+                        <div v-if="cart.cupon" class="flex justify-between text-green-600 font-bold bg-green-50 p-2 rounded-lg">
+                            <span>Cupón: {{ cart.cupon.nombre }}</span>
+                            <span>- {{ formatearPrecio(cart.descuentoImporte) }}</span>
+                        </div>
+
+                        <div class="flex justify-between text-gray-500">
+                            <span>Gastos de envío</span>
+                            <span>{{ formatearPrecio(cart.envio) }}</span>
+                        </div>
+
+                        <div class="flex justify-between text-2xl font-black text-[#010cf7] pt-4 border-t mt-4">
+                            <span>TOTAL</span>
+                            <span>{{ formatearPrecio(cart.totalFinal) }}</span>
+                        </div>
                     </div>
                 </div>
 

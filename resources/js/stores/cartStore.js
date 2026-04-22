@@ -2,7 +2,9 @@ import { defineStore } from 'pinia';
 
 export const useCartStore = defineStore('cart', {
     state: () => ({
-        items: [], 
+        items: [],
+        envioBase: 12,
+        cupon: null, 
     }),
 
     getters: {
@@ -10,29 +12,37 @@ export const useCartStore = defineStore('cart', {
             return state.items.reduce((total, item) => total + item.cantidad, 0);
         },
         subtotal: (state) => {
-            const sum = state.items.reduce((total, item) => total + (item.precio * item.cantidad), 0);
-            return parseFloat(sum.toFixed(2));
+            return state.items.reduce((total, item) => total + (item.precio * item.cantidad), 0);
         },
         envio: (state) => {
-            const valorEnvio = 12;
-            return parseFloat(valorEnvio);
+            return parseFloat(state.envioBase);
         },
-        totalFinal: (getters) => {
-            return parseFloat((getters.subtotal + getters.envio).toFixed(2));
+        // Nuevo: Calcula cuánto dinero se resta
+        descuentoImporte: (state) => {
+            if (!state.cupon) return 0;
+            const valor = parseFloat(state.cupon.valor);
+            if (state.cupon.tipo === 'porcentaje') {
+                return (state.items.reduce((total, item) => total + (item.precio * item.cantidad), 0) * valor) / 100;
+            }
+            return valor;
+        },
+        // Actualizado: Incluye el descuento en el total
+        totalFinal: (state) => {
+            const sub = state.items.reduce((total, item) => total + (item.precio * item.cantidad), 0);
+            const desc = state.cupon ? (state.cupon.tipo === 'porcentaje' ? (sub * state.cupon.valor / 100) : state.cupon.valor) : 0;
+            const total = (sub - desc) + state.envioBase;
+            return parseFloat(Math.max(0, total).toFixed(2));
         }
     },
 
     actions: {
         addToCart(producto) {
             const index = this.items.findIndex(item => item.id === producto.id);
-        
             if (index !== -1) {
-                // Usamos una copia para asegurar reactividad limpia
                 const nuevosItems = [...this.items];
                 nuevosItems[index].cantidad++;
                 this.items = nuevosItems;
             } else {
-                // Añadimos como nuevo array
                 this.items = [
                     ...this.items,
                     {
@@ -50,14 +60,15 @@ export const useCartStore = defineStore('cart', {
 
         removeFromCart(id) {
             this.items = this.items.filter(item => item.id !== id);
-            
             if (this.items.length === 0) {
+                this.cupon = null;
                 localStorage.removeItem('hecoma-cart');
             }
         },
 
         clearCart() {
             this.items = [];
+            this.cupon = null;
             localStorage.removeItem('hecoma-cart');
         },
 
@@ -68,34 +79,38 @@ export const useCartStore = defineStore('cart', {
                     item.id === id ? { ...item, cantidad: cantidad } : item
                 );
             }
+        },
+
+        aplicarCupon(datosCupon) {
+            this.cupon = datosCupon;
+        },
+
+        quitarCupon() {
+            this.cupon = null;
         }
     },
 
     persist: {
         key: 'hecoma-cart',
         storage: localStorage,
-        // Añade esto para evitar errores de hidratación
         beforeRestore: (context) => {
             console.log('Cargando carrito persistente...');
         },
     }
 });
 
-/**
- * LÓGICA DE SINCRONIZACIÓN ENTRE PESTAÑAS
- * Este evento detecta cuando el localStorage cambia desde otra pestaña.
- */
 if (typeof window !== 'undefined') {
     window.addEventListener('storage', (event) => {
         if (event.key === 'hecoma-cart') {
             const cart = useCartStore();
             if (!event.newValue) {
-                // Si el valor es null, es que se ha borrado el carrito en otra pestaña
-                cart.$patch({ items: [] });
+                cart.$patch({ items: [], cupon: null });
             } else {
-                // Si ha cambiado, actualizamos nuestra memoria con lo que hay en el disco
                 const data = JSON.parse(event.newValue);
-                cart.$patch({ items: data.items || [] });
+                cart.$patch({ 
+                    items: data.items || [],
+                    cupon: data.cupon || null
+                });
             }
         }
     });

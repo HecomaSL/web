@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactoController; // Importado correctamente
+use App\Http\Controllers\CuponController;
 use App\Http\Controllers\FresasController;
 use App\Http\Controllers\DiscosController;
 use Illuminate\Foundation\Application;
@@ -230,6 +231,7 @@ Route::get('/carrito', function () {
 })->middleware('auth')->name('carrito');Route::get('/tramitar-pedido', function () { return Inertia::render('TramitarPedido'); })->name('tramitar-pedido');
 // En routes/web.php
 Route::post('/pedido-store', ['App\Http\Controllers\PedidoController', 'store'])->name('pedido.store');
+Route::post('/cupones/validar', [App\Http\Controllers\CuponController::class, 'validar']);
 
 Route::get('/politica-compras', function () { return Inertia::render('CompDev/PoliticaCompras'); })->name('politica-compras');
 Route::get('/politica-devoluciones', function () { return Inertia::render('CompDev/PoliticaDevoluciones'); })->name('politica-devoluciones');
