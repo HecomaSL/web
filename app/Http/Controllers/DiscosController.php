@@ -180,4 +180,14 @@ class DiscosController extends Controller {
             'products' => $productos
         ]);
     }
+
+    public function showSerie5_1() {
+        $productos = Producto::where('familia', 'Serie 5.1')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/discos-para-ranurar/discos-para-canales', [
+            'products' => $productos
+        ]);
+    }
 }

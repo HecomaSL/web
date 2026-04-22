@@ -201,7 +201,7 @@ Route::get('/discos_para_paneles_revestidos', [DiscosController::class, 'showSer
 
 
 Route::get('/discos-para-ranurar', function () { return Inertia::render('Catalogo/Discos/ranurar'); })->name('discos-para-ranurar');
-Route::get('/discos_para_canales', function () { return Inertia::render('Catalogo/Discos/discos-para-ranurar/discos-para-canales'); })->name('discos_para_canales');
+Route::get('/discos_para_canales', [DiscosController::class, 'showSerie5_1'])->name('discos_para_canales');
 
 Route::get('/discos-maquina-portatil', function () { return Inertia::render('Catalogo/Discos/maquina-portatil'); })->name('discos-para-maquina-portatil');
 Route::get('/discos_para_maquina_portatil', function () { return Inertia::render('Catalogo/Discos/maquina-portatil/maquina-portatil'); })->name('discos_para_maquina_portatil');
