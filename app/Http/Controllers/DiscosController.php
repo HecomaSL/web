@@ -190,4 +190,22 @@ class DiscosController extends Controller {
             'products' => $productos
         ]);
     }
+    public function showSerie6_1() {
+        $productos = Producto::where('familia', 'Serie 6.1')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/maquina-portatil/maquina-portatil', [
+            'products' => $productos
+        ]);
+    }
+    public function showSerie7_1() {
+        $productos = Producto::where('familia', 'Serie 7.1')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/discos-materiales-no-ferrosos/discos-materiales-no-ferrosos', [
+            'products' => $productos
+        ]);
+    }
 }

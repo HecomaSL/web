@@ -204,10 +204,11 @@ Route::get('/discos-para-ranurar', function () { return Inertia::render('Catalog
 Route::get('/discos_para_canales', [DiscosController::class, 'showSerie5_1'])->name('discos_para_canales');
 
 Route::get('/discos-maquina-portatil', function () { return Inertia::render('Catalogo/Discos/maquina-portatil'); })->name('discos-para-maquina-portatil');
-Route::get('/discos_para_maquina_portatil', function () { return Inertia::render('Catalogo/Discos/maquina-portatil/maquina-portatil'); })->name('discos_para_maquina_portatil');
+Route::get('/discos_para_maquina_portatil', [DiscosController::class, 'showSerie6_1'])->name('discos_para_maquina_portatil');
 
 Route::get('/discos-materiales-no-ferrosos', function () { return Inertia::render('Catalogo/Discos/discos-materiales-no-ferrosos'); })->name('discos-materiales-no-ferrosos');
-Route::get('/discos_para_materiales_no_ferrosos', function () { return Inertia::render('Catalogo/Discos/discos-materiales-no-ferrosos/discos-materiales-no-ferrosos'); })->name('discos_para_materiales_no_ferrosos');
+Route::get('/discos_para_materiales_no_ferrosos', [DiscosController::class, 'showSerie7_1'])->name('discos_para_materiales_no_ferrosos');
+
 
 Route::get('/discos-materiales-ferrosos', function () { return Inertia::render('Catalogo/Discos/discos-materiales-ferrosos'); })->name('discos-materiales-ferrosos');
 Route::get('/discos_para_materiales_ferrosos', function () { return Inertia::render('Catalogo/Discos/discos-materiales-ferrosos/discos-materiales-ferrosos'); })->name('discos_para_materiales_ferrosos');
