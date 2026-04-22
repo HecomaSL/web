@@ -56,4 +56,33 @@ class DiscosController extends Controller {
             'products' => $productos
         ]);
     }
+
+    public function showSerie2_1() {
+        $productos = Producto::where('familia', 'Serie 2.1')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-para-corte-de-marcos', [
+            'products' => $productos
+        ]);
+    }
+    public function showSerie2_2() {
+        $productos = Producto::where('familia', 'Serie 2.2')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos_plasticos_derivados', [
+            'products' => $productos
+        ]);
+    }
+
+    public function showSerie2_3() {
+        $productos = Producto::where('familia', 'Serie 2.3')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-para-cortes-de-alta-precision', [
+            'products' => $productos
+        ]);
+    }
 }

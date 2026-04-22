@@ -180,9 +180,10 @@ Route::get('/discos_corte_contrachapado', [DiscosController::class, 'showSerie1_
 Route::get('/discos_de_paso_fino_para_acabados', [DiscosController::class, 'showSerie1_5'])->name('discos_de_paso_fino_para_acabados');
 
 Route::get('/discos-aplicaciones-especiales', function () { return Inertia::render('Catalogo/Discos/aplicaciones-especiales'); })->name('discos-de-aplicaciones-especiales');
-Route::get('/discos_para_corte_de_marcos', function () { return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-para-corte-de-marcos'); })->name('discos_para_corte_de_marcos');
-Route::get('/discos_plasticos_derivados', function () { return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos_plasticos_derivados'); })->name('discos_plasticos_derivados');
-Route::get('/discos_para_cortes_alta_precision', function () { return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-para-cortes-de-alta-precision'); })->name('discos_para_cortes_alta_precision');
+Route::get('/discos_para_corte_de_marcos', [DiscosController::class, 'showSerie2_1'])->name('discos_para_corte_de_marcos');
+Route::get('/discos_plasticos_derivados', [DiscosController::class, 'showSerie2_2'])->name('discos_plasticos_derivados');
+Route::get('/discos_para_cortes_alta_precision', [DiscosController::class, 'showSerie2_3'])->name('discos_para_cortes_alta_precision');
+
 Route::get('/discos_finos_para_maderas_de_calidad', function () { return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-finos-para-maderas-de-calidad'); })->name('discos_finos_para_maderas_de_calidad');
 Route::get('/discos_muy_finos_cuerpo_de_alta_tenacidad', function () { return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-muy-finos-con-cuerpo-de-alta-tenacidad'); })->name('discos_muy_finos_cuerpo_de_alta_tenacidad');
 Route::get('/discos_extremadamente_finos_cuerpo_reforzado', function () { return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-extremadamente-finos-con-cuerpo-reforzado'); })->name('discos_extremadamente_finos_cuerpo_reforzado');

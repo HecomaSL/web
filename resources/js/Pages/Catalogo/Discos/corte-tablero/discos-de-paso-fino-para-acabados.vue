@@ -98,7 +98,6 @@ function formatearPrecio(precio) {
 
         <template v-for="(items, familia) in groupedProducts" :key="familia">
           <div class="group-header">{{ familia }}</div>
-
           <table class="product-table">
             <thead>
               <tr>
