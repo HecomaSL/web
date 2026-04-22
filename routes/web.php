@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactoController; // Importado correctamente
 use App\Http\Controllers\FresasController;
+use App\Http\Controllers\DiscosController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -169,15 +170,14 @@ Route::get('/f50-fresa-tirador', [FresasController::class, 'showF50'])->name('f5
 Route::get('/f60-fresa-juntas-longitudinales', [FresasController::class, 'showF60'])->name('f60-fresa-juntas-longitudinales');
 Route::get('/f61-fresa-para-juntas-90o', [FresasController::class, 'showF61'])->name('f61-fresa-para-juntas-90o');
 
-// f50-fresa-tirador
 
 // Discos
 Route::get('/corte-tablero', function () { return Inertia::render('Catalogo/Discos/corte-tablero'); })->name('corte-tablero');
-Route::get('/discos_corte_longitudinal_transversal', function () { return Inertia::render('Catalogo/Discos/corte-tablero/discos_corte_longitudinal_transversal'); })->name('discos_corte_longitudinal_transversal');
-Route::get('/discos_corte_universal', function () { return Inertia::render('Catalogo/Discos/corte-tablero/discos_corte_universal'); })->name('discos_corte_universal');
-Route::get('/discos_de_acabado_y_aglomerado', function () { return Inertia::render('Catalogo/Discos/corte-tablero/discos-de-acabado-y-aglomerado'); })->name('discos_de_acabado_y_aglomerado');
-Route::get('/discos_corte_contrachapado', function () { return Inertia::render('Catalogo/Discos/corte-tablero/discos_corte_contrachapado'); })->name('discos_corte_contrachapado');
-Route::get('/discos_de_paso_fino_para_acabados', function () { return Inertia::render('Catalogo/Discos/corte-tablero/discos-de-paso-fino-para-acabados'); })->name('discos_de_paso_fino_para_acabados');
+Route::get('/discos_corte_longitudinal_transversal', [DiscosController::class, 'showSerie1_1'])->name('discos_corte_longitudinal_transversal');
+Route::get('/discos_corte_universal', [DiscosController::class, 'showSerie1_2'])->name('discos_corte_universal');
+Route::get('/discos_de_acabado_y_aglomerado', [DiscosController::class, 'showSerie1_3'])->name('discos_de_acabado_y_aglomerado');
+Route::get('/discos_corte_contrachapado', [DiscosController::class, 'showSerie1_4'])->name('discos_corte_contrachapado');
+Route::get('/discos_de_paso_fino_para_acabados', [DiscosController::class, 'showSerie1_5'])->name('discos_de_paso_fino_para_acabados');
 
 Route::get('/discos-aplicaciones-especiales', function () { return Inertia::render('Catalogo/Discos/aplicaciones-especiales'); })->name('discos-de-aplicaciones-especiales');
 Route::get('/discos_para_corte_de_marcos', function () { return Inertia::render('Catalogo/Discos/aplicaciones-especiales/discos-para-corte-de-marcos'); })->name('discos_para_corte_de_marcos');
