@@ -170,7 +170,6 @@ Route::get('/f50-fresa-tirador', [FresasController::class, 'showF50'])->name('f5
 Route::get('/f60-fresa-juntas-longitudinales', [FresasController::class, 'showF60'])->name('f60-fresa-juntas-longitudinales');
 Route::get('/f61-fresa-para-juntas-90o', [FresasController::class, 'showF61'])->name('f61-fresa-para-juntas-90o');
 
-
 // Discos
 Route::get('/corte-tablero', function () { return Inertia::render('Catalogo/Discos/corte-tablero'); })->name('corte-tablero');
 Route::get('/discos_corte_longitudinal_transversal', [DiscosController::class, 'showSerie1_1'])->name('discos_corte_longitudinal_transversal');
@@ -187,7 +186,6 @@ Route::get('/discos_finos_para_maderas_de_calidad', [DiscosController::class, 's
 Route::get('/discos_muy_finos_cuerpo_de_alta_tenacidad', [DiscosController::class, 'showSerie2_5'])->name('discos_muy_finos_cuerpo_de_alta_tenacidad');
 Route::get('/discos_extremadamente_finos_cuerpo_reforzado', [DiscosController::class, 'showSerie2_6'])->name('discos_extremadamente_finos_cuerpo_reforzado');
 
-
 Route::get('/incisores', function () { return Inertia::render('Catalogo/Discos/incisores'); })->name('incisores');
 Route::get('/incisores_para_escuadradora', [DiscosController::class, 'showSerie3_1'])->name('incisores_para_escuadradora');
 Route::get('/incisores_conicos_para_marcos', [DiscosController::class, 'showSerie3_2'])->name('incisores_conicos_para_marcos');
@@ -199,7 +197,6 @@ Route::get('/discos-para-seccionadora-y-tableros-laminados', function () { retur
 Route::get('/discos_para_seccionadora', [DiscosController::class, 'showSerie4_1'])->name('discos_para_seccionadora');
 Route::get('/discos_para_paneles_revestidos', [DiscosController::class, 'showSerie4_2'])->name('discos_para_paneles_revestidos');
 
-
 Route::get('/discos-para-ranurar', function () { return Inertia::render('Catalogo/Discos/ranurar'); })->name('discos-para-ranurar');
 Route::get('/discos_para_canales', [DiscosController::class, 'showSerie5_1'])->name('discos_para_canales');
 
@@ -209,7 +206,6 @@ Route::get('/discos_para_maquina_portatil', [DiscosController::class, 'showSerie
 Route::get('/discos-materiales-no-ferrosos', function () { return Inertia::render('Catalogo/Discos/discos-materiales-no-ferrosos'); })->name('discos-materiales-no-ferrosos');
 Route::get('/discos_para_materiales_no_ferrosos', [DiscosController::class, 'showSerie7_1'])->name('discos_para_materiales_no_ferrosos');
 
-
 Route::get('/discos-materiales-ferrosos', function () { return Inertia::render('Catalogo/Discos/discos-materiales-ferrosos'); })->name('discos-materiales-ferrosos');
 Route::get('/discos_para_materiales_ferrosos', [DiscosController::class, 'showSerie8_1'])->name('discos_para_materiales_ferrosos');
 
@@ -217,10 +213,9 @@ Route::get('/discos-madera-maciza', function () { return Inertia::render('Catalo
 Route::get('/discos_sierra_multiple_sin_limitador_viruta', [DiscosController::class, 'showSerie9_1'])->name('discos_sierra_multiple_sin_limitador_viruta');
 Route::get('/discos_sierra_multiple_con_limitador_viruta', [DiscosController::class, 'showSerie9_2'])->name('discos_sierra_multiple_con_limitador_viruta');
 
-
 Route::get('/discos-sierra-multiple', function () { return Inertia::render('Catalogo/Discos/sierra-multiple'); })->name('discos-sierra-multiple');
-Route::get('/sierra_multiple_con_dentones_sin_limitador', function () { return Inertia::render('Catalogo/Discos/sierra-multiple/sin-limitador'); })->name('sierra_multiple_con_dentones_sin_limitador');
-Route::get('/sierra_multiple_con_dentones_con_limitador', function () { return Inertia::render('Catalogo/Discos/sierra-multiple/con-limitador'); })->name('sierra_multiple_con_dentones_con_limitador');
+Route::get('/sierra_multiple_con_dentones_sin_limitador', [DiscosController::class, 'showSerie10_1'])->name('sierra_multiple_con_dentones_sin_limitador');
+Route::get('/sierra_multiple_con_dentones_con_limitador', [DiscosController::class, 'showSerie10_2'])->name('sierra_multiple_con_dentones_con_limitador');
 
 Route::get('/discos-silenciosos', function () { return Inertia::render('Catalogo/Discos/discos-silenciosos'); })->name('discos-silenciosos');
 Route::get('/discos_universales_silenciados', function () { return Inertia::render('Catalogo/Discos/discos-silenciosos/discos_universales_silenciados'); })->name('discos_universales_silenciados');

@@ -235,4 +235,22 @@ class DiscosController extends Controller {
             'products' => $productos
         ]);
     }
+    public function showSerie10_1() {
+        $productos = Producto::where('familia', 'Serie 10.1')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/sierra-multiple/sin-limitador', [
+            'products' => $productos
+        ]);
+    }
+    public function showSerie10_2() {
+        $productos = Producto::where('familia', 'Serie 10.2')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/sierra-multiple/con-limitador', [
+            'products' => $productos
+        ]);
+    }
 }
