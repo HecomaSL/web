@@ -218,11 +218,12 @@ Route::get('/sierra_multiple_con_dentones_sin_limitador', [DiscosController::cla
 Route::get('/sierra_multiple_con_dentones_con_limitador', [DiscosController::class, 'showSerie10_2'])->name('sierra_multiple_con_dentones_con_limitador');
 
 Route::get('/discos-silenciosos', function () { return Inertia::render('Catalogo/Discos/discos-silenciosos'); })->name('discos-silenciosos');
-Route::get('/discos_universales_silenciados', function () { return Inertia::render('Catalogo/Discos/discos-silenciosos/discos_universales_silenciados'); })->name('discos_universales_silenciados');
-Route::get('/discos_silenciados_marcos', function () { return Inertia::render('Catalogo/Discos/discos-silenciosos/discos_silenciados_marcos'); })->name('discos_silenciados_marcos');
-Route::get('/discos_silenciados_seccionadora_laminados', function () { return Inertia::render('Catalogo/Discos/discos-silenciosos/discos_silenciados_seccionadora_laminados'); })->name('discos_silenciados_seccionadora_laminados');
-Route::get('/discos_silenciados_aluminio', function () { return Inertia::render('Catalogo/Discos/discos-silenciosos/discos_silenciados_aluminio'); })->name('discos_silenciados_aluminio');
-Route::get('/discos_silenciados_recubrimiento', function () { return Inertia::render('Catalogo/Discos/discos-silenciosos/discos_silenciados_recubrimiento'); })->name('discos_silenciados_recubrimiento');
+Route::get('/discos_universales_silenciados', [DiscosController::class, 'showSerie11_1'])->name('discos_universales_silenciados');
+Route::get('/discos_silenciados_marcos', [DiscosController::class, 'showSerie11_2'])->name('discos_silenciados_marcos');
+Route::get('/discos_silenciados_seccionadora_laminados', [DiscosController::class, 'showSerie11_3'])->name('discos_silenciados_seccionadora_laminados');
+Route::get('/discos_silenciados_aluminio', [DiscosController::class, 'showSerie11_4'])->name('discos_silenciados_aluminio');
+Route::get('/discos_silenciados_recubrimiento', [DiscosController::class, 'showSerie11_5'])->name('discos_silenciados_recubrimiento');
+
 
 Route::get('/carrito', function () { return Inertia::render('Carrito'); })->name('carrito');
 Route::get('/tramitar-pedido', function () { return Inertia::render('TramitarPedido'); })->name('tramitar-pedido');

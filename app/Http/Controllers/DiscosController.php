@@ -253,4 +253,51 @@ class DiscosController extends Controller {
             'products' => $productos
         ]);
     }
+
+    public function showSerie11_1() {
+        $productos = Producto::where('familia', 'Serie 11.1')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/discos-silenciosos/discos_universales_silenciados', [
+            'products' => $productos
+        ]);
+    }
+
+    public function showSerie11_2() {
+        $productos = Producto::where('familia', 'Serie 11.2')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/discos-silenciosos/discos_silenciados_marcos', [
+            'products' => $productos
+        ]);
+    }
+    public function showSerie11_3() {
+        $productos = Producto::where('familia', 'Serie 11.3')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/discos-silenciosos/discos_silenciados_seccionadora_laminados', [
+            'products' => $productos
+        ]);
+    }
+    public function showSerie11_4() {
+        $productos = Producto::where('familia', 'Serie 11.4')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/discos-silenciosos/discos_silenciados_aluminio', [
+            'products' => $productos
+        ]);
+    }
+    public function showSerie11_5() {
+        $productos = Producto::where('familia', 'Serie 11.5')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/discos-silenciosos/discos_silenciados_recubrimiento', [
+            'products' => $productos
+        ]);
+    }
 }
