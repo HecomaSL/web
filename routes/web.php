@@ -195,11 +195,10 @@ Route::get('/incisores_para_refrentado', [DiscosController::class, 'showSerie3_3
 Route::get('/incisores_ajustables', [DiscosController::class, 'showSerie3_4'])->name('incisores_ajustables');
 Route::get('/incisores_para_canteadoras', [DiscosController::class, 'showSerie3_5'])->name('incisores_para_canteadoras');
 
-
-
 Route::get('/discos-para-seccionadora-y-tableros-laminados', function () { return Inertia::render('Catalogo/Discos/seccionadora'); })->name('discos-para-seccionadora');
-Route::get('/discos_para_seccionadora', function () { return Inertia::render('Catalogo/Discos/discos-seccionadora/discos-para-seccionadora'); })->name('discos_para_seccionadora');
-Route::get('/discos_para_paneles_revestidos', function () { return Inertia::render('Catalogo/Discos/discos-seccionadora/discos-para-paneles-revestidos'); })->name('discos_para_paneles_revestidos');
+Route::get('/discos_para_seccionadora', [DiscosController::class, 'showSerie4_1'])->name('discos_para_seccionadora');
+Route::get('/discos_para_paneles_revestidos', [DiscosController::class, 'showSerie4_2'])->name('discos_para_paneles_revestidos');
+
 
 Route::get('/discos-para-ranurar', function () { return Inertia::render('Catalogo/Discos/ranurar'); })->name('discos-para-ranurar');
 Route::get('/discos_para_canales', function () { return Inertia::render('Catalogo/Discos/discos-para-ranurar/discos-para-canales'); })->name('discos_para_canales');

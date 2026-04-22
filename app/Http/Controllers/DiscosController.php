@@ -161,4 +161,23 @@ class DiscosController extends Controller {
             'products' => $productos
         ]);
     }
+    public function showSerie4_1() {
+        $productos = Producto::where('familia', 'Serie 4.1')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/discos-seccionadora/discos-para-seccionadora', [
+            'products' => $productos
+        ]);
+    }
+
+    public function showSerie4_2() {
+        $productos = Producto::where('familia', 'Serie 4.2')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/discos-seccionadora/discos-para-paneles-revestidos', [
+            'products' => $productos
+        ]);
+    }
 }
