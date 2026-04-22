@@ -225,8 +225,9 @@ Route::get('/discos_silenciados_aluminio', [DiscosController::class, 'showSerie1
 Route::get('/discos_silenciados_recubrimiento', [DiscosController::class, 'showSerie11_5'])->name('discos_silenciados_recubrimiento');
 
 
-Route::get('/carrito', function () { return Inertia::render('Carrito'); })->name('carrito');
-Route::get('/tramitar-pedido', function () { return Inertia::render('TramitarPedido'); })->name('tramitar-pedido');
+Route::get('/carrito', function () {
+    return Inertia::render('Carrito');
+})->middleware('auth')->name('carrito');Route::get('/tramitar-pedido', function () { return Inertia::render('TramitarPedido'); })->name('tramitar-pedido');
 // En routes/web.php
 Route::post('/pedido-store', ['App\Http\Controllers\PedidoController', 'store'])->name('pedido.store');
 

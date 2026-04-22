@@ -22,13 +22,9 @@ function parseRef(ref) {
   if (!match) return { diametro: '-', espesor: '-', eje: '-', z: '-', tipo: '-', serie: 'Serie 4.2.B' }
 
   const sufijo = match[5]
-  const serie = sufijo === 'A10' ? 'Serie 4.2.A'
-              : sufijo === 'A30' ? 'Serie 4.2.C'
-              : 'Serie 4.2.B'
+  const serie = sufijo === 'A10' ? 'Serie 4.2.A' : sufijo === 'A30' ? 'Serie 4.2.C' : 'Serie 4.2.B'
 
   const tipo = sufijo === 'PT' ? 'pt' : 'Alterno'
-
-
 
   return {
     diametro: parseInt(match[1]),
@@ -113,8 +109,8 @@ function formatearPrecio(precio) {
                 <th>Eje</th>
                 <th>Z</th>
                 <th>Tipo de diente</th>
-                <th>Precio</th>
-                <th>Añadir al carrito</th>
+                <th v-if="$page.props.auth.user">Precio</th>
+                <th v-if="$page.props.auth.user">Añadir al carrito</th>
               </tr>
             </thead>
             <tbody>
@@ -125,7 +121,7 @@ function formatearPrecio(precio) {
                 <td>{{ parseRef(item.referencia).eje }}</td>
                 <td>{{ parseRef(item.referencia).z }}</td>
                 <td>{{ parseRef(item.referencia).tipo }}</td>
-                <td class="precio">{{ formatearPrecio(item.precio) }}</td>
+                <td v-if="$page.props.auth.user" class="precio">{{ formatearPrecio(item.precio) }}</td>
                 
                 <td v-if="$page.props.auth.user">
                   <button :disabled="item.stock !== 'si'" @click="agregarAlCarrito(item)">
