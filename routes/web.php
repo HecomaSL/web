@@ -211,11 +211,12 @@ Route::get('/discos_para_materiales_no_ferrosos', [DiscosController::class, 'sho
 
 
 Route::get('/discos-materiales-ferrosos', function () { return Inertia::render('Catalogo/Discos/discos-materiales-ferrosos'); })->name('discos-materiales-ferrosos');
-Route::get('/discos_para_materiales_ferrosos', function () { return Inertia::render('Catalogo/Discos/discos-materiales-ferrosos/discos-materiales-ferrosos'); })->name('discos_para_materiales_ferrosos');
+Route::get('/discos_para_materiales_ferrosos', [DiscosController::class, 'showSerie8_1'])->name('discos_para_materiales_ferrosos');
 
 Route::get('/discos-madera-maciza', function () { return Inertia::render('Catalogo/Discos/madera-maciza'); })->name('discos-madera-maciza');
-Route::get('/discos_sierra_multiple_sin_limitador_viruta', function () { return Inertia::render('Catalogo/Discos/madera-maciza/sin-limitador-de-viruta'); })->name('discos_sierra_multiple_sin_limitador_viruta');
-Route::get('/discos_sierra_multiple_con_limitador_viruta', function () { return Inertia::render('Catalogo/Discos/madera-maciza/con-limitador-de-viruta'); })->name('discos_sierra_multiple_con_limitador_viruta');
+Route::get('/discos_sierra_multiple_sin_limitador_viruta', [DiscosController::class, 'showSerie9_1'])->name('discos_sierra_multiple_sin_limitador_viruta');
+Route::get('/discos_sierra_multiple_con_limitador_viruta', [DiscosController::class, 'showSerie9_2'])->name('discos_sierra_multiple_con_limitador_viruta');
+
 
 Route::get('/discos-sierra-multiple', function () { return Inertia::render('Catalogo/Discos/sierra-multiple'); })->name('discos-sierra-multiple');
 Route::get('/sierra_multiple_con_dentones_sin_limitador', function () { return Inertia::render('Catalogo/Discos/sierra-multiple/sin-limitador'); })->name('sierra_multiple_con_dentones_sin_limitador');

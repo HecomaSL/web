@@ -208,4 +208,31 @@ class DiscosController extends Controller {
             'products' => $productos
         ]);
     }
+    public function showSerie8_1() {
+        $productos = Producto::where('familia', 'Serie 8.1')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/discos-materiales-ferrosos/discos-materiales-ferrosos', [
+            'products' => $productos
+        ]);
+    }
+    public function showSerie9_1() {
+        $productos = Producto::where('familia', 'Serie 9.1')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/madera-maciza/sin-limitador-de-viruta', [
+            'products' => $productos
+        ]);
+    }
+    public function showSerie9_2() {
+        $productos = Producto::where('familia', 'Serie 9.2')
+            ->orderBy('referencia', 'asc')
+            ->get();
+
+        return Inertia::render('Catalogo/Discos/madera-maciza/con-limitador-de-viruta', [
+            'products' => $productos
+        ]);
+    }
 }
