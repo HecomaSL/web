@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactoController; // Importado correctamente
 use App\Http\Controllers\CuponController;
+use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\FresasController;
 use App\Http\Controllers\DiscosController;
 use Illuminate\Foundation\Application;
@@ -237,6 +238,8 @@ Route::get('/politica-compras', function () { return Inertia::render('CompDev/Po
 Route::get('/politica-devoluciones', function () { return Inertia::render('CompDev/PoliticaDevoluciones'); })->name('politica-devoluciones');
 Route::get('/metodo-envio', function () { return Inertia::render('CompDev/MetodoEnvio'); })->name('metodo-envio');
 
+Route::get('/pedido/exito/{id}', [PedidoController::class, 'exito'])
+    ->name('pedido.exito');
 /*
 |--------------------------------------------------------------------------
 | Rutas Protegidas (Requieren Inicio de Sesión)

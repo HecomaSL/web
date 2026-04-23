@@ -2,45 +2,64 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PedidoAdminMail;
+use App\Mail\PedidoClienteMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Mail; // <--- AÑADIDO
-use App\Mail\PedidoClienteMail;      // <--- AÑADIDO
-use App\Mail\PedidoAdminMail;        // <--- AÑADIDO
+use Inertia\Inertia;
 
-class PedidoController extends Controller {
-
-public function index()
+class PedidoController extends Controller
 {
-    // 1. Obtenemos los pedidos del usuario logueado
-    $pedidos = DB::table('pedidos')
-        ->where('idUsuario', auth()->id())
-        ->orderBy('diaPedido', 'desc')
-        ->get();
-
-    // 2. Mapeamos los pedidos para añadirle sus productos con la referencia
-    $pedidosConItems = $pedidos->map(function ($pedido) {
-        $pedido->items = DB::table('pedido_items')
-            // Hacemos el join con la tabla productos
-            ->join('productos', 'pedido_items.idProducto', '=', 'productos.id')
-            ->where('pedido_items.idPedido', $pedido->idPedido)
-            ->select(
-                'pedido_items.*', 
-                'productos.referencia as nombre_articulo' // Forzamos el nombre 'nombre_articulo'
-            )
+    public function index()
+    {
+        $pedidos = DB::table('pedidos')
+            ->where('idUsuario', auth()->id())
+            ->orderBy('diaPedido', 'desc')
             ->get();
-        return $pedido;
-    });
 
-    return inertia('MisPedidos', [
-        'pedidos' => $pedidosConItems
-    ]);
-}
+        $pedidosConItems = $pedidos->map(function ($pedido) {
+            $pedido->items = DB::table('pedido_items')
+                ->join('productos', 'pedido_items.idProducto', '=', 'productos.id')
+                ->where('pedido_items.idPedido', $pedido->idPedido)
+                ->select(
+                    'pedido_items.*',
+                    'productos.referencia as nombre_articulo'
+                )
+                ->get();
+
+            return $pedido;
+        });
+
+        return Inertia::render('MisPedidos', [
+            'pedidos' => $pedidosConItems,
+        ]);
+    }
+
+    public function exito($id)
+    {
+        $pedido = DB::table('pedidos')->where('idPedido', $id)->first();
+
+        if (! $pedido) {
+            return redirect()->route('dashboard')->with('error', 'Pedido no encontrado');
+        }
+
+        if ($pedido->idUsuario !== auth()->id()) {
+            return redirect()->route('dashboard');
+        }
+
+        return Inertia::render('PedidoConfirmado', [
+            'pedido' => [
+                'id' => $pedido->idPedido,
+                'codigo_pedido' => $pedido->codigo_pedido,
+                'total' => $pedido->total,
+            ],
+        ]);
+    }
 
     public function store(Request $request)
     {
-        // Validamos los datos que vienen del formulario de Vue
         $request->validate([
             'nombre' => 'required|string|max:255',
             'tlfn' => 'required',
@@ -52,52 +71,56 @@ public function index()
         try {
             DB::beginTransaction();
 
-            // 1. Crear el pedido (Cabecera) con tus nuevos nombres de columna
+            // 1. Crear el pedido inicial
             $idPedido = DB::table('pedidos')->insertGetId([
-                'idUsuario'   => auth()->id(),
-                'diaPedido'   => now(),
-                'estado'      => 'sin pagar', // Valor inicial por defecto
-                'total'       => $request->total,
-                // Mantenemos estos campos aunque no los mencionaste en el SQL para no perder la info de envío
+                'idUsuario' => auth()->id(),
+                'diaPedido' => now(),
+                'estado' => 'sin pagar',
+                'total' => $request->total,
                 'nombre_receptor' => $request->nombre,
-                'tlfn_receptor'   => (int) filter_var($request->tlfn, FILTER_SANITIZE_NUMBER_INT),
-                'direccion_envio' => $request->direccion . " " . $request->ciudad . " " . $request->cp,
+                'tlfn_receptor' => (int) filter_var($request->tlfn, FILTER_SANITIZE_NUMBER_INT),
+                'direccion_envio' => $request->direccion.' '.($request->ciudad ?? '').' '.($request->cp ?? ''),
+                'codigo_pedido' => '#wp_temp', 
             ]);
 
-            // 2. Crear los detalles en 'pedido_items'
+            // 2. Generar y guardar el código visual real
+            $codigoVisual = '#wp_'.$idPedido;
+            DB::table('pedidos')->where('idPedido', $idPedido)->update([
+                'codigo_pedido' => $codigoVisual,
+            ]);
+
+            // 3. Crear los detalles (Items)
             foreach ($request->items as $item) {
                 DB::table('pedido_items')->insert([
-                    'idPedido'         => $idPedido,
-                    'idProducto'       => $item['id'],
+                    'idPedido' => $idPedido,
+                    'idProducto' => $item['id'],
                     'cantidadProducto' => $item['cantidad'],
-                    'precioUnitario'   => $item['precio'],
+                    'precioUnitario' => $item['precio'],
                 ]);
             }
 
             DB::commit();
 
-            // --- AÑADIDO: Envío de Emails tras el Commit ---
+            // 4. Envío de Emails
             $datosEmail = [
                 'id' => $idPedido,
+                'codigo_pedido' => $codigoVisual,
                 'nombre' => $request->nombre,
-                'total' => $request->total
+                'total' => $request->total,
             ];
 
             try {
                 Mail::to(auth()->user()->email)->send(new PedidoClienteMail($datosEmail));
                 Mail::to('admin@hecoma.com')->send(new PedidoAdminMail($datosEmail));
             } catch (\Exception $e) {
-                // Si falla el mail no rompemos la redirección, solo lo ignoramos o lo logueamos
+                // Silenciamos error de mail para no bloquear la vista de éxito
             }
-            // -----------------------------------------------
 
-            // Redirigimos al dashboard con mensaje de éxito
-            return Redirect::route('dashboard')->with('message', 'Pedido realizado con éxito');
+            return Redirect::route('pedido.exito', ['id' => $idPedido]);
 
         } catch (\Exception $e) {
             DB::rollBack();
-            // Si algo falla, volvemos atrás con el mensaje de error
-            return back()->withErrors(['error' => 'Error al procesar el pedido: ' . $e->getMessage()]);
+            return back()->withErrors(['error' => 'Error: '.$e->getMessage()]);
         }
     }
 }

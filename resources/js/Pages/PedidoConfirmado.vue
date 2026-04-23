@@ -3,6 +3,12 @@ import MainLayout from '@/Layouts/MainLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
+// Definimos las props que llegan desde el controlador de Laravel
+// Asegúrate de que el controlador envíe 'pedido' con el campo 'codigo_pedido'
+const props = defineProps({
+    pedido: Object
+});
+
 // Estado para gestionar el feedback visual de copiado
 const copiado = ref(null);
 
@@ -53,7 +59,10 @@ const activarFeedback = (campo) => {
                     </svg>
                 </div>
 
-                <h1 class="text-3xl font-extrabold text-gray-900 mb-2 uppercase tracking-tight">¡Pedido recibido con éxito!</h1>
+                <h1 class="text-3xl font-extrabold text-gray-900 mb-2 uppercase tracking-tight">
+                    ¡Pedido {{ props.pedido?.codigo_pedido || 'recibido' }} con éxito!
+                </h1>
+                
                 <p class="text-gray-600 mb-8 text-lg">
                     Gracias por confiar en <strong>HECOMA</strong>. Tu pedido se encuentra en estado 
                     <span class="text-orange-600 font-bold uppercase">"Pendiente de Pago"</span>.
@@ -78,7 +87,7 @@ const activarFeedback = (campo) => {
                             <div class="flex items-center gap-2">
                                 <span class="text-blue-900 font-semibold">Banco Santander</span>
                                 <button @click="copiarAlPortapapeles('Banco Santander', 'banco')" class="btn-copy" title="Copiar Banco">
-                                    <span v-if="copiado === 'banco'" class="text-[10px] text-green-600 font-bold uppercase">¡Hecho!</span>
+                                    <span v-if="copiado === 'banco'" class="text-[10px] text-green-600 font-bold uppercase">¡Copiado!</span>
                                     <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                                     </svg>
@@ -91,7 +100,7 @@ const activarFeedback = (campo) => {
                             <div class="flex items-center gap-2">
                                 <span class="text-blue-900 font-mono font-bold tracking-tighter">ES77 0049 5539 0121 1611 3874</span>
                                 <button @click="copiarAlPortapapeles('ES7700495539012116113874', 'iban')" class="btn-copy" title="Copiar IBAN">
-                                    <span v-if="copiado === 'iban'" class="text-[10px] text-green-600 font-bold uppercase">¡Hecho!</span>
+                                    <span v-if="copiado === 'iban'" class="text-[10px] text-green-600 font-bold uppercase">¡Copiado!</span>
                                     <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                                     </svg>
@@ -102,9 +111,9 @@ const activarFeedback = (campo) => {
                         <div class="flex justify-between items-center">
                             <span class="text-gray-500 text-xs font-bold uppercase">Concepto:</span>
                             <div class="flex items-center gap-2">
-                                <span class="text-blue-900 font-bold italic">Nº Pedido o Nombre Completo</span>
-                                <button @click="copiarAlPortapapeles('Nº Pedido o Nombre Completo', 'concepto')" class="btn-copy" title="Copiar Concepto">
-                                    <span v-if="copiado === 'concepto'" class="text-[10px] text-green-600 font-bold uppercase">¡Hecho!</span>
+                                <span class="text-blue-900 font-bold italic">PAGO {{ props.pedido?.codigo_pedido }}</span>
+                                <button @click="copiarAlPortapapeles('PAGO ' + (props.pedido?.codigo_pedido || ''), 'concepto')" class="btn-copy" title="Copiar Concepto">
+                                    <span v-if="copiado === 'concepto'" class="text-[10px] text-green-600 font-bold uppercase">¡Copiado!</span>
                                     <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                                     </svg>
@@ -120,11 +129,11 @@ const activarFeedback = (campo) => {
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10">
                     <Link href="/dashboard"
-                        class="w-full sm:w-auto bg-[#010cf7] text-white px-10 py-4 rounded-xl font-bold uppercase hover:bg-blue-800 transition-all shadow-lg active:scale-95">
+                        class="w-full sm:w-auto bg-[#010cf7] text-white px-10 py-4 rounded-xl font-bold uppercase hover:bg-blue-800 transition-all shadow-lg active:scale-95 text-center">
                         Ver mis pedidos
                     </Link>
                     <Link href="/catalogo"
-                        class="w-full sm:w-auto bg-gray-100 text-gray-700 px-10 py-4 rounded-xl font-bold uppercase hover:bg-gray-200 transition-all border border-gray-200">
+                        class="w-full sm:w-auto bg-gray-100 text-gray-700 px-10 py-4 rounded-xl font-bold uppercase hover:bg-gray-200 transition-all border border-gray-200 text-center">
                         Volver a la tienda
                     </Link>
                 </div>
@@ -143,7 +152,7 @@ const activarFeedback = (campo) => {
     @apply p-1.5 text-blue-400 hover:text-[#010cf7] hover:bg-blue-100 rounded-lg transition-all flex items-center justify-center min-w-[40px] border border-transparent hover:border-blue-200;
 }
 
-/* Animación sutil para el texto de "Hecho" */
+/* Animación sutil para el texto de feedback */
 span[class*="text-green-600"] {
     animation: fadeIn 0.2s ease-out;
 }

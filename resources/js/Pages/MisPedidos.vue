@@ -38,7 +38,7 @@ const formatearPrecio = (p) => parseFloat(p).toLocaleString('es-ES', { minimumFr
                                 </svg>
                             </span>
                             <div>
-                                <span class="font-bold text-lg text-gray-900">Pedido #{{ pedido.idPedido }}</span>
+                                <span class="font-bold text-lg text-gray-900">Pedido {{ pedido.codigo_pedido  }}</span>
                                 <p class="text-xs text-gray-500">{{ pedido.diaPedido }}</p>
                             </div>
                         </div>
@@ -81,9 +81,7 @@ const formatearPrecio = (p) => parseFloat(p).toLocaleString('es-ES', { minimumFr
                         </div>
 
                         <div v-if="pedido.estado === 'sin pagar'" class="mt-6 flex justify-end">
-                            <Link :href="route('pedido.confirmado')" class="bg-orange-500 text-white px-4 py-2 rounded text-xs font-bold hover:bg-orange-600">
-                                REVISAR DATOS DE PAGO
-                            </Link>
+                            <Link :href="route('pedido.exito', { id: pedido.idPedido })" class="bg-orange-500 text-white px-4 py-2 rounded text-xs font-bold hover:bg-orange-600">REVISAR DATOS DE PAGO </Link>
                         </div>
                     </div>
                 </div>
