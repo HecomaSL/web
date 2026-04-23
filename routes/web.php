@@ -235,6 +235,7 @@ Route::post('/cupones/validar', [App\Http\Controllers\CuponController::class, 'v
 
 Route::get('/politica-compras', function () { return Inertia::render('CompDev/PoliticaCompras'); })->name('politica-compras');
 Route::get('/politica-devoluciones', function () { return Inertia::render('CompDev/PoliticaDevoluciones'); })->name('politica-devoluciones');
+Route::get('/metodo-envio', function () { return Inertia::render('CompDev/MetodoEnvio'); })->name('metodo-envio');
 
 /*
 |--------------------------------------------------------------------------
