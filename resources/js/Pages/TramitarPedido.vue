@@ -3,6 +3,7 @@ import MainLayout from '@/Layouts/MainLayout.vue';
 import { Head, useForm, usePage } from '@inertiajs/vue3';
 import { useCartStore } from '@/stores/cartStore';
 import { computed, onMounted } from 'vue';
+import { watch } from 'vue';
 
 const cart = useCartStore();
 const user = usePage().props.auth.user;
@@ -64,6 +65,10 @@ onMounted(() => {
         window.location.href = '/carrito';
     }
 });
+
+watch(() => form.metodo_envio, (nuevoMetodo) => {
+    cart.metodoEnvio = nuevoMetodo;
+}, { immediate: true });
 </script>
 
 <template>
@@ -101,6 +106,28 @@ onMounted(() => {
                                     <label class="text-xs font-bold text-gray-400 uppercase mb-1">C.P.</label>
                                     <input v-model="form.cp" type="text" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" required />
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <label class="block font-bold text-gray-700 mb-3">MÉTODO DE ENVÍO</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center justify-between p-3 border rounded-lg cursor-pointer transition-colors" 
+                                    :class="form.metodo_envio === 'domicilio' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" v-model="form.metodo_envio" value="domicilio" class="w-4 h-4 text-blue-600">
+                                        <span class="text-sm font-medium text-gray-800">Envío a domicilio</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-gray-600">{{ formatearPrecio(cart.costeEnvioBase) }}</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3 border rounded-lg cursor-pointer transition-colors" :class="form.metodo_envio === 'recogida' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" v-model="form.metodo_envio" value="recogida" class="w-4 h-4 text-blue-600">
+                                        <span class="text-sm font-medium text-gray-800">Recogida en Local (Sonseca / Lucena)</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-green-600">GRATIS</span>
+                                </label>
                             </div>
                         </div>
                         

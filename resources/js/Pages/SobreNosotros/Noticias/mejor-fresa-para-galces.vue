@@ -1,12 +1,50 @@
 <script setup>
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Head } from '@inertiajs/vue3';
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const imagenes = ref([
+  { id: 1, url: '/images/fresas/f14.jpg', alt: 'Servicios' },
+  { id: 2, url: '/images/fresas/f15.jpg', alt: 'Catálogo' },
+  { id: 3, url: '/images/fresas/f16.jpg', alt: 'Noticias' }
+]);
+
+const imagenExpandida = ref(null);
+
+const abrirImagen = (url) => {
+  imagenExpandida.value = url;
+  document.body.style.overflow = 'hidden';
+};
+
+const cerrarImagen = () => {
+  imagenExpandida.value = null;
+  document.body.style.overflow = 'auto';
+};
+
+const manejarTecla = (e) => {
+  if (e.key === 'Escape') cerrarImagen();
+};
+
+onMounted(() => window.addEventListener('keydown', manejarTecla));
+onUnmounted(() => window.removeEventListener('keydown', manejarTecla));
 </script>
 
 <template>
   <Head title="¿Reafilar o comprar nuevo? | HECOMA" />
 
   <MainLayout>
+
+    <!-- ===== MODAL ===== -->
+    <Transition name="fade">
+      <div v-if="imagenExpandida" class="modal-overlay" @click.self="cerrarImagen">
+        <button class="boton-cerrar" @click="cerrarImagen" aria-label="Cerrar imagen">&times;</button>
+        <div class="contenedor-imagen">
+          <img :src="imagenExpandida" alt="Imagen ampliada" class="imagen-grande" />
+        </div>
+      </div>
+    </Transition>
+    <!-- ===== FIN MODAL ===== -->
+
     <section class="bg-[#010cf7] py-6 mb-12">
       <div class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Guía de Compra: Cómo elegir la mejor Fresa para Galces</h1>
@@ -23,8 +61,9 @@ import { Head } from '@inertiajs/vue3';
             <h3 class="text-[#003399] text-xl md:text-2xl font-semibold text-center mb-4">F14: Cortes Rectos</h3>
             <h4 class="text-[#003399] text-xl md:text-m font-semibold text-center mb-4">Fresa para galces Z4</h4>
             <p>Es la opción todoterreno. Al tener los cortes paralelos al eje, ofrece una gran capacidad de evacuación de viruta y es muy sencilla de reafilar.</p>
-            <div class="flex justify-center">
-              <img src="/images/fresas/f14.jpg" alt="Fresa cortes rectos" width="50%">
+            <!-- Imagen F14 clicable -->
+            <div class="cursor-zoom-in overflow-hidden rounded-lg shadow-lg hover:opacity-90 transition mb-4" @click="abrirImagen('/images/fresas/f14.jpg')" >
+              <img src="/images/fresas/f14.jpg" alt="Fresa cortes rectos F14" class="w-full h-64 object-cover" />
             </div>
             <div class="flex justify-center">
               <button type="button" onclick="window.location.href='/f14-fresa-para-galces-z4-cortes-rectos'" class="btn-mdi-dark">Ver Fresa F14</button>
@@ -34,8 +73,9 @@ import { Head } from '@inertiajs/vue3';
             <h3 class="text-[#003399] text-xl md:text-2xl font-semibold text-center mb-4">F15: Cortes Alternos</h3>
             <h4 class="text-[#003399] text-xl md:text-m font-semibold text-center mb-4">Fresa para galces Z4 Axial</h4>
             <p>Sus cuchillas están inclinadas alternativamente. Esto crea un "efecto cizalla" que empuja la fibra hacia el centro del tablero, eliminando el astillado superficial.</p>
-            <div class="flex justify-center">
-              <img src="/images/fresas/f15.jpg" alt="Fresa cortes alternos" width="50%">
+            <!-- Imagen F15 clicable -->
+            <div class="flex justify-center cursor-zoom-in overflow-hidden rounded-lg hover:opacity-90 transition mb-4" @click="abrirImagen('/images/fresas/f15.jpg')" >
+              <img src="/images/fresas/f15.jpg" alt="Fresa cortes alternos F15" class="h-64 object-contain" />
             </div>
             <div class="flex justify-center">
               <button type="button" onclick="window.location.href='/f15-fresa-para-mecanizar-galces-z4-axiales-alternos'" class="btn-mdi-dark">Ver fresa F15</button>
@@ -48,8 +88,12 @@ import { Head } from '@inertiajs/vue3';
           <div class="flex-1 bg-white border border-gray-100 rounded-xl shadow-sm p-6 md:p-8 custom-card">
             <h3 class="text-[#003399] text-xl md:text-2xl font-semibold text-center mb-4">Fresa para galces Z4 + V4</h3>
             <p>Esta Serie F16 combina la potencia de sus 4 cortes principales con 4 precortadores laterales (V4). Estos "cuchillos" realizan un corte previo en la fibra antes de que el diente principal retire el material, garantizando un ángulo de 90° perfecto y sin una sola mota de astillado.</p>
-            <div class="flex justify-center">
-              <img src="/images/fresas/f16.jpg" alt="Fresa cortes rectos" width="50%">
+            <!-- Imagen F16 clicable -->
+            <div
+              class="flex justify-center cursor-zoom-in overflow-hidden rounded-lg hover:opacity-90 transition mb-4"
+              @click="abrirImagen('/images/fresas/f16.jpg')"
+            >
+              <img src="/images/fresas/f16.jpg" alt="Fresa cortes rectos F16" class="h-64 object-contain" />
             </div>
             <div class="flex justify-center">
               <button type="button" onclick="window.location.href='/f16-fresa-para-galces-z4-v4'" class="btn-mdi-dark">Comprar F16 con Precortadores</button>
@@ -62,10 +106,10 @@ import { Head } from '@inertiajs/vue3';
           <table class="w-full border-collapse bg-white table-fixed">
             <thead>
               <tr class="bg-[#003399] text-white">
-                <th class="w-[33%] text-center">Modelo</th>
-                <th class="w-[33%] text-center">Tipo de Corte</th>
-                <th class="w-[33%] text-center">Ventaja Principal</th>
-                <th class="w-[33%] text-center">Material Ideal</th>
+                <th class="w-[25%] text-center">Modelo</th>
+                <th class="w-[25%] text-center">Tipo de Corte</th>
+                <th class="w-[25%] text-center">Ventaja Principal</th>
+                <th class="w-[25%] text-center">Material Ideal</th>
               </tr>
             </thead>
             <tbody class="text-gray-600">
@@ -121,15 +165,77 @@ import { Head } from '@inertiajs/vue3';
   @media (max-width: 768px) { thead { font-size: 10px; } tbody { font-size: 10px; } }
   table { border-collapse: collapse; table-layout: fixed; width: 100%; border: 1px solid red; }
   th { padding-top: 2%; padding-bottom: 2%; font-size: 1em; font-weight: bold; text-transform: uppercase; line-height: 1.2; vertical-align: middle; border: 1px solid red; }
-  td { padding: 3%;font-size: 0.8em; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; vertical-align: middle; border: 1px solid red; }
+  td { padding: 3%; font-size: 0.8em; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; vertical-align: middle; border: 1px solid red; }
   @media (min-width: 768px) { th, td { padding-top: 2%; padding-bottom: 2%; } }
   td:first-child { letter-spacing: -0.01em; }
 
   /* --- Boton ---*/
   .btn-mdi-dark { background-color: #003399; color: #ffffff; font-weight: 700; text-transform: uppercase; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; border-radius: 2px; transition: all 0.3s ease; padding: 1rem 3rem; font-size: 16px; width: auto; letter-spacing: 0.05em; }
   .btn-mdi-dark:hover { background-color: #002266; transform: translateY(-1px); }
-  @media (max-width: 768px) { .btn-mdi-dark { font-size: 13px;  padding: 0.9rem 1.5rem; width: 100%; } }
+  @media (max-width: 768px) { .btn-mdi-dark { font-size: 13px; padding: 0.9rem 1.5rem; width: 100%; } }
   .bf { text-align: center; }
   /* --- fin Boton ---*/
 
+  /* Estilos del Overlay (Fondo oscuro) */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: zoom-out;
+  }
+
+  /* Contenedor de la imagen para que no toque los bordes */
+  .contenedor-imagen {
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .imagen-grande {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    cursor: default;
+  }
+
+  /* Botón X */
+  .boton-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 50px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s ease;
+    z-index: 10000;
+  }
+
+  .boton-cerrar:hover {
+    transform: scale(1.2);
+    color: #ff4444;
+  }
+
+  /* Animación de entrada y salida suave */
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s ease;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
 </style>

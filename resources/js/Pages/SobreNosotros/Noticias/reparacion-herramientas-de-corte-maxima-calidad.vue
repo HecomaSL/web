@@ -1,18 +1,17 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Head } from '@inertiajs/vue3';
-// Creamos la referencia para el contenedor
+
 const carouselRef = ref(null);
 
 const scrollCarousel = (direction) => {
   if (carouselRef.value) {
     const container = carouselRef.value;
-    const scrollAmount = 300; // El desplazamiento por click
+    const scrollAmount = 300;
     const maxScroll = container.scrollWidth - container.clientWidth;
 
     if (direction === 'left') {
-      // Si estamos al principio (o muy cerca) y damos a la izquierda, vamos al final
       if (container.scrollLeft <= 5) 
         container.scrollTo({ left: maxScroll, behavior: 'smooth' });
       else 
@@ -25,12 +24,47 @@ const scrollCarousel = (direction) => {
     }
   }
 };
+
+const imagenExpandida = ref(null);
+
+const abrirImagen = (url) => {
+  imagenExpandida.value = url;
+  document.body.style.overflow = 'hidden';
+};
+
+const cerrarImagen = () => {
+  imagenExpandida.value = null;
+  document.body.style.overflow = 'auto';
+};
+
+const manejarTecla = (e) => {
+  if (e.key === 'Escape') cerrarImagen();
+};
+
+onMounted(() => window.addEventListener('keydown', manejarTecla));
+onUnmounted(() => window.removeEventListener('keydown', manejarTecla));
 </script>
 
 <template>
   <Head title="Reparación de herramientas de corte | HECOMA" />
 
   <MainLayout>
+
+    <!-- ===== MODAL ===== -->
+    <Transition name="fade">
+      <div
+        v-if="imagenExpandida"
+        class="modal-overlay"
+        @click.self="cerrarImagen"
+      >
+        <button class="boton-cerrar" @click="cerrarImagen" aria-label="Cerrar imagen">&times;</button>
+        <div class="contenedor-imagen">
+          <img :src="imagenExpandida" alt="Imagen ampliada" class="imagen-grande" />
+        </div>
+      </div>
+    </Transition>
+    <!-- ===== FIN MODAL ===== -->
+
     <section class="bg-[#010cf7] py-6 mb-12">
       <div class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Reparación de herramientas de corte con la máxima calidad</h1>
@@ -44,16 +78,19 @@ const scrollCarousel = (direction) => {
         </div>
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Reparación de herramientas de corte</h2>
         <p>Ahorra hasta un 25% reparando su herramienta de corte con HECOMA®. Misma calidad y duración que una herramienta nueva ahorrando costes y de forma mas sostenible para el medio ambiente.</p>
+
+        <!-- imgytext 1 -->
         <div class="flex justify-center imgytext">
-          <div>
-            <img src="/images/noticias/fresa_galces_usada.jpg" alt="Fresa reparada" width="100%">
+          <div class="cursor-zoom-in" @click="abrirImagen('/images/noticias/fresa_galces_usada.jpg')">
+            <img src="/images/noticias/fresa_galces_usada.jpg" alt="Fresa reparada" width="100%" class="hover:opacity-90 transition" />
             <p>Fresa para labrar galces Z4+4 usada 2</p>
           </div>
-          <div>
-            <img src="/images/noticias/fresaz4_4usada.jpg" alt="Fresa reparada" width="100%">
+          <div class="cursor-zoom-in" @click="abrirImagen('/images/noticias/fresaz4_4usada.jpg')">
+            <img src="/images/noticias/fresaz4_4usada.jpg" alt="Fresa reparada" width="100%" class="hover:opacity-90 transition" />
             <p>Fresa para labrar galces Z4+4 usada</p>
           </div>
         </div>
+
         <p>En estas imágenes podemos apreciar esta herramienta con sus placas de corte en metal duro dañadas y al final de su vida por desgaste y después de varios afilados. Se trata de una fresa para labrar galces en Z4+4.</p>
         <p>En HECOMA® somos fabricantes y renovar su herramienta de corte a un estado igual o mejor que nueva, creemos que es una gran opción. Pero,  ¿qué ventajas obtiene el cliente con nuestro servicio de reparación de herramientas?:</p>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">
@@ -62,20 +99,23 @@ const scrollCarousel = (direction) => {
           <li><span class="text-gray-700 font-normal"><b>Sostenibilidad.</b> Reutilizamos el cuerpo de la herramienta, con el consecuente ahorro en materiales y en energía para su fabricación.</span></li>
           <li><span class="text-gray-700 font-normal"><b>Reutilización.</b> Si las necesidades de fabricación han cambiado, la herramienta se puede remodelar durante la reparación para adaptarse a las nuevas necesidades del cliente.</span></li>
         </ul>
+
+        <!-- imgytext 2 -->
         <div class="flex justify-center imgytext">
-          <div>
-            <img src="/images/noticias/fresa_galces_1.jpg" alt="Fresa reparada" width="100%">
+          <div class="cursor-zoom-in" @click="abrirImagen('/images/noticias/fresa_galces_1.jpg')">
+            <img src="/images/noticias/fresa_galces_1.jpg" alt="Fresa reparada" width="100%" class="hover:opacity-90 transition" />
             <p>Fresa reparada</p>
           </div>
-          <div>
-            <img src="/images/noticias/fresa_galces_2.jpg" alt="Fresa reparada" >
+          <div class="cursor-zoom-in" @click="abrirImagen('/images/noticias/fresa_galces_2.jpg')">
+            <img src="/images/noticias/fresa_galces_2.jpg" alt="Fresa reparada" class="hover:opacity-90 transition" />
             <p>Fresa reparada</p>
           </div>
-          <div>
-            <img src="/images/noticias/fresa_galces_1.jpg" alt="Fresa reparada" >
+          <div class="cursor-zoom-in" @click="abrirImagen('/images/noticias/fresa_galces_1.jpg')">
+            <img src="/images/noticias/fresa_galces_1.jpg" alt="Fresa reparada" class="hover:opacity-90 transition" />
             <p>Fresa reparada</p>
           </div>
         </div>
+
         <p>Las imágenes mas arriba muestran el trabajo de reparación terminado.  La herramienta  ha seguido los siguientes pasos en su reparación:</p>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">
           <li><span class="text-gray-700 font-normal">Limpieza profunda con ultrasonidos y desengrasado</span></li>
@@ -146,36 +186,92 @@ const scrollCarousel = (direction) => {
 
   /* --- Video ---*/
   .video-container { position: relative; width: 100%; max-width: 100%; padding-bottom: 56.25%; height: 0; }
-  /* El iframe ocupa todo el espacio del contenedor */
   .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
   @media (max-width: 768px) { .video-container { max-width: 100%; } }
   /* --- Fin Video ---*/
+
   .imgytext p { text-align: center; }
   .imgytext img { height: 350px; width: 350px; }
-  .imgytext { margin: 1%; }
+  .imgytext div { margin: 1%; }
+
+  /* Estilos del Overlay (Fondo oscuro) */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: zoom-out;
+  }
+
+  .contenedor-imagen {
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .imagen-grande {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  cursor: default;
+  transform: scale(1.25);
+  transform-origin: center center;
+}
+
+  /* Botón X */
+  .boton-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 50px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s ease;
+    z-index: 10000;
+  }
+
+  .boton-cerrar:hover {
+    transform: scale(1.2);
+    color: #ff4444;
+  }
+
+  /* Animación de entrada y salida suave */
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s ease;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
 </style>
 
 <style scoped>
-  /* ========================================= */
-  /* --- CARRUSEL CON FLECHAS (NUEVO/UNIFICADO) --- */
-  /* ========================================= */
   .carousel-container { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 4%; padding-bottom: 1rem; padding-top: 1rem; }
-  /* Ocultar barra de scroll pero mantener funcionalidad */
   .carousel-container::-webkit-scrollbar { display: none; }
   .carousel-item { flex: 0 0 85%; scroll-snap-align: center; text-align: center; transition: transform 0.3s ease; }
   .carousel-item img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 
-  /* --- ESTILOS DE LAS FLECHAS --- */
   .carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; cursor: pointer; font-size: 1.5rem; padding: 0.8rem 1.2rem; z-index: 10; border-radius: 50%; transition: background-color 0.3s ease, opacity 0.3s ease; opacity: 0; }
-  /* Mostrar flechas al hacer hover sobre el contenedor en PC */
   .group:hover .carousel-arrow { opacity: 1; }
   .carousel-arrow:hover { background-color: rgba(0, 0, 0, 0.8); }
-  /* Ajustes para Desktop (Flechas) */
   @media (min-width: 768px) { .carousel-item { flex: 0 0 30.6%; }
     .carousel-arrow { font-size: 2rem; padding: 1rem 1.5rem; }
     .carousel-arrow.left-0 { left: 1rem; }
     .carousel-arrow.right-0 { right: 1rem; }
   }
-  /* Ajustes para Móvil (Ocultar flechas) */
   @media (max-width: 768px) { .carousel-item p { font-size: 13px; } .carousel-arrow { display: none; } }
 </style>

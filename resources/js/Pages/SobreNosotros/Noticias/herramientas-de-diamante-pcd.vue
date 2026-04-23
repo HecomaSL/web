@@ -1,12 +1,48 @@
 <script setup>
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Head } from '@inertiajs/vue3';
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const imagenExpandida = ref(null);
+
+const abrirImagen = (url) => {
+  imagenExpandida.value = url;
+  document.body.style.overflow = 'hidden';
+};
+
+const cerrarImagen = () => {
+  imagenExpandida.value = null;
+  document.body.style.overflow = 'auto';
+};
+
+const manejarTecla = (e) => {
+  if (e.key === 'Escape') cerrarImagen();
+};
+
+onMounted(() => window.addEventListener('keydown', manejarTecla));
+onUnmounted(() => window.removeEventListener('keydown', manejarTecla));
 </script>
 
 <template>
   <Head title="Herramientas de Diamante (PCD) | HECOMA" />
 
   <MainLayout>
+
+    <!-- ===== MODAL ===== -->
+    <Transition name="fade">
+      <div
+        v-if="imagenExpandida"
+        class="modal-overlay"
+        @click.self="cerrarImagen"
+      >
+        <button class="boton-cerrar" @click="cerrarImagen" aria-label="Cerrar imagen">&times;</button>
+        <div class="contenedor-imagen">
+          <img :src="imagenExpandida" alt="Imagen ampliada" class="imagen-grande" />
+        </div>
+      </div>
+    </Transition>
+    <!-- ===== FIN MODAL ===== -->
+
     <section class="bg-[#010cf7] py-6 mb-12">
       <div class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Herramientas de Diamante (PCD)<br>Entre 60 y 150 veces el rendimiento del MD</h1>
@@ -22,20 +58,23 @@ import { Head } from '@inertiajs/vue3';
         <p>El diamante policristalino (PCD en sus siglas en Inglés), se postula como uno de los mejores materiales para elaborar las superficies de corte de herramientas para madera y derivados. En HECOMA®, desde casi nuestra fundación, conocemos las ventajas de este material, y por tanto nos especializamos en su mantenimiento y en la fabricación de herramientas utilizando este material. Conozcamos un poco mas de este.</p>
         <h2>¿Que es el PCD (diamante policristalino)?</h2>
         <p>El PCD, también llamado diamante sintético, es un material de corte fabricado a partir de diamante sintetizado industrialmente. Por su dureza y resistencia a la abrasión, es utilizado con éxito en el mecanizado y corte de madera (y derivados como aglomerados, DM, solid surface…) , plástico, metal, piedra, hormigón, etc</p>
+
+        <!-- imgytext 1 -->
         <div class="flex justify-center imgytext">
-          <div>
-            <img src="/images/noticias/afilado_electroerosion.jpg" alt="Afilado PCD Electro abrasión" >
+          <div class="cursor-zoom-in" @click="abrirImagen('/images/noticias/afilado_electroerosion.jpg')">
+            <img src="/images/noticias/afilado_electroerosion.jpg" alt="Afilado PCD Electro abrasión" class="hover:opacity-90 transition" />
             <p>Afilado PCD Electro abrasión</p>
           </div>
-          <div>
-            <img src="/images/noticias/fresa_extensible_pcd.jpg" alt="Fresa extensible de PCD" >
+          <div class="cursor-zoom-in" @click="abrirImagen('/images/noticias/fresa_extensible_pcd.jpg')">
+            <img src="/images/noticias/fresa_extensible_pcd.jpg" alt="Fresa extensible de PCD" class="hover:opacity-90 transition" />
             <p>Fresa extensible de PCD</p>
           </div>
-          <div>
-            <img src="/images/noticias/fresa_mango_a_medida.jpg" alt="Fresa de eje PCD" >
+          <div class="cursor-zoom-in" @click="abrirImagen('/images/noticias/fresa_mango_a_medida.jpg')">
+            <img src="/images/noticias/fresa_mango_a_medida.jpg" alt="Fresa de eje PCD" class="hover:opacity-90 transition" />
             <p>Fresa de eje PCD</p>
           </div>
         </div>
+
         <h2 class="text-[#010cf7] text-3xl font-bold">Que ventajas nos aportan</h2>
         <p>Las herramientas fabricadas (sus superficies de corte) con este material:</p>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">
@@ -110,10 +149,74 @@ import { Head } from '@inertiajs/vue3';
   .imgytext p { text-align: center; }
   .imgytext img { height: 250px; width: 300px; padding: 1%; object-fit: cover; }
   .imgytext { padding: 1%; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+
   /* --- Video ---*/
   .video-container { position: relative; width: 100%; max-width: 100%; padding-bottom: 56.25%; height: 0; }
-  /* El iframe ocupa todo el espacio del contenedor */
   .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
   @media (max-width: 768px) { .video-container { max-width: 100%; } }
   /* --- Fin Video ---*/
+
+  /* Estilos del Overlay (Fondo oscuro) */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: zoom-out;
+  }
+
+  .contenedor-imagen {
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .imagen-grande {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    cursor: default;
+    transform: scale(1.5);
+    transform-origin: center center;
+  }
+
+  /* Botón X */
+  .boton-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 50px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s ease;
+    z-index: 10000;
+  }
+
+  .boton-cerrar:hover {
+    transform: scale(1.2);
+    color: #ff4444;
+  }
+
+  /* Animación de entrada y salida suave */
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s ease;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
 </style>

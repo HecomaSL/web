@@ -119,11 +119,6 @@ watch(() => cart.subtotal, (nuevoSubtotal) => {
                                     <span>Descuento ({{ cart.cupon.nombre }})</span>
                                     <span>- {{ formatearPrecio(cart.descuentoImporte) }}</span>
                                 </div>
-
-                                <div class="flex justify-between text-gray-600">
-                                    <span>Envío</span>
-                                    <span>{{ formatearPrecio(cart.envio) }}</span>
-                                </div>
                             </div>
 
                             <div class="mb-4">
@@ -149,7 +144,7 @@ watch(() => cart.subtotal, (nuevoSubtotal) => {
 
                             <div class="flex justify-between text-2xl font-bold text-[#0000BB] mb-8">
                                 <span>TOTAL</span>
-                                <span>{{ formatearPrecio(cart.totalFinal) }}</span>
+                                <span>{{ formatearPrecio(cart.subtotal - cart.descuentoImporte) }}</span>
                             </div>
 
                             <Link href="/tramitar-pedido"

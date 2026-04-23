@@ -3,35 +3,30 @@ import { defineStore } from 'pinia';
 export const useCartStore = defineStore('cart', {
     state: () => ({
         items: [],
-        envioBase: 12,
-        cupon: null, 
+        cupon: null,
+        metodoEnvio: 'domicilio', // Valor por defecto
+        costeEnvioBase: 12.00, // Ajusta el precio de tu envío aquí
     }),
 
     getters: {
         totalProductos: (state) => {
             return state.items.reduce((total, item) => total + item.cantidad, 0);
         },
-        subtotal: (state) => {
-            return state.items.reduce((total, item) => total + (item.precio * item.cantidad), 0);
-        },
+        subtotal: (state) => state.items.reduce((acc, item) => acc + (item.precio * item.cantidad), 0),
+
         envio: (state) => {
-            return parseFloat(state.envioBase);
+            return state.metodoEnvio === 'recogida' ? 0 : state.costeEnvioBase;
         },
         // Nuevo: Calcula cuánto dinero se resta
         descuentoImporte: (state) => {
             if (!state.cupon) return 0;
-            const valor = parseFloat(state.cupon.valor);
-            if (state.cupon.tipo === 'porcentaje') {
-                return (state.items.reduce((total, item) => total + (item.precio * item.cantidad), 0) * valor) / 100;
-            }
-            return valor;
+            return state.cupon.tipo === 'porcentaje' 
+                ? (state.subtotal * (state.cupon.valor / 100)) 
+                : state.cupon.valor;
         },
         // Actualizado: Incluye el descuento en el total
         totalFinal: (state) => {
-            const sub = state.items.reduce((total, item) => total + (item.precio * item.cantidad), 0);
-            const desc = state.cupon ? (state.cupon.tipo === 'porcentaje' ? (sub * state.cupon.valor / 100) : state.cupon.valor) : 0;
-            const total = (sub - desc) + state.envioBase;
-            return parseFloat(Math.max(0, total).toFixed(2));
+            return (state.subtotal - state.descuentoImporte) + state.envio;
         }
     },
 

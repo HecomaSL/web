@@ -1,12 +1,48 @@
 <script setup>
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Head } from '@inertiajs/vue3';
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const imagenExpandida = ref(null);
+
+const abrirImagen = (url) => {
+  imagenExpandida.value = url;
+  document.body.style.overflow = 'hidden';
+};
+
+const cerrarImagen = () => {
+  imagenExpandida.value = null;
+  document.body.style.overflow = 'auto';
+};
+
+const manejarTecla = (e) => {
+  if (e.key === 'Escape') cerrarImagen();
+};
+
+onMounted(() => window.addEventListener('keydown', manejarTecla));
+onUnmounted(() => window.removeEventListener('keydown', manejarTecla));
 </script>
 
 <template>
   <Head title="¿Cómo elegir las mejores fresas para ranurar? | HECOMA" />
 
   <MainLayout>
+
+    <!-- ===== MODAL ===== -->
+    <Transition name="fade">
+      <div
+        v-if="imagenExpandida"
+        class="modal-overlay"
+        @click.self="cerrarImagen"
+      >
+        <button class="boton-cerrar" @click="cerrarImagen" aria-label="Cerrar imagen">&times;</button>
+        <div class="contenedor-imagen">
+          <img :src="imagenExpandida" alt="Imagen ampliada" class="imagen-grande" />
+        </div>
+      </div>
+    </Transition>
+    <!-- ===== FIN MODAL ===== -->
+
     <section class="bg-[#010cf7] py-6 mb-12">
       <div class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">¿Cómo elegir las mejores fresas para ranurar?</h1>
@@ -23,8 +59,12 @@ import { Head } from '@inertiajs/vue3';
             <h3 class="text-[#003399] text-xl md:text-2xl font-semibold text-center mb-4">Serie F10 (Z4)</h3>
             <h4 class="text-[#003399] text-xl md:text-m font-semibold text-center mb-4">Fresas para ranurar Z4</h4>
             <p>Ideal para cortes rápidos en maderas blandas o procesos donde prima la velocidad de producción.</p>
-            <div class="flex justify-center">
-              <img src="/images/fresas/f10.jpg" alt="Fresa ranurar Z4" width="50%">
+            <!-- Imagen F10 clicable -->
+            <div
+              class="flex justify-center cursor-zoom-in overflow-hidden rounded-lg hover:opacity-90 transition mb-4"
+              @click="abrirImagen('/images/fresas/f10.jpg')"
+            >
+              <img src="/images/fresas/f10.jpg" alt="Fresa ranurar Z4" class="h-64 object-contain" />
             </div>
             <div class="flex justify-center">
               <button type="button" onclick="window.location.href='/f10-fresa-para-ranurar-z4'" class="btn-mdi-dark">Ver Fresa F10</button>
@@ -34,11 +74,15 @@ import { Head } from '@inertiajs/vue3';
             <h3 class="text-[#003399] text-xl md:text-2xl font-semibold text-center mb-4">Serie F11 (Z8)</h3>
             <h4 class="text-[#003399] text-xl md:text-m font-semibold text-center mb-4">Fresas para ranurar Z8</h4>
             <p>Al tener más dientes, ofrece un acabado mucho más fino y es perfecta para maderas duras.</p>
-            <div class="flex justify-center">
-              <img src="/images/fresas/f11.jpg" alt="Fresa ranurar Z8" width="50%">
+            <!-- Imagen F11 clicable -->
+            <div
+              class="flex justify-center cursor-zoom-in overflow-hidden rounded-lg hover:opacity-90 transition mb-4"
+              @click="abrirImagen('/images/fresas/f11.jpg')"
+            >
+              <img src="/images/fresas/f11.jpg" alt="Fresa ranurar Z8" class="h-64 object-contain" />
             </div>
             <div class="flex justify-center">
-              <button type="button" onclick="window.location.href='/f11-fresa-para-ranurar-de-z8'" class="btn-mdi-dark">Ver fresa F1q</button>
+              <button type="button" onclick="window.location.href='/f11-fresa-para-ranurar-de-z8'" class="btn-mdi-dark">Ver fresa F11</button>
             </div>
           </div>
         </div>
@@ -48,8 +92,12 @@ import { Head } from '@inertiajs/vue3';
           <div class="flex-1 bg-white border border-gray-100 rounded-xl shadow-sm p-6 md:p-8 custom-card">
             <h3 class="text-[#003399] text-xl md:text-2xl font-semibold text-center mb-4">Serie F12 (Z4+V4)</h3>
             <p>Esta fresa para ranurar incorpora cuchillas laterales que realizan un pre-corte limpio en la fibra antes de que el diente principal arranque el material. Es la solución definitiva contra el astillado</p>
-            <div class="flex justify-center">
-              <img src="/images/fresas/f12.jpg" alt="Fresa ranurar Z4 + V4" width="50%">
+            <!-- Imagen F12 clicable -->
+            <div
+              class="flex justify-center cursor-zoom-in overflow-hidden rounded-lg hover:opacity-90 transition mb-4"
+              @click="abrirImagen('/images/fresas/f12.jpg')"
+            >
+              <img src="/images/fresas/f12.jpg" alt="Fresa ranurar Z4 + V4" class="h-64 object-contain" />
             </div>
             <div class="flex justify-center">
               <button type="button" onclick="window.location.href='/f12-fresa-para-ranurar-de-z4-v4'" class="btn-mdi-dark">Comprar F12 con Precortadores</button>
@@ -76,7 +124,7 @@ import { Head } from '@inertiajs/vue3';
               <tr class="hover:bg-gray-50 transition-colors">
                 <td class="font-bold text-[#003399]">Fresas para Ranurar Extensibles</td>
                 <td class="text-justify text-gray-500">Ajuste milimétrico para grosores especiales</td>
-                <td class="text-justify"><a href="/f13-fresa-para-ranurar-extensible-z4-y-v4">Ver Serie F13</a></td>
+                <td class="text-justify"><a class="f13" href="/f13-fresa-para-ranurar-extensible-z4-y-v4">Ver Serie F13</a></td>
               </tr>
             </tbody>
           </table>
@@ -106,21 +154,82 @@ import { Head } from '@inertiajs/vue3';
 
   p { text-align: justify; line-height: 1.6; }
   h2 { line-height: 1.2; text-align: justify; }
-  
+  .f13 { color:blue; }
   .table-container { font-size: 16px; }
   thead { background-color: blue; }
   @media (max-width: 768px) { thead { font-size: 10px; } tbody { font-size: 10px; } }
   table { border-collapse: collapse; table-layout: fixed; width: 100%; border: 1px solid red; }
   th { padding-top: 2%; padding-bottom: 2%; font-size: 1em; font-weight: bold; text-transform: uppercase; line-height: 1.2; vertical-align: middle; border: 1px solid red; }
-  td { padding: 3%;font-size: 0.8em; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; vertical-align: middle; border: 1px solid red; }
+  td { padding: 3%; font-size: 0.8em; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; vertical-align: middle; border: 1px solid red; }
   @media (min-width: 768px) { th, td { padding-top: 2%; padding-bottom: 2%; } }
   td:first-child { letter-spacing: -0.01em; }
 
   /* --- Boton ---*/
   .btn-mdi-dark { background-color: #003399; color: #ffffff; font-weight: 700; text-transform: uppercase; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; border-radius: 2px; transition: all 0.3s ease; padding: 1rem 3rem; font-size: 16px; width: auto; letter-spacing: 0.05em; }
   .btn-mdi-dark:hover { background-color: #002266; transform: translateY(-1px); }
-  @media (max-width: 768px) { .btn-mdi-dark { font-size: 13px;  padding: 0.9rem 1.5rem; width: 100%; } }
+  @media (max-width: 768px) { .btn-mdi-dark { font-size: 13px; padding: 0.9rem 1.5rem; width: 100%; } }
   .bf { text-align: center; }
   /* --- fin Boton ---*/
 
+  /* Estilos del Overlay (Fondo oscuro) */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: zoom-out;
+  }
+
+  .contenedor-imagen {
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .imagen-grande {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    cursor: default;
+  }
+
+  /* Botón X */
+  .boton-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 50px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s ease;
+    z-index: 10000;
+  }
+
+  .boton-cerrar:hover {
+    transform: scale(1.2);
+    color: #ff4444;
+  }
+
+  /* Animación de entrada y salida suave */
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s ease;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
 </style>
