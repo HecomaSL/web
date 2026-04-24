@@ -42,23 +42,12 @@ const form = useForm({
             </div>
             <div>
                 <InputLabel for="tlfn" value="Telefono contacto" />
-                <TextInput 
-                    id="tlfn" 
-                    type="text" 
-                    class="mt-1 block w-full" 
-                    v-model="form.tlfn" 
-                    required 
-                    maxlength="9"
-                    @input="form.tlfn = form.tlfn.replace(/\D/g, '').slice(0, 9)" 
-                />
+                <TextInput id="tlfn" type="text" class="mt-1 block w-full" v-model="form.tlfn" required maxlength="9" @input="form.tlfn = form.tlfn.replace(/\D/g, '').slice(0, 9)"  />
                 <InputError class="mt-2" :message="form.errors.tlfn" />
             </div>
 
             <div v-if="mustVerifyEmail && user.email_verified_at === null">
-                <p class="mt-2 text-sm text-gray-800">
-                    Tu dirección de correo no está verificada.
-                    <Link :href="route('verification.send')" method="post" as="button" class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Haz clic aquí para volver a enviar el email de verificación.</Link>
-                </p>
+                <p class="mt-2 text-sm text-gray-800">Tu dirección de correo no está verificada. <Link :href="route('verification.send')" method="post" as="button" class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Haz clic aquí para volver a enviar el email de verificación.</Link></p>
 
                 <div v-show="status === 'verification-link-sent'" class="mt-2 text-sm font-medium text-green-600">
                     Se ha enviado un nuevo enlace de verificación a tu correo electrónico.
