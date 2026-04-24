@@ -1,24 +1,57 @@
 <script setup>
 import MainLayout from '@/Layouts/MainLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
-import { ref } from 'vue'; // <--- Importante para el desplegable
+import { Head, Link, useForm } from '@inertiajs/vue3'; // Añadimos useForm para las acciones
+import { ref } from 'vue';
 
 const props = defineProps({
     pedidos: Array
 });
 
-// Variable para controlar qué pedido está expandido
 const pedidoAbierto = ref(null);
+const form = useForm({}); // Formulario vacío para enviar peticiones POST/PATCH
 
 const togglePedido = (id) => {
-    if (pedidoAbierto.value === id) {
-        pedidoAbierto.value = null;
-    } else {
-        pedidoAbierto.value = id;
-    }
+    pedidoAbierto.value = pedidoAbierto.value === id ? null : id;
 };
 
 const formatearPrecio = (p) => parseFloat(p).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + '€';
+
+// --- LÓGICA DE EXPERTO: GESTIÓN DE ESTADOS ---
+
+const getEstadoConfig = (estado) => {
+    const configs = {
+        'sin pagar':   { css: 'bg-yellow-100 text-yellow-700', label: 'Pendiente de Pago' },
+        'no servido':  { css: 'bg-blue-100 text-blue-700', label: 'En Preparación' },
+        'reparto':     { css: 'bg-indigo-100 text-indigo-700', label: 'En Reparto' },
+        'entregado':   { css: 'bg-green-100 text-green-700', label: 'Entregado' },
+        'exito':       { css: 'bg-gray-800 text-white', label: 'Completado' },
+        'cancelado':   { css: 'bg-red-100 text-red-700', label: 'Cancelado' },
+        'devuelto':    { css: 'bg-orange-100 text-orange-700', label: 'Devuelto' }
+    };
+    return configs[estado] || { css: 'bg-gray-100 text-gray-600', label: estado };
+};
+
+const puedeDevolver = (pedido) => {
+    if (!['reparto', 'entregado'].includes(pedido.estado)) return false;
+    
+    const fechaPedido = new Date(pedido.diaPedido);
+    const hoy = new Date();
+    const diferenciaDias = (hoy - fechaPedido) / (1000 * 60 * 60 * 24);
+    
+    return diferenciaDias < 15;
+};
+
+const cancelarPedido = (id) => {
+    if (confirm('¿Estás seguro de que deseas cancelar este pedido?')) {
+        form.post(route('pedido.cancelar', id));
+    }
+};
+
+const devolverPedido = (id) => {
+    if (confirm('¿Deseas solicitar la devolución de este pedido?')) {
+        form.post(route('pedido.devolver', id));
+    }
+};
 </script>
 
 <template>
@@ -38,7 +71,7 @@ const formatearPrecio = (p) => parseFloat(p).toLocaleString('es-ES', { minimumFr
                                 </svg>
                             </span>
                             <div>
-                                <span class="font-bold text-lg text-gray-900">Pedido {{ pedido.codigo_pedido  }}</span>
+                                <span class="font-bold text-lg text-gray-900">Pedido {{ pedido.codigo_pedido }}</span>
                                 <p class="text-xs text-gray-500">{{ pedido.diaPedido }}</p>
                             </div>
                         </div>
@@ -48,30 +81,28 @@ const formatearPrecio = (p) => parseFloat(p).toLocaleString('es-ES', { minimumFr
                                 <p class="text-xs uppercase text-gray-400 font-bold">Total</p>
                                 <p class="text-xl font-black text-[#010cf7]">{{ formatearPrecio(pedido.total) }}</p>
                             </div>
-                            <span :class="{'px-3 py-1 text-xs font-bold rounded-full uppercase': true, 'bg-yellow-100 text-yellow-700': pedido.estado === 'sin pagar', 'bg-green-100 text-green-700': pedido.estado === 'pagado'}">
-                                {{ pedido.estado }}
+                            <span :class="['px-3 py-1 text-xs font-bold rounded-full uppercase', getEstadoConfig(pedido.estado).css]">
+                                {{ getEstadoConfig(pedido.estado).label }}
                             </span>
                         </div>
                     </div>
 
                     <div v-if="pedidoAbierto === pedido.idPedido" class="border-t border-gray-100 bg-gray-50 p-6 animate-fade-in-down">
-                        <h4 class="text-sm font-bold text-gray-700 mb-4 uppercase">Artículos en este pedido:</h4>
+                        <h4 class="text-sm font-bold text-gray-700 mb-4 uppercase text-center md:text-left">Artículos:</h4>
                         
                         <div class="overflow-x-auto">
                             <table class="w-full text-sm text-left">
                                 <thead class="text-gray-500 border-b border-gray-200">
                                     <tr>
                                         <th class="py-2">Referencia</th>
-                                        <th class="py-2 text-center">Cantidad</th>
-                                        <th class="py-2 text-right">Precio Unit.</th>
+                                        <th class="py-2 text-center">Cant.</th>
+                                        <th class="py-2 text-right">Precio</th>
                                         <th class="py-2 text-right">Subtotal</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr v-for="item in pedido.items" :key="item.id" class="border-b border-gray-100 last:border-0 text-gray-700">
-                                        <td class="py-3 font-medium text-gray-800">
-                                            {{ item.nombre_articulo ? item.nombre_articulo : 'Sin Ref (ID: ' + item.idProducto + ')' }}
-                                        </td>
+                                        <td class="py-3 font-medium text-gray-800">{{ item.nombre_articulo || 'Producto ID: ' + item.idProducto }}</td>
                                         <td class="py-3 text-center">{{ item.cantidadProducto }}</td>
                                         <td class="py-3 text-right">{{ formatearPrecio(item.precioUnitario) }}</td>
                                         <td class="py-3 text-right font-bold">{{ formatearPrecio(item.precioUnitario * item.cantidadProducto) }}</td>
@@ -80,8 +111,29 @@ const formatearPrecio = (p) => parseFloat(p).toLocaleString('es-ES', { minimumFr
                             </table>
                         </div>
 
-                        <div v-if="pedido.estado === 'sin pagar'" class="mt-6 flex justify-end">
-                            <Link :href="route('pedido.exito', { id: pedido.idPedido })" class="bg-orange-500 text-white px-4 py-2 rounded text-xs font-bold hover:bg-orange-600">REVISAR DATOS DE PAGO </Link>
+                        <div class="mt-8 flex flex-wrap justify-end gap-3 border-t pt-4">
+                            
+                            <Link v-if="pedido.estado === 'sin pagar'" 
+                                :href="route('pedido.exito', { id: pedido.idPedido })" 
+                                class="bg-blue-600 text-white px-5 py-2 rounded shadow-sm text-xs font-bold hover:bg-blue-700">
+                                FINALIZAR PAGO
+                            </Link>
+
+                            <button v-if="['sin pagar', 'no servido'].includes(pedido.estado)"
+                                @click="cancelarPedido(pedido.idPedido)"
+                                class="bg-red-500 text-white px-5 py-2 rounded shadow-sm text-xs font-bold hover:bg-red-600">
+                                CANCELAR PEDIDO
+                            </button>
+
+                            <button v-if="puedeDevolver(pedido)"
+                                @click="devolverPedido(pedido.idPedido)"
+                                class="bg-orange-500 text-white px-5 py-2 rounded shadow-sm text-xs font-bold hover:bg-orange-600">
+                                SOLICITAR DEVOLUCIÓN
+                            </button>
+
+                            <span v-if="pedido.estado === 'exito'" class="text-green-600 font-bold text-sm italic">
+                                ✓ Pedido completado con éxito
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -89,13 +141,3 @@ const formatearPrecio = (p) => parseFloat(p).toLocaleString('es-ES', { minimumFr
         </div>
     </MainLayout>
 </template>
-
-<style scoped>
-.animate-fade-in-down {
-    animation: fadeInDown 0.3s ease-out;
-}
-@keyframes fadeInDown {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-</style>

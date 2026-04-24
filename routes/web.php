@@ -238,8 +238,9 @@ Route::get('/politica-compras', function () { return Inertia::render('CompDev/Po
 Route::get('/politica-devoluciones', function () { return Inertia::render('CompDev/PoliticaDevoluciones'); })->name('politica-devoluciones');
 Route::get('/metodo-envio', function () { return Inertia::render('CompDev/MetodoEnvio'); })->name('metodo-envio');
 
-Route::get('/pedido/exito/{id}', [PedidoController::class, 'exito'])
-    ->name('pedido.exito');
+Route::get('/pedido/exito/{id}', [PedidoController::class, 'exito'])->name('pedido.exito');
+Route::post('/pedidos/cancelar/{id}', [PedidoController::class, 'cancelar'])->name('pedido.cancelar');
+Route::post('/pedidos/devolver/{id}', [PedidoController::class, 'devolver'])->name('pedido.devolver');
 /*
 |--------------------------------------------------------------------------
 | Rutas Protegidas (Requieren Inicio de Sesión)

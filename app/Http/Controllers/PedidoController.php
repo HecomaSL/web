@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+use App\Models\Pedido;
 
 class PedidoController extends Controller
 {
@@ -122,5 +123,16 @@ class PedidoController extends Controller
             DB::rollBack();
             return back()->withErrors(['error' => 'Error: '.$e->getMessage()]);
         }
+    }
+    public function cancelar($id) {
+        $pedido = Pedido::findOrFail($id);
+
+        // Verificamos que el estado permita la cancelación
+        if (in_array($pedido->estado, ['sin pagar', 'no servido'])) {
+            $pedido->update(['estado' => 'cancelado']);
+        }
+
+        // ¡ESTO ES CLAVE! Inertia necesita la redirección para actualizar el componente
+        return back()->with('message', 'Pedido cancelado correctamente');
     }
 }
