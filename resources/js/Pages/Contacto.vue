@@ -1,6 +1,7 @@
 <script setup>
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { useForm } from '@inertiajs/vue3';
+import { Head } from '@inertiajs/vue3';
 
 const form = useForm({
     nombre: '',
@@ -22,7 +23,7 @@ const enviarFormulario = () => {
 </script>
 
 <template>
-  <Head title="Nuestra Historia - HECOMA" />
+  <Head title="Contacto - HECOMA" />
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-12">

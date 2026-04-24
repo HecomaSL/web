@@ -79,9 +79,7 @@ const catalogoDiscos = [
     <MainLayout>
         <section class="bg-[#010cf7] py-6 mb-12">
             <div class="container mx-auto px-6">
-                <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">
-                    DISCOS DE CORTE PARA MADERA
-                </h1>
+                <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">DISCOS DE CORTE PARA MADERA </h1>
             </div>
         </section>
   
@@ -102,12 +100,8 @@ const catalogoDiscos = [
                         </div>
             
                         <div class="h-[20%] w-full bg-[#010cf7] flex flex-col items-center justify-center text-center px-4 py-2">
-                            <span class="text-white text-[10px] font-semibold uppercase tracking-widest mb-1">
-                                {{ item.serie }}
-                            </span>
-                            <h3 class="text-white text-xs font-bold leading-tight uppercase">
-                                {{ item.titulo }}
-                            </h3>
+                            <span class="text-white text-[10px] font-semibold uppercase tracking-widest mb-1">{{ item.serie }}</span>
+                            <h3 class="text-white text-xs font-bold leading-tight uppercase">{{ item.titulo }}</h3>
                         </div>
                     </a>
                 </div>
