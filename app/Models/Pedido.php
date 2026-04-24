@@ -32,4 +32,9 @@ class Pedido extends Model
     {
         return $this->hasMany(PedidoItem::class, 'idPedido', 'idPedido');
     }
+    public function usuario()
+{
+    // Asegúrate de que 'idUsuario' sea el nombre de la columna en tu tabla pedidos
+    return $this->belongsTo(User::class, 'id'); 
+}
 }

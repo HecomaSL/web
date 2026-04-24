@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Mail\PedidoAdminMail;
 use App\Mail\PedidoClienteMail;
+use App\Models\Pedido;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
-use App\Models\Pedido;
 
 class PedidoController extends Controller
 {
@@ -81,7 +82,7 @@ class PedidoController extends Controller
                 'nombre_receptor' => $request->nombre,
                 'tlfn_receptor' => (int) filter_var($request->tlfn, FILTER_SANITIZE_NUMBER_INT),
                 'direccion_envio' => $request->direccion.' '.($request->ciudad ?? '').' '.($request->cp ?? ''),
-                'codigo_pedido' => '#wp_temp', 
+                'codigo_pedido' => '#wp_temp',
             ]);
 
             // 2. Generar y guardar el código visual real
@@ -121,10 +122,13 @@ class PedidoController extends Controller
 
         } catch (\Exception $e) {
             DB::rollBack();
+
             return back()->withErrors(['error' => 'Error: '.$e->getMessage()]);
         }
     }
-    public function cancelar($id) {
+
+    public function cancelar($id)
+    {
         $pedido = Pedido::findOrFail($id);
 
         // Verificamos que el estado permita la cancelación
@@ -134,5 +138,48 @@ class PedidoController extends Controller
 
         // ¡ESTO ES CLAVE! Inertia necesita la redirección para actualizar el componente
         return back()->with('message', 'Pedido cancelado correctamente');
+    }
+
+    public function devolver(Request $request, $id)
+    {
+        // 1. Validar que el motivo llega
+        $request->validate([
+            'motivo' => 'required|string|min:10',
+        ]);
+
+        $pedido = Pedido::with('usuario')->findOrFail($id); // Asumiendo relación 'usuario'
+
+        // 2. Comprobar seguridad (plazo y dueño)
+        $fechaPedido = Carbon::parse($pedido->diaPedido);
+        if ($pedido->idUsuario !== auth()->id() || $fechaPedido->diffInDays(now()) >= 15) {
+            return back()->with('error', 'No es posible tramitar la devolución.');
+        }
+
+        // 3. Cambiar estado
+        $pedido->update(['estado' => 'devolucion']);
+
+        // 4. Datos para los correos
+        $data = [
+            'codigo' => $pedido->codigo_pedido,
+            'cliente' => auth()->user()->name,
+            'motivo' => $request->motivo,
+            'emailCliente' => auth()->user()->email,
+        ];
+
+        // CORREO AL CLIENTE
+        Mail::send([], [], function ($message) use ($data) {
+            $message->to($data['emailCliente'])
+                ->subject('Devolución tramitada - Pedido '.$data['codigo'])
+                ->html("Hola {$data['cliente']}, tu devolución del pedido <b>{$data['codigo']}</b> ha sido tramitada correctamente. Nos pondremos en contacto contigo pronto.");
+        });
+
+        // CORREO AL ADMIN (Pon tu email aquí)
+        Mail::send([], [], function ($message) use ($data) {
+            $message->to('dptocomercial@hecoma.com')
+                ->subject('Nueva solicitud de devolución de la Web')
+                ->html("El cliente <b>{$data['cliente']}</b> ha iniciado la devolución del pedido <b>{$data['codigo']}</b>.<br><br><b>Motivo:</b><br>{$data['motivo']}");
+        });
+
+        return back()->with('success', 'Devolución enviada con éxito.');
     }
 }

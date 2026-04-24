@@ -240,7 +240,7 @@ Route::get('/metodo-envio', function () { return Inertia::render('CompDev/Metodo
 
 Route::get('/pedido/exito/{id}', [PedidoController::class, 'exito'])->name('pedido.exito');
 Route::post('/pedidos/cancelar/{id}', [PedidoController::class, 'cancelar'])->name('pedido.cancelar');
-Route::post('/pedidos/devolver/{id}', [PedidoController::class, 'devolver'])->name('pedido.devolver');
+Route::post('/pedidos/{id}/devolver', [PedidoController::class, 'devolver'])->name('pedido.devolver');
 /*
 |--------------------------------------------------------------------------
 | Rutas Protegidas (Requieren Inicio de Sesión)
