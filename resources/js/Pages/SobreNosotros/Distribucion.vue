@@ -14,7 +14,7 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Unete a nuestra red de distribución y crece con HECOMA</h2>
         <p>Si eres un profesional del suministro industrial y buscas expandir tu catálogo con soluciones de alto rendimiento para el sector de la madera, en HECOMA te ofrecemos una oportunidad de crecimiento estratégica. Buscamos establecer alianzas con distribuidores que deseen comercializar herramientas de fabricación propia con el sello de calidad de nuestras plantas en Toledo y Córdoba.</p>
@@ -22,20 +22,20 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <div class="rounded-lg overflow-hidden shadow-md">
           <img src="/images/distribucion/fresas_mango.jpg" alt="Fresas de mango con cuchillas perfiladas a medida" class="w-full h-auto object-cover" />
-          <p>Fresas de mango con cuchillas perfiladas a medida</p>
+          <p class="tc">Fresas de mango con cuchillas perfiladas a medida</p>
         </div>
         <div class="rounded-lg overflow-hidden shadow-md">
           <img src="/images/distribucion/fresas_proex.jpg" alt="Fresas de la serie ProEx" class="w-full h-auto object-cover" />
-          <p>Fresas de la serie ProEx, fresas para madera, mecanizar, ranurar, rebajar, etc.</p>
+          <p class="tc">Fresas de la serie ProEx, fresas para madera, mecanizar, ranurar, rebajar, etc.</p>
         </div>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Imagen de Marca</h2>
         <div class="space-y-4 text-gray-700">
@@ -45,43 +45,43 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <div class="rounded-lg overflow-hidden shadow-md">
           <img src="/images/distribucion/fresas_mango_con_cuchillas.jpg" alt="Material PLV para su establecimiento" class="w-full h-auto object-cover" />
-          <p>Fresas de mango con cuchillas perfiladas a medida</p>
+          <p class="tc">Fresas de mango con cuchillas perfiladas a medida</p>
         </div>
         <div class="rounded-lg overflow-hidden shadow-md">
           <img src="/images/distribucion/fresas_proex_2.jpg" alt="Soportes adecuados para la exposición del producto" class="w-full h-auto object-cover" />
-          <p>Fresas de la serie ProEx, fresas para madera, mecanizar, ranurar, rebajar, etc.</p>
+          <p class="tc">Fresas de la serie ProEx, fresas para madera, mecanizar, ranurar, rebajar, etc.</p>
         </div>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">WIN-WIN-WIN: Todos ganamos</h2>
         <div class="space-y-4 text-gray-700">
           <p><b>Gana Tu cliente</b>: disfruta de mejores productos y servicios, a medida de sus necesidades, y con un servicio excelente. Calidad y variedad de producto. Soluciones a nuevos retos productivos. Mejora de costes y rendimiento de su maquinaria. Mejores acabados y calidad en sus trabajos.</p>
-          <p><b>Ganas tu</b>: Incrementa tus ingresos, ampliando tu número de clientes y ofreciendo mas servicios y productos. No necesitas adquirir nueva maquinaria , ni contratar a nuevo personal . Amplía tu oferta de producto, sin almacén, sin stock y sin preocuparte de la logística. Todo esto lo hace HECOMA® por ti.</p>
+          <p><b>Ganas tú</b>: Incrementa tus ingresos, ampliando tu número de clientes y ofreciendo mas servicios y productos. No necesitas adquirir nueva maquinaria , ni contratar a nuevo personal . Amplía tu oferta de producto, sin almacén, sin stock y sin preocuparte de la logística. Todo esto lo hace HECOMA® por ti.</p>
           <p><b>Gana HECOMA®</b>: crecemos contigo. En zona de influencia, en clientes, en imagen de marca. Estamos en constante evolución. Nuestra capacidad productiva crece día a día, con nueva maquinaria y tecnología. Nuestras herramientas informáticas permiten agilidad y disponibilidad. Crecemos en experiencia con cada nuevo reto de tus clientes</p>
         </div>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <div class="rounded-lg overflow-hidden shadow-md">
           <img src="/images/distribucion/trabajo-especial.jpg" alt="Dibujo de Trabajo Especial" class="w-full h-auto object-cover" />
-          <p>Fresas de mango con cuchillas perfiladas a medida</p>
+          <p class="tc">Fresas de mango con cuchillas perfiladas a medida</p>
         </div>
         <div class="rounded-lg overflow-hidden shadow-md">
           <img src="/images/distribucion/nuestra-gente.jpg" alt="Nuestra Gente" class="w-full h-auto object-cover" />
-          <p>Fresas de la serie ProEx, fresas para madera, mecanizar, ranurar, rebajar, etc.</p>
+          <p class="tc">Fresas de la serie ProEx, fresas para madera, mecanizar, ranurar, rebajar, etc.</p>
         </div>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Trabajo En Equipo</h2>
         <div class="space-y-4 text-gray-700">
@@ -94,8 +94,8 @@ import { Head } from '@inertiajs/vue3';
 </template>
 
 <style scoped>
-  /* Ajustes para imitar el interlineado y estilo de la imagen corporativa */
   p { text-align: justify; line-height: 1.6; }
   h2 { line-height: 1.2; }
   #divh1 p { text-align: center; }
+  .tc { text-align: center; }
 </style>

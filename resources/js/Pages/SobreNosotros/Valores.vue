@@ -13,7 +13,7 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg text-justify">
         <p>En HECOMA, nuestros valores se han construido a lo largo de más de 20 años de trayectoria, desde nuestra creación en 1999. Son el resultado de la experiencia acumulada, del trabajo constante y de una forma de entender cada proyecto basada en la calidad, la responsabilidad y el compromiso con nuestros clientes.</p>
         <p>Estos valores guían nuestra manera de trabajar y están presentes en cada decisión, proceso y servicio que ofrecemos. Creemos en una relación profesional basada en la confianza, la transparencia y el rigor técnico, orientada siempre a ofrecer soluciones eficientes y duraderas.</p>
@@ -21,7 +21,7 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6 uppercase">Compromiso con la Calidad y la Precisión Industrial</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-6">
@@ -39,7 +39,7 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6 uppercase">Mejora Continua e Innovación en Tecnología de Corte CNC</h2>
         <div class="space-y-6 text-gray-700 leading-relaxed text-lg text-justify">
@@ -49,7 +49,7 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto">
         <div class="flex flex-col md:flex-row gap-12 items-center">
           <div class="md:w-1/2">
