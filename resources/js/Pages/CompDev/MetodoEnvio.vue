@@ -42,9 +42,7 @@ const metodos = ref([
             <div class="text-3xl font-black text-gray-800 mb-4">
               {{ metodo.precio }}
             </div>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              {{ metodo.descripcion }}
-            </p>
+            <p class="text-gray-600 mb-6 leading-relaxed">{{ metodo.descripcion }}</p>
             <div class="mt-auto w-full pt-4 border-t border-gray-50 flex items-center justify-center gap-2 text-sm font-bold text-gray-400 uppercase">
               <span class="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
               {{ metodo.plazo }}
@@ -77,31 +75,15 @@ const metodos = ref([
 
         <div class="mt-12 text-center">
           <p class="text-gray-500 mb-4">¿Tiene dudas sobre el transporte de herramientas especiales?</p>
-          <a 
-            href="/contacto" 
-            class="inline-block bg-[#0000BB] text-white px-8 py-3 rounded-lg font-bold uppercase hover:bg-blue-800 transition-colors shadow-lg"
-          >
-            Contactar con Soporte Técnico
-          </a>
+          <a href="/contacto" class="inline-block bg-[#0000BB] text-white px-8 py-3 rounded-lg font-bold uppercase hover:bg-blue-800 transition-colors shadow-lg">Contactar con Soporte Técnico</a>
         </div>
-
       </div>
     </section>
   </MainLayout>
 </template>
 
 <style scoped>
-/* Ajustes específicos para mejorar la legibilidad */
-h1, h2, h3 {
-  letter-spacing: 0.05em;
-}
-
-p {
-  line-height: 1.6;
-}
-
-/* Animación suave para las tarjetas */
-.transition-shadow {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+h1, h2, h3 { letter-spacing: 0.05em; }
+p {line-height: 1.6; }
+.transition-shadow { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 </style>

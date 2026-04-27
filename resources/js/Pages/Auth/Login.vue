@@ -1,6 +1,5 @@
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
-// Importamos tu Layout principal que ya contiene el Header y Footer
 import MainLayout from '@/Layouts/MainLayout.vue'; 
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
@@ -9,25 +8,12 @@ import TextInput from '@/Components/TextInput.vue';
 import Checkbox from '@/Components/Checkbox.vue';
 
 defineProps({
-    canResetPassword: {
-        type: Boolean,
-    },
-    status: {
-        type: String,
-    },
+    canResetPassword: { type: Boolean, },
+    status: { type: String, },
 });
 
-const form = useForm({
-    email: '',
-    password: '',
-    remember: false,
-});
-
-const submit = () => {
-    form.post(route('login'), {
-        onFinish: () => form.reset('password'),
-    });
-};
+const form = useForm({ email: '', password: '', remember: false, });
+const submit = () => { form.post(route('login'), { onFinish: () => form.reset('password'), }); };
 </script>
 
 <template>
@@ -35,9 +21,7 @@ const submit = () => {
     <MainLayout>
         <section class="bg-[#010cf7] py-6 mb-12">
             <div class="container mx-auto px-6">
-                <h1 class="text-white text-2xl md:text-3xl font-bold text-center uppercase tracking-wide">
-                    Acceso Clientes
-                </h1>
+                <h1 class="text-white text-2xl md:text-3xl font-bold text-center uppercase tracking-wide">Acceso Clientes</h1>
             </div>
         </section>
 

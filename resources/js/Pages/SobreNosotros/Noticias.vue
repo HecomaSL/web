@@ -5,9 +5,7 @@
     import { useNoticias } from '@/Composables/useNoticias';
     import '@/Styles/noticias.css';
 
-    const { 
-        filtrosSeleccionados, noticiasAMostrar, noticiasFiltradas, cargando, cargarMas, resetIndex 
-    } = useNoticias();
+    const { filtrosSeleccionados, noticiasAMostrar, noticiasFiltradas, cargando, cargarMas, resetIndex } = useNoticias();
 
     const handleScroll = () => {
         const posicionActual = window.innerHeight + window.scrollY;

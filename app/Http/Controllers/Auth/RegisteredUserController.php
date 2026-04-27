@@ -29,29 +29,11 @@ class RegisteredUserController extends Controller {
      */
     public function store(Request $request): RedirectResponse {
         // Validación ajustada a la estructura de tu tabla 'usuarios'
-        $request->validate([
-            'nombre' => 'required|string|max:60', 
-            'email' => 'required|string|lowercase|email|max:60|unique:'.User::class,
-            'contrasena' => ['required', 'confirmed', Rules\Password::defaults()],
-            'tlfn' => 'required|integer',
-            'direccion' => 'required|string|max:120',
-            'nombreEmpresa' => 'required|string|max:60',
-        ]);
-
+        $request->validate([ 'nombre' => 'required|string|max:60', 'email' => 'required|string|lowercase|email|max:60|unique:'.User::class, 'contrasena' => ['required', 'confirmed', Rules\Password::defaults()], 'tlfn' => 'required|integer', 'direccion' => 'required|string|max:120', 'nombreEmpresa' => 'required|string|max:60', ]);
         // Creación del registro con los campos específicos
-        $user = User::create([
-            'nombre' => $request->nombre,
-            'email' => $request->email,
-            'contrasena' => Hash::make($request->contrasena),
-            'tlfn' => $request->tlfn,
-            'direccion' => $request->direccion,
-            'nombreEmpresa' => $request->nombreEmpresa,
-        ]);
-
+        $user = User::create([ 'nombre' => $request->nombre, 'email' => $request->email, 'contrasena' => Hash::make($request->contrasena), 'tlfn' => $request->tlfn, 'direccion' => $request->direccion, 'nombreEmpresa' => $request->nombreEmpresa, ]);
         event(new Registered($user));
-
         Auth::login($user);
-
         return redirect(route('/Dashboard', absolute: false));
     }
 }

@@ -68,10 +68,7 @@ const areaTecnicaLink = computed(() => {
             <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold leading-tight uppercase tracking-wide mb-4">CONTACTO</h2>
-                    <p class="text-lg">
-                        ¿Tienes alguna duda? Estaremos encantados de ayudarte. 
-                        Ponte en contacto con nosotros haciendo click <a href="/contacto" class="font-bold hover:underline">aquí.</a>
-                    </p>
+                    <p class="text-lg">¿Tienes alguna duda? Estaremos encantados de ayudarte. Ponte en contacto con nosotros haciendo click <a href="/contacto" class="font-bold hover:underline">aquí.</a></p>
                 </div>
 
                 <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch">
@@ -109,28 +106,11 @@ const areaTecnicaLink = computed(() => {
     .sectionColor { background-color: #0000BB; }
     strong { letter-spacing: 0.02em; }
     h2, p { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-
-    /* Ajuste para que los bloques de recursos se vean bien en grid/flex */
-    .imgytext-main div {
-        align-items: center;
-        display: flex; 
-        flex-direction: column; 
-        padding: 1rem;
-    }
-
+    .imgytext-main div { align-items: center; display: flex; flex-direction: column; padding: 1rem; }
     .imgytext-main p { text-align: center; }
     .imgytext-main img { height: 200px; width: 200px; object-fit: contain; }
-
-    /* Estilos para las imágenes de ayuda inferiores */
-    .imgytext img { 
-        height: auto; 
-        max-width: 200px; 
-    }
-    
-    .contacto .imgytext{
-        display: flex;
-        align-items: center;
-    }
+    .imgytext img { height: auto; max-width: 200px; }
+    .contacto .imgytext { display: flex; align-items: center; }
     .contacto a { color:blue; }
     .imag { display: grid; place-items: center; }
 </style>

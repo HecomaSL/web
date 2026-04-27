@@ -11,20 +11,13 @@ defineProps({
 });
 
 const user = usePage().props.auth.user;
-
-// Sincronizamos el formulario con la propiedad 'nombre' de tu tabla usuarios
-const form = useForm({
-    nombre: user.nombre || '', 
-    email: user.email || '',
-    tlfn: user.tlfn || '',
-});
+const form = useForm({ nombre: user.nombre || '', email: user.email || '', tlfn: user.tlfn || '', });
 </script>
 
 <template>
     <section>
         <header>
             <h2 class="text-lg font-bold text-[#010cf7]">Información del Perfil </h2>
-
             <p class="mt-1 text-sm text-gray-600"> Actualiza tu nombre de cliente y tu dirección de correo electrónico.</p>
         </header>
 
@@ -55,9 +48,7 @@ const form = useForm({
             </div>
 
             <div class="flex items-center gap-4">
-                <PrimaryButton :disabled="form.processing" class="bg-[#010cf7] hover:bg-blue-800 active:bg-blue-900 transition-all">
-                    Guardar Cambios
-                </PrimaryButton>
+                <PrimaryButton :disabled="form.processing" class="bg-[#010cf7] hover:bg-blue-800 active:bg-blue-900 transition-all">Guardar Cambios</PrimaryButton>
 
                 <Transition enter-active-class="transition ease-in-out" enter-from-class="opacity-0" leave-active-class="transition ease-in-out" leave-to-class="opacity-0" >
                     <p v-if="form.recentlySuccessful" class="text-sm font-semibold text-green-600">¡Guardado correctamente!</p>

@@ -4,126 +4,26 @@ import { Head } from '@inertiajs/vue3';
 
 // Array de productos completo
 const catalogoFRESAS = [
-    {
-        serie: "SERIE F10",
-        titulo: "FRESAS PARA RANURAR Z4",
-        imagen: "images/fresas/f10.jpg",
-        link: "/f10_fresa_para_ranurar_z4"
-    },
-    {
-        serie: "SERIE F11",
-        titulo: "FRESAS PARA RANURAR Z8",
-        imagen: "images/fresas/f11.jpg",
-        link: "/f11-fresa-para-ranurar-de-z8"
-    },
-    {
-        serie: "SERIE F12",
-        titulo: "FRESAS PARA RANURAR Z4+v4",
-        imagen: "images/fresas/f12.jpg",
-        link: "/f12-fresa-para-ranurar-de-z4-v4"
-    },
-    {
-        serie: "SERIE F13",
-        titulo: "FRESAS EXTESIBLE PARA RANURAR Z4+V4",
-        imagen: "images/fresas/f13.jpg",
-        link: "/f13-fresa-para-ranurar-extensible-z4-y-v4"
-    },
-    {
-        serie: "SERIE F14",
-        titulo: "FRESAS PARA GALCES Z4 (CORTES RECTOS)",
-        imagen: "images/fresas/f14.jpg",
-        link: "/f14-fresa-para-galces-z4-cortes-rectos"
-    },
-    {
-        serie: "SERIE F15",
-        titulo: "FRESAS PARA GALCES Z4 (CORTES ALTERNOS)",
-        imagen: "images/fresas/f15.jpg",
-        link: "/f15-fresa-para-mecanizar-galces-z4-axiales-alternos"
-    },
-    {
-        serie: "SERIE F16",
-        titulo: "FRESAS PARA GALCES Z4+V4",
-        imagen: "images/fresas/f16.jpg",
-        link: "/f16-fresa-para-galces-z4-v4"
-    },
-    {
-        serie: "SERIE F17",
-        titulo: "FRESAS EXTENSIBLE PARA RANURAR Y ESPIGAR Z4+V4",
-        imagen: "images/fresas/f17.jpg",
-        link: "/f17-fresa-extensible-ranurar-espigar-z4-v4"
-    },
-    {
-        serie: "SERIE F20",
-        titulo: "FRESAS RADIO CÓNCAVO 1/4",
-        imagen: "images/fresas/f20.jpg",
-        link: "/f20-fresa-radio-1-4-concavo"
-    },
-    {
-        serie: "SERIE F21",
-        titulo: "FRESAS RADIO CÓNCAVO 1/2",
-        imagen: "images/fresas/f21.jpg",
-        link: "/f21-fresa-radio-1-2-concavo"
-    },
-    {
-        serie: "SERIE F22",
-        titulo: "FRESAS RADIO CONVEXO 1/4",
-        imagen: "images/fresas/f22.jpg",
-        link: "/f22-fresa-radio-1-4-convexo"
-    },
-    {
-        serie: "SERIE F23",
-        titulo: "FRESAS RADIO CONVEXO 1/2",
-        imagen: "images/fresas/f23.jpg",
-        link: "/f23-fresa-radio-1-2-convexo"
-    },
-    {
-        serie: "SERIE F30",
-        titulo: "FRESAS PARA BISELADOS",
-        imagen: "images/fresas/f30.jpg",
-        link: "/f30-fresa-de-bisel"
-    },
-    {
-        serie: "SERIE F40",
-        titulo: "FRESAS PARA PLAFONES",
-        imagen: "images/fresas/f40.jpg",
-        link: "/f40-fresa-para-plafones"
-    },
-    {
-        serie: "SERIE F41",
-        titulo: "JUEGO FRESAS MOLDURA-CONTRAMOLDURA",
-        imagen: "images/fresas/f41.png",
-        link: "/f41-juego-fresas-moldura-contramoldura"
-    },
-    {
-        serie: "SERIE F50",
-        titulo: "FRESAS PARA TIRADORES",
-        imagen: "images/fresas/f50.png",
-        link: "/f50-fresa-tirador"
-    },
-    {
-        serie: "SERIE F60",
-        titulo: "FRESAS PARA JUNTAS LONGITUDINALES",
-        imagen: "images/fresas/f60.png",
-        link: "/f60-fresa-juntas-longitudinales"
-    },
-    {
-        serie: "SERIE F61",
-        titulo: "FRESAS PARA INGLETES (JUNTAS A 90º)",
-        imagen: "images/fresas/f61.png",
-        link: "/f61-fresa-para-juntas-90o"
-    },
-    {
-        serie: "SERIE F70",
-        titulo: "FRESAS ESPECIALES P≤20",
-        imagen: "images/fresas/f70.png",
-        link: "https://api.whatsapp.com/send?phone=34667407692&text=Hola!%20Quiero%20informarme%20sobre%20Serie%20F70"
-    },
-    {
-        serie: "SERIE F71",
-        titulo: "FRESAS ESPECIALES P>20",
-        imagen: "images/fresas/f71.png",
-        link: "https://api.whatsapp.com/send?phone=34667407692&text=Hola!%20Quiero%20informarme%20sobre%20Serie%20F71"
-    },
+    { serie: "SERIE F10", titulo: "FRESAS PARA RANURAR Z4", imagen: "images/fresas/f10.jpg", link: "/f10_fresa_para_ranurar_z4" },
+    { serie: "SERIE F11", titulo: "FRESAS PARA RANURAR Z8", imagen: "images/fresas/f11.jpg", link: "/f11-fresa-para-ranurar-de-z8" },
+    { serie: "SERIE F12", titulo: "FRESAS PARA RANURAR Z4+v4", imagen: "images/fresas/f12.jpg", link: "/f12-fresa-para-ranurar-de-z4-v4" },
+    { serie: "SERIE F13", titulo: "FRESAS EXTESIBLE PARA RANURAR Z4+V4", imagen: "images/fresas/f13.jpg", link: "/f13-fresa-para-ranurar-extensible-z4-y-v4" },
+    { serie: "SERIE F14", titulo: "FRESAS PARA GALCES Z4 (CORTES RECTOS)", imagen: "images/fresas/f14.jpg", link: "/f14-fresa-para-galces-z4-cortes-rectos" },
+    { serie: "SERIE F15", titulo: "FRESAS PARA GALCES Z4 (CORTES ALTERNOS)", imagen: "images/fresas/f15.jpg", link: "/f15-fresa-para-mecanizar-galces-z4-axiales-alternos" },
+    { serie: "SERIE F16", titulo: "FRESAS PARA GALCES Z4+V4", imagen: "images/fresas/f16.jpg", link: "/f16-fresa-para-galces-z4-v4" },
+    { serie: "SERIE F17", titulo: "FRESAS EXTENSIBLE PARA RANURAR Y ESPIGAR Z4+V4", imagen: "images/fresas/f17.jpg", link: "/f17-fresa-extensible-ranurar-espigar-z4-v4" },
+    { serie: "SERIE F20", titulo: "FRESAS RADIO CÓNCAVO 1/4", imagen: "images/fresas/f20.jpg", link: "/f20-fresa-radio-1-4-concavo" },
+    { serie: "SERIE F21", titulo: "FRESAS RADIO CÓNCAVO 1/2", imagen: "images/fresas/f21.jpg", link: "/f21-fresa-radio-1-2-concavo" },
+    { serie: "SERIE F22", titulo: "FRESAS RADIO CONVEXO 1/4", imagen: "images/fresas/f22.jpg", link: "/f22-fresa-radio-1-4-convexo" },
+    { serie: "SERIE F23", titulo: "FRESAS RADIO CONVEXO 1/2", imagen: "images/fresas/f23.jpg", link: "/f23-fresa-radio-1-2-convexo" },
+    { serie: "SERIE F30", titulo: "FRESAS PARA BISELADOS", imagen: "images/fresas/f30.jpg", link: "/f30-fresa-de-bisel" },
+    { serie: "SERIE F40", titulo: "FRESAS PARA PLAFONES", imagen: "images/fresas/f40.jpg", link: "/f40-fresa-para-plafones" },
+    { serie: "SERIE F41", titulo: "JUEGO FRESAS MOLDURA-CONTRAMOLDURA", imagen: "images/fresas/f41.png", link: "/f41-juego-fresas-moldura-contramoldura" },
+    { serie: "SERIE F50", titulo: "FRESAS PARA TIRADORES", imagen: "images/fresas/f50.png", link: "/f50-fresa-tirador" },
+    { serie: "SERIE F60", titulo: "FRESAS PARA JUNTAS LONGITUDINALES", imagen: "images/fresas/f60.png", link: "/f60-fresa-juntas-longitudinales" },
+    { serie: "SERIE F61", titulo: "FRESAS PARA INGLETES (JUNTAS A 90º)", imagen: "images/fresas/f61.png", link: "/f61-fresa-para-juntas-90o" },
+    { serie: "SERIE F70", titulo: "FRESAS ESPECIALES P≤20", imagen: "images/fresas/f70.png", link: "https://api.whatsapp.com/send?phone=34667407692&text=Hola!%20Quiero%20informarme%20sobre%20Serie%20F70" },
+    { serie: "SERIE F71", titulo: "FRESAS ESPECIALES P>20", imagen: "images/fresas/f71.png", link: "https://api.whatsapp.com/send?phone=34667407692&text=Hola!%20Quiero%20informarme%20sobre%20Serie%20F71" },
 ];
 </script>
 

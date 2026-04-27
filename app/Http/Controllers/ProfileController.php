@@ -16,10 +16,7 @@ class ProfileController extends Controller {
      * Display the user's profile form.
      */
     public function edit(Request $request): Response {
-        return Inertia::render('Profile/Edit', [
-            'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
-            'status' => session('status'),
-        ]);
+        return Inertia::render('Profile/Edit', [ 'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail, 'status' => session('status'),  ]);
     }
 
     /**
@@ -31,16 +28,13 @@ class ProfileController extends Controller {
         $user->nombre = $request->input('nombre');
         $user->email = $request->input('email');
 
-        // LÓGICA PARA INT:
         $val = $request->input('tlfn');
         
-        if (empty($val)) {
-            $user->tlfn = 0; // Si es NOT NULL y no hay nada, ponemos 0
-        } else {
-            // Quitamos cualquier cosa que no sea número
+        if (empty($val)) 
+            $user->tlfn = 0;
+        else
             $user->tlfn = (int) filter_var($val, FILTER_SANITIZE_NUMBER_INT);
-        }
-
+        
         $user->save();
         return Redirect::route('profile.edit');
     }
@@ -49,19 +43,12 @@ class ProfileController extends Controller {
      * Delete the user's account.
      */
     public function destroy(Request $request): RedirectResponse {
-        $request->validate([
-            'password' => ['required', 'current_password'],
-        ]);
-
+        $request->validate([ 'password' => ['required', 'current_password'], ]);
         $user = $request->user();
-
         Auth::logout();
-
         $user->delete();
-
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
         return Redirect::to('/');
     }
 }

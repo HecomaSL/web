@@ -5,13 +5,10 @@ import { Head } from '@inertiajs/vue3';
 
 <template>
   <Head title="Nuestra Historia - HECOMA" />
-
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-12">
       <div class="container mx-auto px-6">
-        <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">
-          Trayectoria en la Fabricación de Herramientas de Corte
-        </h1>
+        <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Trayectoria en la Fabricación de Herramientas de Corte</h1>
       </div>
     </section>
 
@@ -80,11 +77,6 @@ import { Head } from '@inertiajs/vue3';
 
 <style scoped>
   /* Ajustes para imitar el interlineado y estilo de la imagen corporativa */
-  p {
-    text-align: justify;
-    line-height: 1.6;
-  }
-  h2 {
-    line-height: 1.2;
-  }
+  p { text-align: justify; line-height: 1.6; }
+  h2 { line-height: 1.2; }
 </style>

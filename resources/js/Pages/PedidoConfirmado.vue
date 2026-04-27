@@ -4,10 +4,7 @@ import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
 // Definimos las props que llegan desde el controlador de Laravel
-// Asegúrate de que el controlador envíe 'pedido' con el campo 'codigo_pedido'
-const props = defineProps({
-    pedido: Object
-});
+const props = defineProps({ pedido: Object });
 
 // Estado para gestionar el feedback visual de copiado
 const copiado = ref(null);
@@ -34,16 +31,12 @@ const copiarAlPortapapeles = (texto, campo) => {
         return;
     }
 
-    navigator.clipboard.writeText(texto).then(() => {
-        activarFeedback(campo);
-    });
+    navigator.clipboard.writeText(texto).then(() => { activarFeedback(campo); });
 };
 
 const activarFeedback = (campo) => {
     copiado.value = campo;
-    setTimeout(() => {
-        copiado.value = null;
-    }, 2000);
+    setTimeout(() => { copiado.value = null; }, 2000);
 };
 </script>
 
@@ -59,14 +52,8 @@ const activarFeedback = (campo) => {
                     </svg>
                 </div>
 
-                <h1 class="text-3xl font-extrabold text-gray-900 mb-2 uppercase tracking-tight">
-                    ¡Pedido {{ props.pedido?.codigo_pedido || 'recibido' }} con éxito!
-                </h1>
-                
-                <p class="text-gray-600 mb-8 text-lg">
-                    Gracias por confiar en <strong>HECOMA</strong>. Tu pedido se encuentra en estado 
-                    <span class="text-orange-600 font-bold uppercase">"Pendiente de Pago"</span>.
-                </p>
+                <h1 class="text-3xl font-extrabold text-gray-900 mb-2 uppercase tracking-tight"> ¡Pedido {{ props.pedido?.codigo_pedido || 'recibido' }} con éxito!</h1>
+                <p class="text-gray-600 mb-8 text-lg">Gracias por confiar en <strong>HECOMA</strong>. Tu pedido se encuentra en estado <span class="text-orange-600 font-bold uppercase">"Pendiente de Pago"</span>.</p>
 
                 <div class="bg-blue-50 border-l-4 border-[#010cf7] p-6 text-left mb-8 rounded-r-xl">
                     <h3 class="text-[#010cf7] font-bold mb-3 flex items-center uppercase tracking-wide">
@@ -76,11 +63,8 @@ const activarFeedback = (campo) => {
                         </svg>
                         Instrucciones para la Transferencia
                     </h3>
-                    
-                    <p class="text-blue-800 text-sm mb-5 font-medium">
-                        Realiza el ingreso por el importe total de tu compra a la siguiente cuenta bancaria:
-                    </p>
-
+                
+                    <p class="text-blue-800 text-sm mb-5 font-medium"> Realiza el ingreso por el importe total de tu compra a la siguiente cuenta bancaria:</p>
                     <div class="space-y-3 bg-white p-5 rounded-lg border border-blue-100 shadow-sm">
                         <div class="flex justify-between items-center border-b border-gray-100 pb-2">
                             <span class="text-gray-500 text-xs font-bold uppercase">Banco:</span>
@@ -134,26 +118,14 @@ const activarFeedback = (campo) => {
                             </div>
                         </div>
                     </div>
-
-                    <p class="text-xs text-blue-600 mt-4 italic font-medium">
-                        * Los pedidos se procesarán una vez se confirme la recepción del importe en nuestra cuenta (suele tardar 24-48h laborales).
-                    </p>
+                    <p class="text-xs text-blue-600 mt-4 italic font-medium">* Los pedidos se procesarán una vez se confirme la recepción del importe en nuestra cuenta (suele tardar 24-48h laborales).</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10">
-                    <Link href="/dashboard"
-                        class="w-full sm:w-auto bg-[#010cf7] text-white px-10 py-4 rounded-xl font-bold uppercase hover:bg-blue-800 transition-all shadow-lg active:scale-95 text-center">
-                        Ver mis pedidos
-                    </Link>
-                    <Link href="/catalogo"
-                        class="w-full sm:w-auto bg-gray-100 text-gray-700 px-10 py-4 rounded-xl font-bold uppercase hover:bg-gray-200 transition-all border border-gray-200 text-center">
-                        Volver a la tienda
-                    </Link>
+                    <Link href="/dashboard" class="w-full sm:w-auto bg-[#010cf7] text-white px-10 py-4 rounded-xl font-bold uppercase hover:bg-blue-800 transition-all shadow-lg active:scale-95 text-center">Ver mis pedidos</Link>
+                    <Link href="/catalogo" class="w-full sm:w-auto bg-gray-100 text-gray-700 px-10 py-4 rounded-xl font-bold uppercase hover:bg-gray-200 transition-all border border-gray-200 text-center">Volver a la tienda </Link>
                 </div>
-                
-                <p class="mt-8 text-gray-400 text-sm">
-                    ¿Algún problema con el pago? <Link href="/contacto" class="text-blue-500 underline">Contáctanos</Link>
-                </p>
+                <p class="mt-8 text-gray-400 text-sm">¿Algún problema con el pago? <Link href="/contacto" class="text-blue-500 underline">Contáctanos</Link></p>
             </div>
         </div>
     </MainLayout>
@@ -161,15 +133,9 @@ const activarFeedback = (campo) => {
 
 <style scoped>
 /* Estilo para los botones de copiar */
-.btn-copy {
-    @apply p-1.5 text-blue-400 hover:text-[#010cf7] hover:bg-blue-100 rounded-lg transition-all flex items-center justify-center min-w-[40px] border border-transparent hover:border-blue-200;
-}
-
+.btn-copy { @apply p-1.5 text-blue-400 hover:text-[#010cf7] hover:bg-blue-100 rounded-lg transition-all flex items-center justify-center min-w-[40px] border border-transparent hover:border-blue-200; }
 /* Animación sutil para el texto de feedback */
-span[class*="text-green-600"] {
-    animation: fadeIn 0.2s ease-out;
-}
-
+span[class*="text-green-600"] { animation: fadeIn 0.2s ease-out; }
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
     to { opacity: 1; transform: translateY(0); }

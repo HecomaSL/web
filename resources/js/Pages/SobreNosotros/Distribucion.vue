@@ -62,9 +62,9 @@ import { Head } from '@inertiajs/vue3';
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">WIN-WIN-WIN: Todos ganamos</h2>
         <div class="space-y-4 text-gray-700">
-          <p>Gana Tu cliente: disfruta de mejores productos y servicios, a medida de sus necesidades, y con un servicio excelente. Calidad y variedad de producto. Soluciones a nuevos retos productivos. Mejora de costes y rendimiento de su maquinaria. Mejores acabados y calidad en sus trabajos.</p>
-          <p>Ganas tu: Incrementa tus ingresos, ampliando tu número de clientes y ofreciendo mas servicios y productos. No necesitas adquirir nueva maquinaria , ni contratar a nuevo personal . Amplía tu oferta de producto, sin almacén, sin stock y sin preocuparte de la logística. Todo esto lo hace HECOMA® por ti.</p>
-          <p>Gana HECOMA®:  crecemos contigo. En zona de influencia, en clientes, en imagen de marca. Estamos en constante evolución. Nuestra capacidad productiva crece día a día, con nueva maquinaria y tecnología. Nuestras herramientas informáticas permiten agilidad y disponibilidad. Crecemos en experiencia con cada nuevo reto de tus clientes</p>
+          <p><b>Gana Tu cliente</b>: disfruta de mejores productos y servicios, a medida de sus necesidades, y con un servicio excelente. Calidad y variedad de producto. Soluciones a nuevos retos productivos. Mejora de costes y rendimiento de su maquinaria. Mejores acabados y calidad en sus trabajos.</p>
+          <p><b>Ganas tu</b>: Incrementa tus ingresos, ampliando tu número de clientes y ofreciendo mas servicios y productos. No necesitas adquirir nueva maquinaria , ni contratar a nuevo personal . Amplía tu oferta de producto, sin almacén, sin stock y sin preocuparte de la logística. Todo esto lo hace HECOMA® por ti.</p>
+          <p><b>Gana HECOMA®</b>: crecemos contigo. En zona de influencia, en clientes, en imagen de marca. Estamos en constante evolución. Nuestra capacidad productiva crece día a día, con nueva maquinaria y tecnología. Nuestras herramientas informáticas permiten agilidad y disponibilidad. Crecemos en experiencia con cada nuevo reto de tus clientes</p>
         </div>
       </div>
     </section>
@@ -83,11 +83,11 @@ import { Head } from '@inertiajs/vue3';
     </section>
     <section class="container mx-auto px-6 mb-16">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
-      <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Trabajo En Equipo</h2>
-      <div class="space-y-4 text-gray-700">
-        <p>En HECOMA, entendemos el trabajo en equipo como una alianza estratégica donde nuestro principal objetivo es potenciar su capacidad de respuesta ante el mercado. Usted enfóquese en lo que mejor sabe hacer: cultivar la relación con sus clientes, detectar nuevas oportunidades de negocio y escuchar las demandas de una industria cada vez más exigente. Nosotros nos encargamos de respaldar cada una de sus ventas con el mejor producto de fabricación propia y un servicio técnico de excelencia.</p>
-        <p>Nuestro equipo comercial y el departamento de ingeniería estarán a su lado de forma permanente, proporcionando el asesoramiento técnico necesario para resolver cualquier reto en el mecanizado de madera, plásticos o metales. No solo suministramos herramientas; aportamos soluciones integrales que incluyen desde el diseño de herramientas especiales a medida hasta el mantenimiento proactivo mediante nuestro servicio de afilado CNC. Al colaborar con HECOMA, usted cuenta con la solidez de un fabricante líder que le ayuda a solucionar los problemas técnicos de sus clientes con precisión, rapidez y una fiabilidad que refuerza su reputación profesional en el sector industrial</p>
-      </div>
+        <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Trabajo En Equipo</h2>
+        <div class="space-y-4 text-gray-700">
+          <p>En HECOMA, entendemos el trabajo en equipo como una alianza estratégica donde nuestro principal objetivo es potenciar su capacidad de respuesta ante el mercado. Usted enfóquese en lo que mejor sabe hacer: cultivar la relación con sus clientes, detectar nuevas oportunidades de negocio y escuchar las demandas de una industria cada vez más exigente. Nosotros nos encargamos de respaldar cada una de sus ventas con el mejor producto de fabricación propia y un servicio técnico de excelencia.</p>
+          <p>Nuestro equipo comercial y el departamento de ingeniería estarán a su lado de forma permanente, proporcionando el asesoramiento técnico necesario para resolver cualquier reto en el mecanizado de madera, plásticos o metales. No solo suministramos herramientas; aportamos soluciones integrales que incluyen desde el diseño de herramientas especiales a medida hasta el mantenimiento proactivo mediante nuestro servicio de afilado CNC. Al colaborar con HECOMA, usted cuenta con la solidez de un fabricante líder que le ayuda a solucionar los problemas técnicos de sus clientes con precisión, rapidez y una fiabilidad que refuerza su reputación profesional en el sector industrial</p>
+        </div>
       </div>
     </section>
   </MainLayout>

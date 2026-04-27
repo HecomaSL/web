@@ -5,7 +5,6 @@ import { Head } from '@inertiajs/vue3';
 
 <template>
   <Head title="SERVICIOS | HECOMA" />
-
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-12">
       <div id="divh1" class="container mx-auto px-6">
@@ -41,8 +40,5 @@ import { Head } from '@inertiajs/vue3';
   p { text-align: justify; line-height: 1.6; }
   h2 { line-height: 1.2; }
   #divh1 p { text-align: center; }
-  .botones {
-    display: flex;
-    justify-content: space-around;
-  }
+  .botones { display: flex; justify-content: space-around; }
 </style>

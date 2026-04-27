@@ -18,32 +18,23 @@ const groupedProducts = computed(() => {
 
 function parseRef(ref) {
   const match = ref.match(/^D(\d{3})(\d{2})(\d{2})Z(\d+)([A-Z])$/)
-  if (!match) return { diametro: '-', espesor: '-', eje: '-', z: '-', tipo: '-' }
-  return {
-    diametro: parseInt(match[1]),
-    espesor: (parseInt(match[2]) / 10).toFixed(1),
-    eje: parseInt(match[3]),
-    z: parseInt(match[4]),
-    tipo: match[5] === 'A' ? 'Alternos' : match[5]
-  }
+  if (!match) 
+    return { diametro: '-', espesor: '-', eje: '-', z: '-', tipo: '-' }
+  return { diametro: parseInt(match[1]), espesor: (parseInt(match[2]) / 10).toFixed(1), eje: parseInt(match[3]), z: parseInt(match[4]), tipo: match[5] === 'A' ? 'Alternos' : match[5] }
 }
 
 function agregarAlCarrito(product) {
-  if (!product) return
+  if (!product)
+    return
   cart.addToCart({
-    id: product.id,
-    referencia: product.referencia,
-    tipo: product.tipo,
-    familia: product.familia,
-    precio: product.precio,
-    stock: product.stock
+    id: product.id, referencia: product.referencia,
+    tipo: product.tipo, familia: product.familia,
+    precio: product.precio, stock: product.stock
   })
 }
 
 function formatearPrecio(precio) {
-  return precio
-    ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + ' €'
-    : '---'
+  return precio ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + ' €' : '---'
 }
 </script>
 
@@ -73,10 +64,10 @@ function formatearPrecio(precio) {
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Estas son las especificaciones</h2>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">
-            <li><span class="text-gray-700 font-normal">El ángulo de ataque de estos discos es de 10º.</span></li>
-            <li><span class="text-gray-700 font-normal">Dentado en forma de trapecio plano</span></li>
-            <li><span class="text-gray-700 font-normal">Ancho de diente entre 2,5 mm y 3,5 mm</span></li>
-            <li><span class="text-gray-700 font-normal">Diámetros entre 200 mm y 350 mm.</span></li>
+          <li><span class="text-gray-700 font-normal">El ángulo de ataque de estos discos es de 10º.</span></li>
+          <li><span class="text-gray-700 font-normal">Dentado en forma de trapecio plano</span></li>
+          <li><span class="text-gray-700 font-normal">Ancho de diente entre 2,5 mm y 3,5 mm</span></li>
+          <li><span class="text-gray-700 font-normal">Diámetros entre 200 mm y 350 mm.</span></li>
         </ul>
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Medidas disponibles</h2>        
         <p>Las referencias marcadas están en stock permanente y seran entregadas en un plazo estimado de entrega de 48–72 horas laborables desde la confirmación del pago. El resto de las referencias se entregan en un plazo máximo entre 3 y 9 semanas. Si necesitas un tamaño o perfil especial, por favor, contáctanos.</p>
@@ -109,12 +100,7 @@ function formatearPrecio(precio) {
                 <td>{{ parseRef(item.referencia).z }}</td>
                 <td>{{ parseRef(item.referencia).tipo }}</td>
                 <td v-if="$page.props.auth.user" class="precio">{{ formatearPrecio(item.precio) }}</td>
-                
-                <td v-if="$page.props.auth.user">
-                  <button :disabled="item.stock !== 'si'" @click="agregarAlCarrito(item)">
-                    🛒
-                  </button>
-                </td>
+                <td v-if="$page.props.auth.user"> <button :disabled="item.stock !== 'si'" @click="agregarAlCarrito(item)">🛒 </button></td>
               </tr>
             </tbody>
           </table>
@@ -125,97 +111,23 @@ function formatearPrecio(precio) {
 </template>
 
 <style scoped>
-  /* Ajustes para imitar el interlineado y estilo de la imagen corporativa */
-  p { text-align: justify; line-height: 1.6; }
-  h2 { line-height: 1.2; }
-  h3 { line-height: 1.2; }
-  .img { display: flex; justify-content: center; }
-/* Tabla */
-.group-header {
-  background-color: #cce0f0;
-  padding: 6px 12px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: #1a3a5c;
-  border-top: 1px solid #a8c8e8;
-  border-bottom: 1px solid #a8c8e8;
-  margin-top: 16px;
-}
-
-.product-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.875rem;
-}
-
-.product-table thead tr {
-  background: #f5f5f5;
-  border-bottom: 2px solid #ddd;
-}
-
-.product-table th {
-  padding: 8px 12px;
-  text-align: left;
-  font-weight: 600;
-  color: #444;
-  white-space: nowrap;
-}
-
-.product-table tbody tr {
-  border-bottom: 1px solid #eee;
-  transition: background 0.15s;
-}
-
-.product-table tbody tr:hover {
-  background: #f9f9f9;
-}
-
-.product-table td {
-  padding: 7px 12px;
-  color: #333;
-}
-
-.ref {
-  font-family: monospace;
-  font-size: 0.8rem;
-  color: #555;
-}
-
-.precio {
-  font-weight: 600;
-  color: #1a3a5c;
-}
-
-.stock-badge {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.stock-badge.in-stock {
-  color: #2e7d32;
-}
-
-.stock-badge.no-stock {
-  color: #c62828;
-}
-
-.cart-btn {
-  background: #010cf7;
-  color: white;
-  border: none;
-  padding: 5px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  transition: background 0.15s;
-}
-
-.cart-btn:hover:not(:disabled) {
-  background: #0009c0;
-}
-
-.cart-btn:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-}
+p { text-align: justify; line-height: 1.6; }
+h2 { line-height: 1.2; }
+h3 { line-height: 1.2; }
+.img { display: flex; justify-content: center; }
+.group-header { background-color: #cce0f0; padding: 6px 12px; font-weight: 600; font-size: 0.85rem; color: #1a3a5c; border-top: 1px solid #a8c8e8; border-bottom: 1px solid #a8c8e8; margin-top: 16px; }
+.product-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.product-table thead tr { background: #f5f5f5; border-bottom: 2px solid #ddd; }
+.product-table th { padding: 8px 12px; text-align: left; font-weight: 600; color: #444; white-space: nowrap; }
+.product-table tbody tr { border-bottom: 1px solid #eee; transition: background 0.15s; }
+.product-table tbody tr:hover { background: #f9f9f9; }
+.product-table td { padding: 7px 12px; color: #333; }
+.ref { font-family: monospace; font-size: 0.8rem; color: #555; }
+.precio { font-weight: 600; color: #1a3a5c; }
+.stock-badge { font-weight: 700;font-size: 1rem; }
+.stock-badge.in-stock { color: #2e7d32; }
+.stock-badge.no-stock { color: #c62828; }
+.cart-btn { background: #010cf7; color: white; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; transition: background 0.15s; }
+.cart-btn:hover:not(:disabled) { background: #0009c0; }
+.cart-btn:disabled { background: #ccc; cursor: not-allowed; }
 </style>

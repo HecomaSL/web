@@ -1,72 +1,38 @@
 <script setup>
-    import MainLayout from '@/Layouts/MainLayout.vue';
-    import { Head } from '@inertiajs/vue3';
-    import { computed } from 'vue';
-    import { useCartStore } from '@/stores/cartStore';
-    
-    const props = defineProps({
-      productos: Array
-    });
-    
-    const cart = useCartStore();
+import MainLayout from '@/Layouts/MainLayout.vue';
+import { Head } from '@inertiajs/vue3';
+import { computed } from 'vue';
+import { useCartStore } from '@/stores/cartStore';
 
-    /**
-     * Formato: F50-160A → D=160, Perfil=A
-     * No hay material (solo MD), no hay HSS.
-     * B varía según perfil: A,B=19 / C,D,E,F=20 / G=21 / H=22
-     */
-    const bPorPerfil = {
-        A: 19, B: 19,
-        C: 20, D: 20, E: 20, F: 20,
-        G: 21,
-        H: 22
-    };
+const props = defineProps({ productos: Array });
+const cart = useCartStore();
+const bPorPerfil = { A: 19, B: 19, C: 20, D: 20, E: 20, F: 20, G: 21, H: 22 };
 
-    const tablaAgrupada = computed(() => {
-        const filas = [];
+const tablaAgrupada = computed(() => {
+  const filas = [];
 
-        props.productos.forEach(prod => {
-            // F50-160A → D=160, Perfil=A
-            const match = prod.referencia.match(/^F50-(\d{3})([A-Z])$/);
-            if (!match) return;
+  props.productos.forEach(prod => {
+    const match = prod.referencia.match(/^F50-(\d{3})([A-Z])$/);
+    if (!match)
+      return;
+    const diametro = match[1];
+    const perfil   = match[2];
+    filas.push({ medidas: { D: diametro, B: bPorPerfil[perfil] ?? '---', d: '50', Z: '4' },perfil, producto: prod });
+  });
+  return filas.sort((a, b) => parseInt(a.medidas.D) - parseInt(b.medidas.D) || a.perfil.localeCompare(b.perfil));
+});
 
-            const diametro = match[1];
-            const perfil   = match[2];
+const agregarAlCarrito = (producto) => {
+  if (!producto)
+    return;
+  cart.addToCart({
+    id: producto.id, referencia: producto.referencia,
+    tipo: producto.tipo, familia: producto.familia,
+    precio: producto.precio, stock: producto.stock
+  });
+};
 
-            filas.push({
-                medidas: {
-                    D: diametro,
-                    B: bPorPerfil[perfil] ?? '---',
-                    d: '50',
-                    Z: '4'
-                },
-                perfil,
-                producto: prod
-            });
-        });
-
-        // Ordenamos por diámetro y luego por perfil alfabético
-        return filas.sort((a, b) =>
-            parseInt(a.medidas.D) - parseInt(b.medidas.D) ||
-            a.perfil.localeCompare(b.perfil)
-        );
-    });
-    
-    const agregarAlCarrito = (producto) => {
-        if (!producto) return;
-        cart.addToCart({
-            id: producto.id,
-            referencia: producto.referencia,
-            tipo: producto.tipo,
-            familia: producto.familia,
-            precio: producto.precio,
-            stock: producto.stock
-        });
-    };
-    
-    const formatearPrecio = (precio) => {
-      return precio ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + '€' : '---';
-    };
+const formatearPrecio = (precio) => { return precio ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + '€' : '---'; };
 </script>
 
 <template>
@@ -109,7 +75,6 @@
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h3 v-if="!$page.props.auth.user" class="text-[#010cf7] text-3xl font-bold mb-6">Nota para profesionales:</h3>
         <p v-if="!$page.props.auth.user">Para consultar nuestras tarifas industriales, verificar disponibilidad a tiempo real y tramitar tu pedido, es necesario <a href="/login">iniciar sesión</a> o <a href="/register">registrarte</a> como cliente.</p>
-
         <div class="overflow-x-auto shadow-xl rounded-lg border border-gray-200">
           <table class="w-full text-sm text-left border-collapse bg-white">
             <thead class="font-bold">
@@ -131,15 +96,9 @@
                 <td class="px-3 py-4 text-center text-gray-600">{{ fila.medidas.d }}</td>
                 <td class="px-3 py-4 text-center text-gray-600">{{ fila.medidas.Z }}</td>
                 <td class="px-3 py-4 text-center text-gray-600 font-medium">{{ fila.perfil }}</td>
-                <td class="px-4 py-4 text-xs border-l-2 border-blue-100">
-                  {{ fila.producto.referencia }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4">
-                  {{ formatearPrecio(fila.producto.precio) }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center">
-                  <button @click="agregarAlCarrito(fila.producto)" class="hover:scale-125 transition-transform">🛒</button>
-                </td>
+                <td class="px-4 py-4 text-xs border-l-2 border-blue-100">{{ fila.producto.referencia }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4">{{ formatearPrecio(fila.producto.precio) }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center"><button @click="agregarAlCarrito(fila.producto)" class="hover:scale-125 transition-transform">🛒</button></td>
               </tr>
             </tbody>
           </table>

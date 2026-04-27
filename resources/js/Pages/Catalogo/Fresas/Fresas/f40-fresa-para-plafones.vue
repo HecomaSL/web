@@ -4,74 +4,49 @@
     import { computed } from 'vue';
     import { useCartStore } from '@/stores/cartStore';
     
-    const props = defineProps({
-      productos: Array // Datos de MariaDB
-    });
-    
+    const props = defineProps({ productos: Array });
     const cart = useCartStore();
     
     /**
      * LÓGICA DINÁMICA: Agrupamos productos por sus medidas base.
      * Se diferencia MD de HSS por la letra final (M o H).
      */
-     const tablaAgrupada = computed(() => {
-    const grupos = {};
+    const tablaAgrupada = computed(() => {
+      const grupos = {};
 
-    props.productos.forEach(prod => {
-        // F30-1403015AM → D=140, B=30, Alpha=15, Tipo=A, Material=M
+      props.productos.forEach(prod => {
         const match = prod.referencia.match(/F40-(\d{3})(A|B|C|D|E|F|G|H)(M|H)/);
         
         if (match) {
-            const diametro = match[1];           // "140"
-            const tipo     = match[2];           // "A" o "B"
-            const material = match[3];           // "M" o "H"
-            
-            // Agrupa MD y HSS en la misma fila quitando la última letra
-            const baseRef = prod.referencia.slice(0, -1);
+          const diametro = match[1];
+          const tipo     = match[2];
+          const material = match[3];
+          const baseRef = prod.referencia.slice(0, -1);
 
-            if (!grupos[baseRef]) {
-                grupos[baseRef] = {
-                    medidas: {
-                        D: diametro,
-                        B: '20',
-                        d: '50',
-                        Z: '4',
-                        tipo: tipo,
-                    },
-                    md: null,
-                    hss: null
-                };
-            }
+          if (!grupos[baseRef])
+            grupos[baseRef] = { medidas: { D: diametro,B: '20', d: '50', Z: '4', tipo: tipo, }, md: null, hss: null };
 
-            if (material === 'M')
-                grupos[baseRef].md = prod;
-            else if (material === 'H')
-                grupos[baseRef].hss = prod;
+          if (material === 'M')
+            grupos[baseRef].md = prod;
+          else if (material === 'H')
+            grupos[baseRef].hss = prod;
         }
-    });
+      });
 
-    return Object.values(grupos).sort((a, b) => {
-        return parseInt(a.medidas.D) - parseInt(b.medidas.D) ||
-               a.medidas.B - b.medidas.B ||
-               a.medidas.tipo.localeCompare(b.medidas.tipo);
+      return Object.values(grupos).sort((a, b) => { return parseInt(a.medidas.D) - parseInt(b.medidas.D) || a.medidas.B - b.medidas.B || a.medidas.tipo.localeCompare(b.medidas.tipo); });
     });
-});
     
     const agregarAlCarrito = (producto) => {
-        if (!producto) return;
+        if (!producto)
+          return;
         cart.addToCart({
-            id: producto.id,
-            referencia: producto.referencia,
-            tipo: producto.tipo,
-            familia: producto.familia,
-            precio: producto.precio,
-            stock: producto.stock
+          id: producto.id, referencia: producto.referencia,
+          tipo: producto.tipo, familia: producto.familia,
+          precio: producto.precio, stock: producto.stock
         });
     };
     
-    const formatearPrecio = (precio) => {
-      return precio ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + '€' : '---';
-    };
+    const formatearPrecio = (precio) => { return precio ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + '€' : '---'; };
 </script>
 
 <template>
@@ -113,7 +88,6 @@
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h3 v-if="!$page.props.auth.user" class="text-[#010cf7] text-3xl font-bold mb-6">Nota para profesionales:</h3>
         <p v-if="!$page.props.auth.user">Para consultar nuestras tarifas industriales, verificar disponibilidad a tiempo real y tramitar tu pedido, es necesario <a href="/login">iniciar sesión</a> o <a href="/register">registrarte</a> como cliente.</p>
-
         <div class="overflow-x-auto shadow-xl rounded-lg border border-gray-200">
           <table class="w-full text-sm text-left border-collapse bg-white">
             <thead class="font-bold">
@@ -138,25 +112,12 @@
                 <td class="px-3 py-4 text-center text-gray-600">{{ fila.medidas.d }}</td>
                 <td class="px-3 py-4 text-center text-gray-600">{{ fila.medidas.Z }}</td>
                 <td class="px-3 py-4 text-center text-gray-600">{{ fila.medidas.tipo }}</td>
-                <td class="px-4 py-4  text-xs /40 border-l-2 border-blue-100">
-                    {{ fila.md ? fila.md.referencia : '---' }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 /40">
-                    {{ fila.md ? formatearPrecio(fila.md.precio) : '---' }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center /40">
-                    <button v-if="fila.md" @click="agregarAlCarrito(fila.md)" class="hover:scale-125 transition-transform">🛒</button>
-                </td>
-
-                <td class="px-4 py-4  text-xs bg-[#fafcfe]/40 border-l-2 border-gray-100">
-                    {{ fila.hss ? fila.hss.referencia : '---' }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 text-gray-900 bg-[#fafcfe]/40">
-                    {{ fila.hss ? formatearPrecio(fila.hss.precio) : '---' }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center bg-[#fafcfe]/40">
-                    <button v-if="fila.hss" @click="agregarAlCarrito(fila.hss)" class="hover:scale-125 transition-transform">🛒</button>
-                </td>
+                <td class="px-4 py-4  text-xs /40 border-l-2 border-blue-100">{{ fila.md ? fila.md.referencia : '---' }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 /40">{{ fila.md ? formatearPrecio(fila.md.precio) : '---' }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center /40"><button v-if="fila.md" @click="agregarAlCarrito(fila.md)" class="hover:scale-125 transition-transform">🛒</button></td>
+                <td class="px-4 py-4  text-xs bg-[#fafcfe]/40 border-l-2 border-gray-100">{{ fila.hss ? fila.hss.referencia : '---' }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 text-gray-900 bg-[#fafcfe]/40">{{ fila.hss ? formatearPrecio(fila.hss.precio) : '---' }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center bg-[#fafcfe]/40"><button v-if="fila.hss" @click="agregarAlCarrito(fila.hss)" class="hover:scale-125 transition-transform">🛒</button></td>
               </tr>
             </tbody>
           </table>
@@ -167,7 +128,6 @@
 </template>
 
 <style scoped>
-  /* Ajustes para imitar el interlineado y estilo de la imagen corporativa */
   p { text-align: justify; line-height: 1.6; }
   h2 { line-height: 1.2; }
   h3 { line-height: 1.2; }

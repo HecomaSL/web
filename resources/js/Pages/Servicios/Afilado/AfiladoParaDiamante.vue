@@ -25,13 +25,13 @@ import { Head } from '@inertiajs/vue3';
         <img src="images/servicios/afilado-en-maquina-diamante.jpg" alt="Afilado en maquina diamante">
         <p>Confíe a HECOMA sus:</p>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">
-            <li><span class="text-gray-700 font-normal">Sierras y discos de diamante</span></li>
-            <li><span class="text-gray-700 font-normal">Fresas de diamante</span></li>
-            <li><span class="text-gray-700 font-normal">Brocas de diamante</span></li>
-            <li><span class="text-gray-700 font-normal">Trituradores  de diamante</span></li>
-            <li><span class="text-gray-700 font-normal">Discos incisores  de PCD para perfiladoras</span></li>
-            <li><span class="text-gray-700 font-normal">Herramientas de diamante para softformado, postformado y preformado (una de nuestras especialidades</span></li>
-            <li><span class="text-gray-700 font-normal">etc</span></li>
+          <li><span class="text-gray-700 font-normal">Sierras y discos de diamante</span></li>
+          <li><span class="text-gray-700 font-normal">Fresas de diamante</span></li>
+          <li><span class="text-gray-700 font-normal">Brocas de diamante</span></li>
+          <li><span class="text-gray-700 font-normal">Trituradores  de diamante</span></li>
+          <li><span class="text-gray-700 font-normal">Discos incisores  de PCD para perfiladoras</span></li>
+          <li><span class="text-gray-700 font-normal">Herramientas de diamante para softformado, postformado y preformado (una de nuestras especialidades</span></li>
+          <li><span class="text-gray-700 font-normal">etc</span></li>
         </ul>
       </div>
     </section>

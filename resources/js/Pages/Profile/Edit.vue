@@ -2,21 +2,15 @@
 import { ref, computed } from 'vue';
 import { Head, Link, usePage } from '@inertiajs/vue3';
 import { useCartStore } from '@/stores/cartStore';
-
-// Componentes originales del perfil de Breeze
 import DeleteUserForm from './Partials/DeleteUserForm.vue';
 import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
 
-defineProps({
-    mustVerifyEmail: { type: Boolean },
-    status: { type: String },
-});
+defineProps({ mustVerifyEmail: { type: Boolean }, status: { type: String }, });
 
 const page = usePage();
 const cartStore = useCartStore();
 
-// --- LÓGICA DE TU HEADER ---
 const openMenu = ref(null);
 const openSubMenu = ref(null); 
 const isMobileMenuOpen = ref(false);
@@ -33,14 +27,7 @@ const menus = {
     { label: 'Noticias', url: '/noticias' }
   ],
   servicios: [
-    { 
-      label: 'Servicio de Afilado', 
-      url: '/afilado',
-      subitems: [
-        { label: 'Afilado para madera', url: '/afilado-para-madera' },
-        { label: 'Afilado para diamante', url: '/afilado-para-diamante' }
-      ]
-    },
+    { label: 'Servicio de Afilado', url: '/afilado', subitems: [ { label: 'Afilado para madera', url: '/afilado-para-madera' }, { label: 'Afilado para diamante', url: '/afilado-para-diamante' } ] },
     { label: 'Fabricación a medida', url: '/fabricacion-a-medida' }
   ],
   catalogo: [

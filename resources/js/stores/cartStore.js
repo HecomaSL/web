@@ -19,10 +19,9 @@ export const useCartStore = defineStore('cart', {
         },
         // Nuevo: Calcula cuánto dinero se resta
         descuentoImporte: (state) => {
-            if (!state.cupon) return 0;
-            return state.cupon.tipo === 'porcentaje' 
-                ? (state.subtotal * (state.cupon.valor / 100)) 
-                : state.cupon.valor;
+            if (!state.cupon) 
+                return 0;
+            return state.cupon.tipo === 'porcentaje' ? (state.subtotal * (state.cupon.valor / 100)) : state.cupon.valor;
         },
         // Actualizado: Incluye el descuento en el total
         totalFinal: (state) => {
@@ -70,9 +69,7 @@ export const useCartStore = defineStore('cart', {
         updateQuantity(id, nuevaCantidad) {
             const cantidad = parseInt(nuevaCantidad);
             if (cantidad > 0) {
-                this.items = this.items.map(item => 
-                    item.id === id ? { ...item, cantidad: cantidad } : item
-                );
+                this.items = this.items.map(item => item.id === id ? { ...item, cantidad: cantidad } : item );
             }
         },
 
@@ -98,14 +95,11 @@ if (typeof window !== 'undefined') {
     window.addEventListener('storage', (event) => {
         if (event.key === 'hecoma-cart') {
             const cart = useCartStore();
-            if (!event.newValue) {
+            if (!event.newValue)
                 cart.$patch({ items: [], cupon: null });
-            } else {
+            else {
                 const data = JSON.parse(event.newValue);
-                cart.$patch({ 
-                    items: data.items || [],
-                    cupon: data.cupon || null
-                });
+                cart.$patch({ items: data.items || [],  cupon: data.cupon || null });
             }
         }
     });

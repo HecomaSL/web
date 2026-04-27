@@ -5,7 +5,6 @@ import { Head } from '@inertiajs/vue3';
 
 <template>
   <Head title="POLITICA DE PROTECCION DE DATOS | HECOMA" />
-
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-12">
       <div id="divh1" class="container mx-auto px-6">
@@ -27,14 +26,14 @@ import { Head } from '@inertiajs/vue3';
       <div class="space-y-4 text-gray-700">
         <p>Se aplican todas las medidas exigidas por la ley Española (LOPD), por el nuevo reglamento y algunas adicionales. Entre ellas podemos destacar:</p>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">
-            <li><span class="text-gray-700 font-normal">Aplicaciones con datos centralizadas en servidor en nube, por lo que los datos personales en equipos locales se minimiza al máximo</span></li>
-            <li><span class="text-gray-700 font-normal">Copias de seguridad cifradas de los equipos con acceso a datos. El almacenamiento de estas copias es local y en la nube.</span></li>
-            <li><span class="text-gray-700 font-normal">El alojamiento en Nube contratado está localizado en servidores y proveedores Europeos que siguen estrictamente lo indicado en el RGPD</span></li>
-            <li><span class="text-gray-700 font-normal">El acceso a terminales con datos está protegido por contraseñas robustas y conforme a ley.</span></li>
-            <li><span class="text-gray-700 font-normal">Solo pueden acceder a los datos el personal autorizado para ello, identificándose y con su contraseña personal.</span></li>
-            <li><span class="text-gray-700 font-normal">Todos los equipos están convenientemente actualizados con los parches indicados por el fabricante. Su mantenimiento es periódico y gestionado por personal especializado de forma centralizada.</span></li>
-            <li><span class="text-gray-700 font-normal">Todos los equipos están protegidos por software de seguridad gestionado de forma centralizada y sus configuraciones protegidas para evitar negligencias.</span></li>
-            <li><span class="text-gray-700 font-normal">De forma periódica en los equipos con acceso a datos, se analizan con herramientas de “Risk Intelligence”  para evaluar la exposición de los datos que contienen, formar a los usuarios en el uso correcto y establecer las medidas de seguridad adicionales pertinentes.</span></li>
+          <li><span class="text-gray-700 font-normal">Aplicaciones con datos centralizadas en servidor en nube, por lo que los datos personales en equipos locales se minimiza al máximo</span></li>
+          <li><span class="text-gray-700 font-normal">Copias de seguridad cifradas de los equipos con acceso a datos. El almacenamiento de estas copias es local y en la nube.</span></li>
+          <li><span class="text-gray-700 font-normal">El alojamiento en Nube contratado está localizado en servidores y proveedores Europeos que siguen estrictamente lo indicado en el RGPD</span></li>
+          <li><span class="text-gray-700 font-normal">El acceso a terminales con datos está protegido por contraseñas robustas y conforme a ley.</span></li>
+          <li><span class="text-gray-700 font-normal">Solo pueden acceder a los datos el personal autorizado para ello, identificándose y con su contraseña personal.</span></li>
+          <li><span class="text-gray-700 font-normal">Todos los equipos están convenientemente actualizados con los parches indicados por el fabricante. Su mantenimiento es periódico y gestionado por personal especializado de forma centralizada.</span></li>
+          <li><span class="text-gray-700 font-normal">Todos los equipos están protegidos por software de seguridad gestionado de forma centralizada y sus configuraciones protegidas para evitar negligencias.</span></li>
+          <li><span class="text-gray-700 font-normal">De forma periódica en los equipos con acceso a datos, se analizan con herramientas de “Risk Intelligence”  para evaluar la exposición de los datos que contienen, formar a los usuarios en el uso correcto y establecer las medidas de seguridad adicionales pertinentes.</span></li>
         </ul>
       </div>
     </section>
@@ -43,13 +42,13 @@ import { Head } from '@inertiajs/vue3';
       <div class="space-y-4 text-gray-700">
         <p>Los principales derechos que regula el RGPD ya estaban recogidos en la LOPD. Aprovechamos para recordarlos e introducir los novedosos. Estos son:</p>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">
-            <li><span class="text-gray-700 font-normal">Derecho de acceso: derecho a saber qué datos se han recogido y qué se hace con ellos</span></li>
-            <li><span class="text-gray-700 font-normal">Derecho de rectificación: puedes completar o corregir cualquiera de los datos personales que tengamos sobre tí.</span></li>
-            <li><span class="text-gray-700 font-normal">Derecho de supresión: si así lo solicitas, podrás eliminar tus datos personales en nuestros sistemas (¡ojo!, necesitamos tus datos para poder mantener la relación comercial que nos une.)</span></li>
-            <li><span class="text-gray-700 font-normal">Derecho a la limitación en el tratamiento: si consideras que tus datos son inexactos o que no se está usando para un fin legítimo, puede pedir que se dejen de utilizar mientras se aclara.</span></li>
-            <li><span class="text-gray-700 font-normal">Derecho a la portabilidad: Puedes solicitar tus datos personales en un formato que te permita transferirlos a otra entidad.</span></li>
-            <li><span class="text-gray-700 font-normal">Derecho de oposición: Puedes oponerte al tratamiento de tus datos, excepto si hay un interés legítimo en continuar haciéndolo. Ten en cuenta que esto puede hacer imposible seguir prestándote servicios.</span></li>
-            <li><span class="text-gray-700 font-normal">Derecho al no tratamiento personalizado: Puedes elegir que tus datos no sean utilizados de manera automática para tomar decisiones sobre el servicio que se te presta; ten en cuenta que hay limitaciones a este derecho si se acredita que tus derechos están a salvo</span></li>
+          <li><span class="text-gray-700 font-normal">Derecho de acceso: derecho a saber qué datos se han recogido y qué se hace con ellos</span></li>
+          <li><span class="text-gray-700 font-normal">Derecho de rectificación: puedes completar o corregir cualquiera de los datos personales que tengamos sobre tí.</span></li>
+          <li><span class="text-gray-700 font-normal">Derecho de supresión: si así lo solicitas, podrás eliminar tus datos personales en nuestros sistemas (¡ojo!, necesitamos tus datos para poder mantener la relación comercial que nos une.)</span></li>
+          <li><span class="text-gray-700 font-normal">Derecho a la limitación en el tratamiento: si consideras que tus datos son inexactos o que no se está usando para un fin legítimo, puede pedir que se dejen de utilizar mientras se aclara.</span></li>
+          <li><span class="text-gray-700 font-normal">Derecho a la portabilidad: Puedes solicitar tus datos personales en un formato que te permita transferirlos a otra entidad.</span></li>
+          <li><span class="text-gray-700 font-normal">Derecho de oposición: Puedes oponerte al tratamiento de tus datos, excepto si hay un interés legítimo en continuar haciéndolo. Ten en cuenta que esto puede hacer imposible seguir prestándote servicios.</span></li>
+          <li><span class="text-gray-700 font-normal">Derecho al no tratamiento personalizado: Puedes elegir que tus datos no sean utilizados de manera automática para tomar decisiones sobre el servicio que se te presta; ten en cuenta que hay limitaciones a este derecho si se acredita que tus derechos están a salvo</span></li>
         </ul>
       </div>
     </section>

@@ -1,29 +1,18 @@
 <script setup>
 import { Head, useForm } from '@inertiajs/vue3';
-// Usamos MainLayout para mantener Header y Footer de HECOMA
 import MainLayout from '@/Layouts/MainLayout.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
 
-defineProps({
-    status: {
-        type: String,
-    },
-});
+defineProps({ status: { type: String, }, });
 
-const form = useForm({
-    email: '',
-});
-
-const submit = () => {
-    form.post(route('password.email'));
-};
+const form = useForm({ email: '', });
+const submit = () => { form.post(route('password.email')); };
 </script>
 
 <template>
     <Head title="Recuperar Contraseña | HECOMA" />
-
     <MainLayout>
         <section class="bg-[#010cf7] py-6 mb-12">
             <div class="container mx-auto px-6">
@@ -64,7 +53,6 @@ const submit = () => {
     .btn-reset-hecoma { background-color: #003399; color: #ffffff; font-weight: 700; text-transform: uppercase; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; border-radius: 4px; transition: all 0.3s ease; padding: 0.8rem 2rem; font-size: 14px; width: 100%; letter-spacing: 0.05em; }
     .btn-reset-hecoma:hover { background-color: #010cf7; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(1, 12, 247, 0.2); }
     .btn-reset-hecoma:disabled { opacity: 0.5; cursor: not-allowed; }
-
     @media (max-width: 768px) {
         h1 { font-size: 1.25rem; }
     }

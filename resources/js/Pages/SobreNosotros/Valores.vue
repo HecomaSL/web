@@ -9,9 +9,7 @@ import { Head } from '@inertiajs/vue3';
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-12">
       <div class="container mx-auto px-6">
-        <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">
-          Valores y Compromiso Técnico en la Fabricación de Herramientas
-        </h1>
+        <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Valores y Compromiso Técnico en la Fabricación de Herramientas</h1>
       </div>
     </section>
 
@@ -73,10 +71,6 @@ import { Head } from '@inertiajs/vue3';
 </template>
 
 <style scoped>
-  p {
-    line-height: 1.8;
-  }
-  h2 {
-    letter-spacing: 0.025em;
-  }
+  p { line-height: 1.8; }
+  h2 { letter-spacing: 0.025em; }
 </style>

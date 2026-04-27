@@ -24,10 +24,10 @@ import { Head } from '@inertiajs/vue3';
         <p>Los precios se muestran en EUR e incluyen los impuestos aplicables (IVA). Los gastos de envío se mostrarán antes de confirmar el pedido.</p>
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">4. Cómo comprar</h2>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">
-            <li><span class="text-gray-700 font-normal">1) Selecciona productos y añádelos al carrito</span></li>
-            <li><span class="text-gray-700 font-normal">2) Introduce datos de envío y facturación</span></li>
-            <li><span class="text-gray-700 font-normal">3) Confirma el pedido</span></li>
-            <li><span class="text-gray-700 font-normal">4) Recibirás un email con el resumen y las instrucciones de pago</span></li>
+          <li><span class="text-gray-700 font-normal">1) Selecciona productos y añádelos al carrito</span></li>
+          <li><span class="text-gray-700 font-normal">2) Introduce datos de envío y facturación</span></li>
+          <li><span class="text-gray-700 font-normal">3) Confirma el pedido</span></li>
+          <li><span class="text-gray-700 font-normal">4) Recibirás un email con el resumen y las instrucciones de pago</span></li>
         </ul>
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">5. Método de pago: transferencia bancaria</h2>
         <p>El pago se realiza mediante transferencia bancaria a la cuenta que se indicará al finalizar la compra.</p>
@@ -48,7 +48,6 @@ import { Head } from '@inertiajs/vue3';
 </template>
 
 <style scoped>
-  /* Ajustes para imitar el interlineado y estilo de la imagen corporativa */
   p { text-align: justify; line-height: 1.6; }
   h2 { line-height: 1.2; }
   h3 { line-height: 1.2; }

@@ -4,10 +4,7 @@
     import { computed } from 'vue';
     import { useCartStore } from '@/stores/cartStore';
     
-    const props = defineProps({
-      productos: Array // Datos de tu captura de MariaDB
-    });
-    
+    const props = defineProps({ productos: Array });
     const cart = useCartStore();
     
     /**
@@ -18,61 +15,36 @@
         const grupos = {};
     
         props.productos.forEach(prod => {
-            // Usamos una expresión regular para extraer los números de la referencia
-            // Ejemplo: "F10-14004M" -> Extrae 140 (D) y 04 (B)
-            // Ajustamos según el formato: F10- (D=3 dígitos) (B=2 dígitos)
-            const match = prod.referencia.match(/F13-(\d{3})(\d{2,3})/);
-            
-            if (match) {
-                const diametro = match[1]; // Los primeros 3 números (140, 150...)
-                const ancho = parseInt(match[2]);   // Los siguientes números (04, 05...)
-                
-                // La base de la referencia para agrupar (quitando la M o H final)
-                const baseRef = prod.referencia.slice(0, -1); 
-    
-                if (!grupos[baseRef]) {
-                    grupos[baseRef] = {
-                        medidas: {
-                            D: diametro,
-                            B: ancho,
-                            d: diametro > 145 ? '50' : '50',
-                            Z: '4' // Es una Z4
-                        },
-                        md: null,
-                        hss: null
-                    };
-                }
-    
-                // Asignamos al hueco según la letra final
-                if (prod.referencia.endsWith('M')) {
-                  grupos[baseRef].md = prod;
-                } else if (prod.referencia.endsWith('H')) {
-                  grupos[baseRef].hss = prod;
-                }
-            }
+          const match = prod.referencia.match(/F13-(\d{3})(\d{2,3})/);
+          if (match) {
+            const diametro = match[1];
+            const ancho = parseInt(match[2]);
+            const baseRef = prod.referencia.slice(0, -1); 
+
+            if (!grupos[baseRef])
+              grupos[baseRef] = { medidas: { D: diametro, B: ancho, d: diametro > 145 ? '50' : '50', Z: '4' }, md: null, hss: null };
+
+            if (prod.referencia.endsWith('M')) 
+              grupos[baseRef].md = prod;
+            else if (prod.referencia.endsWith('H'))
+              grupos[baseRef].hss = prod;
+          }
         });
     
-        // Ordenamos por diámetro y luego por ancho
-        return Object.values(grupos).sort((a, b) => {
-            return a.medidas.D - b.medidas.D || a.medidas.B - b.medidas.B;
-        });
+        return Object.values(grupos).sort((a, b) => { return a.medidas.D - b.medidas.D || a.medidas.B - b.medidas.B; });
     });
     
     const agregarAlCarrito = (producto) => {
-        if (!producto) return;
+        if (!producto)
+          return;
         cart.addToCart({
-            id: producto.id,
-            referencia: producto.referencia,
-            tipo: producto.tipo,
-            familia: producto.familia,
-            precio: producto.precio,
-            stock: producto.stock
+          id: producto.id, referencia: producto.referencia,
+          tipo: producto.tipo, familia: producto.familia,
+          precio: producto.precio, stock: producto.stock
         });
     };
     
-    const formatearPrecio = (precio) => {
-      return precio ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + '€' : '---';
-    };
+    const formatearPrecio = (precio) => { return precio ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + '€' : '---'; };
 </script>
 
 <template>
@@ -141,25 +113,13 @@
                 <td class="px-3 py-4 text-center text-gray-600">{{ fila.medidas.d }}</td>
                 <td class="px-3 py-4 text-center text-gray-600">{{ fila.medidas.Z }}</td>
                 
-                <td class="px-4 py-4  text-xs /40 border-l-2 border-blue-100">
-                    {{ fila.md ? fila.md.referencia : '---' }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 /40">
-                    {{ fila.md ? formatearPrecio(fila.md.precio) : '---' }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center /40">
-                    <button v-if="fila.md" @click="agregarAlCarrito(fila.md)" class="hover:scale-125 transition-transform">🛒</button>
-                </td>
+                <td class="px-4 py-4  text-xs /40 border-l-2 border-blue-100">{{ fila.md ? fila.md.referencia : '---' }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 /40">{{ fila.md ? formatearPrecio(fila.md.precio) : '---' }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center /40"><button v-if="fila.md" @click="agregarAlCarrito(fila.md)" class="hover:scale-125 transition-transform">🛒</button></td>
 
-                <td class="px-4 py-4  text-xs bg-[#fafcfe]/40 border-l-2 border-gray-100">
-                    {{ fila.hss ? fila.hss.referencia : '---' }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 text-gray-900 bg-[#fafcfe]/40">
-                    {{ fila.hss ? formatearPrecio(fila.hss.precio) : '---' }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center bg-[#fafcfe]/40">
-                    <button v-if="fila.hss" @click="agregarAlCarrito(fila.hss)" class="hover:scale-125 transition-transform">🛒</button>
-                </td>
+                <td class="px-4 py-4  text-xs bg-[#fafcfe]/40 border-l-2 border-gray-100">{{ fila.hss ? fila.hss.referencia : '---' }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 text-gray-900 bg-[#fafcfe]/40">{{ fila.hss ? formatearPrecio(fila.hss.precio) : '---' }} </td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center bg-[#fafcfe]/40"> <button v-if="fila.hss" @click="agregarAlCarrito(fila.hss)" class="hover:scale-125 transition-transform">🛒</button></td>
               </tr>
             </tbody>
           </table>
@@ -170,7 +130,6 @@
 </template>
 
 <style scoped>
-  /* Ajustes para imitar el interlineado y estilo de la imagen corporativa */
   p { text-align: justify; line-height: 1.6; }
   h2 { line-height: 1.2; }
   a { color: blue; text-decoration: underline;}

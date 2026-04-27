@@ -27,10 +27,7 @@ const form = useForm({
 const formatearPrecio = (valor) => {
     const numero = parseFloat(valor);
     if (isNaN(numero)) return '0,00 €';
-    return numero.toLocaleString('es-ES', { 
-        style: 'currency', 
-        currency: 'EUR' 
-    });
+    return numero.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
 };
 
 const enviarPedido = () => {
@@ -52,23 +49,15 @@ const enviarPedido = () => {
             cart.clearCart();
             window.location.href = '/pedido-confirmado'; 
         },
-        onError: (errors) => {
-            console.error("Errores en el envío:", errors);
-        },
+        onError: (errors) => { console.error("Errores en el envío:", errors); },
         preserveScroll: true,
     });
 };
 
 // Seguridad: Si recargan y el carrito está vacío, volver atrás
-onMounted(() => {
-    if (cart.items.length === 0) {
-        window.location.href = '/carrito';
-    }
-});
+onMounted(() => { if (cart.items.length === 0) window.location.href = '/carrito'; });
 
-watch(() => form.metodo_envio, (nuevoMetodo) => {
-    cart.metodoEnvio = nuevoMetodo;
-}, { immediate: true });
+watch(() => form.metodo_envio, (nuevoMetodo) => { cart.metodoEnvio = nuevoMetodo; }, { immediate: true });
 </script>
 
 <template>
@@ -76,10 +65,8 @@ watch(() => form.metodo_envio, (nuevoMetodo) => {
     <MainLayout>
         <div class="py-12 bg-gray-50 min-h-screen">
             <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
-                
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                     <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-4">DATOS DE ENTREGA</h2>
-                    
                     <form @submit.prevent="enviarPedido" class="space-y-5">
                         <div class="grid grid-cols-1 gap-4">
                             <div class="flex flex-col">
@@ -112,8 +99,7 @@ watch(() => form.metodo_envio, (nuevoMetodo) => {
                         <div class="pt-4">
                             <label class="block font-bold text-gray-700 mb-3">MÉTODO DE ENVÍO</label>
                             <div class="space-y-2">
-                                <label class="flex items-center justify-between p-3 border rounded-lg cursor-pointer transition-colors" 
-                                    :class="form.metodo_envio === 'domicilio' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'">
+                                <label class="flex items-center justify-between p-3 border rounded-lg cursor-pointer transition-colors" :class="form.metodo_envio === 'domicilio' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'">
                                     <div class="flex items-center gap-3">
                                         <input type="radio" v-model="form.metodo_envio" value="domicilio" class="w-4 h-4 text-blue-600">
                                         <span class="text-sm font-medium text-gray-800">Envío a domicilio</span>
@@ -145,8 +131,7 @@ watch(() => form.metodo_envio, (nuevoMetodo) => {
                             </div>
                         </div>
 
-                        <button type="submit" :disabled="form.processing"
-                            class="w-full bg-[#010cf7] text-white py-4 rounded-xl font-bold uppercase hover:bg-blue-800 transition-all shadow-lg active:scale-95 disabled:opacity-50 mt-4">
+                        <button type="submit" :disabled="form.processing" class="w-full bg-[#010cf7] text-white py-4 rounded-xl font-bold uppercase hover:bg-blue-800 transition-all shadow-lg active:scale-95 disabled:opacity-50 mt-4">
                             {{ form.processing ? 'PROCESANDO PEDIDO...' : `FINALIZAR Y PAGAR ${formatearPrecio(cart.totalFinal)}` }}
                         </button>
                     </form>
@@ -154,7 +139,6 @@ watch(() => form.metodo_envio, (nuevoMetodo) => {
 
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 h-fit sticky top-24">
                     <h2 class="text-xl font-bold mb-6 text-gray-800 uppercase tracking-tight">RESUMEN DEL PEDIDO</h2>
-                    
                     <div class="max-h-64 overflow-y-auto mb-6 pr-2 space-y-4">
                         <div v-for="item in cart.items" :key="item.id" class="flex justify-between items-start">
                             <div class="flex flex-col">
@@ -187,7 +171,6 @@ watch(() => form.metodo_envio, (nuevoMetodo) => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </MainLayout>

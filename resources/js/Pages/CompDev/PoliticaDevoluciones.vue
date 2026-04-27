@@ -22,10 +22,10 @@ import { Head } from '@inertiajs/vue3';
         <p>Si compras como consumidor/a, puedes desistir de la compra en un plazo de 14 días naturales desde la recepción del pedido, sin necesidad de justificación.</p>
         <p>Para ejercer el desistimiento, envía un email a <a href="mailto:dptocomercial@hecoma.com">dptocomercial@hecoma.com</a> indicando:</p>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">
-            <li><span class="text-gray-700 font-normal">Número de pedido</span></li>
-            <li><span class="text-gray-700 font-normal">Nombre y apellidos</span></li>
-            <li><span class="text-gray-700 font-normal">Productos a devolver</span></li>
-            <li><span class="text-gray-700 font-normal">Fecha de recepción</span></li>
+          <li><span class="text-gray-700 font-normal">Número de pedido</span></li>
+          <li><span class="text-gray-700 font-normal">Nombre y apellidos</span></li>
+          <li><span class="text-gray-700 font-normal">Productos a devolver</span></li>
+          <li><span class="text-gray-700 font-normal">Fecha de recepción</span></li>
         </ul>
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">3. Condiciones de la devolución</h2>
         <p>El producto debe devolverse en perfecto estado, sin usar más allá de la manipulación necesaria para comprobar su naturaleza y funcionamiento, y con su embalaje, accesorios y documentación.</p>
@@ -35,9 +35,9 @@ import { Head } from '@inertiajs/vue3';
         <p>Producto defectuoso o envío incorrecto: asumiremos los gastos de recogida/devolución y gestionaremos el reemplazo o reembolso</p>
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">5. Procedimiento</h2>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">
-            <li><span class="text-gray-700 font-normal">1) Solicita la devolución por email a dptocomercial@hecoma.com</span></li>
-            <li><span class="text-gray-700 font-normal">2) Te indicaremos la dirección de devolución e instrucciones de embalaje (especialmente importante en herramientas de corte)</span></li>
-            <li><span class="text-gray-700 font-normal">3) Envía el producto debidamente protegido y embalado</span></li>
+          <li><span class="text-gray-700 font-normal">1) Solicita la devolución por email a dptocomercial@hecoma.com</span></li>
+          <li><span class="text-gray-700 font-normal">2) Te indicaremos la dirección de devolución e instrucciones de embalaje (especialmente importante en herramientas de corte)</span></li>
+          <li><span class="text-gray-700 font-normal">3) Envía el producto debidamente protegido y embalado</span></li>
         </ul>
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">6. Reembolso</h2>
         <p>Una vez recibidos los productos y revisado su estado, realizaremos el reembolso en un plazo máximo de 14 días naturales desde la comunicación del desistimiento. Podremos retener el reembolso hasta recibir los bienes o hasta que se acredite su devolución. El reembolso se realizará por el mismo medio de pago, salvo acuerdo expreso.</p>
@@ -54,7 +54,6 @@ import { Head } from '@inertiajs/vue3';
 </template>
 
 <style scoped>
-  /* Ajustes para imitar el interlineado y estilo de la imagen corporativa */
   p { text-align: justify; line-height: 1.6; }
   h2 { line-height: 1.2; }
   h3 { line-height: 1.2; }

@@ -8,13 +8,7 @@ import { ref } from 'vue';
 
 const passwordInput = ref(null);
 const currentPasswordInput = ref(null);
-
-const form = useForm({
-    current_password: '',
-    password: '',
-    password_confirmation: '',
-});
-
+const form = useForm({ current_password: '', password: '', password_confirmation: '', });
 const updatePassword = () => {
     form.put(route('password.update'), {
         preserveScroll: true,

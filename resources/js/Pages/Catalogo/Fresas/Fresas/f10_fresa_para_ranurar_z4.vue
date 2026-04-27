@@ -4,10 +4,7 @@
     import { computed } from 'vue';
     import { useCartStore } from '@/stores/cartStore';
     
-    const props = defineProps({
-      productos: Array // Datos de tu captura de MariaDB
-    });
-    
+    const props = defineProps({ productos: Array });
     const cart = useCartStore();
     
     /**
@@ -16,63 +13,38 @@
      */
     const tablaAgrupada = computed(() => {
         const grupos = {};
-    
         props.productos.forEach(prod => {
-            // Usamos una expresión regular para extraer los números de la referencia
-            // Ejemplo: "F10-14004M" -> Extrae 140 (D) y 04 (B)
-            // Ajustamos según el formato: F10- (D=3 dígitos) (B=2 dígitos)
             const match = prod.referencia.match(/F10-(\d{3})(\d{2,3})/);
             
             if (match) {
-                const diametro = match[1]; // Los primeros 3 números (140, 150...)
-                const ancho = parseInt(match[2]);   // Los siguientes números (04, 05...)
-                
-                // La base de la referencia para agrupar (quitando la M o H final)
+                const diametro = match[1];
+                const ancho = parseInt(match[2]);
                 const baseRef = prod.referencia.slice(0, -1); 
     
-                if (!grupos[baseRef]) {
-                    grupos[baseRef] = {
-                        medidas: {
-                            D: diametro,
-                            B: ancho,
-                            d: diametro > 145 ? '50' : '50',
-                            Z: '4' // Es una Z4
-                        },
-                        md: null,
-                        hss: null
-                    };
-                }
-    
+                if (!grupos[baseRef])
+                    grupos[baseRef] = {medidas: { D: diametro, B: ancho, d: diametro > 145 ? '50' : '50', Z: '4' }, md: null, hss: null };
+                
                 // Asignamos al hueco según la letra final
-                if (prod.referencia.endsWith('M')) {
+                if (prod.referencia.endsWith('M'))
                   grupos[baseRef].md = prod;
-                } else if (prod.referencia.endsWith('H')) {
+                else if (prod.referencia.endsWith('H'))
                   grupos[baseRef].hss = prod;
-                }
             }
         });
-    
         // Ordenamos por diámetro y luego por ancho
-        return Object.values(grupos).sort((a, b) => {
-            return a.medidas.D - b.medidas.D || a.medidas.B - b.medidas.B;
-        });
+        return Object.values(grupos).sort((a, b) => { return a.medidas.D - b.medidas.D || a.medidas.B - b.medidas.B; });
     });
     
     const agregarAlCarrito = (producto) => {
-        if (!producto) return;
+        if (!producto)
+            return;
         cart.addToCart({
-            id: producto.id,
-            referencia: producto.referencia,
-            tipo: producto.tipo,
-            familia: producto.familia,
-            precio: producto.precio,
-            stock: producto.stock
+            id: producto.id, referencia: producto.referencia,
+            tipo: producto.tipo, familia: producto.familia,
+            precio: producto.precio, stock: producto.stock
         });
     };
-    
-    const formatearPrecio = (precio) => {
-        return precio ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + '€' : '---';
-    };
+    const formatearPrecio = (precio) => { return precio ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + '€' : '---'; };
 </script>
 
 <template>
@@ -106,10 +78,8 @@
                     <li><span class="text-gray-700 font-normal">Placas de corte fabricadas en MD para trabajar con maderas y materiales duros o en HSS para maderas blandas</span></li>
                     <li><span class="text-gray-700 font-normal">Fabricado para avance mecánico. Bajo pedido si la necesita para avance manual.</span></li>
                 </ul>
-                
                 <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Aplicación:</h2>
                 <p>Herramienta para ranurar madera a lo largo de la fibra. El cuerpo de la herramienta está fabricado en aleación de acero de alta resistencia. Las placas de corte (carburo de tungsteno) son soldadas mediante aleación trimetálica. Con los mejores materiales y fabricación mediante CNC de alta precisión, obtenemos gran rendimiento, estabilidad en la calidad del corte y elevada duración de la herramienta. La fresa se entrega con las indicaciones de uso necesarias para el correcto trabajo de esta.</p>
-                
                 <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Referencias disponibles:</h2>
                 <p>Las referencias marcadas están en stock permanente y seran entregadas en un plazo estimado de entrega de 48–72 horas laborables desde la confirmación del pago. El resto de las referencias se entregan en un plazo máximo entre 3 y 9 semanas. Si necesitas un tamaño o perfil especial, por favor, contáctanos.</p>
             </div>
@@ -127,14 +97,10 @@
                                 <th class="px-3 py-4 text-center font-extrabold">B</th>
                                 <th class="px-3 py-4 text-center font-extrabold">d</th>
                                 <th class="px-3 py-4 text-center font-extrabold">Z</th>
-                                
                                 <th class="px-4 py-4 border-l-2 border-blue-100 font-bold">Ref MD</th>
-                                
                                 <th v-if="$page.props.auth.user" class="px-4 py-4 font-bold">Precio MD</th>
                                 <th v-if="$page.props.auth.user" class="px-4 py-4 text-center font-bold">Añadir Al carrito</th>
-
                                 <th class="px-4 py-4 border-l-2 border-gray-100 font-bold">Ref HSS</th>
-                                
                                 <th v-if="$page.props.auth.user" class="px-4 py-4 font-bold">Precio HSS</th>
                                 <th v-if="$page.props.auth.user" class="px-4 py-4 text-center font-bold">Añadir Al carrito</th>
                             </tr>
@@ -146,30 +112,12 @@
                                 <td class="px-3 py-4 text-center text-gray-600">{{ fila.medidas.B }}</td>
                                 <td class="px-3 py-4 text-center text-gray-600">{{ fila.medidas.d }}</td>
                                 <td class="px-3 py-4 text-center text-gray-600">{{ fila.medidas.Z }}</td>
-                                
-                                <td class="px-4 py-4 text-xs border-l-2 border-blue-100">
-                                    {{ fila.md ? fila.md.referencia : '---' }}
-                                </td>
-                                
-                                <td v-if="$page.props.auth.user" class="px-4 py-4 font-bold text-[#010cf7]">
-                                    {{ fila.md ? formatearPrecio(fila.md.precio) : '---' }}
-                                </td>
-
-                                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center">
-                                    <button v-if="fila.md" @click="agregarAlCarrito(fila.md)" class="hover:scale-125 transition-transform">🛒</button>
-                                </td>
-
-                                <td class="px-4 py-4 text-xs bg-[#fafcfe]/40 border-l-2 border-gray-100">
-                                    {{ fila.hss ? fila.hss.referencia : '---' }}
-                                </td>
-
-                                <td v-if="$page.props.auth.user" class="px-4 py-4 text-gray-900 bg-[#fafcfe]/40 font-bold text-[#010cf7]">
-                                    {{ fila.hss ? formatearPrecio(fila.hss.precio) : '---' }}
-                                </td>
-
-                                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center bg-[#fafcfe]/40">
-                                    <button v-if="fila.hss" @click="agregarAlCarrito(fila.hss)" class="hover:scale-125 transition-transform">🛒</button>
-                                </td>
+                                <td class="px-4 py-4 text-xs border-l-2 border-blue-100">{{ fila.md ? fila.md.referencia : '---' }}</td>
+                                <td v-if="$page.props.auth.user" class="px-4 py-4 font-bold text-[#010cf7]">{{ fila.md ? formatearPrecio(fila.md.precio) : '---' }}</td>
+                                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center"><button v-if="fila.md" @click="agregarAlCarrito(fila.md)" class="hover:scale-125 transition-transform">🛒</button></td>
+                                <td class="px-4 py-4 text-xs bg-[#fafcfe]/40 border-l-2 border-gray-100">{{ fila.hss ? fila.hss.referencia : '---' }}</td>
+                                <td v-if="$page.props.auth.user" class="px-4 py-4 text-gray-900 bg-[#fafcfe]/40 font-bold text-[#010cf7]">{{ fila.hss ? formatearPrecio(fila.hss.precio) : '---' }}</td>
+                                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center bg-[#fafcfe]/40"><button v-if="fila.hss" @click="agregarAlCarrito(fila.hss)" class="hover:scale-125 transition-transform">🛒</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -183,7 +131,6 @@
   p { text-align: justify; line-height: 1.6; }
   h2 { line-height: 1.2; }
   table th { font-size: 0.75rem; }
-  /* Estilo visual para separar bloques */
   td, th { border-right: 1px solid #f1f5f9; }
   td:last-child, th:last-child { border-right: none; }
   a { color: blue; text-decoration: underline;}

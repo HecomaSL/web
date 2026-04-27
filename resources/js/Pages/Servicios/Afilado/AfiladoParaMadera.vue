@@ -24,14 +24,14 @@ import { Head } from '@inertiajs/vue3';
         <img src="images/servicios/afilado-calidad-2.jpg">
         <p>Recupere la calidad de acabados y rendimiento de su herramienta para corte de la madera, confiando a HECOMA sus:</p>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">
-            <li><span class="text-gray-700 font-normal">Discos / Sierras circulares metal duro y acero (HSS)</span></li>
-            <li><span class="text-gray-700 font-normal">Sierras de cinta (afilado, triscado y reparación)</span></li>
-            <li><span class="text-gray-700 font-normal">Fresas de todo tipo y uso (ranurar, espigar, galces, etc.)</span></li>
-            <li><span class="text-gray-700 font-normal">Brocas metal duro, acero (HSS), de mango roscado, sujeción rápida, etc.</span></li>
-            <li><span class="text-gray-700 font-normal">Cuchillas de torno, reversibles, corrugadas, etc.</span></li>
-            <li><span class="text-gray-700 font-normal">Bedanos</span></li>
-            <li><span class="text-gray-700 font-normal">Cadenas de escopleadoras</span></li>
-            <li><span class="text-gray-700 font-normal">...</span></li>
+          <li><span class="text-gray-700 font-normal">Discos / Sierras circulares metal duro y acero (HSS)</span></li>
+          <li><span class="text-gray-700 font-normal">Sierras de cinta (afilado, triscado y reparación)</span></li>
+          <li><span class="text-gray-700 font-normal">Fresas de todo tipo y uso (ranurar, espigar, galces, etc.)</span></li>
+          <li><span class="text-gray-700 font-normal">Brocas metal duro, acero (HSS), de mango roscado, sujeción rápida, etc.</span></li>
+          <li><span class="text-gray-700 font-normal">Cuchillas de torno, reversibles, corrugadas, etc.</span></li>
+          <li><span class="text-gray-700 font-normal">Bedanos</span></li>
+          <li><span class="text-gray-700 font-normal">Cadenas de escopleadoras</span></li>
+          <li><span class="text-gray-700 font-normal">...</span></li>
         </ul>
         <p>Nuestro equipo comercial le ofrece el asesoramiento necesario y la recogida de sus herramientas de forma directa, sin intermediarios. Si lo desea, también recogemos y entregamos de forma urgente con las principales empresas de mensajería. Nuestros acuerdos a nivel nacional le ofrecen entrega puntual en 24, 48 o 72 horas, según su necesidad.</p>
       </div>

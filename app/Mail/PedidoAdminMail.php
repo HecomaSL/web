@@ -6,20 +6,16 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class PedidoAdminMail extends Mailable
-{
+class PedidoAdminMail extends Mailable {
     use Queueable, SerializesModels;
 
     public $pedido;
 
-    public function __construct($pedido)
-    {
+    public function __construct($pedido) {
         $this->pedido = $pedido;
     }
 
-    public function build()
-    {
-        return $this->subject('🚀 Nuevo pedido pendiente - HECOMA')
-                ->view('emails.pedido_admin');
+    public function build() {
+        return $this->subject('🚀 Nuevo pedido pendiente - HECOMA')->view('emails.pedido_admin');
     }
 }

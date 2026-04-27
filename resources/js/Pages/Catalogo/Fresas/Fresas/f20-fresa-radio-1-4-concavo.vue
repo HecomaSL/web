@@ -4,10 +4,7 @@
     import { computed } from 'vue';
     import { useCartStore } from '@/stores/cartStore';
     
-    const props = defineProps({
-      productos: Array // Datos de MariaDB
-    });
-    
+    const props = defineProps({ productos: Array });
     const cart = useCartStore();
     
     /**
@@ -18,76 +15,40 @@
         const grupos = {};
     
         props.productos.forEach(prod => {
-          // Regex: F20- (D:3 dígitos) R (Radio:2-3 dígitos) (Tipo:A o B) (Material:M o H)
-          // Ejemplo: F20-140R05AM -> match[1]=140, match[2]=05, match[3]=A, match[4]=M
           const match = prod.referencia.match(/F20-(\d{3})R(\d{2,3})(A|B)(M|H)/);
           
           if (match) {
             const diametro = match[1];
             const valorR = parseInt(match[2]);
             const tipoLetra = match[3];
-            const material = match[4]; // M o H
-            
-            // La baseRef sirve para juntar el producto MD y HSS en la misma fila
-            // Quitamos solo la última letra (M o H)
+            const material = match[4];
             const baseRef = prod.referencia.slice(0, -1); 
 
             if (!grupos[baseRef]) {
-              // Mapeo manual de B según el Radio (R)
-              const rMap = {
-                  5:  11,
-                  8:  14,
-                  10: 16,
-                  12: 18,
-                  15: 22,
-                  20: 27,
-                  25: 32,
-                  30: 38
-              };
-
-              grupos[baseRef] = {
-                  medidas: {
-                      D: diametro,
-                      B: rMap[valorR] || '---',
-                      d: '50', 
-                      Z: '4',
-                      tipo: tipoLetra,
-                      r: valorR
-                  },
-                  md: null,
-                  hss: null
-              };
+              const rMap = { 5:  11, 8:  14, 10: 16,  12: 18, 15: 22, 20: 27, 25: 32, 30: 38 };
+              grupos[baseRef] = {medidas: { D: diametro, B: rMap[valorR] || '---', d: '50', Z: '4', tipo: tipoLetra, r: valorR}, md: null, hss: null };
             }
 
-            // Asignación según la letra final extraída en el match[4]
             if (material === 'M')
               grupos[baseRef].md = prod;
             else if (material === 'H')
               grupos[baseRef].hss = prod;
           }
         });
-    
-        // Ordenamos la tabla por Diámetro y luego por Radio
-        return Object.values(grupos).sort((a, b) => {
-            return parseInt(a.medidas.D) - parseInt(b.medidas.D) ||  a.medidas.r - b.medidas.r ||  a.medidas.tipo.localeCompare(b.medidas.tipo);
-        });
+        return Object.values(grupos).sort((a, b) => { return parseInt(a.medidas.D) - parseInt(b.medidas.D) ||  a.medidas.r - b.medidas.r ||  a.medidas.tipo.localeCompare(b.medidas.tipo); });
     });
     
     const agregarAlCarrito = (producto) => {
-        if (!producto) return;
+        if (!producto)
+          return;
         cart.addToCart({
-            id: producto.id,
-            referencia: producto.referencia,
-            tipo: producto.tipo,
-            familia: producto.familia,
-            precio: producto.precio,
-            stock: producto.stock
+          id: producto.id, referencia: producto.referencia,
+          tipo: producto.tipo, familia: producto.familia,
+          precio: producto.precio, stock: producto.stock
         });
     };
     
-    const formatearPrecio = (precio) => {
-      return precio ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + '€' : '---';
-    };
+    const formatearPrecio = (precio) => { return precio ? parseFloat(precio).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + '€' : '---'; };
 </script>
 
 <template>
@@ -156,28 +117,12 @@
                 <td class="px-3 py-4 text-center text-gray-600">{{ fila.medidas.Z }}</td>
                 <td class="px-3 py-4 text-center text-gray-600">{{ fila.medidas.tipo }}</td>
                 <td class="px-3 py-4 text-center text-gray-600 font-bold">{{ fila.medidas.r }}</td>
-                
-                <td class="px-4 py-4 text-xs border-l-2 border-blue-100">
-                    {{ fila.md ? fila.md.referencia : '---' }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 font-semibold text-gray-900">
-                    {{ fila.md ? formatearPrecio(fila.md.precio) : '---' }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center">
-                    <button v-if="fila.md" @click="agregarAlCarrito(fila.md)" class="hover:scale-125 transition-transform">🛒</button>
-                    <span v-else>---</span>
-                </td>
-
-                <td class="px-4 py-4 text-xs bg-[#fafcfe]/40 border-l-2 border-gray-100">
-                    {{ fila.hss ? fila.hss.referencia : '---' }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 font-semibold text-gray-900 bg-[#fafcfe]/40">
-                    {{ fila.hss ? formatearPrecio(fila.hss.precio) : '---' }}
-                </td>
-                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center bg-[#fafcfe]/40">
-                    <button v-if="fila.hss" @click="agregarAlCarrito(fila.hss)" class="hover:scale-125 transition-transform">🛒</button>
-                    <span v-else>---</span>
-                </td>
+                <td class="px-4 py-4 text-xs border-l-2 border-blue-100">{{ fila.md ? fila.md.referencia : '---' }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 font-semibold text-gray-900">{{ fila.md ? formatearPrecio(fila.md.precio) : '---' }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center"><button v-if="fila.md" @click="agregarAlCarrito(fila.md)" class="hover:scale-125 transition-transform">🛒</button><span v-else>---</span></td>
+                <td class="px-4 py-4 text-xs bg-[#fafcfe]/40 border-l-2 border-gray-100">{{ fila.hss ? fila.hss.referencia : '---' }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 font-semibold text-gray-900 bg-[#fafcfe]/40">{{ fila.hss ? formatearPrecio(fila.hss.precio) : '---' }}</td>
+                <td v-if="$page.props.auth.user" class="px-4 py-4 text-center bg-[#fafcfe]/40"><button v-if="fila.hss" @click="agregarAlCarrito(fila.hss)" class="hover:scale-125 transition-transform">🛒</button><span v-else>---</span></td>
               </tr>
             </tbody>
           </table>

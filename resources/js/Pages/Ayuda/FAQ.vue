@@ -31,12 +31,12 @@ import { Head } from '@inertiajs/vue3';
         <ul class="list-disc list-inside space-y-2 ml-4 font-medium">
             <li><span class="text-gray-700 font-normal"></span>Sonseca:</li>
             <ul class="list-disc list-inside space-y-2 ml-4 font-medium">
-                <li><span class="text-gray-700 font-normal"></span>De Lunes a Viernes: de 9:00 a 14:00 y de 16:00 a 18:00</li>
+              <li><span class="text-gray-700 font-normal"></span>De Lunes a Viernes: de 9:00 a 14:00 y de 16:00 a 18:00</li>
             </ul>
             <li><span class="text-gray-700 font-normal"></span>Lucena:</li>
             <ul class="list-disc list-inside space-y-2 ml-4 font-medium">
-                <li><span class="text-gray-700 font-normal"></span>De Lunes a Jueves: de 8:00 a 14:00 y de 16:00 a 18:00</li>
-                <li><span class="text-gray-700 font-normal"></span>Viernes: de 7:00 a 15:00</li>
+              <li><span class="text-gray-700 font-normal"></span>De Lunes a Jueves: de 8:00 a 14:00 y de 16:00 a 18:00</li>
+              <li><span class="text-gray-700 font-normal"></span>Viernes: de 7:00 a 15:00</li>
             </ul>
         </ul>
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">¿HECOMA ofrece asesoramiento técnico antes de fabricar?</h2>
@@ -51,16 +51,15 @@ import { Head } from '@inertiajs/vue3';
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">¿Qué ventajas tiene comprar herramientas HECOMA frente a alternativas genéricas?</h2>
         <p>Princiapalmente:</p>
         <ul class="list-disc list-inside space-y-2 ml-4 font-medium">
-            <li><span class="text-gray-700 font-normal">Herramienta adaptada al trabajo real del cliente</span></li>
-            <li><span class="text-gray-700 font-normal">Calidad de acabado y rendimiento</span></li>
-            <li><span class="text-gray-700 font-normal">Rapidez de fabricación y respuesta</span></li>
-            <li><span class="text-gray-700 font-normal">Asesoramiento especializado</span></li>
+          <li><span class="text-gray-700 font-normal">Herramienta adaptada al trabajo real del cliente</span></li>
+          <li><span class="text-gray-700 font-normal">Calidad de acabado y rendimiento</span></li>
+          <li><span class="text-gray-700 font-normal">Rapidez de fabricación y respuesta</span></li>
+          <li><span class="text-gray-700 font-normal">Asesoramiento especializado</span></li>
         </ul>
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">¿Por qué es obligatorio registrarse para comprar en la tienda online y ver precios?</h2>
         <p>En HECOMA trabajamos principalmente con profesionales y empresas del sector de la madera. Al requerir un registro previo para visualizar los precios, podemos ofrecer una atención personalizada y tarifas competitivas ajustadas al volumen y necesidades de cada cliente. Además, el registro garantiza un entorno de compra seguro, permite un seguimiento exhaustivo de los pedidos, acceso a facturas y la posibilidad de consultar el histórico de compras para facilitar la reposición de herramientas específicas de forma rápida.</p>
       </div>
     </section>
-
   </MainLayout>
 </template>
 

@@ -5,26 +5,12 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
 
-const form = useForm({
-    nombre: '',           // Coincide con BBDD
-    email: '',            // Coincide con BBDD
-    contrasena: '',       // Coincide con BBDD
-    contrasena_confirmation: '',
-    tlfn: '',             // Coincide con BBDD
-    direccion: '',        // Coincide con BBDD
-    nombreEmpresa: '',    // Coincide con BBDD
-});
-
-const submit = () => {
-    form.post(route('register'), {
-        onFinish: () => form.reset('contrasena', 'contrasena_confirmation'),
-    });
-};
+const form = useForm({ nombre: '', email: '', contrasena: '', contrasena_confirmation: '', tlfn: '',direccion: '', nombreEmpresa: '', });
+const submit = () => { form.post(route('register'), { onFinish: () => form.reset('contrasena', 'contrasena_confirmation'), }); };
 </script>
 
 <template>
     <Head title="Crear Cuenta | HECOMA" />
-
     <MainLayout>
         <section class="bg-[#010cf7] py-6 mb-12">
             <div class="container mx-auto px-6">
@@ -78,9 +64,7 @@ const submit = () => {
                     </div>
 
                     <div class="md:col-span-2 mt-6 flex flex-col space-y-4">
-                        <button type="submit" class="btn-register-hecoma" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                            Registrarse
-                        </button>
+                        <button type="submit" class="btn-register-hecoma" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">Registrarse</button>
                         <div class="text-center">
                             <Link :href="route('login')" class="text-sm text-gray-600 underline hover:text-[#010cf7]">¿Ya tienes una cuenta? Inicia sesión</Link>
                         </div>
