@@ -7,17 +7,17 @@ import { Head } from '@inertiajs/vue3';
   <Head title="AFILADO DE HERRAMIENTAS DE MADERA | HECOMA" />
 
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-12">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div id="divh1" class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">AFILADO DE HERRAMIENTAS PARA CORTE DE MADERA</h1>
         <p class="text-white font-bold ">Servicios de afilado confiables, de calidad y con el máximo rendimiento.</p>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Afilado y mantenimiento profesional para maximizar el rendimiento de sus herramientas</h2>
-        <p>Saque el máximo partido a su herramienta con nuestros servicios de afilado y mantenimiento. El rendimiento, la calidad de acabados y la fiabilidad, son nuestro baluarte.  Somos fabricantes, y por tanto recomendamos un correcto mantenimiento y afilado de sus herramientas de metal duro o acero rápido (HSS), para alargar su vida sin perder calidad.</p>
+        <p><b>Saque el máximo partido</b> a su herramienta con nuestros <b>servicios de afilado y mantenimiento</b>. El <b>rendimiento, la calidad de acabados y la fiabilidad</b>, son nuestro baluarte. Somos fabricantes, y por tanto recomendamos un correcto mantenimiento y afilado de sus herramientas de metal duro o acero rápido (HSS), para alargar su vida sin perder calidad.</p>
         <iframe width="100%" height="450" src="https://www.youtube.com/embed/EqSfdHvMbV0" title="Mantenimiento Herramientas de corte" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-xl shadow-lg mt-8"></iframe>
         <img src="images/servicios/afilado-calidad.jpg">
         <p>Las últimas tecnologías <a href="https://hecoma.com/incorporamos-walter-heliotronic-power-diamond-400/">para afilado mediante tecnología CNC</a>, nuestro personal con alta cualificación y gran experiencia, nuestros controles de calidad, así como una ágil logística, hacen de HECOMA S.L. su aliado perfecto en el día a día de su fábrica</p>

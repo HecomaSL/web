@@ -6,13 +6,13 @@ import { Head } from '@inertiajs/vue3';
 <template>
     <Head title="Broca MDI helicoidal acabado Z3 (BA06) - HECOMA" />
     <MainLayout>
-        <section class="bg-[#010cf7] py-6 mb-12">
+        <section class="bg-[#010cf7] py-6 mb-5">
             <div class="container mx-auto px-6">
                 <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Serie 1.6 Broca MDI helicoidal acabado Z3 (BA06)</h1>
             </div>
         </section>
 
-        <section class="container mx-auto px-6 mb-16">
+        <section class="container mx-auto px-6 mb-10">
             <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
                 <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Serie 1.6.1 Broca MDI helicoidal acabado positiva Z3</h2>
             </div>
@@ -37,7 +37,7 @@ import { Head } from '@inertiajs/vue3';
                 </div>
             </div>
         </section>
-        <section class="container mx-auto px-6 mb-16">
+        <section class="container mx-auto px-6 mb-10">
             <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
                 <h3 class="text-[#010cf7] text-3xl font-bold mb-6">Medidas disponibles</h3>
                 <p>Las referencias marcadas están en stock permanente y seran entregadas en un plazo estimado de entrega de 48–72 horas laborables desde la confirmación del pago. El resto de las referencias se entregan en un plazo máximo entre 3 y 9 semanas. Si necesitas un tamaño o perfil especial, por favor, contáctanos.</p>
@@ -105,7 +105,7 @@ import { Head } from '@inertiajs/vue3';
             </div>
         </section>
 
-        <section class="container mx-auto px-6 mb-16">
+        <section class="container mx-auto px-6 mb-10">
             <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
                 <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Serie 1.6.2 Broca MDI helicoidal acabado negativo Z3
                 </h2>
@@ -131,7 +131,7 @@ import { Head } from '@inertiajs/vue3';
                 </div>
             </div>
         </section>
-        <section class="container mx-auto px-6 mb-16">
+        <section class="container mx-auto px-6 mb-10">
             <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
                 <h3 class="text-[#010cf7] text-3xl font-bold mb-6">Medidas disponibles</h3>
                 <p>Las referencias marcadas están en stock permanente y seran entregadas en un plazo estimado de entrega de 48–72 horas laborables desde la confirmación del pago. El resto de las referencias se entregan en un plazo máximo entre 3 y 9 semanas. Si necesitas un tamaño o perfil especial, por favor, contáctanos.</p>

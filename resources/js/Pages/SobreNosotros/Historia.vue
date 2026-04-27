@@ -6,7 +6,7 @@ import { Head } from '@inertiajs/vue3';
 <template>
   <Head title="Nuestra Historia - HECOMA" />
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-10">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Trayectoria en la Fabricación de Herramientas de Corte</h1>
       </div>

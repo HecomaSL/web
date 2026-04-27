@@ -53,13 +53,13 @@
   <Head title="F40 Fresa para plafones - HECOMA" />
 
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-12">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">F40 Fresa para plafones</h1>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <div class="overflow-hidden shadow-md">
           <img src="images/fresas/f40.jpg" alt="Fresa para plafones" style="width: 100%;" />
@@ -70,7 +70,7 @@
         </div>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Características de nuestra fresa para plafones:</h2>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">

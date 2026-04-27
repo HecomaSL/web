@@ -12,7 +12,7 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Serie 1.13.1 Broca BD13</h2>
       </div>
@@ -39,7 +39,7 @@ import { Head } from '@inertiajs/vue3';
         </div>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h3 class="text-[#010cf7] text-3xl font-bold mb-6">Medidas disponibles</h3>
         <p>Las referencias marcadas están en stock permanente y seran entregadas en un plazo estimado de entrega de
@@ -364,7 +364,7 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Serie 1.13.2 Broca BP13</h2>
       </div>
@@ -391,7 +391,7 @@ import { Head } from '@inertiajs/vue3';
         </div>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Medidas disponibles</h2>
         <p>Las referencias marcadas están en stock permanente y seran entregadas en un plazo estimado de entrega de

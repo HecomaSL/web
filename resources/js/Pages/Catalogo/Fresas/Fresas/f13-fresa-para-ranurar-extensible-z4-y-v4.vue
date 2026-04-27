@@ -51,25 +51,26 @@
   <Head title="F13 Fresa Extensible para ranurar Z4 + V4 - HECOMA" />
 
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-12">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">F13 Fresa Extensible para ranurar Z4 + V4</h1>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <div class="overflow-hidden shadow-md">
           <img src="images/fresas/f13.jpg" alt="Fresa Extensible para ranurar Z4 + V4" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
           <p>La fresa para ranurar extensible F13 se consolida como la solución más versátil y rentable para mecanizados que exigen anchos de ranura variables con una precisión milimétrica.</p>
-          <p>Gracias a su diseño modular desarrollado por HECOMA®, permite configurar la medida exacta de corte en cualquier sentido de la veta, optimizando el stock de utillaje en el taller. Su arquitectura técnica de 4 cortes principales (Z4) combinados con 4 precortadores (V4) garantiza paredes laterales perfectamente escuadradas y libres de astillamiento, incluso en maderas transversales. Disponible con placas de Metal Duro (HM) para una resistencia extrema en materiales abrasivos o en HSS para acabados ultra-limpios en maderas blandas, está específicamente diseñada para maquinaria con avance mecánico.</p>
+          <p>Gracias a su diseño modular desarrollado por HECOMA®, permite configurar la medida exacta de corte en cualquier sentido de la veta, optimizando el stock de utillaje en el taller. Su arquitectura técnica de 4 cortes principales (Z4) combinados con 4 precortadores (V4) garantiza paredes laterales perfectamente escuadradas y libres de astillamiento, incluso en maderas transversales.</p>
+          <p>Disponible con placas de Metal Duro (HM) para una resistencia extrema en materiales abrasivos o en HSS para acabados ultra-limpios en maderas blandas, está específicamente diseñada para maquinaria con avance mecánico.</p>
           <p>Es la opción predilecta para industrias que buscan la máxima flexibilidad operativa, estabilidad dinámica y una larga vida útil en procesos de producción donde la precisión y la polivalencia son factores críticos.</p>
         </div>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Características de nuestras fresas extensibles para ranurar:</h2>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">

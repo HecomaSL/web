@@ -17,7 +17,7 @@ const catalogoBrocas = [
     <Head title="BROCAS - HECOMA" />
   
     <MainLayout>
-        <section class="bg-[#010cf7] py-6 mb-12">
+        <section class="bg-[#010cf7] py-6 mb-15">
             <div class="container mx-auto px-6">
                 <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">BROCAS</h1>
             </div>

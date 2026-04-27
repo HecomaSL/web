@@ -21,18 +21,18 @@ const catalogoDiscos = [
     <Head title="DISCOS - HECOMA" />
   
     <MainLayout>
-        <section class="bg-[#010cf7] py-6 mb-12">
+        <section class="bg-[#010cf7] py-6 mb-5">
             <div class="container mx-auto px-6">
                 <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">DISCOS DE CORTE PARA MADERA </h1>
             </div>
         </section>
   
-        <section class="container mx-auto px-6 mb-16">
+        <section class="container mx-auto px-6 mb-10">
             <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
-                <h2 class="text-[#010cf7] text-3xl font-bold mb-8">Discos de Corte Industrial de Alto Rendimiento</h2>
-                <p>Nuestros discos de corte están diseñados para ofrecer un gran rendimiento, durabilidad y cortes limpios. Fabricados con materiales de alta calidad, aseguran precisión y eficiencia en cada aplicación, optimizando tus procesos de producción y garantizando acabados profesionales.</p>
-                <p>Las referencias marcadas están en stock permanente y seran entregadas en un plazo estimado de entrega de 48–72 horas laborables desde la confirmación del pago. El resto de las referencias se entregan en un plazo máximo entre 3 y 9 semanas. Si necesitas un tamaño o perfil especial, por favor, contáctanos.</p>
-                <h2 class="text-[#010cf7] text-3xl font-bold mb-8">Nuestro catálogo de Discos de corte:</h2>
+                <h2 class="text-[#010cf7] text-3xl font-bold">Discos de Corte Industrial de Alto Rendimiento</h2>
+                <p>Nuestros <b>discos de corte</b> están diseñados para ofrecer un gran rendimiento, durabilidad y cortes limpios. Fabricados con materiales de alta calidad, aseguran precisión y eficiencia en cada aplicación, optimizando tus procesos de producción y garantizando acabados profesionales.</p>
+                <p>Las referencias <b>marcadas están en stock</b> permanente y seran entregadas en un plazo estimado de entrega de <b>48–72 horas laborables</b> desde la confirmación del pago. El <b>resto de las referencias</b> se entregan en un plazo máximo <b>entre 3 y 9 semanas</b>. Si necesitas un tamaño o perfil especial, por favor, contáctanos.</p>
+                <h2 class="text-[#010cf7] text-3xl font-bold">Nuestro catálogo de Discos de corte:</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <a v-for="(item, index) in catalogoDiscos" :key="index" :href="item.link" class="group flex flex-col h-[420px] border border-gray-200 shadow-sm hover:shadow-md transition-all overflow-hidden rounded-sm bg-white" >
                         <div class="h-[80%] w-full flex items-center justify-center bg-white p-6">

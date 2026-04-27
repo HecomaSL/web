@@ -52,13 +52,13 @@
   <Head title="F60 Fresa para juntas longitudinales - HECOMA" />
 
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-12">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">F60 Fresa para juntas longitudinales</h1>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <div class="overflow-hidden shadow-md">
           <img src="images/fresas/f60.png" alt="Fresa F60" style="width: 100%;" />

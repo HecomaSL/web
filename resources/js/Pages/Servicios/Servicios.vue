@@ -6,21 +6,21 @@ import { Head } from '@inertiajs/vue3';
 <template>
   <Head title="SERVICIOS | HECOMA" />
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-12">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div id="divh1" class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">SERVICIOS DE AFILADO DE HERRAMIENTAS DE ALTA PRECISIÓN</h1>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16 ">
+    <section class="container mx-auto px-6 mb-10 ">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Servicios técnicos especializados en herramientas de corte</h2>
         <p>En HECOMA, llevamos más de 20 años ayudando a empresas a mejorar la productividad y eficiencia mediante herramientas de corte de alta precisión y soluciones a medida. Combinamos tecnología avanzada con experiencia técnica especializada, asegurado resultados precisos, duraderos y adaptados a las necesidades de cada cliente..</p>
-        <p>Trabajamos con un enfoque orientado a la calidad y al rendimiento, ofreciendo asesoramiento profesional, mantenimiento y soluciones que garantizan un corte estable, seguro y eficiente en el día a día. Nos comprometemos a acompañarte en cada fase del proyecto, aportando soporte cercano y respuesta ágil para que tu maquinaria y tus herramientas trabajen siempre al máximo nivel.</p>
+        <p>Trabajamos con un <b>enfoque orientado a la calidad y al rendimiento</b>, ofreciendo asesoramiento profesional, mantenimiento y soluciones que garantizan un corte estable, seguro y eficiente en el día a día. Nos comprometemos a acompañarte en cada fase del proyecto, aportando soporte cercano y respuesta ágil para que tu maquinaria y tus herramientas trabajen siempre al máximo nivel.</p>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Elige el servicio que mejor se adapta a tu producción</h2>
         <div class="space-4 text-gray-700 botones">     

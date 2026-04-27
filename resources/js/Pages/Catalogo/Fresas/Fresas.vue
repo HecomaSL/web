@@ -31,19 +31,19 @@ const catalogoFRESAS = [
     <Head title="FRESAS - HECOMA" />
   
     <MainLayout>
-        <section class="bg-[#010cf7] py-6 mb-12">
+        <section class="bg-[#010cf7] py-6 mb-5">
             <div class="container mx-auto px-6">
                 <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">FRESAS PARA MADERA</h1>
             </div>
         </section>
   
-        <section class="container mx-auto px-6 mb-16">
+        <section class="container mx-auto px-6 mb-10">
             <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
-                <h2 class="text-[#010cf7] text-3xl font-bold mb-8">Fresas de Alto Rendimiento</h2>
+                <h2 class="text-[#010cf7] text-3xl font-bold">Fresas de Alto Rendimiento</h2>
                 <p>Descubre nuestra completa gama de fresas, diseñadas para ofrecer precisión, durabilidad y acabados perfectos en todo tipo de mecanizados, desde fresas para ranurar hasta fresas para galces. En HECOMA contamos con referencias en stock permanente y la posibilidad de fabricar perfiles y dimensiones especiales a medida según tus necesidades. Cada fresa se produce con materiales de alta calidad (metal duro y HSS) y está pensada para maximizar el rendimiento y la estabilidad en corte.</p>
                 <p>Las referencias marcadas están en stock permanente seran entregadas en un plazo estimado de entrega de 48–72 horas laborables desde la confirmación del pago. El resto de las referencias se entregan en un plazo máximo entre 3 y 9 semanas. Ante cualquier duda, consúltenos.</p>     
                 
-                <h2 class="text-[#010cf7] text-3xl font-bold mb-8">Nuestro catálogo de fresas:</h2>
+                <h2 class="text-[#010cf7] text-3xl font-bold">Nuestro catálogo de fresas:</h2>
                 <p>El presente catálogo incluye la gama estándar de nuestras fresas de alto rendimiento. HECOMA, como fabricante de herramienta especial, podrá fabricarle cualquier tipo de herramienta que no se incluya en el presente catálogo, y ponemos a su disposición nuestro departamento técnico-comercial para asesorarle y ofrecerle la mejor solución. En el catálogo se describen las aplicaciones más habituales con este tipo de herramienta y pretendemos que le sirva de guía para la elección de la herramienta más adecuada a su necesidad.</p>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-start">

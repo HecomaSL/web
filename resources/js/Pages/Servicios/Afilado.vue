@@ -7,14 +7,14 @@ import { Head } from '@inertiajs/vue3';
   <Head title="AFILADO DE HERRAMIENTAS DE ALTA PRECISIÓN | HECOMA" />
 
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-12">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div id="divh1" class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">SERVICIOS DE AFILADO DE HERRAMIENTAS DE ALTA PRECISIÓN</h1>
         <p class="text-white font-bold ">En HECOMA, devolvemos a sus herramientas la geometría de corte original. Especialistas en soluciones integrales para la industria de la madera, el metal y composites.</p>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Excelencia en el mantenimiento de herramientas de corte</h2>
         <p>El rendimiento de su línea de producción depende directamente del estado de sus filos. Un afilado deficiente no solo empeora el acabado del producto, sino que aumenta el consumo energético y reduce la vida útil de la maquinaria.</p>
@@ -22,7 +22,7 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Nuestros servicios de afilado:</h2>
           <div class="space-y-4 text-gray-700">
@@ -36,7 +36,7 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">¿Su herramienta necesita pasar por HECOMA?</h2>
           <div class="space-y-4 text-gray-700">

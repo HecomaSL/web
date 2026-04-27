@@ -38,13 +38,13 @@ function formatearPrecio(precio) {
   <Head title="Serie 2.3 Discos para cortes de alta precisión - HECOMA" />
 
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-12">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Serie 2.3 Discos para cortes de alta precisión.</h1>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <div class="img overflow-hidden shadow-md">
           <img src="/images/discos/discos.jpg" alt="" style="width: 75%;" />
@@ -60,7 +60,7 @@ function formatearPrecio(precio) {
         <p>Gracias a los estándares de fabricación de HECOMA®, estos discos minimizan las desviaciones y vibraciones durante el proceso de corte, asegurando una geometría perfecta en cada pieza. Es la elección predilecta para trabajos de carpintería técnica y seccionado de precisión, donde la tolerancia al error es mínima y la terminación profesional es el objetivo principal.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Estas son las especificaciones</h2>
         <ul class="list-disc list-inside space-y-2 ml-4 text-[#010cf7] font-medium">
@@ -73,7 +73,7 @@ function formatearPrecio(precio) {
         <p>Las referencias marcadas están en stock permanente y seran entregadas en un plazo estimado de entrega de 48–72 horas laborables desde la confirmación del pago. El resto de las referencias se entregan en un plazo máximo entre 3 y 9 semanas. Si necesitas un tamaño o perfil especial, por favor, contáctanos.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto">
         <template v-for="(items, familia) in groupedProducts" :key="familia">
           <div class="group-header">{{ familia }}</div>

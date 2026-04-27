@@ -14,12 +14,10 @@ const props = defineProps({
     <Head :title="tituloSeccion" />
 
     <MainLayout>
-        <section class="py-6 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="max-w-6xl mx-auto">
-                    <h1 :style="{ color: colorCorporativo }" class="text-3xl md:text-4xl font-bold uppercase tracking-tight">{{ tituloSeccion }}</h1>
+        <section class="bg-[#010cf7] py-6 mb-5">
+            <div class="container mx-auto px-6 text-center">
+                    <h1 class="text-white text-3xl md:text-4xl font-bold uppercase tracking-tight">{{ tituloSeccion }}</h1>
                 </div>
-            </div>
         </section>
 
         <section class="pb-16 bg-white">
@@ -39,8 +37,6 @@ const props = defineProps({
 
 <style scoped>
     h1 { border-bottom: 2px solid transparent; }
-    /* Efecto suave de desplazamiento al pasar el ratón */
     .group { transition: transform 0.2s ease-in-out; }
-    /* Estilos opcionales para que el texto de la serie se vea limpio */
     h1 { line-height: 1.2; }
 </style>
