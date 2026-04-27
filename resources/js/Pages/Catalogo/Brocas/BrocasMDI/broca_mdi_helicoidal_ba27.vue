@@ -5,13 +5,12 @@ import { Head } from '@inertiajs/vue3';
 
 <template>
 
-  <Head title="Broca MDI Helicoidal acabado positiva Z1 - HECOMA" />
+  <Head title="Broca MDI Helicoidal acabado Z3 (BA27) - HECOMA" />
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-12">
       <div class="container mx-auto px-6">
-        <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Serie 1.27 Broca MDI
-          Helicoidal acabado Z3 (BA27)</h1>
+        <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Serie 1.27 Broca MDI Helicoidal acabado Z3 (BA27)</h1>
       </div>
     </section>
 
@@ -50,6 +49,8 @@ import { Head } from '@inertiajs/vue3';
               <th class="px-3 py-4 text-center font-extrabold">Lc</th>
               <th class="px-3 py-4 text-center font-extrabold">Lt</th>
               <th class="px-3 py-4 text-center font-extrabold">Øm</th>
+              <th class="px-3 py-4 text-center font-extrabold">Z</th>
+              <th class="px-3 py-4 text-center font-extrabold">Rotacion</th>
               <th class="px-3 py-4 text-center font-extrabold">Articulo</th>
               <th class="px-3 py-4 text-center font-extrabold">¿Stock?</th>
               <th class="px-3 py-4 text-center font-extrabold">Comprar</th>
@@ -62,6 +63,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">40</td>
               <td class="px-3 py-4 text-center text-gray-600">150</td>
               <td class="px-3 py-4 text-center text-gray-600">16</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z3</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA16.40.150DP3-16</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA16.40.150DP3-16&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA16.40.150DP3-16">aqui</a></td>
@@ -72,6 +75,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">40</td>
               <td class="px-3 py-4 text-center text-gray-600">200</td>
               <td class="px-3 py-4 text-center text-gray-600">16</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z3</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA16.40.200DP3-16</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA16.40.200DP3-16&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA16.40.200DP3-16">aqui</a></td>
@@ -82,6 +87,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">40</td>
               <td class="px-3 py-4 text-center text-gray-600">200</td>
               <td class="px-3 py-4 text-center text-gray-600">20</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z3</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA20.40.200DP3-20</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA20.40.200DP3-20&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA20.40.200DP3-20">aqui</a></td>
@@ -96,19 +103,8 @@ import { Head } from '@inertiajs/vue3';
 
 <style scoped>
 /* Ajustes para imitar el interlineado y estilo de la imagen corporativa */
-p {
-  text-align: justify;
-  line-height: 1.6;
-}
-
-h2 {
-  line-height: 1.2;
-}
-
-h3 {
-  line-height: 1.2;
-}
-a {
-  color: blue;
-}
+p { text-align: justify; line-height: 1.6; }
+h2 { line-height: 1.2; }
+h3 { line-height: 1.2; }
+a { color: blue; }
 </style>

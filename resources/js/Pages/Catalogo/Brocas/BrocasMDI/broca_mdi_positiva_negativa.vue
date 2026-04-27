@@ -5,13 +5,12 @@ import { Head } from '@inertiajs/vue3';
 
 <template>
 
-  <Head title="Broca MDI Helicoidal acabado positiva Z1 - HECOMA" />
+  <Head title="Broca MDI Helicoidal Acabado Positivo-Negativo - HECOMA" />
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-12">
       <div class="container mx-auto px-6">
-        <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Serie 1.8 Broca MDI
-          Helicoidal Acabado Positivo-Negativo</h1>
+        <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Serie 1.8 Broca MDI Helicoidal Acabado Positivo-Negativo</h1>
       </div>
     </section>
 
@@ -52,6 +51,8 @@ import { Head } from '@inertiajs/vue3';
               <th class="px-3 py-4 text-center font-extrabold">Lc</th>
               <th class="px-3 py-4 text-center font-extrabold">Lt</th>
               <th class="px-3 py-4 text-center font-extrabold">Øm</th>
+              <th class="px-3 py-4 text-center font-extrabold">Z</th>
+              <th class="px-3 py-4 text-center font-extrabold">Rotacion</th>
               <th class="px-3 py-4 text-center font-extrabold">Articulo</th>
               <th class="px-3 py-4 text-center font-extrabold">¿Stock?</th>
               <th class="px-3 py-4 text-center font-extrabold">Comprar</th>
@@ -64,6 +65,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">21</td>
               <td class="px-3 py-4 text-center text-gray-600">60</td>
               <td class="px-3 py-4 text-center text-gray-600">4</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z1+1</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA4.21.60DPN1-04W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA4.21.60DPN1-04W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA4.21.60DPN1-04W">aqui</a></td>
@@ -74,6 +77,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">22</td>
               <td class="px-3 py-4 text-center text-gray-600">70</td>
               <td class="px-3 py-4 text-center text-gray-600">5</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z1+1</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA5.22.70DPN1-05W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA5.22.70DPN1-05W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA5.22.70DPN1-05W">aqui</a></td>
@@ -84,6 +89,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">22</td>
               <td class="px-3 py-4 text-center text-gray-600">60</td>
               <td class="px-3 py-4 text-center text-gray-600">6</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z1+1</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA6.22.60DPN1-06W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA6.22.60DPN1-06W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA6.22.60DPN1-06W">aqui</a></td>
@@ -132,6 +139,8 @@ import { Head } from '@inertiajs/vue3';
               <th class="px-3 py-4 text-center font-extrabold">Lc</th>
               <th class="px-3 py-4 text-center font-extrabold">Lt</th>
               <th class="px-3 py-4 text-center font-extrabold">Øm</th>
+              <th class="px-3 py-4 text-center font-extrabold">Z</th>
+              <th class="px-3 py-4 text-center font-extrabold">Rotacion</th>
               <th class="px-3 py-4 text-center font-extrabold">Articulo</th>
               <th class="px-3 py-4 text-center font-extrabold">¿Stock?</th>
               <th class="px-3 py-4 text-center font-extrabold">Comprar</th>
@@ -144,6 +153,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">12</td>
               <td class="px-3 py-4 text-center text-gray-600">60</td>
               <td class="px-3 py-4 text-center text-gray-600">6</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z2+2</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA6.12.60DPN2-06W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA6.12.60DPN2-06W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA6.12.60DPN2-06W">aqui</a></td>
@@ -154,6 +165,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">18</td>
               <td class="px-3 py-4 text-center text-gray-600">70</td>
               <td class="px-3 py-4 text-center text-gray-600">8</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z2+2</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA8.18.70DPN2-08W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA8.18.70DPN2-08W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA8.18.70DPN2-08W">aqui</a></td>
@@ -164,6 +177,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">22</td>
               <td class="px-3 py-4 text-center text-gray-600">70</td>
               <td class="px-3 py-4 text-center text-gray-600">8</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z2+2</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA8.22.70DPN2-08W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA8.22.70DPN2-08W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA8.22.70DPN2-08W">aqui</a></td>
@@ -174,6 +189,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">18</td>
               <td class="px-3 py-4 text-center text-gray-600">70</td>
               <td class="px-3 py-4 text-center text-gray-600">10</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z2+2</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA10.18.70DPN2-10W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA10.18.70DPN2-10W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA10.18.70DPN2-10W">aqui</a></td>
@@ -184,6 +201,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">22</td>
               <td class="px-3 py-4 text-center text-gray-600">70</td>
               <td class="px-3 py-4 text-center text-gray-600">10</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z2+2</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA10.22.70DPN2-10W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA10.22.70DPN2-10W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA10.22.70DPN2-10W">aqui</a></td>
@@ -194,6 +213,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">25</td>
               <td class="px-3 py-4 text-center text-gray-600">80</td>
               <td class="px-3 py-4 text-center text-gray-600">10</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z2+2</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA10.25.80DPN2-10W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA10.25.80DPN2-10W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA10.25.80DPN2-10W">aqui</a></td>
@@ -204,6 +225,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">18</td>
               <td class="px-3 py-4 text-center text-gray-600">70</td>
               <td class="px-3 py-4 text-center text-gray-600">12</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z2+2</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA12.18.70DPN2-12W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA12.18.70DPN2-12W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA12.18.70DPN2-12W">aqui</a></td>
@@ -220,6 +243,8 @@ import { Head } from '@inertiajs/vue3';
               <th class="px-3 py-4 text-center font-extrabold">Lc</th>
               <th class="px-3 py-4 text-center font-extrabold">Lt</th>
               <th class="px-3 py-4 text-center font-extrabold">Øm</th>
+              <th class="px-3 py-4 text-center font-extrabold">Z</th>
+              <th class="px-3 py-4 text-center font-extrabold">Rotacion</th>
               <th class="px-3 py-4 text-center font-extrabold">Articulo</th>
               <th class="px-3 py-4 text-center font-extrabold">¿Stock?</th>
               <th class="px-3 py-4 text-center font-extrabold">Comprar</th>
@@ -232,6 +257,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">25</td>
               <td class="px-3 py-4 text-center text-gray-600">83</td>
               <td class="px-3 py-4 text-center text-gray-600">12</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z3+3</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA12.25.83DPN3-12W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA12.25.83DPN3-12W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA12.25.83DPN3-12W">aqui</a></td>
@@ -242,6 +269,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">55</td>
               <td class="px-3 py-4 text-center text-gray-600">110</td>
               <td class="px-3 py-4 text-center text-gray-600">16</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z3+3</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA16.55.110DPN3-16W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA16.55.110DPN3-16W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA16.55.110DPN3-16W">aqui</a></td>
@@ -252,6 +281,8 @@ import { Head } from '@inertiajs/vue3';
               <td class="px-3 py-4 text-center text-gray-600">100</td>
               <td class="px-3 py-4 text-center text-gray-600">165</td>
               <td class="px-3 py-4 text-center text-gray-600">20</td>
+              <td class="px-3 py-4 text-center text-gray-600">Z3+3</td>
+              <td class="px-3 py-4 text-center text-gray-600">Rotacion a derechas</td>
               <td class="px-3 py-4 text-center text-gray-600">BA20.100.165DPN3-20W</td>
               <td class="px-3 py-4 text-center text-gray-600">No</td>
               <td class="px-3 py-4 text-center text-gray-600">Pedir presupuesto <a href="mailto:dptocomercial@hecoma.com?subject=Prespuesto%broca%BA20.100.165DPN3-20W&amp;body=Buenas,%necesito%prespuesto%de%la%broca%BA20.100.165DPN3-20W">aqui</a></td>
@@ -265,19 +296,8 @@ import { Head } from '@inertiajs/vue3';
 
 <style scoped>
 /* Ajustes para imitar el interlineado y estilo de la imagen corporativa */
-p {
-  text-align: justify;
-  line-height: 1.6;
-}
-
-h2 {
-  line-height: 1.2;
-}
-
-h3 {
-  line-height: 1.2;
-}
-a {
-  color: blue;
-}
+p { text-align: justify; line-height: 1.6; }
+h2 { line-height: 1.2; }
+h3 { line-height: 1.2; }
+a { color: blue; }
 </style>
