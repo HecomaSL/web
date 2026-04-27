@@ -40,7 +40,11 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
     <section class="container mx-auto px-6 mb-16">
-      <div class="overflow-x-auto shadow-xl rounded-lg border border-gray-200">
+      <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
+        <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Medidas disponibles</h2>
+        <p>Las referencias marcadas están en stock permanente y seran entregadas en un plazo estimado de entrega de
+          48–72 horas laborables desde la confirmación del pago. El resto de las referencias se entregan en un plazo
+          máximo entre 3 y 9 semanas. Si necesitas un tamaño o perfil especial, por favor, contáctanos.</p>
         <table class="w-full text-sm text-left border-collapse bg-white">
           <thead class="font-bold">
             <tr class="bg-[#e7f5ff] text-gray-700 border-b border-blue-200 uppercase">
