@@ -25,26 +25,28 @@ const enviarFormulario = () => {
         <section class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
                 <p>Sabemos que en el mundo del mecanizado de la madera, cada detalle cuenta. Por eso, en HECOMA, queremos estar siempre cerca de tí para asesorarte de la manera que te resulte más cómoda.</p>
-                <p>Puedes contactarnos de la manera que te resulte más cómoda: vía email, teléfono, whatsapp, en nuestras oficinas o a través de nuestro formulario de contacto. También nos puedes encontrar en nuestras redes sociales para estar al día de nuestras novedades. Nuestro equipo estará encantado de ayudarte y resolver cualquier duda que tengas.</p>
+                <p>Puedes contactarnos de la manera que te resulte más cómoda: vía <strong> <a href="mailto:dptocomercial@hecoma.com" title="Correo de contacto">email</a></strong>, <strong><a href="tel:+34 667 40 76 92">teléfono</a></strong>, <strong><a href="https://api.whatsapp.com/send?phone=34667407692&amp;text=Hola!%20Quiero%20informarme%20sobre%20sus%20productos">whatsapp</a></strong>, en <strong><a href="#sedes">nuestras oficinas</a></strong> o a través de nuestro <a href="#formulario-contacto"><strong>formulario de contacto</strong></a>. También nos puedes encontrar en nuestras redes sociales para estar al día de nuestras novedades. Nuestro equipo estará encantado de ayudarte y resolver cualquier duda que tengas.</p>
             </div>
         </section>
 
-        <section class=" py-16 px-6">
+        <section id="sedes" class=" py-16 px-6">
             <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold leading-tight uppercase tracking-wide mb-4">SEDES</h2>
                 </div>
-
                 <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch">
                     <div class="flex-1 bg-white border border-gray-100 rounded-xl shadow-md p-4 flex flex-col items-center">
                         <h3 class="text-[#003399] text-xl md:text-2xl font-bold uppercase mb-4">Sonseca</h3>
-                        <div class="w-full h-[350px] overflow-hidden rounded-lg">
+                        <p>De Lunes a Viernes de 9.00 - 14.00 y 16.00 - 18.00</p>
+                        <div class="w-full h-[350px] overflow-hidden rounded-lg mt-7">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3070.42047632631!2d-3.982636!3d39.685249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6a115e701d7ea7%3A0x778ccf570a392130!2sHerramientas%20de%20corte%20para%20madera%20S.L.%20HECOMA!5e0!3m2!1ses!2ses!4v1776407987341!5m2!1ses!2ses" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
 
                     <div class="flex-1 bg-white border border-gray-100 rounded-xl shadow-md p-4 flex flex-col items-center">
                         <h3 class="text-[#003399] text-xl md:text-2xl font-bold uppercase mb-4">Lucena</h3>
+                        <p>De Lunes a Jueves de 8.00 a 14.00 y 16.00 - 18.00</p>
+                        <p>Viernes de 7.00 - 15.00</p>
                         <div class="w-full h-[350px] overflow-hidden rounded-lg">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.7251254704947!2d-4.5082153!3d37.3963323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6d70d203160d91%3A0x858d2135793072e7!2sHECOMA%20%26%20Incoypre!5e0!3m2!1ses!2ses!4v1776408039362!5m2!1ses!2ses" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
@@ -52,7 +54,7 @@ const enviarFormulario = () => {
                 </div>
             </div>
         </section>
-        <section class="py-16 px-6 bg-[#f5f9fb]">
+        <section id="formulario-contacto" class="py-16 px-6 bg-[#f5f9fb]">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold leading-tight uppercase tracking-wide mb-4">FORMULARIO DE CONTACTO</h2>
             </div>
@@ -96,8 +98,12 @@ const enviarFormulario = () => {
 </template>
 
 <style scoped>
-  /* Ajustes para imitar el interlineado y estilo de la imagen corporativa */
+  :global(html) { scroll-behavior:smooth; }
+
+  section { scroll-margin-top: 50px; }
+
   p { text-align: justify; line-height: 1.6; }
   h2 { line-height: 1.2; }
   h3 { line-height: 1.2; }
+  a { color:blue; }
 </style>
