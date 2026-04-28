@@ -52,7 +52,11 @@
 </script>
 
 <template>
-  <Head title="F30 Fresa de bisel - HECOMA" />
+  <Head>
+    <title>F30 Fresas para biselado | Fresas de Alta Precisión en Madera</title>
+    <meta name="description" content="Nuestras fresas para biselado profesional F30 tienen un diseño con ángulo axial y 4 cortes (Z4) para un acabado suave sin vibraciones. Disponible en Metal Duro y HSS para avance mecánico." />
+    <meta name="keywords" content="fresa, fresa para biselado, fresa de bisel, fresa alta precision" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

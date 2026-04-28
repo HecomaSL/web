@@ -48,7 +48,11 @@
 </script>
 
 <template>
-  <Head title="F16 Fresa para Galces Z4 + V4 - HECOMA" />
+  <Head>
+    <title>F16 Fresa para Galces Z4+V4 | Acabado Perfecto Sin Astillado</title>
+    <meta name="description" content="Lleva tus galces al siguiente nivel con la Fresa F16. Sus 4 cortes y 4 precortadores (Z4+V4) aseguran un acabado limpio en ambas caras del tablero. Ideal para procesos industriales exigentes" />
+    <meta name="keywords" content="fresa, fresa para galces, fresa z4+v4, fresa galces z4+v4" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

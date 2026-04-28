@@ -52,7 +52,11 @@
 </script>
 
 <template>
-  <Head title="F20 Fresa radio 1/4 cóncavo - HECOMA" />
+  <Head>
+    <title>F20 Fresa Radio Cóncavo 1/4 | Perfilado de Alta Precisión Z4</title>
+    <meta name="description" content="Logra perfiles redondeados perfectos con la Fresa F20 de radio 1/4 cóncavo. Ideal para molduras, cantos y detalles decorativos en madera. Calidad profesional para un acabado suave y sin marcas." />
+    <meta name="keywords" content="fresa, fresa z4, fresa radio cóncavo, fresa radio concavo 1/4" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-15">

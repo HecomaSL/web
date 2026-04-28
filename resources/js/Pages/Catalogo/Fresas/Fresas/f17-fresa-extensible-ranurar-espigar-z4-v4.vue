@@ -45,7 +45,11 @@
 </script>
 
 <template>
-  <Head title="F17 Fresa extensible para ranurar y espigar Z4 y V4 - HECOMA" />
+  <Head>
+    <title>F17 Fresa Extensible Ranurar y Espigar Z4+V4 | Fresa HECOMA</title>
+    <meta name="description" content="Ahorra tiempo y herramientas con la Fresa F17 extensible. Configuración Z4+V4 para ranurar y espigar perfectamente en cualquier ancho. Corte limpio y precisión industrial en cada ajuste." />
+    <meta name="keywords" content="fresa, fresa z4, fresa z4+v4, fresa extensible, fresa ranurar, fresa espigar, fresa extensible ranurar y espigar," />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

@@ -34,5 +34,6 @@ const listaBrocas = [
 </script>
 
 <template>
+    
     <SeccionHerramientas tituloSeccion="SERIE 1. BROCAS HELICOIDALES MDI" :productos="listaBrocas" />
 </template>

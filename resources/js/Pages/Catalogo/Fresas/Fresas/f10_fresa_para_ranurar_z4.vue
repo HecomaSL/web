@@ -48,7 +48,11 @@
 </script>
 
 <template>
-    <Head title="F10 Fresa para ranurar Z4 - HECOMA" />
+    <Head>
+        <title>F10 Fresa para ranurar Z4 | 4 Cortes Rectos para Acabado Preciso</title>
+        <meta name="description" content="Aumenta la productividad de tu taller con la Fresa para ranurar Hecoma F10. Gracias a sus 4 cortes rectos de gran precisión, esta herramienta garantiza ranuras limpias, una estabilidad de corte superior y una excelente durabilidad del filo en maderas y tableros." />
+        <meta name="keywords" content="fresa, fresa para ranurar, fresa z4, fresa ranurar z4, fresa cortes rectos, fresa para ranurado" />
+    </Head>
 
     <MainLayout>
         <section class="bg-[#010cf7] py-6 mb-5">

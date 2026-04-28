@@ -48,7 +48,11 @@
 </script>
 
 <template>
-  <Head title="F13 Fresa Extensible para ranurar Z4 + V4 - HECOMA" />
+  <Head>
+    <title>F13 Fresa Extensible para ranurar Z4 + V4 | Ranurado Ajustable de Alta Precisión</title>
+    <meta name="description" content="F13 Fresa para ranurar extensible con 4 cortes y 4 precortadores. Ajuste de ancho mediante anillos decimales para un acabado sin astillas. Disponible en Metal Duro y HSS. Calidad ProEx para avance mecánico.." />
+    <meta name="keywords" content="fresa, fresa para ranurar, fresa z4, fresa ranurar z4+v4, fresa para ranurado, fresa con precortador, fresa extensible" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

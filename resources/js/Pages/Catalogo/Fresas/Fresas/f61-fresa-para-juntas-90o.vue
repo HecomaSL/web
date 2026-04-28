@@ -46,7 +46,11 @@
 </script>
 
 <template>
-  <Head title="F61 Fresa Para Ingletes (Juntas a 90º) - HECOMA" />
+  <Head>
+    <title>F61 Fresas para ingletes | Fresas Para Junta a 90º</title>
+    <meta name="description" content="Logra uniones invisibles y ultra resistentes con nuestras fresas para ingletes. Perfecta para juntas a 90º en inglete. Fabricación CNC en acero de alta resistencia y carburo para un ajuste milimétrico sin huecos" />
+    <meta name="keywords" content="fresa, fresas para ingletes, fresas para juntas, fresas para juntas a 90o" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

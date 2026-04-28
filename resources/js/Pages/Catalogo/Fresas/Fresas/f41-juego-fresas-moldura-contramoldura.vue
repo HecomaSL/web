@@ -69,7 +69,11 @@
 </script>
 
 <template>
-  <Head title="F41 Juego Fresas Moldura y Contramoldura - HECOMA" />
+  <Head>
+    <title>F41 Juego Fresas Moldura y Contramoldura | Uniones Perfectas Z4+V4</title>
+    <meta name="description" content="Consiga ensambles profesionales con el Juego de Fresas F41. Diseñadas para moldurado y espigado de puertas con precisión CNC. Disponibles en Metal Duro y HSS para avance mecánico. ¡Calidad impecable de HECOMA®!" />
+    <meta name="keywords" content="fresa, fresas moldura, fresas contramoldura, fresas z4, fresas z4+v4" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

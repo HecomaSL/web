@@ -4,7 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-  <Head title="DISTRIBUCIÓN | HECOMA" />
+  <Head>
+    <title>Red de Distribución de Herramientas Para Corte De Madera | HECOMA</title>
+    <meta name="description" content="Únete a la red de distribución de Hecoma. Fabricación propia, red comercial en el centro y sur de España y entrega express. ¡Crezcamos juntos con soluciones de corte de alta precisión!" />
+    <meta name="keywords" content="Herramientas para corte, brocas, fresas, discos, suministros industriales, herramienta corte de madera" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

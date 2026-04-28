@@ -49,7 +49,11 @@
 </script>
 
 <template>
-  <Head title="F60 Fresa para juntas longitudinales - HECOMA" />
+  <Head>
+    <title>F60 Fresa para juntas longitudinales | Uniones Dentadas de Z4</title>
+    <meta name="description" content="Optimice sus ensambles con la Fresa F60 para juntas longitudinales. Diseño de Z4 en Metal Duro para uniones resistentes y precisas en maderas y tableros. ¡Calidad industrial HECOMA® para avance mecánico!" />
+    <meta name="keywords" content="fresa, fresas para juntas, fresa para junta, fresa para junta longitudinal, fresas para juntas longitudinales, fresa z4," />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

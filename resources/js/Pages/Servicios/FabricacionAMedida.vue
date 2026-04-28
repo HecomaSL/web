@@ -4,7 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-  <Head title="FABRICACION A MEDIDA HERRAMIENTAS DE CORTE | HECOMA" />
+  <Head>
+    <title>Fabricacion a medida herramientas de corte | HECOMA</title>
+    <meta name="description" content="Herramientas especiales a medida con calidad, precisión y rapidez de fabricación. Con la calidad, acabado y rendimiento que nos caracteriza, fabricamos herramienta y perfiles especiales a medida de sus necesidades. Con instalaciones, maquinaria, ingeniería y técnicos propios, conseguimos plazos de entrega no habituales en el sector." />
+    <meta name="keywords" content="Fabricacion a medida herramientas de corte, afilado, afilado de herramientas, brocas, fresas, discos, " />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

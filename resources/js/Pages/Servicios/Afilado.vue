@@ -4,7 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-  <Head title="AFILADO DE HERRAMIENTAS DE ALTA PRECISIÓN | HECOMA" />
+  <Head>
+    <title>Afilado de Herramientas de Alta Precision | HECOMA</title>
+    <meta name="description" content="No espere a que la calidad de su producto final disminuya o a que su maquinaria sufra por un sobreesfuerzo innecesario. En el mundo del mecanizado y la carpintería industrial, el estado de sus herramientas es el factor que define la línea entre la rentabilidad y las pérdidas ocultas. No espere a que sea demasiado tarde." />
+    <meta name="keywords" content="afilado, afilado de herramientas, brocas, fresas, discos, " />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

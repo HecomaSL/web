@@ -4,7 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-  <Head title="AFILADO DE HERRAMIENTAS DE MADERA | HECOMA" />
+  <Head>
+    <title>Afilado de Herramientas para madera | HECOMA</title>
+    <meta name="description" content="Expertos en el afilado de herramientas de madera: sierras, fresas y brocas. Máxima precisión con tecnología CNC. ¡Optimiza tu producción con Hecoma!" />
+    <meta name="keywords" content="afilado, afilado de herramientas, Afilado de Herramientas para madera" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

@@ -4,7 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-  <Head title="SERVICIOS | HECOMA" />
+  <Head>
+    <title>Servicios Profesionales para la Industria de la Madera | Hecoma</title>
+    <meta name="description" content="Alarga la vida de tus herramientas con nuestro servicio profesional de afilado de diamante (PCD) y metal duro. Fabricación de herramientas a medida y soporte técnico especializado para la industria de la madera. Calidad Hecoma garantizada." />
+    <meta name="keywords" content="afilado, afilado de herramientas, Afilado de Herramientas de diamante" />
+  </Head>
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">
       <div id="divh1" class="container mx-auto px-6">

@@ -16,8 +16,8 @@ const props = defineProps({
     <MainLayout>
         <section class="bg-[#010cf7] py-6 mb-5">
             <div class="container mx-auto px-6 text-center">
-                    <h1 class="text-white text-3xl md:text-4xl font-bold uppercase tracking-tight">{{ tituloSeccion }}</h1>
-                </div>
+                <h1 class="text-white text-3xl md:text-4xl font-bold uppercase tracking-tight">{{ tituloSeccion }}</h1>
+            </div>
         </section>
 
         <section class="pb-16 bg-white">

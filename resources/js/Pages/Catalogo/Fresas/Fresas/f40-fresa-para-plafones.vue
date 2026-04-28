@@ -50,7 +50,11 @@
 </script>
 
 <template>
-  <Head title="F40 Fresa para plafones - HECOMA" />
+  <Head>
+    <title>F40 Fresa para Plafones | Calidad Profesional para Madera</title>
+    <meta name="description" content="Optimiza tus trabajos de carpintería con nuestra Fresa para Plafones F40. Diseñada para ofrecer un corte ultra estable y una durabilidad del filo superior, incluso en maderas duras. Esta herramienta profesional garantiza acabados limpios y sin astillamientos en puertas y armarios." />
+    <meta name="keywords" content="fresa, fresa z4, fresa para plafones" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

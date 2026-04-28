@@ -19,7 +19,11 @@
 </script>
 
 <template>
-    <Head title="Noticias - HECOMA" />
+    <Head>
+        <title>Noticias | Herramientas de corte para madera</title>
+        <meta name="description" content="Contacta con Hecoma: Expertos en herramientas de corte de madera y afilado. Solicita presupuesto, asesoramiento técnico o información logística. ¡Estamos para ayudarte!." />
+        <meta name="keywords" content="Herramientas para corte, brocas, fresas, discos, suministros industriales, herramienta corte de madera" />
+    </Head>
     <MainLayout>
         <section class="bg-[#010cf7] py-6 mb-12">
             <div id="divh1" class="container mx-auto px-6">

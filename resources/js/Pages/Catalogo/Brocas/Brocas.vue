@@ -2,19 +2,17 @@
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
-// Los datos siguen igual.
 const catalogoBrocas = [
-  {
-    serie: "SERIE 1",
-    titulo: "BROCA MDI HELICOIDAL",
-    imagen: "/images/brocas/brocas_mdi.png", 
-    link: "/brocas-mdi"
-  },
+  { serie: "SERIE 1", titulo: "BROCA MDI HELICOIDAL", imagen: "/images/brocas/brocas_mdi.png", link: "/brocas-mdi" },
 ];
 </script>
 
 <template>
-    <Head title="BROCAS - HECOMA" />
+    <Head>
+        <title>Brocas para Herramientas Corte de Madera | HECOMA</title>
+        <meta name="description" content="Amplia selección de brocas HSS, cobalto y diamante. Perforación perfecta en cualquier material" />
+        <meta name="keywords" content="brocas, herramienta corte de madera, brocas para madera" />
+    </Head>
   
     <MainLayout>
         <section class="bg-[#010cf7] py-6 mb-15">

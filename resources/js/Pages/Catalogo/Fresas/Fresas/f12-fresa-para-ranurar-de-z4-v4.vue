@@ -48,7 +48,11 @@
 </script>
 
 <template>
-  <Head title="F12 Fresa para ranurar Z4 + V4 - HECOMA" />
+  <Head>
+    <title>F12 Fresa para Ranurar Z4+V4 | Ranurado de Madera Perfecto</title>
+    <meta name="description" content="F12 Fresa industrial con 4 cortes y 4 precortadores (Z4+V4). Diseñada para ranurar en cualquier sentido de la fibra con acabado perfecto. Disponible en Metal Duro y HSS para avance mecánico." />
+    <meta name="keywords" content="fresa, fresa para ranurar, fresa z4, fresa ranurar z4+v4, fresa para ranurado, fresa con precortador" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

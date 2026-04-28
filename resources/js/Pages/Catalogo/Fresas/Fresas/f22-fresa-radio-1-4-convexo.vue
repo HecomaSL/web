@@ -53,7 +53,11 @@
 </script>
 
 <template>
-  <Head title="F22 Fresa radio 1/4 convexo - HECOMA" />
+  <Head>
+    <title>F22 Fresas de Radio Convexo 1/4 | Redondeado de Cantos Z4</title>
+    <meta name="description" content="Suaviza aristas y bordes con la Fresa F22 de radio 1/4 convexo. Perfecta para redondear cantos en muebles y encimeras con total precisión. Corte limpio que reduce el lijado posterior." />
+    <meta name="keywords" content="fresa, fresa z4, fresa radio convexo, fresa radio convexo 1/4, fresa para cantos, redondeo de cantos" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

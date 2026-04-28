@@ -28,7 +28,11 @@ const catalogoFRESAS = [
 </script>
 
 <template>
-    <Head title="FRESAS - HECOMA" />
+    <Head>
+        <title>Fresas para Madera | Herramientas de Corte Profesional</title>
+        <meta name="description" content="¿Buscas un corte limpio y duradero? Descubre nuestras fresas industriales para madera, tableros y materiales compuestos. Herramientas diseñadas para resistir el uso intensivo y maximizar el rendimiento de tu maquinaria. Consulta el stock." />
+        <meta name="keywords" content="fresas, herramienta corte de madera, fresas para madera" />
+    </Head>
   
     <MainLayout>
         <section class="bg-[#010cf7] py-6 mb-5">

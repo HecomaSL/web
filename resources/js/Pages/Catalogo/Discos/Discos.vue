@@ -18,7 +18,11 @@ const catalogoDiscos = [
 </script>
 
 <template>
-    <Head title="DISCOS - HECOMA" />
+    <Head>
+        <title>Discos de Corte para Madera | Herramientas de Corte Profesional</title>
+        <meta name="description" content="Discos de corte para madera profesional para carpintería e industria. Disponemos de sierras para seccionadoras, ingletadoras y escuadradoras. Optimiza tu producción con herramientas de alta resistencia. ¡Consulta nuestro catálogo técnico!" />
+        <meta name="keywords" content="discos, herramienta corte de madera, discos corte, discos corte para madera" />
+    </Head>
   
     <MainLayout>
         <section class="bg-[#010cf7] py-6 mb-5">

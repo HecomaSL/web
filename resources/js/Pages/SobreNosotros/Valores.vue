@@ -4,7 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-  <Head title="NUESTROS VALORES | HECOMA" />
+  <Head>
+        <title>Filosofia HECOMA | Herramientas de corte para madera</title>
+        <meta name="description" content="Descubre los pilares que definen a Hecoma: precisión, innovación constante y un compromiso inquebrantable con el éxito de nuestros clientes. Por qué somos el referente en herramientas de corte para madera. Conoce nuestra filosofía." />
+        <meta name="keywords" content="Herramientas para corte, brocas, fresas, discos, suministros industriales, herramienta corte de madera" />
+    </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

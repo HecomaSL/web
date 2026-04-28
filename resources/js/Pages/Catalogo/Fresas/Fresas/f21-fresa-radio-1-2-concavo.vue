@@ -46,6 +46,12 @@
 </script>
 
 <template>
+  <Head>
+    <title>F21 Fresa Radio Cóncavo 1/2 | Perfilado de Alta Precisión Z4</title>
+    <meta name="description" content="Crea perfiles elegantes con la Fresa F21 de radio 1/2 cóncavo. Ideal para molduras de gran formato y cantos decorativos. Corte suave, preciso y sin vibraciones. ¡Mejora tus acabados hoy!." />
+    <meta name="keywords" content="fresa, fresa z4, fresa radio cóncavo, fresa radio concavo 1/2" />
+  </Head>
+
   <Head title="F21 Fresa radio 1/2 cóncavo - HECOMA" />
 
   <MainLayout>

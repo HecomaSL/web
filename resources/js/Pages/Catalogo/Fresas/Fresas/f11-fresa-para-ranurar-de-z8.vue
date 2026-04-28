@@ -47,7 +47,11 @@
 </script>
 
 <template>
-  <Head title="F11 Fresa para ranurar Z8 - HECOMA" />
+  <Head>
+    <title>F11 Fresa para Ranurar Z8 | Ranurado Madera Perfecto</title>
+    <meta name="description" content="Maximiza tu producción con la Fresa F11 de 8 cortes rectos (Z8). Mayor velocidad de avance y acabado superior en madera y tableros. Disponible en Metal Duro y HSS. ¡Calidad para uso profesional!" />
+    <meta name="keywords" content="fresa, fresa para ranurar, fresa z8, fresa ranurar z8, fresa para ranurado" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

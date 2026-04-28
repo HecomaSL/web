@@ -36,7 +36,11 @@ const formatearPrecio = (precio) => { return precio ? parseFloat(precio).toLocal
 </script>
 
 <template>
-  <Head title="F50 Fresas para tiradores - HECOMA" />
+  <Head>
+    <title>F50 Fresas para tiradores de Madera | Fresa de Uñeros</title>
+    <meta name="description" content="Crea muebles minimalistas con nuestras fresas para tiradores integrados. Ideal para puertas y cajones sin tiradores externos. Acabado ergonómico, limpio y de alta precisión industrial. ¡Compra ahora!" />
+    <meta name="keywords" content="fresa, fresas tiradores, fresa tirador, fresa de uñeros" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

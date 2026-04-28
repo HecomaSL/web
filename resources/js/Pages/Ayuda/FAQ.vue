@@ -4,7 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-  <Head title="FAQ | HECOMA" />
+  <Head>
+    <title>FAQ | Herramientas para Corte de Madera</title>
+    <meta name="description" content="¿Tienes dudas sobre herramientas de corte a medida? Resolvemos tus preguntas sobre fabricación, plazos de entrega y asesoramiento técnico en HECOMA. Optimiza tu producción hoy." />
+    <meta name="keywords" content="Herramientas de corte para madera, fresas, fresas diamante, fresas pcd, fresas metal duro, fresas md" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

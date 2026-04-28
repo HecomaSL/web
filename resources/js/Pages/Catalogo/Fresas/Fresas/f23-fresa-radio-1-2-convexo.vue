@@ -45,7 +45,11 @@
 </script>
 
 <template>
-  <Head title="F23 Fresa radio 1/2 convexo - HECOMA" />
+  <Head>
+    <title>F23 Fresas Radio Convexo 1/2 | Acabado Profesional</title>
+    <meta name="description" content="Redondea cantos con facilidad usando la Fresa de radio 1/2 convexo F23. Ideal para encimeras, mesas y peldaños. Garantiza un corte suave, sin quemaduras y listo para barnizar." />
+    <meta name="keywords" content="fresa, fresa z4, fresa radio convexo, fresa radio convexo 1/2" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

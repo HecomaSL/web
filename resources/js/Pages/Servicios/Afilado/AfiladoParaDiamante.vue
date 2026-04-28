@@ -4,7 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-  <Head title="AFILADO DE HERRAMIENTAS DE DIAMANTE | HECOMA" />
+  <Head>
+    <title>Afilado de Herramientas de Diamante | HECOMA</title>
+    <meta name="description" content="Afilado de herramientas de diamante PCD: Recupere la precisión y maximice la vida útil de sus herramientas con Hecoma SL. Expertos en mantenimiento industrial de alto rendimiento." />
+    <meta name="keywords" content="afilado, afilado de herramientas, Afilado de Herramientas de diamante" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

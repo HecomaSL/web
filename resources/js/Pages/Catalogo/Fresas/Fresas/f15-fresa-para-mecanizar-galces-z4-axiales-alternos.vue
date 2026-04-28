@@ -46,7 +46,11 @@
 </script>
 
 <template>
-  <Head title="F15 Fresa para Galces Z4 (Cortes Alternos) - HECOMA" />
+  <Head>
+    <title>F15 Fresa para Galces Z4 con Cortes Alternos | Fresa HECOMA</title>
+    <meta name="description" content="F15 Fresa industrial para galces y cantos. Sus 4 cortes axiales alternos (Z4) reducen vibraciones y mejoran el avance. Disponible en Metal Duro y HSS para acabados premium. ¡Calidad superior!" />
+    <meta name="keywords" content="fresa, fresa para galces, fresa z4, fresa galces cortes alternos, fresa cortes alternos" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

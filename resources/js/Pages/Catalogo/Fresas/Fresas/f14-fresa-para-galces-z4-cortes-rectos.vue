@@ -44,7 +44,11 @@
 </script>
 
 <template>
-  <Head title="F14 Fresa para Galces Z4 (Cortes Rectos) - HECOMA" />
+  <Head>
+    <title>F14 Fresa para Galces Z4 | Cortes Rectos de Alta Estabilidad</title>
+    <meta name="description" content="F14 Fresa de 4 cortes rectos para galces y canteado profesional. Cuerpo de acero especial antivibración. Disponible en Metal Duro (MD) y HSS para avance mecánico o manual. ¡Precisión y seguridad!." />
+    <meta name="keywords" content="fresa, fresa para galces, fresa z4, fresa cortes rectos" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">
