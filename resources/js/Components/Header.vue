@@ -25,14 +25,7 @@ const menus = {
     { label: 'Noticias', url: '/noticias' }
   ],
   servicios: [
-    { 
-      label: 'Servicio de Afilado', 
-      url: '/afilado',
-      subitems: [
-        { label: 'Afilado para madera', url: '/afilado-para-madera' },
-        { label: 'Afilado para diamante', url: '/afilado-para-diamante' }
-      ]
-    },
+    { label: 'Servicio de Afilado', url: '/afilado', subitems: [ { label: 'Afilado para madera', url: '/afilado-para-madera' }, { label: 'Afilado para diamante', url: '/afilado-para-diamante' } ] },
     { label: 'Fabricación a medida', url: '/fabricacion-a-medida' }
   ],
   catalogo: [

@@ -7,13 +7,13 @@ import { Head } from '@inertiajs/vue3';
   <Head title="AVISO LEGAL | HECOMA" />
 
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-12">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div id="divh1" class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">AVISO LEGAL</h1>
       </div>
     </section>
 
-    <section class="max-w-6xl container mx-auto px-6 mb-16">
+    <section class="max-w-6xl container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <p>El sitio web <a href="https://hecoma.com">hecoma.com</a> (en adelante, el “Sitio Web”) es propiedad HERRAMIENTAS DE CORTE PARA MADERA, S.L (en adelante, la “EMPRESA”), con domicilio social en Calle Progreso (Pg. Araciles), 12 – 45100 Sonseca (Toledo) y CIF B45455201. Inscrita en el Registro Mercantil de Toledo, Tomo 994, Folio 26, S 8, Hoja 185 e Inscripción 1ª.</p>
         <p>La EMPRESA le da la bienvenida y le invita a leer atentamente las Condiciones Generales de Uso de este Sito Web (en adelante, las “Condiciones Generales de Uso”) que describen los términos y condiciones que serán aplicables a su navegación por el mismo, de conformidad con lo establecido en la normativa española de aplicación. Dado que la EMPRESA podría modificar en el futuro estas Condiciones de Uso, le recomendamos que las visite periódicamente para estar debidamente informado de los cambios realizados.</p>
@@ -21,7 +21,7 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">1. Objetivo</h2>
       <div class="space-y-4 text-gray-700">
         <p>La EMPRESA suministra el contenido y los servicios que están disponibles en el Sitio Web, con sujeción a las presentes Condiciones Generales de Uso, así como a la política sobre tratamiento de datos personales (en adelante, la “Política de Protección de Datos”). El acceso a este Sitio Web o su utilización en cualquier forma le otorga la calificación de “Usuario” e implica la aceptación sin reservas de todas y cada una de las presentes Condiciones Generales de Uso, reservándose la EMPRESA el derecho a modificarlos en cualquier momento. En consecuencia, será responsabilidad de todo Usuario, la atenta lectura de las Condiciones Generales de Uso vigente en cada una de las ocasiones en que acceda a este Sitio Web, por lo que, si éste no está de acuerdo con cualquiera de los mismos aquí dispuestos, deberá abstenerse respecto al uso del presente Sitio Web.</p>
@@ -29,20 +29,20 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">2. Servicios</h2>
       <div class="space-y-4 text-gray-700">
         <p>A través del Sitio Web, la EMPRESA ofrece a los Usuarios la posibilidad de acceder a: Información sobre la empresa, sus datos de contacto, sus productos y servicios, sus tarifas, sus ofertas comerciales, su ubicación – Un apartado de contacto para realizar consultas facilitando sus datos de carácter personal – Links para acceder a redes sociales (en adelante los “Servicios”).</p>
         <p>Asimismo, queda advertido de que, en ocasiones, se podrán establecer condiciones particulares para la utilización en el Sitio Web de contenidos y/o servicios específicos, la utilización de dichos contenidos o servicios implicará la aceptación de las condiciones particulares en ellos especificadas.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">3. Privacidad y Tratamiento de Datos</h2>
       <div class="space-y-4 text-gray-700">
         <p>La EMPRESA trata sus datos de carácter personal según los establecido en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y por el que se deroga la Directiva 95/46/CE (Reglamento general de protección de datos) y la LO 3/2018. La información sobre sus datos de carácter personal, según el artículo 13 de la sección 2 del citado reglamento y la LO 3/2018.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">4. Propiedad Industrial e Intelectual</h2>
       <div class="space-y-4 text-gray-700">
         <p>El Usuario reconoce y acepta que todos los contenidos que se muestran en el Sitio Web y en especial, diseños, textos, imágenes, logos, iconos, botones, software, nombres comerciales, marcas, o cualesquiera otros signos susceptibles de utilización industrial y/o comercial están sujetos a derechos de Propiedad Intelectual y todas las marcas, nombres comerciales o signos distintivos, todos los derechos de propiedad industrial e intelectual, sobre los contenidos y/o cualesquiera otros elementos insertados en el página, que son propiedad exclusiva de la EMPRESA y/o de terceros, quienes tienen el derecho exclusivo de utilizarlos en el tráfico económico.</p>
@@ -53,7 +53,7 @@ import { Head } from '@inertiajs/vue3';
         <p>Asimismo, queda prohibido suprimir, eludir y/o manipular el «copyright» así como los dispositivos técnicos de protección, o cualesquiera mecanismos de información que pudieren contener los contenidos. El Usuario de este Sitio Web se compromete a respetar los derechos enunciados y a evitar cualquier actuación que pudiera perjudicarlos, reservándose en todo caso la EMPRESA el ejercicio de cuantos medios o acciones legales le correspondan en defensa de sus legítimos derechos de propiedad intelectual e industrial.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">5. Obligaciones y Responsabilidades del Usuario del Sitio Web</h2>
       <div class="space-y-4 text-gray-700">
         <p>El Usuario se compromete a:</p>
@@ -89,7 +89,7 @@ import { Head } from '@inertiajs/vue3';
         <p>Si de manera negligente o dolosa incumpliera cualquiera de las obligaciones establecidas en las presentes Condiciones Generales de Uso, responderá por todos los daños y perjuicios que de dicho incumplimiento pudieran derivarse para la EMPRESA.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">6. Responsabilidades</h2>
       <div class="space-y-4 text-gray-700">
         <p>La EMPRESA no garantiza el acceso continuado, ni la correcta visualización, descarga o utilidad de los elementos e informaciones contenidas en las páginas del sitio Web, que pueden verse impedidos, dificultados o interrumpidos por factores o circunstancias que están fuera de su control.</p>
@@ -107,7 +107,7 @@ import { Head } from '@inertiajs/vue3';
         <p>Usted defenderá, indemnizará y mantendrá a la EMPRESA indemne frente a cualesquiera daños y perjuicios que se deriven de reclamaciones, acciones o demandas de terceros como consecuencia de su acceso o uso del Sitio Web. Asimismo, usted se obliga a indemnizar a la EMPRESA frente a cualesquiera daños y perjuicios, que se deriven del uso por su parte de “robots”, “spiders”, “crawlers” o herramientas similares empleadas con el fin de recabar o extraer datos o de cualquier otra actuación por su parte que imponga una carga irrazonable sobre el funcionamiento del Sitio Web.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">7. Hipervínculos</h2>
       <div class="space-y-4 text-gray-700">
         <p>El Usuario se obliga a no reproducir de ningún modo, ni siquiera mediante un hiperenlace o hipervínculo, el Sitio Web de la EMPRESA, así como ninguno de sus contenidos, salvo autorización expresa y por escrito de la EMPRESA.</p>
@@ -122,31 +122,31 @@ import { Head } from '@inertiajs/vue3';
         <p>La EMPRESA podrá solicitar, en cualquier momento, que elimine cualquier enlace al Sitio Web, después de lo cual deberá proceder de inmediato a su eliminación. La EMPRESA no puede controlar la información, contenidos, productos o servicios facilitados por otros sitios web que tengan establecidos enlaces con destino al Sitio Web. En consecuencia, la EMPRESA no asume ningún tipo de responsabilidad por cualquier aspecto relativo a tales sitios web.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">8. Cookies</h2>
       <div class="space-y-4 text-gray-700">
         <p>Puede usted consultar la información sobre cookies accediendo a este <a href="/politica-cookies">LINK</a></p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">9. Duración y terminación</h2>
       <div class="space-y-4 text-gray-700">
         <p>La prestación del servicio del presente Sitio Web y los demás servicios tienen en principio una duración indefinida. No obstante, la EMPRESA podrá dar por terminada o suspender cualquiera de los servicios del portal. Cuando sea ello posible, la EMPRESA anunciará la terminación o suspensión de la prestación del servicio determinado.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">10. Declaraciones y Garantías</h2>
       <div class="space-y-4 text-gray-700">
         <p>En general, los contenidos y servicios ofrecidos en el Sitio Web tienen carácter meramente informativo. En caso de ponerse a disposición del usuario los productos o servicios reflejados en la web, se estará a lo dispuesto en las condiciones generales de contratación correspondientes.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">11. Fuerza mayor</h2>
       <div class="space-y-4 text-gray-700">
         <p>La EMPRESA no será responsable en todo en caso de imposibilidad de prestar servicio, si ésta se debe a interrupciones prolongadas del suministro eléctrico, líneas de telecomunicaciones, conflictos sociales, huelgas, rebelión, explosiones, inundaciones, actos y omisiones del Gobierno, y en general todos los supuestos de fuerza mayor o de caso fortuito.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">12. Resolución de controversias. Ley aplicable y jurisdicción</h2>
       <div class="space-y-4 text-gray-700">
         <p>Las presentes Condiciones Generales de Uso, así como el uso del Sitio Web, se regirán por la legislación española. En caso de litigio, las partes contratantes acuerdan someterse a los Jueces y Tribunales de domicilio del consumidor, siempre que el mismo esté situado en territorio español. De lo contrario, si se trata de un usuario no consumidor o de un consumidor situado fuera del territorio español, la sumisión será a los juzgados y tribunales de la ciudad del domicilio de la EMPRESA. Asumiendo la parte que incumpla el contrato los gastos judiciales y extrajudiciales que se deriven de la reclamación incluido los gastos de abogados, procuradores, etc.</p>

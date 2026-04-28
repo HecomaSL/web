@@ -7,19 +7,19 @@ import { Head } from '@inertiajs/vue3';
   <Head title="POLITICA PRIVACIDAD | HECOMA" />
 
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-12">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div id="divh1" class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">POLITICA DE PRIVACIDAD</h1>
       </div>
     </section>
 
-    <section class="max-w-6xl container mx-auto px-6 mb-16">
+    <section class="max-w-6xl container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <p>La presente política de privacidad se aplica al tratamiento de los datos personales de los clientes y/o usuarios del sitio web hecoma.com cuyo responsable del tratamiento de datos es HECOMA, S.L</p>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Confidencialidad y protección de datos</h2>
       <div class="space-y-4 text-gray-700">
         <p>La presente Política de Privacidad tiene por objeto facilitar información sobre los derechos que le asisten en virtud de lo establecido en el REGLAMENTO (UE) 2016/679 DEL PARLAMENTO EUROPEO y del CONSEJO, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y por el que se deroga la Directiva 95/46/CE (Reglamento general de protección de datos) y la LO 3/2018. La información sobre sus datos de carácter personal, según el artículo 13 de la sección 2 del citado reglamento y la LO 3/2018.</p>
@@ -28,7 +28,7 @@ import { Head } from '@inertiajs/vue3';
         <p>Asimismo, le informamos de que INCOYPRE SL cuenta con un encargado de Protección de Datos, con quien se podrá poner en contacto a través de la siguiente dirección: <a href="mailto:rgpd@hecoma.com">rgpd@hecoma.com</a></p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Información básica sobre protección de datos</h2>
         <div class="space-y-4 text-gray-700">
             <table class="min-w-full divide-y divide-gray-200 bg-white">
@@ -78,7 +78,7 @@ import { Head } from '@inertiajs/vue3';
             </table>
         </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Información adicional sobre protección de datos:</h2>
       <div class="space-y-4 text-gray-700">
         <p class="text-lg font-bold mb-4">1. ¿Quién es el titular de esta web?</p>

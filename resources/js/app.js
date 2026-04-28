@@ -6,7 +6,6 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 
-// Importamos Pinia y el plugin de persistencia
 import { createPinia } from 'pinia';
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 
@@ -20,17 +19,10 @@ createInertiaApp({
             import.meta.glob('./Pages/**/*.vue'),
         ),
     setup({ el, App, props, plugin }) {
-        // Creamos la instancia de Pinia y el plugin
         const pinia = createPinia();
         pinia.use(piniaPluginPersistedstate);
 
-        return createApp({ render: () => h(App, props) })
-            .use(plugin)
-            .use(ZiggyVue)
-            .use(pinia)
-            .mount(el);
+        return createApp({ render: () => h(App, props) }).use(plugin).use(ZiggyVue).use(pinia).mount(el);
     },
-    progress: {
-        color: '#0000BB',
-    },
+    progress: { color: '#0000BB', },
 });

@@ -6,14 +6,10 @@ import MainLayout from '@/Layouts/MainLayout.vue'
 import { useCartStore } from '@/stores/cartStore'
 
 const cart = useCartStore()
-
 const codigoCupon = ref('')
 const cuponError = ref('')
 const cuponCargando = ref(false)
-
-const formatearPrecio = (valor) => {
-    return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(valor)
-}
+const formatearPrecio = (valor) => { return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(valor) }
 
 const aplicarCupon = async () => {
     if (!codigoCupon.value.trim())
@@ -24,7 +20,6 @@ const aplicarCupon = async () => {
 
     try {
         const res = await axios.post('/cupones/validar', { codigo: codigoCupon.value.trim().toUpperCase(), subtotal: cart.subtotal })
-        
         cart.aplicarCupon(res.data.cupon) 
         cuponError.value = ''
         codigoCupon.value = ''

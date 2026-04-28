@@ -7,13 +7,13 @@ import { Head } from '@inertiajs/vue3';
   <Head title="POLITICA DE PROTECCION DE DATOS | HECOMA" />
 
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-12">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div id="divh1" class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">POLITICA DE COOKIES</h1>
       </div>
     </section>
 
-    <section class="max-w-6xl container mx-auto px-6 mb-16">
+    <section class="max-w-6xl container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <p>Una cookie es un fichero que se descarga en su ordenador al acceder a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los hábitos de navegación de un usuario o de su equipo y, dependiendo de la información que contengan y de la forma en que utilice su equipo, pueden utilizarse para reconocer al usuario.</p>
         <p>La web de HERRAMIENTAS DE CORTE PARA MADERA SL utiliza cookies propias y de terceros, todas en el dominio “www.hecoma.com”</p>

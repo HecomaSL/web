@@ -4,29 +4,20 @@ export const useCartStore = defineStore('cart', {
     state: () => ({
         items: [],
         cupon: null,
-        metodoEnvio: 'domicilio', // Valor por defecto
-        costeEnvioBase: 12.00, // Ajusta el precio de tu envío aquí
+        metodoEnvio: 'domicilio',
+        costeEnvioBase: 12.00,
     }),
 
     getters: {
-        totalProductos: (state) => {
-            return state.items.reduce((total, item) => total + item.cantidad, 0);
-        },
+        totalProductos: (state) => { return state.items.reduce((total, item) => total + item.cantidad, 0); },
         subtotal: (state) => state.items.reduce((acc, item) => acc + (item.precio * item.cantidad), 0),
-
-        envio: (state) => {
-            return state.metodoEnvio === 'recogida' ? 0 : state.costeEnvioBase;
-        },
-        // Nuevo: Calcula cuánto dinero se resta
+        envio: (state) => { return state.metodoEnvio === 'recogida' ? 0 : state.costeEnvioBase; },
         descuentoImporte: (state) => {
             if (!state.cupon) 
                 return 0;
             return state.cupon.tipo === 'porcentaje' ? (state.subtotal * (state.cupon.valor / 100)) : state.cupon.valor;
         },
-        // Actualizado: Incluye el descuento en el total
-        totalFinal: (state) => {
-            return (state.subtotal - state.descuentoImporte) + state.envio;
-        }
+        totalFinal: (state) => { return (state.subtotal - state.descuentoImporte) + state.envio; }
     },
 
     actions: {
@@ -39,15 +30,7 @@ export const useCartStore = defineStore('cart', {
             } else {
                 this.items = [
                     ...this.items,
-                    {
-                        id: producto.id,
-                        referencia: producto.referencia,
-                        tipo: producto.tipo,
-                        familia: producto.familia,
-                        precio: parseFloat(producto.precio),
-                        stock: producto.stock, 
-                        cantidad: 1
-                    }
+                    { id: producto.id, referencia: producto.referencia, tipo: producto.tipo, familia: producto.familia, precio: parseFloat(producto.precio), stock: producto.stock, cantidad: 1 }
                 ];
             }
         },
@@ -68,26 +51,18 @@ export const useCartStore = defineStore('cart', {
 
         updateQuantity(id, nuevaCantidad) {
             const cantidad = parseInt(nuevaCantidad);
-            if (cantidad > 0) {
+            if (cantidad > 0)
                 this.items = this.items.map(item => item.id === id ? { ...item, cantidad: cantidad } : item );
-            }
         },
 
-        aplicarCupon(datosCupon) {
-            this.cupon = datosCupon;
-        },
-
-        quitarCupon() {
-            this.cupon = null;
-        }
+        aplicarCupon(datosCupon) { this.cupon = datosCupon; },
+        quitarCupon() { this.cupon = null; }
     },
 
     persist: {
         key: 'hecoma-cart',
         storage: localStorage,
-        beforeRestore: (context) => {
-            console.log('Cargando carrito persistente...');
-        },
+        beforeRestore: (context) => { console.log('Cargando carrito persistente...'); },
     }
 });
 

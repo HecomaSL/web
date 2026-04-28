@@ -20,10 +20,7 @@ class PedidoController extends Controller {
             $pedido->items = DB::table('pedido_items')
                 ->join('productos', 'pedido_items.idProducto', '=', 'productos.id')
                 ->where('pedido_items.idPedido', $pedido->idPedido)
-                ->select(
-                    'pedido_items.*',
-                    'productos.referencia as nombre_articulo'
-                )
+                ->select( 'pedido_items.*', 'productos.referencia as nombre_articulo' )
                 ->get();
 
             return $pedido;
@@ -116,14 +113,9 @@ class PedidoController extends Controller {
         $data = [ 'codigo' => $pedido->codigo_pedido, 'cliente' => auth()->user()->name, 'motivo' => $request->motivo, 'emailCliente' => auth()->user()->email, ];
 
         // CORREO AL CLIENTE
-        Mail::send([], [], function ($message) use ($data) {
-            $message->to($data['emailCliente']) ->subject('Devolución tramitada - Pedido '.$data['codigo'])->html("Hola {$data['cliente']}, tu devolución del pedido <b>{$data['codigo']}</b> ha sido tramitada correctamente. Nos pondremos en contacto contigo pronto.");
-        });
-
+        Mail::send([], [], function ($message) use ($data) { $message->to($data['emailCliente']) ->subject('Devolución tramitada - Pedido '.$data['codigo'])->html("Hola {$data['cliente']}, tu devolución del pedido <b>{$data['codigo']}</b> ha sido tramitada correctamente. Nos pondremos en contacto contigo pronto."); });
         // CORREO AL ADMIN (Pon tu email aquí)
-        Mail::send([], [], function ($message) use ($data) {
-            $message->to('dptocomercial@hecoma.com')->subject('Nueva solicitud de devolución de la Web')->html("El cliente <b>{$data['cliente']}</b> ha iniciado la devolución del pedido <b>{$data['codigo']}</b>.<br><br><b>Motivo:</b><br>{$data['motivo']}");
-        });
+        Mail::send([], [], function ($message) use ($data) { $message->to('dptocomercial@hecoma.com')->subject('Nueva solicitud de devolución de la Web')->html("El cliente <b>{$data['cliente']}</b> ha iniciado la devolución del pedido <b>{$data['codigo']}</b>.<br><br><b>Motivo:</b><br>{$data['motivo']}"); });
 
         return back()->with('success', 'Devolución enviada con éxito.');
     }

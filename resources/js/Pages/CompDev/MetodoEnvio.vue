@@ -6,18 +6,14 @@ import { Head } from '@inertiajs/vue3';
 // Datos de los métodos
 const metodos = ref([
   {
-    titulo: 'Envío a Domicilio',
-    precio: '12,00 €',
+    titulo: 'Envío a Domicilio', precio: '12,00 €',
     descripcion: 'Entrega rápida en su taller o domicilio a través de nuestra agencia de transporte nacional.',
-    plazo: '24/48 horas laborables',
-    icono: '🚚'
+    plazo: '24/48 horas laborables', icono: '🚚'
   },
   {
-    titulo: 'Recogida en Oficinas',
-    precio: 'Gratis',
+    titulo: 'Recogida en Oficinas', precio: 'Gratis',
     descripcion: 'Puede recoger su pedido directamente en nuestras sedes de Sonseca (Toledo) o Lucena (Córdoba).',
-    plazo: 'Inmediato (según disponibilidad)',
-    icono: '🏢'
+    plazo: 'Inmediato (según disponibilidad)', icono: '🏢'
   }
 ]);
 </script>

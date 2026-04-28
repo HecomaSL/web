@@ -27,9 +27,7 @@
           <ul class="space-y-2 text-sm opacity-80">
             <li><a href="/politica-compras" class="hover:opacity-100 hover:underline">Política de Compras</a></li>
             <li><a href="/politica-devoluciones" class="hover:opacity-100 hover:underline">Política de Devolución</a></li>
-            <li><a href="#" class="hover:opacity-100 hover:underline">Estado del Pedido</a></li>
             <li><a href="/metodo-envio" class="hover:opacity-100 hover:underline">Métodos de Envío</a></li>
-            <li><a href="#" class="hover:opacity-100 hover:underline">Garantía de Productos</a></li>
           </ul>
         </div>
 

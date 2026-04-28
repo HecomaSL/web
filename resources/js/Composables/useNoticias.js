@@ -33,28 +33,23 @@ export function useNoticias() {
     const indicePagina = ref(6);
     const cargando = ref(false);
 
-    // Filtrado basado en la propiedad 'cat' de tus objetos
     const noticiasFiltradas = computed(() => {
-        if (filtrosSeleccionados.value.length === 0)
-            return misNoticias;
+        if (filtrosSeleccionados.value.length === 0) return misNoticias;
         
         return misNoticias.filter(n => filtrosSeleccionados.value.includes(n.cat));
     });
 
-    // Subconjunto de noticias a mostrar (Paginación)
     const noticiasAMostrar = computed(() => { return noticiasFiltradas.value.slice(0, indicePagina.value); });
 
     const cargarMas = () => {
         if (cargando.value) return;
         if (indicePagina.value >= noticiasFiltradas.value.length) return;
         cargando.value = true;
-        // Simulación de carga para UI
         setTimeout(() => { indicePagina.value += 4; cargando.value = false; }, 500);
     };
 
     const resetIndex = () => { indicePagina.value = 6; };
 
-    // Si cambian los filtros, volvemos a mostrar las primeras 6
     watch(filtrosSeleccionados, () => { resetIndex(); });
     return { filtrosSeleccionados, noticiasAMostrar, noticiasFiltradas, cargando, cargarMas, resetIndex };
 }

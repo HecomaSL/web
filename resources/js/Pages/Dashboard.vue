@@ -6,13 +6,13 @@ import { Head, Link } from '@inertiajs/vue3';
 <template>
     <Head title="Mi Panel de Usuario | HECOMA" />
     <MainLayout>
-        <section class="bg-[#010cf7] py-6 mb-12">
+        <section class="bg-[#010cf7] py-6 mb-5">
             <div class="container mx-auto px-6">
                 <h1 class="text-white text-2xl md:text-3xl font-bold text-center uppercase tracking-wide">Panel de Control de Usuario</h1>
             </div>
         </section>
 
-        <section class="container mx-auto px-6 mb-20">
+        <section class="container mx-auto px-6 mb-10">
             <div class="max-w-6xl mx-auto">
                 
                 <div class="mb-8 p-6 bg-blue-50 border-l-4 border-[#010cf7] rounded-r-lg shadow-sm">

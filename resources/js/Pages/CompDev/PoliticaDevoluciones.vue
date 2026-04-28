@@ -7,13 +7,13 @@ import { Head } from '@inertiajs/vue3';
   <Head title="Política de devoluciones - HECOMA" />
 
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-12">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">Política de devoluciones</h1>
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">1. Identificación del vendedor</h2>
         <p>Vendedor: HERRAMIENTAS DE CORTE PARA LA MADERA S.L.</p>

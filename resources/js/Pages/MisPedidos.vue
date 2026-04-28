@@ -9,7 +9,6 @@ const pedidoAbierto = ref(null);
 const togglePedido = (id) => { pedidoAbierto.value = pedidoAbierto.value === id ? null : id; };
 const formatearPrecio = (p) => parseFloat(p).toLocaleString('es-ES', { minimumFractionDigits: 2 }) + '€';
 
-// --- LÓGICA DE EXPERTO: GESTIÓN DE ESTADOS ---
 const getEstadoConfig = (estado) => {
     const configs = {
         'sin pagar': { css: 'bg-yellow-100 text-yellow-700', label: 'Pendiente de Pago' },
@@ -46,7 +45,6 @@ const devolverPedido = (id) => {
 const mostrarModal = ref(false);
 const idPedidoDevolucion = ref(null);
 
-// Actualizamos el form para que lleve el motivo
 const form = useForm({ motivo: '' });
 
 const abrirModalDevolucion = (id) => {

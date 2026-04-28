@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ContactoController; // Importado correctamente
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\CuponController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\FresasController;

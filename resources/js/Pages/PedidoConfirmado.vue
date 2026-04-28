@@ -3,10 +3,7 @@ import MainLayout from '@/Layouts/MainLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
-// Definimos las props que llegan desde el controlador de Laravel
 const props = defineProps({ pedido: Object });
-
-// Estado para gestionar el feedback visual de copiado
 const copiado = ref(null);
 
 /**

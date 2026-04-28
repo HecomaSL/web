@@ -16,7 +16,7 @@ const enviarFormulario = () => {
 <template>
     <Head title="Contacto - HECOMA" />
     <MainLayout>
-        <section class="bg-[#010cf7] py-6 mb-12">
+        <section class="bg-[#010cf7] py-6 mb-5">
             <div class="container mx-auto px-6">
                 <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">CONTACTO</h1>
             </div>
@@ -31,7 +31,7 @@ const enviarFormulario = () => {
 
         <section id="sedes" class=" py-16 px-6">
             <div class="container mx-auto max-w-6xl">
-                <div class="text-center mb-12">
+                <div class="text-center mb-5">
                     <h2 class="text-3xl md:text-4xl font-bold leading-tight uppercase tracking-wide mb-4">SEDES</h2>
                 </div>
                 <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch">
@@ -55,7 +55,7 @@ const enviarFormulario = () => {
             </div>
         </section>
         <section id="formulario-contacto" class="py-16 px-6 bg-[#f5f9fb]">
-            <div class="text-center mb-12">
+            <div class="text-center mb-5">
                 <h2 class="text-3xl md:text-4xl font-bold leading-tight uppercase tracking-wide mb-4">FORMULARIO DE CONTACTO</h2>
             </div>
             <div class="container mx-auto max-w-4xl bg-white p-8 rounded-xl shadow-sm">

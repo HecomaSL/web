@@ -6,13 +6,13 @@ import { Head } from '@inertiajs/vue3';
 <template>
   <Head title="POLITICA DE PROTECCION DE DATOS | HECOMA" />
   <MainLayout>
-    <section class="bg-[#010cf7] py-6 mb-12">
+    <section class="bg-[#010cf7] py-6 mb-5">
       <div id="divh1" class="container mx-auto px-6">
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center uppercase tracking-wide">POLITICA DE PROTECCION DE DATOS</h1>
       </div>
     </section>
 
-    <section class="max-w-6xl container mx-auto px-6 mb-16">
+    <section class="max-w-6xl container mx-auto px-6 mb-10">
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
         <h2 class="text-[#010cf7] text-3xl font-bold mb-6">¿Cómo usa HECOMA® tus datos?</h2>
         <p>Nuestro Interés Legítimo es nuestra relación comercial, ofrecerte nuestros servicios y productos.</p>
@@ -21,7 +21,7 @@ import { Head } from '@inertiajs/vue3';
       </div>
     </section>
 
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">¿Qué medidas toma HECOMA® para proteger tus datos?</h2>
       <div class="space-y-4 text-gray-700">
         <p>Se aplican todas las medidas exigidas por la ley Española (LOPD), por el nuevo reglamento y algunas adicionales. Entre ellas podemos destacar:</p>
@@ -37,7 +37,7 @@ import { Head } from '@inertiajs/vue3';
         </ul>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 id="derechos" class="text-[#010cf7] text-3xl font-bold mb-6">¿Qué derechos incluye el RGPD y la LOPD?</h2>
       <div class="space-y-4 text-gray-700">
         <p>Los principales derechos que regula el RGPD ya estaban recogidos en la LOPD. Aprovechamos para recordarlos e introducir los novedosos. Estos son:</p>
@@ -52,21 +52,21 @@ import { Head } from '@inertiajs/vue3';
         </ul>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">¿Qué es el RGPD y la LOPD?</h2>
       <div class="space-y-4 text-gray-700">
         <p>El RGPD, es la nueva regulación que, a nivel de la Unión Europea, regula la recogida y tratamiento de datos personales. Es de obligado cumplimiento a partir del 25 de Mayo de 2018, aunque lleva vigente desde hace 2 años. Este reglamento desarrolla lo expuesto en nuestra LOPD (Ley Orgánica de Protección de Datos) y se ajusta a la nueva normativa Europea al respecto.</p>
         <p>Para un conocimiento profundo sobre el objetivo y lo que conlleva el nuevo reglamento, puedes visitar la <a href="https://www.agpd.es/portalwebAGPD/index-ides-idphp.php">web de la Agencia Española de Protección de Datos</a>.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">¿Cómo puedo ejercer mis derechos sobre mis datos?</h2>
       <div class="space-y-4 text-gray-700">
         <p>Para asegurar, como es lógico y pide la ley, de que sólo tú puedes ejercer los derechos sobre tus datos, debes enviar una solicitud con tus datos e identificación (DNI, pasaporte u otro documento válido que te identifique) a cualquiera de los métodos de contacto que te ofrecemos.</p>
         <p>Los derechos de Acceso, Rectificación, Cancelación y Oposición (derechos ARCO), son derechos independientes, por lo que no es necesario ejercitar en primer lugar el derecho de acceso para poder rectificar o cancelar.</p>
       </div>
     </section>
-    <section class="container mx-auto px-6 mb-16 max-w-6xl">
+    <section class="container mx-auto px-6 mb-10 max-w-6xl">
       <h2 class="text-[#010cf7] text-3xl font-bold mb-6">Contacto para Ejercer tus derechos</h2>
       <div class="space-y-4 text-gray-700">
         <p>Contacta con nosotros para ejercer tus derechos o cualquier otra consulta en: <a href="mailto:lopd@hecoma.com">lopd@hecoma.com</a> o en el <a href="tel:+34685532082">+34 685 53 20 82</a> (Teléfono del delegado de tratamiento)  o por carta a: <a href="https://maps.app.goo.gl/e6HeoQM8Pjg8hDya9">Hecoma – Incoypre Pol. Ind. Pilar de la Dehesa, C/Galicia nº 1 Lucena (Córdoba) España</a>, indicando: a la atención del delegado de tratamiento de datos.</p>

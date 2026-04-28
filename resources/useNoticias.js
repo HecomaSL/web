@@ -157,9 +157,7 @@ export function useNoticias() {
         setTimeout(() => { indexVisibles.value += 5; cargando.value = false; }, 600);
     };
 
-    const resetIndex = () => {
-        indexVisibles.value = 5;
-    };
+    const resetIndex = () => { indexVisibles.value = 5; };
 
     return { filtrosSeleccionados, noticiasAMostrar, noticiasFiltradas, cargando, cargarMas, resetIndex };
 }

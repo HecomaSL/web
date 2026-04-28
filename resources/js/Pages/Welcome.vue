@@ -4,10 +4,7 @@ import { usePage, Link, Head } from '@inertiajs/vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
 
 const page = usePage();
-
-const areaTecnicaLink = computed(() => {
-    return page.props.auth.user ? '/dashboard' : '/login';
-});
+const areaTecnicaLink = computed(() => { return page.props.auth.user ? '/dashboard' : '/login'; });
 </script>
 
 <template>
@@ -36,8 +33,6 @@ const areaTecnicaLink = computed(() => {
                 <p class="text-xl text-center">Como fabricantes de herramientas de corte para madera, madera técnica y plásticos, ofrecemos soluciones en diamante (PCD) y metal duro (HM). Con plantas de producción en <a href="https://maps.app.goo.gl/iFUmCyCxncteymou5">Sonseca (Toledo)</a> y <a href="https://maps.app.goo.gl/wXWTaA6HyoetsaGn9">Lucena (Córdoba)</a>, cubrimos el centro y sur de España con asesoramiento técnico presencial. Especialistas en el diseño de herramientas especiales a medida con plazos de entrega mínimos para optimizar tu producción industrial.</p>
             </div>
         </section>
-
-        
 
         <section class="py-16 px-6">
             <div class="container mx-auto max-w-5xl text-center">
@@ -78,7 +73,7 @@ const areaTecnicaLink = computed(() => {
 
         <section class="contacto py-16 px-6 bg-[#f5f9fb]">
             <div class="container mx-auto max-w-6xl">
-                <div class="text-center mb-12">
+                <div class="text-center mb-5">
                     <h2 class="text-3xl md:text-4xl font-bold leading-tight uppercase tracking-wide mb-4">CONTACTO</h2>
                     <p class="text-lg">¿Tienes alguna duda? Estaremos encantados de ayudarte. Ponte en contacto con nosotros haciendo click <a href="/contacto" class="font-bold hover:underline">aquí.</a></p>
                 </div>

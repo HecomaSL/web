@@ -67,7 +67,6 @@ const submit = () => { form.post(route('login'), { onFinish: () => form.reset('p
 </template>
 
 <style scoped>
-/* Estilo para que el botón de Login sea idéntico a los de tu web */
 .btn-login-hecoma { background-color: #003399; color: #ffffff; font-weight: 700; text-transform: uppercase; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; border-radius: 4px; transition: all 0.3s ease; padding: 0.8rem 2rem; font-size: 16px; width: 100%; letter-spacing: 0.05em; }
 .btn-login-hecoma:hover { background-color: #010cf7; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(1, 12, 247, 0.2); }
 .btn-login-hecoma:disabled { opacity: 0.5; cursor: not-allowed; }

@@ -8,55 +8,35 @@ import { watch } from 'vue';
 const cart = useCartStore();
 const user = usePage().props.auth.user;
 
-// Formulario de Inertia con todos los campos necesarios
 const form = useForm({
-    nombre: user.nombre || '',
-    email: user.email || '',
-    tlfn: user.tlfn || '',
-    direccion: user.direccion || '',
-    ciudad: '',
-    cp: '',
-    metodo_pago: 'transferencia',
-    items: [],
+    nombre: user.nombre || '', email: user.email || '',
+    tlfn: user.tlfn || '', direccion: user.direccion || '',
+    ciudad: '', cp: '', metodo_pago: 'transferencia', items: [],
     nombre_cupon: cart.cupon ? cart.cupon.nombre : null, 
-    descuento_total: 0,
-    total: 0   
+    descuento_total: 0, total: 0   
 });
 
-// Helpers para formateo
 const formatearPrecio = (valor) => {
     const numero = parseFloat(valor);
-    if (isNaN(numero)) return '0,00 €';
+    if (isNaN(numero))
+        return '0,00 €';
     return numero.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
 };
 
 const enviarPedido = () => {
-    // Preparar items para el servidor
-    form.items = cart.items.map(item => ({
-        id: item.id,
-        referencia: item.referencia,
-        precio: parseFloat(item.precio || 0),
-        cantidad: parseInt(item.cantidad || 0)
-    }));
+    form.items = cart.items.map(item => ({ id: item.id, referencia: item.referencia, precio: parseFloat(item.precio || 0), cantidad: parseInt(item.cantidad || 0) }));
     
-    // Capturar valores del store en el momento del envío
     form.nombre_cupon = cart.cupon ? cart.cupon.nombre : null;
     form.descuento_total = cart.descuentoImporte;
     form.total = cart.totalFinal;
 
     form.post(route('pedido.store'), {
-        onSuccess: () => {
-            cart.clearCart();
-            window.location.href = '/pedido-confirmado'; 
-        },
+        onSuccess: () => { cart.clearCart(); window.location.href = '/pedido-confirmado'; },
         onError: (errors) => { console.error("Errores en el envío:", errors); },
         preserveScroll: true,
     });
 };
-
-// Seguridad: Si recargan y el carrito está vacío, volver atrás
 onMounted(() => { if (cart.items.length === 0) window.location.href = '/carrito'; });
-
 watch(() => form.metodo_envio, (nuevoMetodo) => { cart.metodoEnvio = nuevoMetodo; }, { immediate: true });
 </script>
 
