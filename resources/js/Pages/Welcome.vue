@@ -37,6 +37,8 @@ const areaTecnicaLink = computed(() => {
             </div>
         </section>
 
+        
+
         <section class="py-16 px-6">
             <div class="container mx-auto max-w-5xl text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight uppercase tracking-wide">CENTRO DE RECURSOS Y HERRAMIENTAS DE CORTE DE MADERA</h2>
