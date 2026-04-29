@@ -11,14 +11,11 @@ use Illuminate\Support\Facades\Auth; // ← esta línea faltaba
 class EsAdmin{
     /**
      * Handle an incoming request.
-     *
      * @param  Closure(Request): (Response)  $next
      */
-
     public function handle(Request $request, Closure $next)  {
-        if (Auth::check() && Auth::user()->admin === 'SI') {
+        if (Auth::check() && Auth::user()->admin === 'SI')
             return $next($request);
-        }
 
         return redirect('/');
     }

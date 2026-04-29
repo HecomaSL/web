@@ -9,10 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
-class AdminController extends Controller
-{
-    public function index()
-    {
+class AdminController extends Controller {
+    public function index() {
         // Métricas para el dashboard
         $stats = [
             'total_usuarios'      => User::count(),
@@ -25,21 +23,12 @@ class AdminController extends Controller
             'cupones_activos'     => Cupon::where('activo', 1)->count(),
         ];
 
-        $tickets = Ticket::with('user')
-            ->orderBy('created_at', 'desc')
-            ->get();
-
+        $tickets = Ticket::with('user')->orderBy('created_at', 'desc')->get();
         $cupones = Cupon::orderBy('fechaInicio', 'desc')->get();
-
-        return Inertia::render('Admin/Dashboard', [
-            'stats'   => $stats,
-            'tickets' => $tickets,
-            'cupones' => $cupones,
-        ]);
+        return Inertia::render('Admin/Dashboard', [ 'stats' => $stats, 'tickets' => $tickets, 'cupones' => $cupones,]);
     }
 
-    public function storeCupon(Request $request)
-    {
+    public function storeCupon(Request $request) {
         $validated = $request->validate([
             'nombre'         => 'required|string|max:50|unique:cupones,nombre',
             'fechaInicio'    => 'required|date',
@@ -57,16 +46,14 @@ class AdminController extends Controller
             'tipo'          => $validated['tipo'],
             'valor'         => $validated['valor'],
             'usos_maximos'  => $validated['usos_maximos'],
-            'usos_actuales' => 0,
-            'activo'        => 1,
+            'usos_actuales' => 0, 'activo' => 1,
             'minimo_pedido' => $validated['minimo_pedido'] ?? 0,
         ]);
 
         return redirect()->back()->with('success', 'Cupón creado correctamente.');
     }
 
-    public function toggleCupon(Request $request, $id)
-    {
+    public function toggleCupon(Request $request, $id) {
         $cupon = Cupon::findOrFail($id);
         $cupon->activo = !$cupon->activo;
         $cupon->save();
@@ -74,8 +61,7 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Estado del cupón actualizado.');
     }
 
-    public function updateTicket(Request $request, $id)
-    {
+    public function updateTicket(Request $request, $id) {
         $ticket = Ticket::findOrFail($id);
         $ticket->estado = $request->estado;
         $ticket->save();

@@ -3,38 +3,14 @@ import { ref } from 'vue';
 import { Head, Link, useForm, router } from '@inertiajs/vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
 
-const props = defineProps({
-    stats:   Object,
-    tickets: Array,
-    cupones: Array,
-});
-
+const props = defineProps({ stats: Object, tickets: Array, cupones: Array, });
 const seccionActiva = ref('dashboard');
 
 // Formulario cupón
-const formCupon = useForm({
-    nombre:        '',
-    fechaInicio:   '',
-    fechaFin:      '',
-    tipo:          'porcentaje',
-    valor:         '',
-    usos_maximos:  '',
-    minimo_pedido: '',
-});
-
-const crearCupon = () => {
-    formCupon.post(route('admin.cupones.store'), {
-        onSuccess: () => formCupon.reset(),
-    });
-};
-
-const toggleCupon = (id) => {
-    router.post(route('admin.cupones.toggle', id));
-};
-
-const cambiarEstadoTicket = (id, estado) => {
-    router.post(route('admin.tickets.update', id), { estado });
-};
+const formCupon = useForm({ nombre: '', fechaInicio: '', fechaFin: '', tipo: 'porcentaje', valor: '', usos_maximos: '', minimo_pedido: '', });
+const crearCupon = () => { formCupon.post(route('admin.cupones.store'), { onSuccess: () => formCupon.reset(), }); };
+const toggleCupon = (id) => { router.post(route('admin.cupones.toggle', id)); };
+const cambiarEstadoTicket = (id, estado) => { router.post(route('admin.tickets.update', id), { estado }); };
 
 const colorEstado = (estado) => {
     switch (estado) {
@@ -44,12 +20,20 @@ const colorEstado = (estado) => {
         default:            return 'badge';
     }
 };
+// Comprobar si el cupón está caducado
+const estaCaducado = (fechaFin) => {
+    if (!fechaFin)
+        return false;
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0)
+    const fin = new Date(fechaFin);
+    return fin < hoy;
+};
 </script>
 
 <template>
     <Head title="Panel Administrador | HECOMA" />
     <MainLayout>
-
         <section class="bg-[#010cf7] py-6 mb-5">
             <div class="container mx-auto px-6">
                 <h1 class="text-white text-2xl md:text-3xl font-bold text-center uppercase tracking-wide">
@@ -60,7 +44,6 @@ const colorEstado = (estado) => {
 
         <section class="container mx-auto px-6 mb-10">
             <div class="max-w-7xl mx-auto">
-
                 <!-- NAV -->
                 <div class="flex gap-3 mb-8 flex-wrap">
                     <button @click="seccionActiva = 'dashboard'" :class="['nav-btn', seccionActiva === 'dashboard' ? 'active' : '']">📊 Dashboard</button>
@@ -135,7 +118,7 @@ const colorEstado = (estado) => {
                             <tbody>
                                 <tr v-for="ticket in tickets" :key="ticket.id">
                                     <td>{{ ticket.id }}</td>
-                                    <td>{{ ticket.user?.name }}</td>
+                                    <td>{{ ticket.user?.nombre }}</td>
                                     <td>{{ ticket.user?.email }}</td>
                                     <td>{{ ticket.titulo }}</td>
                                     <td class="problema-cell">{{ ticket.problema }}</td>
@@ -227,7 +210,10 @@ const colorEstado = (estado) => {
                                     <td>{{ cupon.fechaInicio }}</td>
                                     <td>{{ cupon.fechaFin }}</td>
                                     <td>
-                                        <span :class="cupon.activo ? 'badge badge-abierto' : 'badge badge-cerrado'">
+                                        <span v-if="estaCaducado(cupon.fechaFin)" class="badge badge-caducado">
+                                            Caducado
+                                        </span>
+                                        <span v-else :class="cupon.activo ? 'badge badge-abierto' : 'badge badge-cerrado'">
                                             {{ cupon.activo ? 'Activo' : 'Inactivo' }}
                                         </span>
                                     </td>

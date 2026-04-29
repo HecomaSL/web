@@ -25,7 +25,7 @@ class TicketController extends Controller {
         // Envío de correo al administrador
         Mail::send([], [], function ($message) use ($ticket, $usuario) {
             $message
-                ->to(config('mail.admin_address', env('MAIL_ADMIN', 'tu@email.com')))
+                ->to(config('mail.admin_address', env('MAIL_ADMIN', 'marketing@hecoma.com')))
                 ->subject('🎫 Nuevo Ticket #' . $ticket->id . ' - ' . $ticket->titulo)
                 ->html('
                     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
