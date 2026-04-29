@@ -66,7 +66,6 @@ const colorEstado = (estado) => {
                     <button @click="seccionActiva = 'dashboard'" :class="['nav-btn', seccionActiva === 'dashboard' ? 'active' : '']">📊 Dashboard</button>
                     <button @click="seccionActiva = 'tickets'"   :class="['nav-btn', seccionActiva === 'tickets'   ? 'active' : '']">🎫 Tickets</button>
                     <button @click="seccionActiva = 'cupones'"   :class="['nav-btn', seccionActiva === 'cupones'   ? 'active' : '']">🏷️ Cupones</button>
-                    <Link :href="route('profile.edit')" class="nav-btn">👤 Mi Perfil</Link>
                 </div>
 
                 <!-- DASHBOARD -->

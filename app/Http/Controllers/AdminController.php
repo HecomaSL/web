@@ -29,7 +29,7 @@ class AdminController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        $cupones = Cupon::orderBy('created_at', 'desc')->get();
+        $cupones = Cupon::orderBy('fechaInicio', 'desc')->get();
 
         return Inertia::render('Admin/Dashboard', [
             'stats'   => $stats,

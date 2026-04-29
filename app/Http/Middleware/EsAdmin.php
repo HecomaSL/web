@@ -8,8 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth; // ← esta línea faltaba
 
 
-class EsAdmin
-{
+class EsAdmin{
     /**
      * Handle an incoming request.
      *
@@ -17,7 +16,7 @@ class EsAdmin
      */
 
     public function handle(Request $request, Closure $next)  {
-        if (Auth::check() && Auth::user()->admin === 'si') {
+        if (Auth::check() && Auth::user()->admin === 'SI') {
             return $next($request);
         }
 

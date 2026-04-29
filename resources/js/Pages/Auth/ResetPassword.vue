@@ -17,7 +17,7 @@ const submit = () => { form.post(route('password.store'), { onFinish: () => form
         <form @submit.prevent="submit">
             <div>
                 <InputLabel for="email" value="Email" />
-                <TextInputid="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
+                <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
@@ -29,8 +29,8 @@ const submit = () => { form.post(route('password.store'), { onFinish: () => form
 
             <div class="mt-4">
                 <InputLabel for="password_confirmation" value="Confirm Password" />
-                <TextInputid="password_confirmation"type="password" class="mt-1 block w-full" v-model="form.password_confirmation" required autocomplete="new-password" />
-                <InputErrorclass="mt-2" :message="form.errors.password_confirmation" />
+                <TextInput id="password_confirmation"type="password" class="mt-1 block w-full" v-model="form.password_confirmation" required autocomplete="new-password" />
+                <InputError class="mt-2" :message="form.errors.password_confirmation" />
             </div>
 
             <div class="mt-4 flex items-center justify-end">
