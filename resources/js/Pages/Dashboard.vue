@@ -14,10 +14,8 @@ import { Head, Link } from '@inertiajs/vue3';
 
         <section class="container mx-auto px-6 mb-10">
             <div class="max-w-6xl mx-auto">
-                
                 <div class="mb-8 p-6 bg-blue-50 border-l-4 border-[#010cf7] rounded-r-lg shadow-sm">
-                    <p class="text-lg text-gray-700">¡Hola, <span class="font-bold text-[#003399]">{{ $page.props.auth.user.nombre }}</span>! Bienvenido a tu área privada de HECOMA®.
-                    </p>
+                    <p class="text-lg text-gray-700">¡Hola, <span class="font-bold text-[#003399]">{{ $page.props.auth.user.nombre }}</span>! Bienvenido a tu área privada de HECOMA®.</p>
                     <p class="text-sm text-gray-500 mt-1">Desde aquí puedes gestionar tus pedidos, consultar reafilados y actualizar tu perfil.</p>
                 </div>
 
@@ -41,7 +39,7 @@ import { Head, Link } from '@inertiajs/vue3';
                         <div class="icon-box">🛠️</div>
                         <h3 class="text-xl font-bold text-[#003399] mb-2">Soporte Técnico</h3>
                         <p class="text-gray-600 text-sm mb-4">¿Tienes dudas sobre un material? Contacta con nuestros técnicos.</p>
-                        <Link href="/" class="btn-dashboard outline">Abrir Ticket</Link>
+                        <Link href="/ticket" class="btn-dashboard outline">Abrir Ticket</Link>
                     </div>
 
                 </div>

@@ -9,13 +9,13 @@ use App\Http\Controllers\DiscosController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\TicketController;
 
 /*
 |--------------------------------------------------------------------------
 | Rutas Públicas
 |--------------------------------------------------------------------------
 */
-
 Route::get('/', function () { return Inertia::render('Welcome', [ 'canLogin' => Route::has('login'), 'canRegister' => Route::has('register'), 'laravelVersion' => Application::VERSION, 'phpVersion' => PHP_VERSION, ]); });
 Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto');
 Route::post('/contacto-enviar', [ContactoController::class, 'enviar'])->name('contacto.enviar');
@@ -29,13 +29,8 @@ Route::get('/afilado-para-diamante', function () { return Inertia::render('Servi
 // Fabricacion a medida
 Route::get('/fabricacion-a-medida', function () { return Inertia::render('Servicios/FabricacionAMedida'); })->name('fabricacion-a-medida');
 
-// Nueva ruta para Nuestra Historia
 Route::get('/nuestra-historia', function () { return Inertia::render('SobreNosotros/Historia'); })->name('historia');
-
-// Nueva ruta para Nuestra Valores
 Route::get('/nuestros-valores', function () { return Inertia::render('SobreNosotros/Valores'); })->name('valores');
-
-// Nueva ruta para Distribución
 Route::get('/distribucion', function () { return Inertia::render('SobreNosotros/Distribucion'); })->name('distribucion');
 Route::get('/catalogo', function () { return Inertia::render('Catalogo/Catalogo'); })->name('catalogo');
 Route::get('/aviso-legal', function () { return Inertia::render('TextosLegales/AvisoLegal'); })->name('aviso-legal');
@@ -165,8 +160,7 @@ Route::get('/discos_silenciados_aluminio', [DiscosController::class, 'showSerie1
 Route::get('/discos_silenciados_recubrimiento', [DiscosController::class, 'showSerie11_5'])->name('discos_silenciados_recubrimiento');
 
 
-Route::get('/carrito', function () { return Inertia::render('Carrito');
-})->middleware('auth')->name('carrito');Route::get('/tramitar-pedido', function () { return Inertia::render('TramitarPedido'); })->name('tramitar-pedido');
+Route::get('/carrito', function () { return Inertia::render('Carrito'); })->middleware('auth')->name('carrito');Route::get('/tramitar-pedido', function () { return Inertia::render('TramitarPedido'); })->name('tramitar-pedido');
 // En routes/web.php
 Route::post('/pedido-store', ['App\Http\Controllers\PedidoController', 'store'])->name('pedido.store');
 Route::post('/cupones/validar', [App\Http\Controllers\CuponController::class, 'validar']);
@@ -182,7 +176,6 @@ Route::post('/pedidos/{id}/devolver', [PedidoController::class, 'devolver'])->na
 | Rutas Protegidas (Requieren Inicio de Sesión)
 |--------------------------------------------------------------------------
 */
-
 Route::get('/dashboard', function () { return Inertia::render('Dashboard'); })->middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -190,6 +183,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/pedido-confirmado', function () { return inertia('PedidoConfirmado');})->name('pedido.confirmado');
     Route::get('/mis-pedidos', [App\Http\Controllers\PedidoController::class, 'index'])->name('pedidos.index');
+    Route::get('/ticket', [TicketController::class, 'index'])->name('ticket');
+    Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
 });
 
 require __DIR__.'/auth.php';

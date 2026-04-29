@@ -27,7 +27,6 @@ class User extends Authenticatable {
     public function getAuthPassword() {
         return $this->contrasena;
     }
-
     
     protected function casts(): array {
         return ['email_verified_at' => 'datetime', 'contrasena' => 'hashed',];
