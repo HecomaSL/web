@@ -17,5 +17,5 @@ class PasswordController extends Controller {
 
         $request->user()->update([ 'contrasena' => Hash::make($validated['password']), ]);
         return back();
-    }
+    } 
 }
