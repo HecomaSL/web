@@ -185,6 +185,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/mis-pedidos', [App\Http\Controllers\PedidoController::class, 'index'])->name('pedidos.index');
     Route::get('/ticket', [TicketController::class, 'index'])->name('ticket');
     Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
+
+    // Rutas admin
+    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
+    Route::post('/admin/cupones', [App\Http\Controllers\AdminController::class, 'storeCupon'])->name('admin.cupones.store');
+    Route::post('/admin/cupones/{id}/toggle', [App\Http\Controllers\AdminController::class, 'toggleCupon'])->name('admin.cupones.toggle');
+    Route::post('/admin/tickets/{id}', [App\Http\Controllers\AdminController::class, 'updateTicket'])->name('admin.tickets.update');
+    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])
+    ->name('admin.dashboard')
+    ->middleware('admin'); 
 });
 
 require __DIR__.'/auth.php';
