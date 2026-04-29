@@ -34,7 +34,6 @@ const areaTecnicaLink = computed(() => { return page.props.auth.user ? '/dashboa
                     <img src="/images/logo-hecoma-blanco.png" alt="HECOMA Logo" class="h-24 md:h-32 object-contain" />
                 </div>
                 <h1 class="text-3xl md:text-4xl font-bold mb-8 leading-tight uppercase tracking-wide">Fabricación de Herramientas de Corte para Madera de Alto Rendimiento</h1>
-                <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight uppercase tracking-wide">Prueba pull git </h2>
                 <p class="text-xl text-center">Como fabricantes de herramientas de corte para madera, madera técnica y plásticos, ofrecemos soluciones en diamante (PCD) y metal duro (HM). Con plantas de producción en <a href="https://maps.app.goo.gl/iFUmCyCxncteymou5">Sonseca (Toledo)</a> y <a href="https://maps.app.goo.gl/wXWTaA6HyoetsaGn9">Lucena (Córdoba)</a>, cubrimos el centro y sur de España con asesoramiento técnico presencial. Especialistas en el diseño de herramientas especiales a medida con plazos de entrega mínimos para optimizar tu producción industrial.</p>
             </div>
         </section>
