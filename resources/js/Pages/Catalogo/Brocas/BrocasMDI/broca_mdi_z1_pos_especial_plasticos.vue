@@ -4,8 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-
-  <Head title="Broca MDI Helicoidal acabado positivo Z1 para plásticos - HECOMA" />
+  <Head>
+    <title>Broca MDI para Plásticos Z1 positivo | Corte Frío y Acabado Espejo</title>
+    <meta name="description" content="Broca MDI Z1 para plásticos, acrílicos y PVC. Hélice positiva diseñada para evitar el derretimiento del material. ¡Acabado transparente!" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi z1, broca mdi positiva, broca mdi especial, broca mdi para plasticos" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

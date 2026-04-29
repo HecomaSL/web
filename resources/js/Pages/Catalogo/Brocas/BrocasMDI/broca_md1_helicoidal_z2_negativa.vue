@@ -4,6 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
+  <Head>
+    <title>Broca MDI Helicoidal acabado Z2 Negativo | Adiós al Astillado Superior</title>
+    <meta name="description" content="Broca de Metal Duro Integral (MDI) Z2 con hélice negativa. Evita el astillado en la cara superior de melaminas y laminados. Corte limpio y máxima precisión. Calidad HECOMA" />
+    <meta name="keywords" content="broca mdi, broca mdi helicoidal, broca z2, fresa mdi, fresa helicoidal, fresa metal duro, broca metal duro" />
+  </Head>
   <Head title="Broca MDI Helicoidal acabado negativa Z2 - HECOMA" />
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

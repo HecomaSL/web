@@ -4,8 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-
-  <Head title="Broca MDI Helicoidal acabado positiva Z2 - HECOMA" />
+  <Head>
+    <title>Broca MDI Helicoidal acabado Z2 Positivo | Máximo Acabado y Estabilidad</title>
+    <meta name="description" content="Broca MDI de 2 cortes (Z2) con hélice positiva. Perfecta para acabados de alta calidad en maderas duras, MDF y plásticos. ¡Precisión industrial HECOMA!." />
+    <meta name="keywords" content="broca mdi, broca mdi helicoidal, broca z2, fresa mdi, fresa helicoidal, fresa metal duro, broca metal duro" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

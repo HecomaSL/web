@@ -4,8 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-
-  <Head title="Broca MDI Helicoidal acabado Z3 (BA27) - HECOMA" />
+  <Head>
+    <title>Broca MDI Acabado Z3 (BA27) | Acabado Superior y Alta Estabilidad</title>
+    <meta name="description" content="Broca MDI acabado Z3 (BA27). Triple filo helicoidal para un acabado espejo en maderas duras y tableros. Máxima rigidez y ausencia de vibraciones. ¡Calidad HECOMA!" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi z3, broca mdi desbaste, broca mdi con bisel" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

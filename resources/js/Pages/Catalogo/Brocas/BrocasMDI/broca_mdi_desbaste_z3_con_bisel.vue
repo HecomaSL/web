@@ -4,7 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-  <Head title="Broca MDI helicoidal desbaste en CNC con bisel 60º para canjeados Z3 - HECOMA" />
+  <Head>
+    <title>Broca MDI Desbaste en CNC con Bisel 60º Z3 | Cajeado y Chaflán</title>
+    <meta name="description" content="Broca MDI Z3 para desbaste de cajeados con bisel de 60º integrado. Optimiza tu ciclo CNC realizando desbaste y chaflán en un solo paso. ¡Calidad HECOMA!" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi z3, broca mdi desbaste, broca mdi con bisel" />
+  </Head>
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">
       <div class="container mx-auto px-6">

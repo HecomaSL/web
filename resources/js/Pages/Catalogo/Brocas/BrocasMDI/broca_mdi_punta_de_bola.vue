@@ -4,8 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-
-  <Head title="Broca MDI Helicoidal punta de bola Z2 - HECOMA" />
+  <Head>
+    <title>Broca MDI Punta de Bola Z2 | Acabado 3D y Copiado de Alta Precisión</title>
+    <meta name="description" content="Broca MDI punta de bola Z2. Perfecta para mecanizado 3D, grabados y molduras curvas. Geometría helicoidal para un acabado espejo." />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi z2, broca mdi punta de bola" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

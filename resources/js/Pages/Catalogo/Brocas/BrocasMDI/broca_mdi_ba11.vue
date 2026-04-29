@@ -4,7 +4,12 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-  <Head title="Broca MDI Helicoidal acabado positiva con rompeviruta Z3 (BA11) - HECOMA" />
+  <Head>
+    <title>Broca MDI Rompeviruta TiSi Z3 BA11 | Recubrimiento Titanio-Silicio</title>
+    <meta name="description" content="Broca Z3 con recubrimiento de Titanio y Silicio (TiSi). Máxima resistencia al calor y desgaste en maderas abrasivas. Rendimiento industrial extremo. ¡Stock!" />
+    <meta name="keywords" content="broca mdi, broca mdi helicoidal, broca z3, broca mdi titanio, broca mdi silicio, broca mdi rompeviruta, fresa mdi, fresa helicoidal, fresa metal duro, broca metal duro" />
+  </Head>
+  
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-15">
       <div class="container mx-auto px-6">

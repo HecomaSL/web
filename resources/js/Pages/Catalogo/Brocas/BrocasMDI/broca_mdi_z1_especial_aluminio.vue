@@ -5,7 +5,11 @@ import { Head } from '@inertiajs/vue3';
 
 <template>
 
-  <Head title="Broca MDI Helicoidal acabado Z1 para aluminio - HECOMA" />
+<Head>
+    <title>Broca MDI para Aluminio acabado Z1 | Corte Rápido y Anti-Embotamiento</title>
+    <meta name="description" content="Broca MDI Z1 para Aluminio. Hélice pulida para máxima evacuación y acabado espejo. ¡Calidad HECOMA y fabricación a medida!" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi z1, broca mdi para aluminio" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

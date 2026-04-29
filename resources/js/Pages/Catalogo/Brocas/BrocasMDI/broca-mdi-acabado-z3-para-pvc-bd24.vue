@@ -4,8 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-
-  <Head title="Broca MDI Helicoidal acabado Z3 para PVC (BD24) - HECOMA" />
+  <Head>
+    <title>Broca MDI para PVC Z3 BD24 | Acabado Espejo y Máximo Avance CNC</title>
+    <meta name="description" content="Broca MDI Z3 optimizada para el fresado de PVC y plásticos. Geometría de 3 filos para máxima velocidad de corte y evacuación superior. ¡Calidad HECOMA!" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi z3, broca mdi para pcv, broca mdi para" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

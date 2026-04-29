@@ -4,7 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-  <Head title="Broca MDI Helicoidal desbaste positiva Z3 (BD12) - HECOMA" />
+  <Head>
+    <title>Broca MDI Desbaste Positiva Z3 BD12 | Alto Avance y Remoción</title>
+    <meta name="description" content="Broca MDI de desbaste con 3 filos (Z3) y hélice positiva. Diseñada para una evacuación masiva de viruta y máxima velocidad en maderas duras. ¡Calidad HECOMA!" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi z3, broca mdi desbaste" />
+  </Head>
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">
       <div class="container mx-auto px-6">

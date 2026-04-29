@@ -4,8 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-
-  <Head title="Broca MDI helicoidal acabado positivo-negativa con recubrimiento de platino - HECOMA" />
+  <Head>
+    <title>Broca MDI Acabado Positivo-Negativa con recubrimiento de Platino</title>
+    <meta name="description" content="Broca MDI de compresión con recubrimiento de Platino. Acabado impecable en ambas caras sin astillado. Máxima resistencia térmica y durabilidad. ¡Calidad HECOMA!" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi recubrimiento platino, broca mdi positiva, broca mdi negatica, broca mdi positivo-negativa" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

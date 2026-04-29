@@ -5,7 +5,11 @@ import { Head } from '@inertiajs/vue3';
 
 <template>
 
-  <Head title="Broca MDI Helicoidal acabado Z2 radio convexo - HECOMA" />
+<Head>
+    <title>Broca MDI Radio Convexo Z2 | Perfilado Redondeado y Media Caña</title>
+    <meta name="description" content="Broca MDI de Z2 con radio convexo para perfilado de bordes. Ideal para acabados decorativos en madera y plásticos. Máxima suavidad de corte. ¡Calidad HECOMA!" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi z2, broca mdi radio convexo" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

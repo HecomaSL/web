@@ -4,8 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-
-  <Head title="Broca MDI Helicoidal acabado positiva con rompeviruta Z3 (BA10) - HECOMA" />
+  <Head>
+    <title>Broca MDI Rompeviruta Z3 Positiva BA10 | Desbaste y Acabado CNC</title>
+    <meta name="description" content="Broca industrial Z3 con geometría rompeviruta y hélice positiva. Máxima evacuación y velocidad en maderas duras. Fabricación a medida y con calidad HECOMA" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi z3, broca mdi positiva, broca mdi especial, broca mdi para desbaste, broca mdi para acabado cnc" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

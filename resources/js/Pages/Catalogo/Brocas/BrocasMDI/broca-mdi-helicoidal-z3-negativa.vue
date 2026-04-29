@@ -4,8 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-
-  <Head title="Broca MDI Helicoidal Acabado Negativa Z3 - HECOMA" />
+  <Head>
+    <title>Broca MDI Helicoidal acabado Z3 Negativo BA05 | Corte Limpio Superior</title>
+    <meta name="description" content="Broca industrial Z3 con hélice negativa. Evita el astillado en la cara vista y presiona la pieza hacia la mesa. Ideal para maderas duras y centros CNC" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi z3, broca mdi negativa, broca mdi z3 negativa" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

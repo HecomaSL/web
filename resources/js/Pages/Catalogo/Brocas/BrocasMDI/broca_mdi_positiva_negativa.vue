@@ -4,8 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-
-  <Head title="Broca MDI Helicoidal Acabado Positivo-Negativo - HECOMA" />
+  <Head>
+    <title>Broca MDI Compresión Positiva-Negativa | Acabado Perfecto 2 Caras</title>
+    <meta name="description" content="Broca MDI de compresión (Positiva-Negativa). Evita el astillado en ambas caras de melaminas y laminados. Máxima precisión en corte y fresado. ¡Calidad HECOMA!" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi compresion, broca mdi z2" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

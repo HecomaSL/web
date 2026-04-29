@@ -4,8 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-
-  <Head title="Broca MDI Helicoidal para doblado de Alucobond Z1 - HECOMA" />
+  <Head>
+    <title>Broca MDI para Doblado de Alucobond Z1 | Fresado y Plegado CNC</title>
+    <meta name="description" content="Broca MDI para fresado y doblado de paneles composite (Alucobond/Dibond) Z1. Geometría optimizada para un plegado perfecto sin roturas. ¡Calidad HECOMA!" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi para fresado, broca mdi para doblado de paneles, broca mdi z1, broca mdi para Doblado de Alucobond" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

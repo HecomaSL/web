@@ -4,7 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <Head title="Broca MDI helicoidal acabado Z3 (BA06) - HECOMA" />
+    <Head>
+        <title>Broca MDI Helicoidal acabado Z3 Positiva (B06) | Recubrimiento Diamante</title>
+        <meta name="description" content="Broca industrial Z3 con recubrimiento de diamante. Hélice positiva para evacuación superior en maderas duras y aglomerados. ¡Máxima vida útil gracias a la calidad HECOMA!" />
+        <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi z3, broca mdi positiva, broca mdi z3 positiva" />
+    </Head>
     <MainLayout>
         <section class="bg-[#010cf7] py-6 mb-5">
             <div class="container mx-auto px-6">

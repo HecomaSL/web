@@ -4,8 +4,11 @@ import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
-
-  <Head title="Broca MDI Helicoidadal acabado Z1 para metacrilato - HECOMA" />
+  <Head>
+    <title>Broca MDI para metacrilato | Acabado Transparente Z1 y Corte Espejo</title>
+    <meta name="description" content="Broca MDI para metacrilato con Z1 (un filo) especial para PMMA. Hélice pulida para evitar el calor y lograr bordes cristalinos sin rebaba. ¡Calidad HECOMA!" />
+    <meta name="keywords" content="broca, broca mdi, broca mdi helicoidal, broca mdi z1, Broca MDI para metacrilato, broca mdi especial, broca mdi para pmma" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">
