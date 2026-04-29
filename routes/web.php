@@ -187,13 +187,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
 
     // Rutas admin
-    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
-    Route::post('/admin/cupones', [App\Http\Controllers\AdminController::class, 'storeCupon'])->name('admin.cupones.store');
-    Route::post('/admin/cupones/{id}/toggle', [App\Http\Controllers\AdminController::class, 'toggleCupon'])->name('admin.cupones.toggle');
-    Route::post('/admin/tickets/{id}', [App\Http\Controllers\AdminController::class, 'updateTicket'])->name('admin.tickets.update');
-    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])
-    ->name('admin.dashboard')
-    ->middleware('admin'); 
+    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard')->middleware('admin');
+    Route::post('/admin/cupones', [App\Http\Controllers\AdminController::class, 'storeCupon'])->name('admin.cupones.store')->middleware('admin');
+    Route::post('/admin/cupones/{id}/toggle', [App\Http\Controllers\AdminController::class, 'toggleCupon'])->name('admin.cupones.toggle')->middleware('admin');
+    Route::post('/admin/tickets/{id}', [App\Http\Controllers\AdminController::class, 'updateTicket'])->name('admin.tickets.update')->middleware('admin');
 });
 
 require __DIR__.'/auth.php';
