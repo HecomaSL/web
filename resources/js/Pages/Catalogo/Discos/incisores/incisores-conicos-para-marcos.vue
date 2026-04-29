@@ -38,7 +38,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 3.2 Incisores cónicos para marcos - HECOMA" />
+  <Head>
+    <title>Incisor cónico para marcos | Incisores</title>
+    <meta name="description" content="Serie 3.2 incisores cónicos para marcos. Garantice un pre-corte preciso y un acabado limpio en trabajos de carpintería fina. Diseño cónico para máxima estabilidad y ajuste visual de HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, incisor, incisores, incisor conico, incisor para marcos, incisor conico para marcos" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

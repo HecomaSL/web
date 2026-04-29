@@ -38,7 +38,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 3.1 Incisores para escuadradora - HECOMA" />
+  <Head>
+    <title>Incisor para Escuadradora | Incisores</title>
+    <meta name="description" content="Incisor para escuadradora. Realice un pre-corte preciso para evitar astillados en la cara inferior de tableros revestidos. Garantía de acabado profesional y limpio con HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, incisor, incisores, incisor para escuadradora" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

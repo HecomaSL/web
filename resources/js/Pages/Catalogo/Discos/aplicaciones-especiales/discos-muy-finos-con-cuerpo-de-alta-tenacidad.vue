@@ -35,7 +35,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 2.5 Discos muy finos con cuerpo de alta tenacidad - HECOMA" />
+  <Head>
+    <title>Discos Muy Finos de Alta Tenacidad | Discos de Aplicaciones Especiales</title>
+    <meta name="description" content="Discos con cuerpo de alta tenacidad. Diseñados para un corte estable y de precisión en trabajos continuos. Máximo aprovechamiento del material con la garantía industrial de HECOMA®." />
+    <meta name="keywords" content="discos, discos corte para madera, discos finos, discos muy finos, discos de alta tenacidad, discos finos de alta tenacidad, discos aplicaciones especiales" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

@@ -46,7 +46,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 8.1 Discos para materiales ferrosos - HECOMA" />
+  <Head>
+    <title>Discos para Materiales Ferrosos</title>
+    <meta name="description" content="Discos para el corte preciso de materiales ferrosos y aceros. Rendimiento industrial optimizado para una larga vida útil en condiciones exigentes. Calidad y seguridad HECOMA®.." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos para materiales ferrosos" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

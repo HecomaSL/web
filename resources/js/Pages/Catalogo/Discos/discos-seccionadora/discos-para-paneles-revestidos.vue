@@ -39,7 +39,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 4.2 Discos para paneles revestidos - HECOMA" />
+  <Head>
+    <title>Discos para paneles revestidos | Discos para seccionadora</title>
+    <meta name="description" content="Discos para paneles melamínicos y revestidos. Evita el astillado y garantiza un acabado impecable en superficies decorativas con la calidad de HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos para paneles revestidos, discos para seccionadora" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

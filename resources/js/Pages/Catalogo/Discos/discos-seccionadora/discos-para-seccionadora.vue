@@ -37,7 +37,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 4.1 Discos para seccionadora - HECOMA" />
+  <Head>
+    <title>Discos para seccionadora | Corte de Alta Precisión</title>
+    <meta name="description" content="Discos Serie 4.1 diseñados específicamente para máquinas seccionadoras. Máxima precisión, estabilidad y calidad de acabado en el mecanizado de paneles. Calidad industrial HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos para seccionadora" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

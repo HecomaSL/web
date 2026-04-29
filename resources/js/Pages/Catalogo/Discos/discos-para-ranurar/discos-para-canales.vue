@@ -49,7 +49,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 5.1 Discos para canales - HECOMA" />
+  <Head>
+    <title>Discos para canales | Discos para ranurados</title>
+    <meta name="description" content="Discos diseñados para realizar ranurados y canales precisos en madera maciza y tableros. Máxima estabilidad y limpieza de corte. Calidad industrial HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos para canales, discos para ranurados, discos para ranurar" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

@@ -39,7 +39,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 11.3 Discos silenciosos para seccionadora, laminados y bilaminados - HECOMA" />
+  <Head>
+    <title>Discos silenciosos para seccionadora, laminados y bilaminados | Discos Sileciosos</title>
+    <meta name="description" content="Discos silenciados para seccionadora y materiales laminados. Corte limpio, preciso y con reducción de ruido para acabados de alta calidad. Garantía industrial HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos silenciosos, discos silenciados, discos silenciosos para seccionadora, discos silenciosos para laminados, discos silenciosos para laminados y bilaminados" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

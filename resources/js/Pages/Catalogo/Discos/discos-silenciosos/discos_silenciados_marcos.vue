@@ -46,7 +46,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 11.2 Discos silenciados para marcos - HECOMA" />
+  <Head>
+    <title>Discos de uso exclusivo para marcos | Discos silenciosos</title>
+    <meta name="description" content="Discos diseñados exclusivamente para el corte de marcos. Máxima precisión, acabado impecable y sistema silenciado para un trabajo profesional. Calidad HECOMA®.." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos silenciosos, discos para marcos, discos para marcos silenciados" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

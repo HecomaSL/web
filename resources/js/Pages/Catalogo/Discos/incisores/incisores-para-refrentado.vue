@@ -37,7 +37,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 3.3 Incisores para refrentado - HECOMA" />
+  <Head>
+    <title>Incisores para Refrentado | Incisores</title>
+    <meta name="description" content="Incisores para refrentado en seccionadora. Asegure un pre-corte preciso y elimine el astillado en paneles revestidos y superficies decorativas. Calidad industrial HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, incisor, incisores, incisor para refrentado" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

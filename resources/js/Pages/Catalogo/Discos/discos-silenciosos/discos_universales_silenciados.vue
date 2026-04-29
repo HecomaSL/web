@@ -46,7 +46,11 @@ function formatearPrecio(precio) {
 
 
 <template>
-  <Head title="Serie 11.1 Discos universales silenciados - HECOMA" />
+  <Head>
+    <title>Discos universales silenciados | Discos silenciosos</title>
+    <meta name="description" content="Discos universales silenciados. Máximo confort acústico, reducción de vibraciones y acabado excelente para aplicaciones profesionales con la garantía de HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos silenciosos, discos universales, discos universales silenciados" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

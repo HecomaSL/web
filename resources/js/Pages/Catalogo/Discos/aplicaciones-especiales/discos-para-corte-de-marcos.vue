@@ -35,7 +35,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 2.1 Discos Para corte de Marcos - HECOMA" />
+  <Head>
+    <title>Discos para Corte de Marcos | Discos de Aplicaciones Especiales</title>
+    <meta name="description" content="Discos diseñados para el corte de marcos con máxima precisión. Logre uniones limpias y ensambles perfectos con un corte estable y libre de vibraciones. Calidad profesional HECOMA®." />
+    <meta name="keywords" content="discos, discos corte, discos corte de madera, discos para corte de marcos, discos aplicaciones especiales" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

@@ -39,7 +39,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 2.6 Discos Extremadamente Finos Con Cuerpo Reforzado - HECOMA" />
+  <Head>
+    <title>Discos Finos con Cuerpo Reforzado | Discos de Aplicaciones Especiales</title>
+    <meta name="description" content="Discos para corte ultra preciso y rápido. Su cuerpo reforzado aporta la estabilidad necesaria en discos extremadamente finos para trabajos exigentes. Máxima calidad de acabado con la garantía HECOMA®." />
+    <meta name="keywords" content="discos, discos corte para madera, discos finos, discos finos con cuerpo reforzado, discos aplicaciones especiales" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

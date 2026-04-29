@@ -43,7 +43,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 3.5 Incisores para canteadoras - HECOMA" />
+  <Head>
+    <title>Incisores para Canteadoras | Incisores</title>
+    <meta name="description" content="Incisores especializados en máquinas canteadoras. Realice un pre-corte preciso para un mecanizado del canto limpio y sin astillados. Calidad industrial HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, incisor, incisores, incisor para canteadora" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

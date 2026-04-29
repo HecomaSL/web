@@ -40,7 +40,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 11.5 Discos silenciados con recubrimiento para seccionadora y paneles revestidos - HECOMA" />
+  <Head>
+    <title>Discos silenciados con recubrimiento para seccionadora y paneles revestidos | Discos silenciosos</title>
+    <meta name="description" content="Discos con recubrimiento especial para seccionadora y paneles revestidos. Reduce la fricción y garantiza un acabado limpio en superficies decorativas. Calidad HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos silenciosos, discos silenciados, discos silenciosos para seccionadora, discos silenciosos para paneles revestidos, discos silenciados con recubrimiento" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

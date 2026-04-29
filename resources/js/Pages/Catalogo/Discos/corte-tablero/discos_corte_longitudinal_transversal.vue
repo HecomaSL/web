@@ -34,7 +34,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 1.1. Discos para corte longitudinal o transversal - HECOMA" />
+  <Head>
+    <title>Discos Corte Longitudinal y Transversal | Discos de Corte de Tablero</title>
+    <meta name="description" content="Discos universales para corte longitudinal y transversal de madera. Diseño optimizado para evacuación de viruta y control de avance. ¡Cortes limpios y seguros con HECOMA®!" />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos corte longitudinal, discos corte transversal, discos corte de tablero" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

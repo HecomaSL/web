@@ -38,7 +38,11 @@ function formatearPrecio(precio) {
 }
 </script>
 <template>
-  <Head title="Serie 3.4 Incisores ajustables - HECOMA" />
+  <Head>
+    <title>Incisores Ajustables para Seccionadora | Incisores</title>
+    <meta name="description" content="Incisores ajustables para seccionadora. Máxima versatilidad con ancho de corte adaptable para evitar astillados en paneles revestidos. Calidad profesional HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, incisor, incisores, incisor ajustable, incisor para seccionadora, incisor ajustable para seccionadora" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

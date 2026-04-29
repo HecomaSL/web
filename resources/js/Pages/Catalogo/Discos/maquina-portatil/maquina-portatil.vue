@@ -52,7 +52,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 6.1 Discos Para Máquina Portatil - HECOMA" />
+  <Head>
+    <title>Discos para Máquina Portátil | Discos Cortes Precisos</title>
+    <meta name="description" content="Discos para máquinas portátiles. Diseñados para un corte preciso, seguro y eficiente en aplicaciones profesionales. Estabilidad y rendimiento con la garantía HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos maquina portatil, discos cortes precisos" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

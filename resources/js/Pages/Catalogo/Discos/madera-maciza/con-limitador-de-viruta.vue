@@ -40,7 +40,11 @@ function formatearPrecio(precio) {
 
 
 <template>
-  <Head title="Serie 9.2 Discos para sierra múltiple con limitador de viruta - HECOMA" />
+  <Head>
+    <title>Discos para Sierra Múltiple Con Limitador de Viruta | Discos Madera Maciza</title>
+    <meta name="description" content="Discos con limitador de viruta para sierra múltiple. Máxima seguridad contra el rechazo y corte controlado en madera maciza. Rendimiento profesional HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos madera maciza, discos sierra multiple, discos sierra multiple con limitador de viruta" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

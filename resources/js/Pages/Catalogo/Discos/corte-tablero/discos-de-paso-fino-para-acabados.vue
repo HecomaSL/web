@@ -39,7 +39,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 1.5 Discos De Paso Fino Para Acabados - HECOMA" />
+  <Head>
+    <title>Discos de Paso Fino para Acabados | Discos de Corte de Tablero</title>
+    <meta name="description" content="Discos Serie 1.5 de paso fino para acabados de máxima calidad. Reducen marcas y astillados en materiales delicados. La solución de HECOMA® para cortes de terminación profesional en tableros." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos corte de tablero, discos paso fino, discos paso fino para acabados" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

@@ -39,7 +39,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 2.2 Discos Para Plásticos y Derivados - HECOMA" />
+  <Head>
+    <title>Discos para Plásticos y Derivados | Discos de Aplicaciones Especiales</title>
+    <meta name="description" content="Discos especializados en el corte de materiales plásticos, resinas y derivados de la madera. Evitan el sobrecalentamiento y garantizan un acabado limpio sin rebabas. Calidad HECOMA®." />
+    <meta name="keywords" content="discos, discos corte para madera, discos para plasticos, discos aplicaciones especiales" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

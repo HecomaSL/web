@@ -40,7 +40,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 1.2 Discos para corte universal - HECOMA" />
+  <Head>
+    <title>Discos para Corte Universal | Discos de Corte de Tablero</title>
+    <meta name="description" content="Nuestra Serie 1.2 cuenta Discos universales para corte de tablero. Diseño con evacuación de viruta optimizada y control de avance para máxima seguridad. ¡Calidad industrial HECOMA®!" />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos corte universal, discos corte de tablero" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

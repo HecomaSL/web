@@ -52,7 +52,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 1.4 Discos para corte para contrachapado - HECOMA" />
+  <Head>
+    <title>Discos para Contrachapado y Laminados | Discos de Corte de Tablero</title>
+    <meta name="description" content="Discos Serie 1.4 diseñados para el corte limpio de contrachapado, panel multicapa y laminados de plástico. Evitan el astillado en materiales compuestos. Calidad industrial HECOMA® para acabados profesionales." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos corte de tablero, discos para contrachapado, discos para laminados, discos para contrachapado y laminados" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

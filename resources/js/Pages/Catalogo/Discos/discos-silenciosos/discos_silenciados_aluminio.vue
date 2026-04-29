@@ -53,7 +53,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 11.4 Discos silenciados para aluminio - HECOMA" />
+  <Head>
+    <title>Discos silenciados para aluminio | Discos silenciosos</title>
+    <meta name="description" content="Discos para corte de aluminio y metales no férricos. Sistema silenciado que reduce ruido y vibraciones para un acabado preciso y seguro. Calidad profesional HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos silenciosos, discos silenciados, discos silenciosos para aluminio, discos silenciosos para metales no ferricos" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

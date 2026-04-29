@@ -47,7 +47,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 7.1 Discos para aluminio y otros metales ligeros no ferrosos - HECOMA" />
+  <Head>
+    <title>Discos Corte de Aluminio y Metales Ligeros | Discos para Materiales No Ferrosos</title>
+    <meta name="description" content="Discos para corte limpio de aluminio y metales ligeros. Diseñados para uso profesional e industrial con máxima seguridad y precisión. Calidad superior HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos para materiales no ferrosos, discos corte de aluminio, discos corte de metales ligeros" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

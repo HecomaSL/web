@@ -35,7 +35,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 2.3 Discos para cortes de alta precisión - HECOMA" />
+  <Head>
+    <title>Discos para Cortes de Alta Precisión | Discos de Aplicaciones Especiales</title>
+    <meta name="description" content="Discos para cortes de alta exactitud y máxima estabilidad. Garantice acabados limpios en aplicaciones exigentes con tecnología industrial de HECOMA®. Herramientas de precisión para profesionales." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos para cortes de alta precision, discos aplicaciones especiales" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

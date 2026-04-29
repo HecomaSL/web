@@ -48,7 +48,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 2.4 Discos finos para maderas de calidad - HECOMA" />
+  <Head>
+    <title>Discos Finos para Maderas de Calidad | Discos de Aplicaciones Especiales</title>
+    <meta name="description" content="Discos finos para el corte rápido y preciso de maderas de calidad. Máximo aprovechamiento del material con un acabado excelente y rendimiento industrial. ¡Calidad superior HECOMA®!" />
+    <meta name="keywords" content="discos, discos corte para madera, discos finos, discos finos para madera, discos finos para maderas de calidad, discos aplicaciones especiales" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

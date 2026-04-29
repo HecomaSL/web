@@ -39,7 +39,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 1.3. Discos de acabado y aglomerado - HECOMA" />
+  <Head>
+    <title>Discos de Acabado y Aglomerado | Discos de Corte de Tablero</title>
+    <meta name="description" content="Discos Serie 1.3 especializados en acabados perfectos sobre melamina, MDF y aglomerado. Ideales para evitar imperfecciones antes de pintar o barnizar. Rendimiento industrial con la garantía de HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos corte de tablero, discos de acabado, discos de aglomerado, discos de acabado y aglomerado" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">

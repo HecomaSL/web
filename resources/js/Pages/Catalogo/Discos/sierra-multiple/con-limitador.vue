@@ -64,7 +64,11 @@ function formatearPrecio(precio) {
 </script>
 
 <template>
-  <Head title="Serie 10.2 Discos para sierra múltiple con dentones y con limitador - HECOMA" />
+  <Head>
+    <title>Discos para sierra múltiple con dentones y limitador</title>
+    <meta name="description" content="Discos de sierra múltiple con dentones y limitador de viruta. Diseñados para un corte controlado, estable y seguro en procesos industriales de madera maciza. Calidad HECOMA®." />
+    <meta name="keywords" content="discos, discos para cortes, discos corte para madera, discos para sierra multiple, discos sierra multiple con dentones, discos sierra multiple con dentones con limitador de viruta" />
+  </Head>
 
   <MainLayout>
     <section class="bg-[#010cf7] py-6 mb-5">
