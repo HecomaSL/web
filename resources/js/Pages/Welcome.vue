@@ -28,7 +28,7 @@ const areaTecnicaLink = computed(() => { return page.props.auth.user ? '/dashboa
             </div>
         </section>
 
-        <section class="sectionColor bg-[#0000BB] text-white py-16 px-6">
+        <section class="sectionColor bg-[#0000BB] text-white py-10 px-6">
             <div class="container mx-auto max-w-5xl text-center">
                 <div class="mb-8 flex justify-center">
                     <img src="/images/logo-hecoma-blanco.png" alt="HECOMA Logo" class="h-24 md:h-32 object-contain" />
@@ -38,7 +38,7 @@ const areaTecnicaLink = computed(() => { return page.props.auth.user ? '/dashboa
             </div>
         </section>
 
-        <section class="py-16 px-6">
+        <section class="py-10 px-6">
             <div class="container mx-auto max-w-5xl text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight uppercase tracking-wide">CENTRO DE RECURSOS Y HERRAMIENTAS DE CORTE DE MADERA</h2>
 
@@ -75,7 +75,7 @@ const areaTecnicaLink = computed(() => { return page.props.auth.user ? '/dashboa
             </div>
         </section>
 
-        <section class="contacto py-16 px-6 bg-[#f5f9fb]">
+        <section class="contacto py-10 px-6 bg-[#f5f9fb]">
             <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-5">
                     <h2 class="text-3xl md:text-4xl font-bold leading-tight uppercase tracking-wide mb-4">CONTACTO</h2>
@@ -103,7 +103,7 @@ const areaTecnicaLink = computed(() => { return page.props.auth.user ? '/dashboa
                 <img src="/images/financiacion_ue.png" alt="Financiación UE" class="max-w-full h-auto">
             </div>
 
-            <div class="flex flex-wrap justify-center items-center gap-6">
+            <div class="imagenes">
                 <img src="/images/ayuda1.jpg" alt="Ayuda 1" class="h-20 object-contain">
                 <img src="/images/ayuda2.png" alt="Ayuda 2" class="h-20 object-contain">
                 <img src="/images/ayuda3.jpg" alt="Ayuda 3" class="h-20 object-contain">
@@ -126,11 +126,8 @@ h2, p { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
 .slider-container { width: 100%; margin: 0; padding: 0; }
 .slider { width: 100%; position: relative; }
 .slides { display: flex; width: 100%; margin: 0; padding: 0; list-style: none; }
-
 .slide { width: 100vw; flex-shrink: 0; animation: slide-animation 20s linear infinite; }
-
 .slide img { width: 100%; height: auto; display: block; }
-
 .slides:hover .slide { animation-play-state: paused; }
 
 @keyframes slide-animation {
@@ -140,8 +137,10 @@ h2, p { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
     75%, 95%  { transform: translateX(-300vw); }
     100%      { transform: translateX(-400vw); }
 }
-
 * { box-sizing: border-box; }
-
-.contacto img { max-width: 250px; }
+.imagenes { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.5rem; }
+.imagenes img { margin: 4.2%; transform: scale(2); display: block; }
+/* Estilos para Móvil (Pantallas menores a 768px) */
+@media (max-width: 767px) { .imagenes { display: flex; flex-direction: column; gap: 6rem; } }
+@media (min-width: 768px) and (max-width: 1024px) { .imagenes { display: grid; grid-template-columns: repeat(2, 1fr); justify-items: center; gap: 8rem 2rem; } }
 </style>

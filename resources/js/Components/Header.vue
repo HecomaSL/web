@@ -55,7 +55,7 @@ const getTitleUrl = (key) => {
         </Link>
       </div>
 
-      <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="lg:hidden p-2 focus:outline-none" >
+      <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="lg:hidden p-2 focus:outline-none">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path v-if="!isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -63,7 +63,7 @@ const getTitleUrl = (key) => {
       </button>
 
       <ul class="hidden lg:flex items-center space-x-8 font-medium">
-        <li v-for="(items, key) in menus" :key="key" class="relative group" @mouseenter="openMenu = key" @mouseleave="openMenu = null" >
+        <li v-for="(items, key) in menus" :key="key" class="relative group" @mouseenter="openMenu = key" @mouseleave="openMenu = null">
           <Link :href="getTitleUrl(key)" class="hover:text-blue-500 transition-colors capitalize flex items-center py-2">
             {{ key.replace(/([A-Z])/g, ' $1') }}
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -151,21 +151,35 @@ const getTitleUrl = (key) => {
           </li>
 
           <li v-for="(items, key) in menus" :key="key">
-            <div @click="toggleMenu(key)" class="flex justify-between items-center py-2 text-lg font-bold capitalize border-b border-blue-800">
-              {{ key.replace(/([A-Z])/g, ' $1') }}
-              <svg class="w-5 h-5 transition-transform" :class="{'rotate-180': openMenu === key}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <!-- ✅ CORRECCIÓN: Link navegable separado del botón que abre/cierra -->
+            <div class="flex justify-between items-center border-b border-blue-800">
+              <Link :href="getTitleUrl(key)" class="py-2 text-lg font-bold capitalize flex-1">
+                {{ key.replace(/([A-Z])/g, ' $1') }}
+              </Link>
+              <button @click="toggleMenu(key)" class="p-2">
+                <svg class="w-5 h-5 transition-transform" :class="{'rotate-180': openMenu === key}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
             <ul v-if="openMenu === key" class="pl-4 mt-2 space-y-2">
               <li v-for="item in items" :key="item.label">
                 <div class="flex justify-between items-center py-1">
                   <Link :href="item.url" class="text-blue-100 text-sm">{{ item.label }}</Link>
                   <button v-if="item.subitems" @click="toggleSubMenu(item.label)" class="p-1">
-                    <svg class="w-4 h-4" :class="{'rotate-180': openSubMenu === item.label}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg class="w-4 h-4 transition-transform" :class="{'rotate-180': openSubMenu === item.label}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                   </button>
                 </div>
+                <!-- Lista de subitems para móvil/tablet -->
+                <ul v-if="item.subitems && openSubMenu === item.label" class="pl-4 mt-1 space-y-1">
+                  <li v-for="sub in item.subitems" :key="sub.label">
+                    <Link :href="sub.url" class="block text-blue-200 text-xs py-1 hover:text-white">
+                      {{ sub.label }}
+                    </Link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </li>
+
           <li><Link href="/contacto" class="block py-2 text-lg font-bold border-b border-blue-800">Contacto</Link></li>
           <li v-if="!user" class="pt-4">
             <Link href="/login" class="block text-center border-2 border-white py-2 rounded-full font-bold">Inicio de Sesión</Link>
