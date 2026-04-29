@@ -59,7 +59,7 @@ return [
     | is set to "UTC" by default as it is suitable for most use cases.
     |
     */
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Madrid',
 
     /*
     |--------------------------------------------------------------------------
@@ -71,9 +71,9 @@ return [
     | set to any locale for which you plan to have translation strings.
     |
     */
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'es'),
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
-    'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
+    'faker_locale' => env('APP_FAKER_LOCALE', 'es_ES'),
 
     /*
     |--------------------------------------------------------------------------

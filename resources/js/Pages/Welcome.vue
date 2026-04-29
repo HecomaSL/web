@@ -9,7 +9,7 @@ const areaTecnicaLink = computed(() => { return page.props.auth.user ? '/dashboa
 
 <template>
     <Head>
-        <title>Fabricación de Herramientas de Corte para Madera | HECOMA & IncoyPre</title>
+        <title>Fabricación de Herramientas Corte para Madera | HECOMA & Incoypre</title>
         <meta name="description" content="Diseño y fabricación a medida de herramientas de corte para madera. Especialistas en fresas, discos y brocas de alta precisión. Servicio de entrega rápida y soporte técnico directo de fábrica. Soluciones HECOMA para profesionales." />
         <meta name="keywords" content="Herramientas para corte, brocas, fresas, discos, suministros industriales, herramienta corte de madera" />
     </Head>
