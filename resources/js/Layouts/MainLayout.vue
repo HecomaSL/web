@@ -10,7 +10,7 @@ import Footer from '@/Components/Footer.vue';
         <main class="flex-grow">
             <slot />
         </main>
-
+        <ChatWidget />
         <Footer />
     </div>
 </template>

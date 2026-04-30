@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'cloudflare' => [ 'site' => env('CLOUDFLARE_TURNSTILE_SITE_KEY'), 'secret' => env('CLOUDFLARE_TURNSTILE_SECRET_KEY'), ],
     /*
     |--------------------------------------------------------------------------
     | Third Party Services
