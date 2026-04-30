@@ -99,7 +99,7 @@ const areaTecnicaLink = computed(() => { return page.props.auth.user ? '/dashboa
                 </div>
             </div>
 
-            <div class="imag mt-12 mb-8">
+            <div class="imag mt-10">
                 <img src="/images/financiacion_ue.png" alt="Financiación UE" class="max-w-full h-auto">
             </div>
 
