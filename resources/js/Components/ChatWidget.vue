@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 
 const isOpen = ref(false);
-const vercelAppUrl = "https://hecoma-sales-expert-6titgh397-hecomas-projects.vercel.app/"; // Reemplaza con tu URL real
+const vercelAppUrl = "https://hecoma-sales-expert.vercel.app"; // Reemplaza con tu URL real
 </script>
 
 <template>
