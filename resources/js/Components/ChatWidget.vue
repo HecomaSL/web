@@ -8,12 +8,6 @@ const vercelAppUrl = "https://hecoma-sales-expert.vercel.app/"; // Reemplaza con
 <template>
     <div class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
         <div v-if="isOpen"  class="mb-4 w-[350px] h-[500px] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col transition-all duration-300">
-            
-            <div class="bg-[#003399] p-4 text-white flex justify-between items-center">
-                <span class="font-bold">Asistente HECOMA</span>
-                <button @click="isOpen = false" class="hover:text-gray-300 text-xl">&times;</button>
-            </div>
-
             <iframe :src="vercelAppUrl"  class="flex-1 w-full border-none" allow="microphone" ></iframe>
         </div>
 
