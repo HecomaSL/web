@@ -2,42 +2,63 @@
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Head, useForm, usePage } from '@inertiajs/vue3';
 import { useCartStore } from '@/stores/cartStore';
-import { computed, onMounted } from 'vue';
-import { watch } from 'vue';
+import { computed, onMounted, watch } from 'vue';
 
 const cart = useCartStore();
 const user = usePage().props.auth.user;
 
 const form = useForm({
-    nombre: user.nombre || '', email: user.email || '',
-    tlfn: user.tlfn || '', direccion: user.direccion || '',
-    ciudad: '', cp: '', metodo_pago: 'transferencia', items: [],
-    nombre_cupon: cart.cupon ? cart.cupon.nombre : null, 
-    descuento_total: 0, total: 0   
+    nombre:        user.nombre    || '',
+    email:         user.email     || '',
+    tlfn:          user.tlfn      || '',
+    direccion:     user.direccion || '',
+    ciudad:        '',
+    cp:            '',
+    metodo_envio:  'domicilio',       // ← FALTABA este campo
+    metodo_pago:   'transferencia',
+    items:         [],
+    nombre_cupon:  cart.cupon ? cart.cupon.nombre : null,
+    descuento_total: 0,
+    total:         0,
 });
 
 const formatearPrecio = (valor) => {
     const numero = parseFloat(valor);
-    if (isNaN(numero))
-        return '0,00 €';
+    if (isNaN(numero)) return '0,00 €';
     return numero.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
 };
 
 const enviarPedido = () => {
-    form.items = cart.items.map(item => ({ id: item.id, referencia: item.referencia, precio: parseFloat(item.precio || 0), cantidad: parseInt(item.cantidad || 0) }));
-    
-    form.nombre_cupon = cart.cupon ? cart.cupon.nombre : null;
+    form.items = cart.items.map(item => ({
+        id:         item.id,
+        referencia: item.referencia,
+        precio:     parseFloat(item.precio  || 0),
+        cantidad:   parseInt(item.cantidad  || 0),
+    }));
+
+    form.nombre_cupon    = cart.cupon ? cart.cupon.nombre : null;
     form.descuento_total = cart.descuentoImporte;
-    form.total = cart.totalFinal;
+    form.total           = cart.totalFinal;
 
     form.post(route('pedido.store'), {
-        onSuccess: () => { cart.clearCart(); window.location.href = '/pedido-confirmado'; },
-        onError: (errors) => { console.error("Errores en el envío:", errors); },
+        onSuccess: () => {
+            cart.clearCart();
+        },
+        onError: (errors) => {
+            console.error('Errores en el envío:', errors);
+        },
         preserveScroll: true,
     });
 };
-onMounted(() => { if (cart.items.length === 0) window.location.href = '/carrito'; });
-watch(() => form.metodo_envio, (nuevoMetodo) => { cart.metodoEnvio = nuevoMetodo; }, { immediate: true });
+
+// Sincronizar método de envío con el store del carrito
+watch(() => form.metodo_envio, (nuevoMetodo) => {
+    cart.metodoEnvio = nuevoMetodo;
+}, { immediate: true });
+
+onMounted(() => {
+    if (cart.items.length === 0) window.location.href = '/carrito';
+});
 </script>
 
 <template>
@@ -52,26 +73,31 @@ watch(() => form.metodo_envio, (nuevoMetodo) => { cart.metodoEnvio = nuevoMetodo
                             <div class="flex flex-col">
                                 <label class="text-xs font-bold text-gray-400 uppercase mb-1">Nombre y Apellidos</label>
                                 <input v-model="form.nombre" type="text" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" required />
+                                <span v-if="form.errors.nombre" class="text-red-500 text-xs mt-1">{{ form.errors.nombre }}</span>
                             </div>
 
                             <div class="flex flex-col">
                                 <label class="text-xs font-bold text-gray-400 uppercase mb-1">Teléfono</label>
                                 <input v-model="form.tlfn" type="text" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" required />
+                                <span v-if="form.errors.tlfn" class="text-red-500 text-xs mt-1">{{ form.errors.tlfn }}</span>
                             </div>
 
                             <div class="flex flex-col">
                                 <label class="text-xs font-bold text-gray-400 uppercase mb-1">Dirección Completa</label>
                                 <input v-model="form.direccion" type="text" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" required />
+                                <span v-if="form.errors.direccion" class="text-red-500 text-xs mt-1">{{ form.errors.direccion }}</span>
                             </div>
 
                             <div class="flex gap-4">
                                 <div class="flex-1 flex flex-col">
                                     <label class="text-xs font-bold text-gray-400 uppercase mb-1">Ciudad</label>
                                     <input v-model="form.ciudad" type="text" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" required />
+                                    <span v-if="form.errors.ciudad" class="text-red-500 text-xs mt-1">{{ form.errors.ciudad }}</span>
                                 </div>
                                 <div class="w-1/3 flex flex-col">
                                     <label class="text-xs font-bold text-gray-400 uppercase mb-1">C.P.</label>
                                     <input v-model="form.cp" type="text" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" required />
+                                    <span v-if="form.errors.cp" class="text-red-500 text-xs mt-1">{{ form.errors.cp }}</span>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +105,8 @@ watch(() => form.metodo_envio, (nuevoMetodo) => { cart.metodoEnvio = nuevoMetodo
                         <div class="pt-4">
                             <label class="block font-bold text-gray-700 mb-3">MÉTODO DE ENVÍO</label>
                             <div class="space-y-2">
-                                <label class="flex items-center justify-between p-3 border rounded-lg cursor-pointer transition-colors" :class="form.metodo_envio === 'domicilio' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'">
+                                <label class="flex items-center justify-between p-3 border rounded-lg cursor-pointer transition-colors"
+                                    :class="form.metodo_envio === 'domicilio' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'">
                                     <div class="flex items-center gap-3">
                                         <input type="radio" v-model="form.metodo_envio" value="domicilio" class="w-4 h-4 text-blue-600">
                                         <span class="text-sm font-medium text-gray-800">Envío a domicilio</span>
@@ -87,7 +114,8 @@ watch(() => form.metodo_envio, (nuevoMetodo) => { cart.metodoEnvio = nuevoMetodo
                                     <span class="text-sm font-bold text-gray-600">{{ formatearPrecio(cart.costeEnvioBase) }}</span>
                                 </label>
 
-                                <label class="flex items-center justify-between p-3 border rounded-lg cursor-pointer transition-colors" :class="form.metodo_envio === 'recogida' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'">
+                                <label class="flex items-center justify-between p-3 border rounded-lg cursor-pointer transition-colors"
+                                    :class="form.metodo_envio === 'recogida' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'">
                                     <div class="flex items-center gap-3">
                                         <input type="radio" v-model="form.metodo_envio" value="recogida" class="w-4 h-4 text-blue-600">
                                         <span class="text-sm font-medium text-gray-800">Recogida en Local (Sonseca / Lucena)</span>
@@ -96,22 +124,33 @@ watch(() => form.metodo_envio, (nuevoMetodo) => { cart.metodoEnvio = nuevoMetodo
                                 </label>
                             </div>
                         </div>
-                        
+
                         <div class="pt-4">
                             <label class="block font-bold text-gray-700 mb-3">MÉTODO DE PAGO</label>
                             <div class="space-y-2">
-                                <label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors" :class="{'border-blue-600 bg-blue-50': form.metodo_pago === 'transferencia'}">
+                                <label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                                    :class="{'border-blue-600 bg-blue-50': form.metodo_pago === 'transferencia'}">
                                     <input type="radio" v-model="form.metodo_pago" value="transferencia" class="w-4 h-4 text-blue-600">
                                     <span class="text-sm font-medium">Transferencia Bancaria</span>
                                 </label>
-                                <label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors" :class="{'border-blue-600 bg-blue-50': form.metodo_pago === 'tarjeta'}">
+                                <label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                                    :class="{'border-blue-600 bg-blue-50': form.metodo_pago === 'tarjeta'}">
                                     <input type="radio" v-model="form.metodo_pago" value="tarjeta" class="w-4 h-4 text-blue-600">
                                     <span class="text-sm font-medium">Tarjeta de Crédito</span>
                                 </label>
                             </div>
                         </div>
 
-                        <button type="submit" :disabled="form.processing" class="w-full bg-[#010cf7] text-white py-4 rounded-xl font-bold uppercase hover:bg-blue-800 transition-all shadow-lg active:scale-95 disabled:opacity-50 mt-4">
+                        <!-- Errores generales del servidor -->
+                        <div v-if="Object.keys(form.errors).length" class="bg-red-50 border border-red-200 rounded-lg p-4">
+                            <p class="text-red-600 font-bold text-sm mb-1">Revisa los siguientes errores:</p>
+                            <ul class="text-red-500 text-xs list-disc list-inside">
+                                <li v-for="(error, campo) in form.errors" :key="campo">{{ error }}</li>
+                            </ul>
+                        </div>
+
+                        <button type="submit" :disabled="form.processing"
+                            class="w-full bg-[#010cf7] text-white py-4 rounded-xl font-bold uppercase hover:bg-blue-800 transition-all shadow-lg active:scale-95 disabled:opacity-50 mt-4">
                             {{ form.processing ? 'PROCESANDO PEDIDO...' : `FINALIZAR Y PAGAR ${formatearPrecio(cart.totalFinal)}` }}
                         </button>
                     </form>
@@ -134,7 +173,7 @@ watch(() => form.metodo_envio, (nuevoMetodo) => { cart.metodoEnvio = nuevoMetodo
                             <span>Subtotal</span>
                             <span>{{ formatearPrecio(cart.subtotal) }}</span>
                         </div>
-                        
+
                         <div v-if="cart.cupon" class="flex justify-between text-green-600 font-bold bg-green-50 p-2 rounded-lg">
                             <span>Cupón: {{ cart.cupon.nombre }}</span>
                             <span>- {{ formatearPrecio(cart.descuentoImporte) }}</span>

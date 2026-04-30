@@ -181,7 +181,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/pedido-confirmado', function () { return inertia('PedidoConfirmado');})->name('pedido.confirmado');
+    Route::get('/pedido-confirmado/{id}', [App\Http\Controllers\PedidoController::class, 'exito'])->name('pedido.exito');
+    Route::post('/pedidos', [App\Http\Controllers\PedidoController::class, 'store'])->name('pedido.store');
+
     Route::get('/mis-pedidos', [App\Http\Controllers\PedidoController::class, 'index'])->name('pedidos.index');
     Route::get('/ticket', [TicketController::class, 'index'])->name('ticket');
     Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
@@ -191,6 +193,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/cupones', [App\Http\Controllers\AdminController::class, 'storeCupon'])->name('admin.cupones.store')->middleware('admin');
     Route::post('/admin/cupones/{id}/toggle', [App\Http\Controllers\AdminController::class, 'toggleCupon'])->name('admin.cupones.toggle')->middleware('admin');
     Route::post('/admin/tickets/{id}', [App\Http\Controllers\AdminController::class, 'updateTicket'])->name('admin.tickets.update')->middleware('admin');
+    Route::get('/admin/ingresos/cliente/{id}', [App\Http\Controllers\AdminController::class, 'ingresosCliente'])
+    ->name('admin.ingresos.cliente')
+    ->middleware(['auth']);
 });
 
 require __DIR__.'/auth.php';

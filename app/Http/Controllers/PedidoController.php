@@ -12,66 +12,65 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
-class PedidoController extends Controller {
+class PedidoController extends Controller
+{
     public function index() {
-        $pedidos = DB::table('pedidos')->where('idUsuario', auth()->id())->orderBy('diaPedido', 'desc')->get();
+        $pedidos = DB::table('pedidos') ->where('idUsuario', auth()->id()) ->orderBy('diaPedido', 'desc') ->get();
 
         $pedidosConItems = $pedidos->map(function ($pedido) {
             $pedido->items = DB::table('pedido_items')
-                ->join('productos', 'pedido_items.idProducto', '=', 'productos.id')
-                ->where('pedido_items.idPedido', $pedido->idPedido)
-                ->select( 'pedido_items.*', 'productos.referencia as nombre_articulo' )
-                ->get();
-
+                ->join('productos', 'pedido_items.idProducto', '=', 'productos.id') ->where('pedido_items.idPedido', $pedido->idPedido)
+                ->select('pedido_items.*', 'productos.referencia as nombre_articulo') ->get();
             return $pedido;
         });
 
-        return Inertia::render('MisPedidos', ['pedidos' => $pedidosConItems,]);
+        return Inertia::render('MisPedidos', ['pedidos' => $pedidosConItems]);
     }
 
     public function exito($id) {
         $pedido = DB::table('pedidos')->where('idPedido', $id)->first();
 
-        if (! $pedido) 
+        if (!$pedido)
             return redirect()->route('dashboard')->with('error', 'Pedido no encontrado');
-        
+
         if ($pedido->idUsuario !== auth()->id())
             return redirect()->route('dashboard');
-        
-        return Inertia::render('PedidoConfirmado', [ 'pedido' => [ 'id' => $pedido->idPedido, 'codigo_pedido' => $pedido->codigo_pedido, 'total' => $pedido->total, ], ]);
+
+        return Inertia::render('PedidoConfirmado', [
+            'pedido' => [ 'id' => $pedido->idPedido, 'codigo_pedido' => $pedido->codigo_pedido, 'total' => $pedido->total, ],
+        ]);
     }
 
     public function store(Request $request) {
-        $request->validate([ 'nombre' => 'required|string|max:255', 'tlfn' => 'required', 'direccion' => 'required|string', 'items' => 'required|array|min:1', 'total' => 'required|numeric',]);
+        $request->validate([ 'nombre' => 'required|string|max:255', 'tlfn' => 'required', 'direccion' => 'required|string', 'items' => 'required|array|min:1', 'total' => 'required|numeric', ]);
 
         try {
             DB::beginTransaction();
-
-            // 1. Crear el pedido inicial
+            // 1. Insertar el pedido SIN codigo_pedido
             $idPedido = DB::table('pedidos')->insertGetId([
-                'idUsuario' => auth()->id(),
-                'diaPedido' => now(),
-                'estado' => 'sin pagar',
-                'total' => $request->total,
+                'idUsuario'       => auth()->id(),
+                'diaPedido'       => now(),
+                'estado'          => 'sin pagar',
+                'total'           => $request->total,
                 'nombre_receptor' => $request->nombre,
-                'tlfn_receptor' => (int) filter_var($request->tlfn, FILTER_SANITIZE_NUMBER_INT),
-                'direccion_envio' => $request->direccion.' '.($request->ciudad ?? '').' '.($request->cp ?? ''),
-                'codigo_pedido' => '#wp_temp',
+                'tlfn_receptor'   => (int) filter_var($request->tlfn, FILTER_SANITIZE_NUMBER_INT),
+                'direccion_envio' => trim($request->direccion . ' ' . ($request->ciudad ?? '') . ' ' . ($request->cp ?? '')),
             ]);
 
-            // 2. Generar y guardar el código visual real
-            $codigoVisual = '#wp_'.$idPedido;
-            DB::table('pedidos')->where('idPedido', $idPedido)->update(['codigo_pedido' => $codigoVisual, ]);
+            // 2. Guardar el código visual (#wp_ID) ahora que ya tenemos el ID
+            $codigoVisual = '#wp_' . $idPedido;
+            DB::table('pedidos') ->where('idPedido', $idPedido) ->update(['codigo_pedido' => $codigoVisual]);
 
-            // 3. Crear los detalles (Items)
+            // 3. Insertar los items del pedido
             foreach ($request->items as $item) {
-                DB::table('pedido_items')->insert(['idPedido' => $idPedido, 'idProducto' => $item['id'], 'cantidadProducto' => $item['cantidad'], 'precioUnitario' => $item['precio'], ]);
+                DB::table('pedido_items')->insert([ 'idPedido' => $idPedido, 'idProducto' => $item['id'], 'cantidadProducto' => $item['cantidad'], 'precioUnitario' => $item['precio'], ]);
             }
 
             DB::commit();
 
-            // 4. Envío de Emails
-            $datosEmail = [ 'id' => $idPedido, 'codigo_pedido' => $codigoVisual, 'nombre' => $request->nombre, 'total' => $request->total,];
+            // 4. Envío de emails
+            $datosEmail = [ 'id' => $idPedido, 'codigo_pedido' => $codigoVisual, 'nombre' => $request->nombre, 'total' => $request->total, ];
+
             try {
                 Mail::to(auth()->user()->email)->send(new PedidoClienteMail($datosEmail));
                 Mail::to('admin@hecoma.com')->send(new PedidoAdminMail($datosEmail));
@@ -83,14 +82,13 @@ class PedidoController extends Controller {
 
         } catch (\Exception $e) {
             DB::rollBack();
-            return back()->withErrors(['error' => 'Error: '.$e->getMessage()]);
+            return back()->withErrors(['error' => 'Error: ' . $e->getMessage()]);
         }
     }
 
     public function cancelar($id) {
         $pedido = Pedido::findOrFail($id);
 
-        // Verificamos que el estado permita la cancelación
         if (in_array($pedido->estado, ['sin pagar', 'no servido']))
             $pedido->update(['estado' => 'cancelado']);
 
@@ -98,24 +96,30 @@ class PedidoController extends Controller {
     }
 
     public function devolver(Request $request, $id) {
-        // 1. Validar que el motivo llega
-        $request->validate([ 'motivo' => 'required|string|min:10', ]);
-        $pedido = Pedido::with('usuario')->findOrFail($id);
-        // 2. Comprobar seguridad (plazo y dueño)
+        $request->validate(['motivo' => 'required|string|min:10']);
+
+        $pedido      = Pedido::with('usuario')->findOrFail($id);
         $fechaPedido = Carbon::parse($pedido->diaPedido);
-        if ($pedido->idUsuario !== auth()->id() || $fechaPedido->diffInDays(now()) >= 15) 
+
+        if ($pedido->idUsuario !== auth()->id() || $fechaPedido->diffInDays(now()) >= 15)
             return back()->with('error', 'No es posible tramitar la devolución.');
 
-        // 3. Cambiar estado
         $pedido->update(['estado' => 'devolucion']);
 
-        // 4. Datos para los correos
-        $data = [ 'codigo' => $pedido->codigo_pedido, 'cliente' => auth()->user()->name, 'motivo' => $request->motivo, 'emailCliente' => auth()->user()->email, ];
+        $data = [
+            'codigo' => $pedido->codigo_pedido, 'cliente' => auth()->user()->nombre, 'motivo' => $request->motivo, 'emailCliente' => auth()->user()->email, ];
 
-        // CORREO AL CLIENTE
-        Mail::send([], [], function ($message) use ($data) { $message->to($data['emailCliente']) ->subject('Devolución tramitada - Pedido '.$data['codigo'])->html("Hola {$data['cliente']}, tu devolución del pedido <b>{$data['codigo']}</b> ha sido tramitada correctamente. Nos pondremos en contacto contigo pronto."); });
-        // CORREO AL ADMIN (Pon tu email aquí)
-        Mail::send([], [], function ($message) use ($data) { $message->to('dptocomercial@hecoma.com')->subject('Nueva solicitud de devolución de la Web')->html("El cliente <b>{$data['cliente']}</b> ha iniciado la devolución del pedido <b>{$data['codigo']}</b>.<br><br><b>Motivo:</b><br>{$data['motivo']}"); });
+        Mail::send([], [], function ($message) use ($data) {
+            $message->to($data['emailCliente'])
+                ->subject('Devolución tramitada - Pedido ' . $data['codigo'])
+                ->html("Hola {$data['cliente']}, tu devolución del pedido <b>{$data['codigo']}</b> ha sido tramitada correctamente. Nos pondremos en contacto contigo pronto.");
+        });
+
+        Mail::send([], [], function ($message) use ($data) {
+            $message->to('dptocomercial@hecoma.com')
+                ->subject('Nueva solicitud de devolución de la Web')
+                ->html("El cliente <b>{$data['cliente']}</b> ha iniciado la devolución del pedido <b>{$data['codigo']}</b>.<br><br><b>Motivo:</b><br>{$data['motivo']}");
+        });
 
         return back()->with('success', 'Devolución enviada con éxito.');
     }
