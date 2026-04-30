@@ -67,8 +67,10 @@
           <img src="images/fresas/f16.jpg" alt="Fresa para Galces Z4 + V4" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Nuestra fresa para mecanizar galces F16 es la solución técnica definitiva para el labrado de cantos en cualquier tipo de madera, garantizando resultados impecables independientemente del sentido de la fibra. Gracias a su configuración de 4 cortes principales (Z4) y 4 precortadores (V4), esta herramienta proporciona una suavidad de corte excepcional y una definición de aristas sin astillamientos.</p>
-          <p>Fabricada bajo estándares de precisión industrial, está disponible en Metal Duro para maderas duras o materiales compuestos, y en HSS para optimizar el trabajo en maderas blandas. Diseñada para avance mecánico, la F16 es la elección de los profesionales que buscan rapidez y un acabado de alta calidad en una sola pasada.</p>
+          <p>Nuestra fresa para mecanizar galces F16 es la solución técnica definitiva para el labrado de cantos en cualquier tipo de madera, garantizando resultados impecables independientemente del sentido de la fibra.</p>
+          <p>Gracias a su configuración de 4 cortes principales (Z4) y 4 precortadores (V4), esta herramienta proporciona una suavidad de corte excepcional y una definición de aristas sin astillamientos.</p>
+          <p>Fabricada bajo estándares de precisión industrial, está disponible en Metal Duro para maderas duras o materiales compuestos, y en HSS para optimizar el trabajo en maderas blandas.</p>
+          <p>Diseñada para avance mecánico, la F16 es la elección de los profesionales que buscan rapidez y un acabado de alta calidad en una sola pasada.</p>
         </div>
       </div>
     </section>

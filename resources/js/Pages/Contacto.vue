@@ -33,7 +33,7 @@ const enviarFormulario = () => {
             </div>
         </section>
 
-        <section id="sedes" class=" py-16 px-6">
+        <section id="sedes" class=" py-10 px-6">
             <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-5">
                     <h2 class="text-3xl md:text-4xl font-bold leading-tight uppercase tracking-wide mb-4">SEDES</h2>
@@ -58,7 +58,7 @@ const enviarFormulario = () => {
                 </div>
             </div>
         </section>
-        <section id="formulario-contacto" class="py-16 px-6 bg-[#f5f9fb]">
+        <section id="formulario-contacto" class="py-10 px-6 bg-[#f5f9fb]">
             <div class="text-center mb-5">
                 <h2 class="text-3xl md:text-4xl font-bold leading-tight uppercase tracking-wide mb-4">FORMULARIO DE CONTACTO</h2>
             </div>

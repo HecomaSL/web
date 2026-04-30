@@ -60,7 +60,8 @@ function formatearPrecio(precio) {
         <div class="space-y-4 text-gray-700">
           <p>Dentro de nuestra serie de Discos de aplicaciones especiales, ponemos a su disposición la Serie 2.2, una referencia técnica diseñada específicamente para el corte de materiales plásticos, derivados de la madera y resinas.</p>
           <p>Esta herramienta ha sido desarrollada por HECOMA® para ofrecer un seccionado preciso en superficies que tienden a astillarse o fundirse con discos convencionales.</p>
-          <p>Gracias a su geometría de corte optimizada, estos discos aseguran una evacuación de calor eficiente y un acabado limpio, eliminando la aparición de rebabas en el material. Es la solución ideal para talleres que trabajan con plásticos técnicos y materiales compuestos que exigen una máxima calidad de terminación y durabilidad del filo.</p>
+          <p>Gracias a su geometría de corte optimizada, estos discos aseguran una evacuación de calor eficiente y un acabado limpio, eliminando la aparición de rebabas en el material.</p>
+          <p>Es la solución ideal para talleres que trabajan con plásticos técnicos y materiales compuestos que exigen una máxima calidad de terminación y durabilidad del filo.</p>
         </div>
       </div>
     </section>

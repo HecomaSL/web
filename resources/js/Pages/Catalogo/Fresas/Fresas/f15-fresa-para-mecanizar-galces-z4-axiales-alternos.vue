@@ -65,7 +65,7 @@
           <img src="images/fresas/f15.jpg" alt="Fresa para Galces Z4 (Cortes Alternos)" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Nuestra fresa para galces F15 representa la evolución en el labrado de cantos y perfiles. Su diseño avanzado con 4 cortes axiales alternos (Z4) permite un ataque al material de forma progresiva, lo que se traduce en una reducción drástica de las vibraciones y una mayor suavidad en el avance. Esta configuración garantiza un acabado superficial superior en cualquier tipo de madera, minimizando el esfuerzo de la máquina.</p>
+          <p>Nuestra fresa para galces F15 representa la evolución en el labrado de cantos y perfiles. Su diseño avanzado con 4 cortes axiales alternos (Z4) permite un ataque al material de forma progresiva, lo que se traduce en una reducción drástica de las vibraciones y una mayor suavidad en el avance.</p><p>Esta configuración garantiza un acabado superficial superior en cualquier tipo de madera, minimizando el esfuerzo de la máquina.</p>
           <p>Está disponible en Metal Duro para maderas medias y duras, o en HSS para maderas blandas. Optimizada para avance mecánico, también ofrecemos la posibilidad de fabricación para avance manual bajo pedido.</p>
         </div>
       </div>

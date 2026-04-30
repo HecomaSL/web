@@ -64,8 +64,10 @@
           <img src="images/fresas/f23.jpg" alt="Fresa radio 1/2 conexo" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Nuestra fresa de radio 1/2 convexo F23 es la herramienta de alto rendimiento diseñada para el redondeado de cantos de gran formato. Es la opción preferida para fabricar peldaños de escalera, pasamanos y bordes de encimeras con un perfil ergonómico superior. Al contar con 4 cortes (Z4), esta fresa minimiza el esfuerzo de corte y evita las marcas de quemaduras, incluso en maderas de alta densidad.</p>
-          <p>Está disponible en Metal Duro para máxima durabilidad en materiales duros, o en HSS para acabados extra limpios en maderas blandas. Optimizada para avance mecánico, la F23 garantiza una estabilidad total y una geometría de perfil constante en largas series de producción</p>
+          <p>Nuestra fresa de radio 1/2 convexo F23 es la herramienta de alto rendimiento diseñada para el redondeado de cantos de gran formato.</p>
+          <p>Es la opción preferida para fabricar peldaños de escalera, pasamanos y bordes de encimeras con un perfil ergonómico superior. Al contar con 4 cortes (Z4), esta fresa minimiza el esfuerzo de corte y evita las marcas de quemaduras, incluso en maderas de alta densidad.</p>
+          <p>Está disponible en Metal Duro para máxima durabilidad en materiales duros, o en HSS para acabados extra limpios en maderas blandas.</p>
+          <p>Optimizada para avance mecánico, la F23 garantiza una estabilidad total y una geometría de perfil constante en largas series de producción</p>
         </div>
       </div>
     </section>

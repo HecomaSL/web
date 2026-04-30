@@ -54,12 +54,13 @@ function formatearPrecio(precio) {
           <img src="/images/discos/discos.jpg" alt="" style="width: 75%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de Discos de aplicaciones especiales, ponemos a su disposición la Serie 2.5, una referencia de alto rendimiento que combina un espesor reducido con un cuerpo de alta tenacidad. Esta herramienta ha sido diseñada para lograr un corte preciso y estable, garantizando un acabado superior incluso en los trabajos más exigentes y continuos.</p>
-          <p>Lo que distingue a esta serie es el uso de aceros especiales sometidos a tratamientos térmicos de última generación, que confieren al núcleo de la sierra una memoria elástica excepcional. A diferencia de otros discos finos convencionales que pueden oscilar bajo presión, nuestro cuerpo de alta tenacidad absorbe las cargas laterales y disipa el calor de forma eficiente, manteniendo la planitud absoluta durante el seccionado.</p>
-          <p>Esta estabilidad mecánica permite trabajar a velocidades de avance superiores en procesos industriales automatizados, donde el aprovechamiento crítico del material debe convivir con una resistencia extrema al pandeo.</p>
+          <p>Dentro de nuestra gama de Discos de aplicaciones especiales, ponemos a su disposición la Serie 2.5, una referencia de alto rendimiento que combina un espesor reducido con un cuerpo de alta tenacidad.</p><p> Esta herramienta ha sido diseñada para lograr un corte preciso y estable, garantizando un acabado superior incluso en los trabajos más exigentes y continuos.</p>
+          <p>Lo que distingue a esta serie es el uso de aceros especiales sometidos a tratamientos térmicos de última generación, que confieren al núcleo de la sierra una memoria elástica excepcional.</p>
+          <p>A diferencia de otros discos finos convencionales que pueden oscilar bajo presión, nuestro cuerpo de alta tenacidad absorbe las cargas laterales y disipa el calor de forma eficiente, manteniendo la planitud absoluta durante el seccionado.</p>
         </div>
       </div>
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed ">
+        <p>Esta estabilidad mecánica permite trabajar a velocidades de avance superiores en procesos industriales automatizados, donde el aprovechamiento crítico del material debe convivir con una resistencia extrema al pandeo.</p>
         <p>Gracias a la ingeniería avanzada de HECOMA®, estos discos resisten mejor las tensiones mecánicas y el calor, evitando deformaciones en el cuerpo de la sierra a pesar de su perfil extra fino. Es la solución ideal para procesos industriales que requieren el máximo aprovechamiento del material sin sacrificar la rigidez ni la calidad de terminación profesional.</p>
       </div>
     </section>

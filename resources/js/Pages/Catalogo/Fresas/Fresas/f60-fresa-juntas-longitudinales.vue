@@ -70,7 +70,8 @@
         <div class="space-y-4 text-gray-700">
           <p>Dentro de nuestra gama de fresas industriales, ponemos a su disposición la F60, una fresa para juntas longitudinales diseñada para conseguir uniones precisas, resistentes y con un acabado limpio en maderas y tableros.</p>
           <p>Esta herramienta cuenta con 4 cortes (Z4) y un perfil dentado de alta precisión que facilita un montaje estable, mejorando drásticamente la calidad final del ensamblaje.</p>
-          <p>Fabricada bajo los estándares de HECOMA®, incorpora placas de Metal Duro (MD) de uso universal, ideales para trabajar materiales duros y abrasivos con la máxima durabilidad. Diseñada para avance mecánico, la F60 es la solución perfecta para el empalme de listones y el mecanizado de cantos en procesos de producción continua.</p>
+          <p>Fabricada bajo los estándares de HECOMA®, incorpora placas de Metal Duro (MD) de uso universal, ideales para trabajar materiales duros y abrasivos con la máxima durabilidad.</p>
+          <p>Diseñada para avance mecánico, la F60 es la solución perfecta para el empalme de listones y el mecanizado de cantos en procesos de producción continua.</p>
         </div>
       </div>
     </section>

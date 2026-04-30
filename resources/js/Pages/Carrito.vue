@@ -49,7 +49,7 @@ watch(() => cart.subtotal, (nuevoSubtotal) => {
 <template>
     <Head title="Tu Carrito - HECOMA" />
     <MainLayout>
-        <section class="py-16 px-6 bg-gray-50 min-h-screen">
+        <section class="py-10 px-6 bg-gray-50 min-h-screen">
             <div class="container mx-auto max-w-6xl">
                 <h1 class="text-3xl font-bold mb-10 uppercase tracking-wide text-[#0000BB]">Tu Carrito de Compra</h1>
                 <div v-if="cart.items.length > 0" class="flex flex-col lg:flex-row gap-8">

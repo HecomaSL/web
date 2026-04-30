@@ -71,8 +71,11 @@
           <img src="images/fresas/f30.jpg" alt="Fresa de bisel" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>La fresa para biselado F30 destaca como la solución técnica líder para talleres que requieren chaflanes con acabados de alta calidad. Gracias a su configuración como fresa de bisel con ángulo axial, la herramienta logra una entrada progresiva en la pieza, lo que se traduce en una suavidad de corte excepcional y una superficie libre de astillas.</p>
-          <p>Al trabajar con esta fresa de bisel de 4 cortes (Z4), se reduce significativamente la carga sobre el motor de la maquinaria en avances mecánicos. Dependiendo del proyecto, puede solicitar esta fresa para biselado en Metal Duro (MD) para una resistencia superior en tableros abrasivos, o en HSS para lograr una nitidez de corte inigualable en maderas naturales. Es la inversión perfecta para quienes exigen precisión industrial y máxima durabilidad en cada proceso de biselado.</p>
+          <p>La fresa para biselado F30 destaca como la solución técnica líder para talleres que requieren chaflanes con acabados de alta calidad.</p>
+          <p>Gracias a su configuración como fresa de bisel con ángulo axial, la herramienta logra una entrada progresiva en la pieza, lo que se traduce en una suavidad de corte excepcional y una superficie libre de astillas.</p>
+          <p>Al trabajar con esta fresa de bisel de 4 cortes (Z4), se reduce significativamente la carga sobre el motor de la maquinaria en avances mecánicos.</p>
+          <p>Dependiendo del proyecto, puede solicitar esta fresa para biselado en Metal Duro (MD) para una resistencia superior en tableros abrasivos, o en HSS para lograr una nitidez de corte inigualable en maderas naturales.</p>
+          <p>Es la inversión perfecta para quienes exigen precisión industrial y máxima durabilidad en cada proceso de biselado.</p>
         </div>
       </div>
     </section>

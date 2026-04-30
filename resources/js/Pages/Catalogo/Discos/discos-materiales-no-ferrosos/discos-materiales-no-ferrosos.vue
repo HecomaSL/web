@@ -66,7 +66,8 @@ function formatearPrecio(precio) {
           <img src="/images/discos/discos.jpg" alt="" style="width: 75%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de Discos para materiales no ferrosos, ponemos a su disposición la Serie 7.1, formada por herramientas especializadas en el seccionado de aluminio y otros metales ligeros. Estos discos han sido diseñados para ofrecer un corte limpio, preciso y seguro en aplicaciones profesionales e industriales exigentes.</p>
+          <p>Dentro de nuestra gama de Discos para materiales no ferrosos, ponemos a su disposición la Serie 7.1, formada por herramientas especializadas en el seccionado de aluminio y otros metales ligeros.</p>
+          <p>Estos discos han sido diseñados para ofrecer un corte limpio, preciso y seguro en aplicaciones profesionales e industriales exigentes.</p>
           <p>Gracias a la ingeniería de HECOMA®, están especialmente adaptados para trabajar sobre materiales como aluminio, cobre y diversas aleaciones ligeras, garantizando un rendimiento constante y una excelente calidad de acabado superficial.</p>
           <p>Su geometría de corte avanzada permite una evacuación eficiente de la viruta, evitando el sobrecalentamiento y asegurando una larga durabilidad del filo en procesos de producción continua.</p>
         </div>

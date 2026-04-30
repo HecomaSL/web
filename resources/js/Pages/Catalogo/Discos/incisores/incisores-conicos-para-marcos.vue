@@ -57,13 +57,15 @@ function formatearPrecio(precio) {
           <img src="/images/discos/discos.jpg" alt="" style="width: 75%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de Incisores, ponemos a su disposición la Serie 3.2, formada por incisores cónicos para marcos diseñados para garantizar un pre-corte preciso y un acabado limpio. Esta herramienta es fundamental en trabajos de carpintería donde el ajuste y la calidad visual de la unión son críticos para el resultado final.</p>
-          <p>La ventaja operativa reside en su perfil cónico rectificado, que ofrece una versatilidad superior al permitir la regulación del ancho de incisión mediante el ajuste vertical del eje. Esta característica facilita una alineación milimétrica con la sierra principal, asegurando que el ataque sobre la moldura sea siempre exacto y libre de rebabas, incluso en maderas con fibras cruzadas o recubrimientos sintéticos.</p>
-          <p>Al optimizar la salida del diente, estos incisores protegen la integridad de las aristas más delicadas del marco, garantizando que el ensamblaje posterior sea estanco y no requiera masillas ni repasos manuales. Es la herramienta de precisión necesaria para elevar el estándar de calidad en líneas de producción de marcos y molduras de gama alta.</p>
+          <p>Dentro de nuestra gama de Incisores, ponemos a su disposición la Serie 3.2, formada por incisores cónicos para marcos diseñados para garantizar un pre-corte preciso y un acabado limpio.</p>
+          <p>Esta herramienta es fundamental en trabajos de carpintería donde el ajuste y la calidad visual de la unión son críticos para el resultado final.</p>
+          <p>La ventaja operativa reside en su perfil cónico rectificado, que ofrece una versatilidad superior al permitir la regulación del ancho de incisión mediante el ajuste vertical del eje.</p>
+          <p>Esta característica facilita una alineación milimétrica con la sierra principal, asegurando que el ataque sobre la moldura sea siempre exacto y libre de rebabas, incluso en maderas con fibras cruzadas o recubrimientos sintéticos.</p>
         </div>
       </div>
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed">
-          <p>Gracias a la ingeniería de HECOMA®, su diseño cónico permite adaptarse perfectamente al mecanizado de piezas destinadas a marcos, mejorando la limpieza del corte y la estabilidad del proceso. Es la solución ideal para evitar desgarros en las fibras y asegurar que cada ángulo presente una terminación profesional e impecable, libre de astillados en las zonas de mayor visibilidad.</p>
+        <p>Al optimizar la salida del diente, estos incisores protegen la integridad de las aristas más delicadas del marco, garantizando que el ensamblaje posterior sea estanco y no requiera masillas ni repasos manuales. Es la herramienta de precisión necesaria para elevar el estándar de calidad en líneas de producción de marcos y molduras de gama alta.</p>
+        <p>Gracias a la ingeniería de HECOMA®, su diseño cónico permite adaptarse perfectamente al mecanizado de piezas destinadas a marcos, mejorando la limpieza del corte y la estabilidad del proceso. Es la solución ideal para evitar desgarros en las fibras y asegurar que cada ángulo presente una terminación profesional e impecable, libre de astillados en las zonas de mayor visibilidad.</p>
       </div>
     </section>
     <section class="container mx-auto px-6 mb-10">

@@ -57,12 +57,14 @@ function formatearPrecio(precio) {
           <img src="/images/discos/discos.jpg" alt="" style="width: 75%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de Incisores, ponemos a su disposición la Serie 3.1, diseñada específicamente para su uso en máquinas escuadradoras. Estos incisores son la solución técnica ideal para mejorar drásticamente la calidad del corte en paneles y tableros. Su función principal es realizar un pre-corte preciso que evita el astillado en la cara inferior del material, asegurando un acabado limpio y profesional.</p>
-          <p>La excelencia técnica radica en su capacidad para trabajar en perfecta sincronía con la sierra principal, permitiendo un ajuste micrométrico que garantiza la coincidencia exacta de las líneas de corte. Fabricados con carburo de tungsteno de grano ultrafino, estos incisores mantienen un afilado agresivo y duradero, fundamental para seccionar las fibras del recubrimiento antes de que el disco de corte principal atraviese el tablero.</p>
-          <p>Al implementar esta serie en su flujo de trabajo, reducirá drásticamente el desperdicio de material y los costes operativos, logrando una arista viva y libre de imperfecciones incluso en los laminados más quebradizos o de alto brillo.</p>
+          <p>Dentro de nuestra gama de Incisores, ponemos a su disposición la Serie 3.1, diseñada específicamente para su uso en máquinas escuadradoras.</p>
+          <p> Estos incisores son la solución técnica ideal para mejorar drásticamente la calidad del corte en paneles y tableros. Su función principal es realizar un pre-corte preciso que evita el astillado en la cara inferior del material, asegurando un acabado limpio y profesional.</p>
+          <p>La excelencia técnica radica en su capacidad para trabajar en perfecta sincronía con la sierra principal, permitiendo un ajuste micrométrico que garantiza la coincidencia exacta de las líneas de corte.</p>
+          <p>Fabricados con carburo de tungsteno de grano ultrafino, estos incisores mantienen un afilado agresivo y duradero, fundamental para seccionar las fibras del recubrimiento antes de que el disco de corte principal atraviese el tablero.</p>
         </div>
       </div>
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed">
+        <p>Al implementar esta serie en su flujo de trabajo, reducirá drásticamente el desperdicio de material y los costes operativos, logrando una arista viva y libre de imperfecciones incluso en los laminados más quebradizos o de alto brillo.</p>
         <p>Gracias a la ingeniería de HECOMA®, esta serie es especialmente efectiva en materiales revestidos y superficies decorativas (como melaminas o laminados), donde la integridad estética de ambas caras es fundamental para un ensamblaje de alta calidad.</p>
       </div>
     </section>

@@ -67,8 +67,10 @@
           <img src="images/fresas/f21.jpg" alt="Fresa radio 1/2 cóncavo" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>La fresa para labrar radios 1/2 cóncavos es la herramienta especializada para el mecanizado de radios cóncavos de 1/2″. Diseñada para obtener radios completos con una geometría perfecta, esta fresa destaca por su configuración de 4 cortes (Z4), que garantiza una evacuación de viruta eficiente y un acabado superficial libre de marcas.</p>
-          <p>Según el tipo de proyecto, está disponible en Metal Duro para maderas duras y materiales de alta densidad, o en HSS para un corte extremadamente afilado en maderas blandas. Optimizada para avance mecánico, la F21 proporciona la estabilidad necesaria para trabajos industriales de perfilado exigente, asegurando uniformidad en cada pieza.</p>
+          <p>La fresa para labrar radios 1/2 cóncavos es la herramienta especializada para el mecanizado de radios cóncavos de 1/2″.</p>
+          <p>Diseñada para obtener radios completos con una geometría perfecta, esta fresa destaca por su configuración de 4 cortes (Z4), que garantiza una evacuación de viruta eficiente y un acabado superficial libre de marcas.</p>
+          <p>Según el tipo de proyecto, está disponible en Metal Duro para maderas duras y materiales de alta densidad, o en HSS para un corte extremadamente afilado en maderas blandas.</p>
+          <p>Optimizada para avance mecánico, la F21 proporciona la estabilidad necesaria para trabajos industriales de perfilado exigente, asegurando uniformidad en cada pieza.</p>
         </div>
       </div>
     </section>

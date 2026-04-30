@@ -60,9 +60,13 @@ function formatearPrecio(precio) {
         </div>
         <div class="space-y-4 text-gray-700">
           <p>En HECOMA, entendemos que la eficiencia en el taller depende de la calidad de la herramienta. Nuestra serie de discos de corte universal ha sido desarrollada para ofrecer una solución integral a profesionales que requieren realizar cortes limpios en una amplia variedad de materiales sin necesidad de cambiar de herramienta constantemente.</p>
-          <p>Estos discos han sido diseñados con una geometría de diente optimizada y aleaciones de alta resistencia, lo que garantiza una estabilidad térmica superior incluso en jornadas de trabajo intensivas. Gracias a su versatilidad, podrá alternar entre maderas naturales, derivados y materiales sintéticos manteniendo una precisión constante y reduciendo drásticamente los tiempos de parada por cambio de sierra. Es la inversión ideal para talleres que buscan simplificar su inventario de herramientas sin renunciar a la excelencia técnica que exigen sus clientes.</p>
-          <p>Si busca maximizar su productividad con una herramienta polivalente que no comprometa la calidad del acabado, la gama de discos universales de HECOMA es su mejor aliado estratégico.</p>
+          <p>Estos discos han sido diseñados con una geometría de diente optimizada y aleaciones de alta resistencia, lo que garantiza una estabilidad térmica superior incluso en jornadas de trabajo intensivas.</p>
+          <p>Gracias a su versatilidad, podrá alternar entre maderas naturales, derivados y materiales sintéticos manteniendo una precisión constante y reduciendo drásticamente los tiempos de parada por cambio de sierra.</p>
+          <p>Es la inversión ideal para talleres que buscan simplificar su inventario de herramientas sin renunciar a la excelencia técnica que exigen sus clientes.</p>
         </div>
+      </div>
+      <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed ">
+        <p>Si busca maximizar su productividad con una herramienta polivalente que no comprometa la calidad del acabado, la gama de discos universales de HECOMA es su mejor aliado estratégico.</p>
       </div>
     </section>
     <section class="container mx-auto px-6 mb-10">

@@ -54,7 +54,8 @@ function formatearPrecio(precio) {
           <img src="/images/discos/discos.jpg" alt="" style="width: 75%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de Discos de aplicaciones especiales, ponemos a su disposición la Serie 2.3, una referencia técnica diseñada específicamente para realizar cortes de alta precisión. Esta herramienta es la solución definitiva para aplicaciones exigentes donde se requiere un resultado limpio, estable y con una excelente calidad de acabado.</p>
+          <p>Dentro de nuestra gama de Discos de aplicaciones especiales, ponemos a su disposición la Serie 2.3, una referencia técnica diseñada específicamente para realizar cortes de alta precisión.</p>
+          <p>Esta herramienta es la solución definitiva para aplicaciones exigentes donde se requiere un resultado limpio, estable y con una excelente calidad de acabado.</p>
           <p>La superioridad de los discos para cortes de alta precisión radica en un proceso de equilibrado dinámico y tensión de hoja individualizado, lo que permite trabajar en rangos de tolerancia extremadamente reducidos sin pérdida de linealidad.</p>
           <p>La disposición de sus ranuras de dilatación cortadas por láser con relleno de resina absorbe las micro-vibraciones y el ruido, manteniendo el disco perfectamente plano incluso bajo condiciones de fricción elevada.</p>
         </div>

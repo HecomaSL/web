@@ -62,12 +62,13 @@ function formatearPrecio(precio) {
           <img src="/images/discos/discos.jpg" alt="" style="width: 75%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de Incisores, ponemos a su disposición la Serie 3.5, formada por incisores para canteadoras diseñados para optimizar la calidad del mecanizado en los bordes del panel. Estos componentes son esenciales para realizar un pre-corte preciso antes de la aplicación del canto, eliminando astillados y garantizando un acabado limpio y uniforme.</p>
-          <p>La ingeniería avanzada de los incisores para canteadoras se centra en la perfecta evacuación de la viruta y la reducción del impacto térmico sobre el adhesivo del panel. Al generar una superficie de contacto totalmente plana y libre de micro-fisuras, estos incisores facilitan una aplicación del canto mucho más hermética, lo que se traduce en una unión prácticamente invisible y altamente resistente a la humedad y al paso del tiempo.</p>
-          <p> Su diseño permite trabajar a las altas revoluciones características de los grupos de entrada de las canteadoras automáticas, manteniendo la estabilidad necesaria para procesar desde melaminas estándar hasta laminados de alta presión o polímeros técnicos.</p>
+          <p>Dentro de nuestra gama de Incisores, ponemos a su disposición la Serie 3.5, formada por incisores para canteadoras diseñados para optimizar la calidad del mecanizado en los bordes del panel.</p><p>Estos componentes son esenciales para realizar un pre-corte preciso antes de la aplicación del canto, eliminando astillados y garantizando un acabado limpio y uniforme.</p>
+          <p>La ingeniería avanzada de los incisores para canteadoras se centra en la perfecta evacuación de la viruta y la reducción del impacto térmico sobre el adhesivo del panel.</p>
+          <p>Al generar una superficie de contacto totalmente plana y libre de micro-fisuras, estos incisores facilitan una aplicación del canto mucho más hermética, lo que se traduce en una unión prácticamente invisible y altamente resistente a la humedad y al paso del tiempo.</p>
         </div>
       </div>
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed">
+        <p> Su diseño permite trabajar a las altas revoluciones características de los grupos de entrada de las canteadoras automáticas, manteniendo la estabilidad necesaria para procesar desde melaminas estándar hasta laminados de alta presión o polímeros técnicos.</p>
         <p>Gracias a la tecnología de HECOMA®, esta serie asegura una base perfecta incluso en materiales revestidos y superficies decorativas, permitiendo que el proceso de canteado posterior sea impecable y de alta resistencia visual.</p>
       </div>
     </section>

@@ -65,8 +65,10 @@
           <img src="https://hecoma.com/wp-content/uploads/2026/01/f61.png" alt="" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de fresas para uniones especiales, ponemos a su disposición la Serie F61, una fresa para juntas a 90º (inglete) diseñada para realizar uniones precisas, firmes y con un acabado profesional. Esta herramienta cuenta con Z4 que facilitan la creación de esquinas limpias, mejorando drásticamente la alineación y estabilidad en la fabricación de muebles, cajas y marcos.</p>
-          <p>Fabricada por HECOMA® con placas de Metal Duro (MD), es ideal para uso universal en materiales duros y abrasivos. Optimizada para avance mecánico, la F61 asegura un ensamblaje en ángulo recto perfecto, elevando la calidad técnica de sus estructuras de carpintería.</p>
+          <p>Dentro de nuestra gama de fresas para uniones especiales, ponemos a su disposición la Serie F61, una fresa para juntas a 90º (inglete) diseñada para realizar uniones precisas, firmes y con un acabado profesional.</p>
+          <p>Esta herramienta cuenta con Z4 que facilitan la creación de esquinas limpias, mejorando drásticamente la alineación y estabilidad en la fabricación de muebles, cajas y marcos.</p>
+          <p>Fabricada por HECOMA® con placas de Metal Duro (MD), es ideal para uso universal en materiales duros y abrasivos.</p>
+          <p>Optimizada para avance mecánico, la F61 asegura un ensamblaje en ángulo recto perfecto, elevando la calidad técnica de sus estructuras de carpintería.</p>
         </div>
       </div>
     </section>

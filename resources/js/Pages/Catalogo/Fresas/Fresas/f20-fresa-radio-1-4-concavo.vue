@@ -71,8 +71,10 @@
           <img src="images/fresas/f20.jpg" alt="Fresa radio 1/4 cóncavo" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>La fresa de radio 1/4 cóncavo F20 es la herramienta profesional perfecta para realizar molduras y acabados curvos de gran precisión. Gracias a su configuración de 4 cortes (Z4), ofrece un fresado mucho más estable y limpio que las fresas estándar de dos filos, reduciendo significativamente la necesidad de lijado posterior.</p>
-          <p>Está disponible con placas de Metal Duro (Carburo de Tungsteno) para garantizar la durabilidad en maderas duras y materiales abrasivos, o en HSS para obtener la máxima nitidez de corte en maderas blandas. Optimizada para avance mecánico, la F20 asegura un perfilado uniforme y constante, ideal para la producción de mobiliario de alta gama y elementos decorativos.</p>
+          <p>La fresa de radio 1/4 cóncavo F20 es la herramienta profesional perfecta para realizar molduras y acabados curvos de gran precisión.</p>
+          <p>Gracias a su configuración de 4 cortes (Z4), ofrece un fresado mucho más estable y limpio que las fresas estándar de dos filos, reduciendo significativamente la necesidad de lijado posterior.</p>
+          <p>Está disponible con placas de Metal Duro (Carburo de Tungsteno) para garantizar la durabilidad en maderas duras y materiales abrasivos, o en HSS para obtener la máxima nitidez de corte en maderas blandas.</p>
+          <p>Optimizada para avance mecánico, la F20 asegura un perfilado uniforme y constante, ideal para la producción de mobiliario de alta gama y elementos decorativos.</p>
         </div>
       </div>
     </section>

@@ -55,8 +55,9 @@ const formatearPrecio = (precio) => { return precio ? parseFloat(precio).toLocal
           <img src="images/fresas/f50.png" alt="Fresa para tiradores" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de fresas industriales, ponemos a su disposición la Serie F50, una fresa diseñada para realizar uñeros y tiradores integrados de forma rápida y precisa. Esta herramienta cuenta con Z4 que aseguran un mecanizado limpio en puertas, frentes de cajón y mobiliario moderno de diseño minimalista.</p>
-          <p>Fabricada con tecnología de HECOMA®, destaca por sus placas en Metal Duro (MD), ideales para uso universal en materiales duros y abrasivos. Diseñada para trabajar con avance mecánico, la F50 ofrece una estabilidad superior y un acabado profesional, permitiendo prescindir de herrajes externos en proyectos de alta gama.</p>
+          <p>Dentro de nuestra gama de fresas industriales, ponemos a su disposición la Serie F50, una fresa diseñada para realizar uñeros y tiradores integrados de forma rápida y precisa.</p><p>Esta herramienta cuenta con Z4 que aseguran un mecanizado limpio en puertas, frentes de cajón y mobiliario moderno de diseño minimalista.</p>
+          <p>Fabricada con tecnología de HECOMA®, destaca por sus placas en Metal Duro (MD), ideales para uso universal en materiales duros y abrasivos.</p>
+          <p>Diseñada para trabajar con avance mecánico, la F50 ofrece una estabilidad superior y un acabado profesional, permitiendo prescindir de herrajes externos en proyectos de alta gama.</p>
         </div>
       </div>
     </section>

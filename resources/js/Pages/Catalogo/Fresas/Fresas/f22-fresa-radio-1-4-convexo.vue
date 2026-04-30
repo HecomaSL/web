@@ -72,8 +72,10 @@
           <img src="images/fresas/f22.jpg" alt="Fresa radio 1/4 convexo" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Nuestra fresa de radio 1/4 convexo es la herramienta profesional indispensable para el redondeado de cantos y la creación de perfiles suaves en todo tipo de proyectos de carpintería. A diferencia de las fresas comunes, su configuración de 4 cortes (Z4) permite un avance más rápido y un acabado mucho más fino, eliminando prácticamente el astillado en las aristas.</p>
-          <p>Fabricamos esta fresa en Metal Duro (Carburo de Tungsteno) para garantizar un rendimiento extremo en maderas duras, y en HSS para obtener una nitidez superior en maderas blandas. Diseñada para avance mecánico, la F22 ofrece una estabilidad total, asegurando que el perfil convexo sea uniforme a lo largo de toda la pieza.</p>
+          <p>Nuestra fresa de radio 1/4 convexo es la herramienta profesional indispensable para el redondeado de cantos y la creación de perfiles suaves en todo tipo de proyectos de carpintería.</p>
+          <p>A diferencia de las fresas comunes, su configuración de 4 cortes (Z4) permite un avance más rápido y un acabado mucho más fino, eliminando prácticamente el astillado en las aristas.</p>
+          <p>Fabricamos esta fresa en Metal Duro (Carburo de Tungsteno) para garantizar un rendimiento extremo en maderas duras, y en HSS para obtener una nitidez superior en maderas blandas.</p>
+          <p>Diseñada para avance mecánico, la F22 ofrece una estabilidad total, asegurando que el perfil convexo sea uniforme a lo largo de toda la pieza.</p>
         </div>
       </div>
     </section>

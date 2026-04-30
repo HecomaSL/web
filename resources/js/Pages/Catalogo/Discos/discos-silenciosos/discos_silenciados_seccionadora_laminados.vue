@@ -59,9 +59,13 @@ function formatearPrecio(precio) {
         </div>
         <div class="space-y-4 text-gray-700">
           <p>Especializada en el tratamiento de superficies delicadas, la Serie 11.3 ofrece una solución avanzada en discos silenciosos para máquinas seccionadoras, optimizados específicamente para el corte de tableros laminados y bilaminados.</p>
-          <p>Esta serie incorpora la tecnología de amortiguación de HECOMA®, diseñada para neutralizar las vibraciones de alta frecuencia que suelen causar el astillado en los recubrimientos melamínicos y sintéticos. Al estabilizar el cuerpo del disco durante el avance industrial, se garantiza un acabado impecable y aristas vivas en ambas caras del tablero, minimizando el desperdicio de material.</p>
-          <p>Gracias a su diseño silenciado, no solo se incrementa el confort acústico en las líneas de producción intensiva, sino que se logra una máxima durabilidad del filo al reducir la fricción térmica. Es la herramienta técnica indispensable para el seccionado de precisión donde se requiere la combinación perfecta entre un entorno de trabajo saludable y una calidad de acabado de alto nivel.</p>
+          <p>Esta serie incorpora la tecnología de amortiguación de HECOMA®, diseñada para neutralizar las vibraciones de alta frecuencia que suelen causar el astillado en los recubrimientos melamínicos y sintéticos.</p>
+          <p>Al estabilizar el cuerpo del disco durante el avance industrial, se garantiza un acabado impecable y aristas vivas en ambas caras del tablero, minimizando el desperdicio de material.</p>
+          <p>Gracias a su diseño silenciado, no solo se incrementa el confort acústico en las líneas de producción intensiva, sino que se logra una máxima durabilidad del filo al reducir la fricción térmica.</p>
         </div>
+      </div>
+      <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-lg">
+        <p>Es la herramienta técnica indispensable para el seccionado de precisión donde se requiere la combinación perfecta entre un entorno de trabajo saludable y una calidad de acabado de alto nivel.</p>
       </div>
     </section>
     <section class="container mx-auto px-6 mb-10">

@@ -64,8 +64,10 @@
           <img src="images/fresas/f17.jpg" alt="Fresa extensible para ranurar y espigar Z4 y V4" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Nuestra fresa extensible F17 es la herramienta multifunción definitiva, diseñada específicamente para operaciones combinadas de ranurado y espigado con una precisión excepcional. Gracias a su sistema de anchos variables mediante anillos decimales, permite ajustar la medida del corte a las necesidades exactas de cada ensamble.</p>
-          <p>Su configuración de 4 cortes principales (Z4) y 4 precortadores (V4) asegura paredes laterales perfectamente limpias y hombros de espiga definidos, incluso trabajando a contra fibra. Fabricada en Metal Duro para maderas duras y tableros, o en HSS para maderas blandas, esta fresa para avance mecánico garantiza una larga vida útil y una estabilidad de corte profesional en cada pasada.</p>
+          <p>Nuestra fresa extensible F17 es la herramienta multifunción definitiva, diseñada específicamente para operaciones combinadas de ranurado y espigado con una precisión excepcional.</p>
+          <p>Gracias a su sistema de anchos variables mediante anillos decimales, permite ajustar la medida del corte a las necesidades exactas de cada ensamble.</p>
+          <p>Su configuración de 4 cortes principales (Z4) y 4 precortadores (V4) asegura paredes laterales perfectamente limpias y hombros de espiga definidos, incluso trabajando a contra fibra.</p>
+          <p>Fabricada en Metal Duro para maderas duras y tableros, o en HSS para maderas blandas, esta fresa para avance mecánico garantiza una larga vida útil y una estabilidad de corte profesional en cada pasada.</p>
         </div>
       </div>
     </section>

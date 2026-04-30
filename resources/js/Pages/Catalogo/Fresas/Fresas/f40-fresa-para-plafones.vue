@@ -69,8 +69,10 @@
           <img src="images/fresas/f40.jpg" alt="Fresa para plafones" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Optimice la fabricación de puertas y paneles con nuestra fresa para mecanizar plafones, una herramienta de alto rendimiento diseñada específicamente para mobiliario y madera maciza. Fabricada con materiales de los mejores proveedores europeos y mecanizada mediante tecnología CNC de alta precisión, esta fresa nace de diseños exclusivos de HECOMA® para garantizar una estabilidad de corte superior y una vida útil del filo prolongada.</p>
-          <p>Gracias a su equilibrado dinámico, la F40 ofrece un acabado superficial impecable, reduciendo las vibraciones incluso en grandes diámetros. La herramienta se entrega con las indicaciones de instalación necesarias para asegurar un rendimiento industrial óptimo y seguro en su maquinaria profesional.</p>
+          <p>Optimice la fabricación de puertas y paneles con nuestra fresa para mecanizar plafones, una herramienta de alto rendimiento diseñada específicamente para mobiliario y madera maciza.</p>
+          <p>Fabricada con materiales de los mejores proveedores europeos y mecanizada mediante tecnología CNC de alta precisión, esta fresa nace de diseños exclusivos de HECOMA® para garantizar una estabilidad de corte superior y una vida útil del filo prolongada.</p>
+          <p>Gracias a su equilibrado dinámico, la F40 ofrece un acabado superficial impecable, reduciendo las vibraciones incluso en grandes diámetros.</p>
+          <p>La herramienta se entrega con las indicaciones de instalación necesarias para asegurar un rendimiento industrial óptimo y seguro en su maquinaria profesional.</p>
         </div>
       </div>
     </section>

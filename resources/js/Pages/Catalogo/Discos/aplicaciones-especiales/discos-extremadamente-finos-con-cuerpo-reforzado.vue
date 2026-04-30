@@ -58,8 +58,9 @@ function formatearPrecio(precio) {
           <img src="/images/discos/discos.jpg" alt="" style="width: 75%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de Discos de aplicaciones especiales, ponemos a su disposición la Serie 2.6, una referencia de alto rendimiento diseñada para conseguir un corte ultra preciso y rápido. Estos discos extremadamente finos destacan por incorporar un cuerpo reforzado, una innovación técnica de HECOMA® que aporta una estabilidad y seguridad superiores en los trabajos más exigentes.</p>
-          <p>Gracias a esta arquitectura, se minimiza la flexión lateral del disco a pesar de su espesor mínimo, garantizando un acabado excelente y un aprovechamiento total de la materia prima. Es la solución definitiva para el seccionado de materiales delicados donde la velocidad de corte y la precisión milimétrica son críticas.</p>
+          <p>Dentro de nuestra gama de Discos de aplicaciones especiales, ponemos a su disposición la Serie 2.6, una referencia de alto rendimiento diseñada para conseguir un corte ultra preciso y rápido.</p>
+          <p>Estos discos extremadamente finos destacan por incorporar un cuerpo reforzado, una innovación técnica de HECOMA® que aporta una estabilidad y seguridad superiores en los trabajos más exigentes.</p>
+          <p>Gracias a esta arquitectura, se minimiza la flexión lateral del disco a pesar de su espesor mínimo, garantizando un acabado excelente y un aprovechamiento total de la materia prima.</p><p> Es la solución definitiva para el seccionado de materiales delicados donde la velocidad de corte y la precisión milimétrica son críticas.</p>
         </div>
       </div>
     </section>

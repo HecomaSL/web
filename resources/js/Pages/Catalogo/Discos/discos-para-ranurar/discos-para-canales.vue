@@ -68,7 +68,7 @@ function formatearPrecio(precio) {
           <img src="/images/discos/discos.jpg" alt="" style="width: 75%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de Discos para ranurar, ponemos a su disposición la Serie 5.1, formada por discos para canales diseñados para realizar ranuras y canales precisos con un alto nivel de estabilidad y limpieza de corte. Estos discos son ideales para trabajos de carpintería y mecanizado donde se requiere un canal uniforme y bien definido, tanto en madera maciza como en tableros derivados.</p>
+          <p>Dentro de nuestra gama de Discos para ranurar, ponemos a su disposición la Serie 5.1, formada por discos para canales diseñados para realizar ranuras y canales precisos con un alto nivel de estabilidad y limpieza de corte.</p><p>Estos discos son ideales para trabajos de carpintería y mecanizado donde se requiere un canal uniforme y bien definido, tanto en madera maciza como en tableros derivados.</p>
           <p>La superioridad técnica de los discos para canales reside en su diseño de diente de base plana, específicamente concebido para dejar un fondo de ranura perfectamente liso y escuadrado, facilitando el alojamiento de traseras, paneles o herrajes.</p>
           <p>A diferencia de los discos estándar, estos discos cuentan con un cuerpo reforzado que anula las oscilaciones laterales, lo que garantiza que el ancho del canal sea constante a lo largo de toda la pieza, evitando holguras o atascos en el ensamblaje.</p>
         </div>

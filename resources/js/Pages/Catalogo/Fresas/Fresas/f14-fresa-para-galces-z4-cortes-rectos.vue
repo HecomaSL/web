@@ -63,8 +63,9 @@
           <img src="images/fresas/f14.jpg" alt="Fresa para Galces Z4 (Cortes Rectos)" style="width: 100%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>La fresa para galces con 4 cortes rectos (Z4) es la herramienta de referencia para el canteado y mecanizado longitudinal de madera con acabados de alta calidad. Su cuerpo, fabricado en una aleación de acero especial, ha sido diseñado específicamente para absorber vibraciones y minimizar retrocesos, garantizando un corte fluido y seguro.</p>
-          <p>Según la densidad del material, ofrecemos placas en Metal Duro (MD) para maderas medias y duras, o en HSS para un afilado superior en maderas blandas. Aunque disponemos de stock permanente para avance mecánico, fabricamos versiones para avance manual bajo pedido, adaptándonos a las necesidades específicas de su maquinaria y proceso productivo.</p>
+          <p>La fresa para galces con 4 cortes rectos (Z4) es la herramienta de referencia para el canteado y mecanizado longitudinal de madera con acabados de alta calidad.</p>
+          <p>Su cuerpo, fabricado en una aleación de acero especial, ha sido diseñado específicamente para absorber vibraciones y minimizar retrocesos, garantizando un corte fluido y seguro.</p>
+          <p>Según la densidad del material, ofrecemos placas en Metal Duro (MD) para maderas medias y duras, o en HSS para un afilado superior en maderas blandas.</p><p>Aunque disponemos de stock permanente para avance mecánico, fabricamos versiones para avance manual bajo pedido, adaptándonos a las necesidades específicas de su maquinaria y proceso productivo.</p>
         </div>
       </div>
     </section>

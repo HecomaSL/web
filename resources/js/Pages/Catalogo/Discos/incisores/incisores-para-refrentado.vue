@@ -56,12 +56,14 @@ function formatearPrecio(precio) {
           <img src="/images/discos/discos.jpg" alt="" style="width: 75%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de Incisores, ponemos a su disposición la Serie 3.3, formada por incisores para refrentado diseñados específicamente para su uso en seccionadoras. Esta herramienta es clave para elevar la calidad del corte en la cara inferior del panel, permitiendo realizar un pre-corte preciso que reduce drásticamente el astillado.</p>
-          <p>La ingeniería detrás de los incisores para refrentado está enfocada en soportar las altas velocidades de avance propias de las seccionadoras industriales, manteniendo una estabilidad dimensional absoluta. Estos incisores están fabricados con cuerpos reforzados que absorben las vibraciones armónicas, garantizando que el surco de precorte sea perfectamente simétrico al paso del disco principal.</p>
-          <p>Al asegurar una arista viva y libre de micro-roturas, se facilita una adherencia óptima del canto en las fases posteriores de fabricación. Es la solución técnica definitiva para fábricas de mobiliario que operan con ciclos de trabajo intensivos y exigen una tasa de rechazo cero en tableros melamínicos, estratificados o fenólicos</p>
+          <p>Dentro de nuestra gama de Incisores, ponemos a su disposición la Serie 3.3, formada por incisores para refrentado diseñados específicamente para su uso en seccionadoras.</p>
+          <p>Esta herramienta es clave para elevar la calidad del corte en la cara inferior del panel, permitiendo realizar un pre-corte preciso que reduce drásticamente el astillado.</p>
+          <p>La ingeniería detrás de los incisores para refrentado está enfocada en soportar las altas velocidades de avance propias de las seccionadoras industriales, manteniendo una estabilidad dimensional absoluta.</p>
+          <p>Estos incisores están fabricados con cuerpos reforzados que absorben las vibraciones armónicas, garantizando que el surco de precorte sea perfectamente simétrico al paso del disco principal.</p>
         </div>
       </div>
       <div class="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed">
+        <p>Al asegurar una arista viva y libre de micro-roturas, se facilita una adherencia óptima del canto en las fases posteriores de fabricación. Es la solución técnica definitiva para fábricas de mobiliario que operan con ciclos de trabajo intensivos y exigen una tasa de rechazo cero en tableros melamínicos, estratificados o fenólicos</p>
         <p>Gracias a la tecnología de HECOMA®, esta serie garantiza un acabado limpio y profesional, siendo especialmente eficaz en el trabajo con materiales revestidos y superficies decorativas de alta exigencia. Su implementación asegura una transición perfecta para el canteado, protegiendo la integridad estética de los tableros más delicados durante procesos de producción intensiva.</p>
       </div>
     </section>

@@ -67,7 +67,8 @@ function formatearPrecio(precio) {
           <img src="/images/discos/discos.jpg" alt="" style="width: 75%;" />
         </div>
         <div class="space-y-4 text-gray-700">
-          <p>Dentro de nuestra gama de Discos de aplicaciones especiales, ponemos a su disposición la Serie 2.4, una referencia de espesor reducido diseñada específicamente para el corte de maderas de calidad. Estos discos de alto rendimiento ofrecen un trabajo rápido y preciso, garantizando un acabado excelente incluso en condiciones de uso intensivo.</p>
+          <p>Dentro de nuestra gama de Discos de aplicaciones especiales, ponemos a su disposición la Serie 2.4, una referencia de espesor reducido diseñada específicamente para el corte de maderas de calidad.</p>
+          <p>Estos discos de alto rendimiento ofrecen un trabajo rápido y preciso, garantizando un acabado excelente incluso en condiciones de uso intensivo.</p>
           <p>La ventaja competitiva  reside en su capacidad para realizar cortes quirúrgicos con una mínima extracción de viruta. Al contar con un cuerpo de espesor extrafino, se reduce la resistencia al avance y la carga sobre el motor de la maquinaria, lo que permite un deslizamiento suave y evita el sobrecalentamiento de las maderas más sensibles.</p>
           <p>Esta característica es fundamental cuando se trabaja con maderas exóticas o nobles de alto valor económico, donde cada milímetro de material salvado se traduce en rentabilidad.</p>
         </div>
