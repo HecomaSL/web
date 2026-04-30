@@ -3,6 +3,7 @@
 use Illuminate\Support\Str;
 
 return [
+    'cloudflare' => [ 'site' => env('CLOUDFLARE_TURNSTILE_SITE_KEY'), 'secret' => env('CLOUDFLARE_TURNSTILE_SECRET_KEY'), ],
     /*
     |--------------------------------------------------------------------------
     | Default Cache Store

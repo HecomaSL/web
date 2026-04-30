@@ -4,8 +4,8 @@ import MainLayout from '@/Layouts/MainLayout.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
-
-const form = useForm({ nombre: '', email: '', contrasena: '', contrasena_confirmation: '', tlfn: '',direccion: '', nombreEmpresa: '', });
+import VueTurnstile from 'vue-turnstile';
+const form = useForm({ nombre: '', email: '', contrasena: '', contrasena_confirmation: '', tlfn: '',direccion: '', nombreEmpresa: '', captcha_token: null });
 const submit = () => { form.post(route('register'), { onFinish: () => form.reset('contrasena', 'contrasena_confirmation'), }); };
 </script>
 
@@ -36,7 +36,7 @@ const submit = () => { form.post(route('register'), { onFinish: () => form.reset
 
                     <div class="md:col-span-1">
                         <InputLabel for="tlfn" value="Teléfono" class="text-[#003399] font-bold" />
-                        <TextInput id="tlfn" type="text" class="mt-1 block w-full border-gray-300" v-model="form.tlfn" required />
+                        <TextInput id="tlfn" type="text" class="mt-1 block w-full border-gray-300" v-model="form.tlfn" required maxlength="9" minlength="9" pattern="[0-9]{9}"  oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                         <InputError class="mt-2" :message="form.errors.tlfn" />
                     </div>
 
@@ -61,6 +61,11 @@ const submit = () => { form.post(route('register'), { onFinish: () => form.reset
                     <div class="md:col-span-1">
                         <InputLabel for="contrasena_confirmation" value="Confirmar Contraseña" class="text-[#003399] font-bold" />
                         <TextInput id="contrasena_confirmation" type="password" class="mt-1 block w-full border-gray-300" v-model="form.contrasena_confirmation" required />
+                    </div>
+
+                    <div class="mt-8 flex flex-col space-y-4">
+                        <vue-turnstile site-key="0x4AAAAAACYHA2FD4-BoOhrT" v-model="form.captcha_token"  />
+                        <InputError class="mt-2" :message="form.errors.captcha_token" />
                     </div>
 
                     <div class="md:col-span-2 mt-6 flex flex-col space-y-4">

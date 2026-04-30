@@ -7,6 +7,7 @@ use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
@@ -24,7 +25,16 @@ class LoginRequest extends FormRequest {
      * @return array<string, ValidationRule|array<mixed>|string>
      */
     public function rules(): array {
-        return [ 'email' => ['required', 'string', 'email'], 'password' => ['required', 'string'], ];
+        return [
+            'email' => ['required', 'string', 'email'],
+            'password' => ['required', 'string'],
+            'captcha_token' => ['required', function ($attribute, $value, $fail) {
+                $response = Http::asForm()->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [ 'secret' => config('services.cloudflare.secret'), 'response' => $value, 'remoteip' => request()->ip(), ]);
+
+                if (!$response->json('success'))
+                    $fail('La verificación de seguridad ha fallado. Inténtalo de nuevo.');
+            }],
+        ];
     }
 
     /**
@@ -36,7 +46,7 @@ class LoginRequest extends FormRequest {
         $this->ensureIsNotRateLimited();
 
         if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
-            RateLimiter::hit($this->throttleKey());
+            RateLimiter::hit($this->throttleKey(), 180);
             throw ValidationException::withMessages([ 'email' => trans('auth.failed'), ]);
         }
 

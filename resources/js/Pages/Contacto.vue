@@ -2,6 +2,7 @@
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { useForm } from '@inertiajs/vue3';
 import { Head } from '@inertiajs/vue3';
+import VueTurnstile from 'vue-turnstile';
 
 const form = useForm({ nombre: '', email: '', asunto: '', mensaje: '', imagen: null, });
 
@@ -89,8 +90,11 @@ const enviarFormulario = () => {
                         <label class="text-sm text-gray-600 mb-1">Subir imagen</label>
                         <input type="file" @input="form.imagen = $event.target.files[0]" class="text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200">
                     </div>
-
-                    <div>
+                    <div class="mt-8 flex flex-col space-y-4">
+                        <vue-turnstile site-key="0x4AAAAAACYHA2FD4-BoOhrT" v-model="form.captcha_token"  />
+                        <InputError class="mt-2" :message="form.errors.captcha_token" />
+                    </div>
+                    <div class="mt-8 flex flex-col space-y-4">
                         <button type="submit" :disabled="form.processing" class="px-8 py-2 border-2 border-black font-bold hover:bg-black hover:text-white transition-colors">
                             {{ form.processing ? 'Enviando...' : 'Enviar' }}
                         </button>

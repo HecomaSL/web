@@ -3,16 +3,14 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 import MainLayout from '@/Layouts/MainLayout.vue'; 
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
+import VueTurnstile from 'vue-turnstile';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import Checkbox from '@/Components/Checkbox.vue';
 
-defineProps({
-    canResetPassword: { type: Boolean, },
-    status: { type: String, },
-});
+defineProps({ canResetPassword: { type: Boolean, }, status: { type: String, }, });
 
-const form = useForm({ email: '', password: '', remember: false, });
+const form = useForm({ email: '', password: '', remember: false, captcha_token: null });
 const submit = () => { form.post(route('login'), { onFinish: () => form.reset('password'), }); };
 </script>
 
@@ -26,8 +24,7 @@ const submit = () => { form.post(route('login'), { onFinish: () => form.reset('p
         </section>
 
         <section class="container mx-auto px-6 mb-20">
-            <div class="max-w-md mx-auto bg-white p-8 border border-gray-100 shadow-xl rounded-xl">
-                
+            <div class="max-w-md mx-auto bg-white p-8 border border-gray-100 shadow-xl rounded-xl">  
                 <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
                     {{ status }}
                 </div>
@@ -51,10 +48,12 @@ const submit = () => { form.post(route('login'), { onFinish: () => form.reset('p
                             <span class="ms-2 text-sm text-gray-600">Recordar mi sesión</span>
                         </label>
                     </div>
-
                     <div class="mt-8 flex flex-col space-y-4">
-                        <button type="submit" class="btn-login-hecoma" :class="{ 'opacity-25': form.processing }" :disabled="form.processing" >Entrar</button>
-
+                        <vue-turnstile site-key="0x4AAAAAACYHA2FD4-BoOhrT" v-model="form.captcha_token"  />
+                        <InputError class="mt-2" :message="form.errors.captcha_token" />
+                    </div>
+                    <div class="mt-8 flex flex-col space-y-4">
+                        <button type="submit" class="btn-login-hecoma" :class="{ 'opacity-25': form.processing }" :disabled="form.processing || !form.captcha_token" >Entrar</button>
                         <div class="flex items-center justify-between mt-4">
                             <Link v-if="canResetPassword" :href="route('password.request')" class="text-sm text-gray-500 underline hover:text-[#010cf7]" >¿Olvidaste tu contraseña?</Link>
                             <Link :href="route('register')" class="text-sm font-bold text-[#003399] hover:underline" > Crear cuenta</Link>
@@ -72,7 +71,5 @@ const submit = () => { form.post(route('login'), { onFinish: () => form.reset('p
 .btn-login-hecoma:disabled { opacity: 0.5; cursor: not-allowed; }
 
 /* Ajuste responsivo para el título */
-@media (max-width: 768px) {
-    h1 { font-size: 1.25rem; }
-}
+@media (max-width: 768px) { h1 { font-size: 1.25rem; } }
 </style>

@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http; // Importante para validar el captcha
 use Illuminate\Validation\Rules;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
@@ -35,10 +36,21 @@ class RegisteredUserController extends Controller
             'nombre' => 'required|string|max:60',
             'email' => 'required|string|lowercase|email|max:60|unique:'.User::class,
             'contrasena' => ['required', 'confirmed', Rules\Password::defaults()],
-            'tlfn' => 'required|integer',
+            'tlfn' => 'required|digits:9', // Cambiado a digits:9 para que sean exactamente 9 números
             'direccion' => 'required|string|max:120',
             'nombreEmpresa' => 'required|string|max:60',
-            // Eliminamos 'admin' de aquí si lo vas a poner fijo a 'NO' abajo
+            // Validación de Cloudflare Turnstile
+            'captcha_token' => ['required', function ($attribute, $value, $fail) {
+                $response = Http::asForm()->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
+                    'secret' => config('services.cloudflare.secret'),
+                    'response' => $value,
+                    'remoteip' => request()->ip(),
+                ]);
+
+                if (!$response->json('success')) {
+                    $fail('La verificación de seguridad ha fallado. Inténtalo de nuevo.');
+                }
+            }],
         ]);
 
         $user = User::create([
