@@ -18,11 +18,11 @@ const areaTecnicaLink = computed(() => { return page.props.auth.user ? '/dashboa
             <div class="slider-container">
                 <div class="slider" id="slider">
                     <ul class="slides">
-                        <li class="slide"><a href="#"><img src="/images/SLIDER1.jpg" alt="SLIDER 1"></a></li>
-                        <li class="slide"><a href="#"><img src="/images/SLIDER2.jpg" alt="SLIDER 2"></a></li>
-                        <li class="slide"><a href="#"><img src="/images/SLIDER3.jpg" alt="SLIDER 3"></a></li>
-                        <li class="slide"><a href="#"><img src="/images/SLIDER4.jpg" alt="SLIDER 4"></a></li>
-                        <li class="slide"><a href="#"><img src="/images/SLIDER1.jpg" alt="SLIDER 1"></a></li>
+                        <li class="slide"><a href="#"><img src="/images/SLIDER1.jpg" width="1350" height="506" alt="SLIDER 1"></a></li>
+                        <li class="slide"><a href="#"><img src="/images/SLIDER2.jpg" width="1350" height="506" alt="SLIDER 2"></a></li>
+                        <li class="slide"><a href="#"><img src="/images/SLIDER3.jpg" width="1350" height="506" alt="SLIDER 3"></a></li>
+                        <li class="slide"><a href="#"><img src="/images/SLIDER4.jpg" width="1350" height="506" alt="SLIDER 4"></a></li>
+                        <li class="slide"><a href="#"><img src="/images/SLIDER1.jpg" width="1350" height="506" alt="SLIDER 1"></a></li>
                     </ul>
                 </div>
             </div>
@@ -46,28 +46,28 @@ const areaTecnicaLink = computed(() => { return page.props.auth.user ? '/dashboa
                     <a href="/servicios" class="flex-1">
                         <div class="servicios">
                             <h3>SERVICIOS</h3>
-                            <img src="/images/servicios.png" alt="Fresa reparada" width="100%">
+                            <img src="/images/servicios.png" alt="Servicios" width="200" height="200">
                             <p>Nuestra gran diferencia: el desarrollo de herramientas a medida y afilado de calidad</p>
                         </div>
                     </a>
                     <a href="/catalogo" class="flex-1">
                         <div class="catalogo">
                             <h3>CATÁLOGO</h3>
-                            <img src="/images/catalogo.png" alt="Fresa reparada" width="100%">
+                            <img src="/images/catalogo.png" alt="Catalogo" width="200" height="200">
                             <p>Eche un vistazo a nuestra gran gama de productos para trabajos de madera.</p>
                         </div>
                     </a>
                     <a href="/noticias" class="flex-1">
                         <div class="noticias">
                             <h3>NOTICIAS</h3>
-                            <img src="/images/noticias.png" alt="Fresa reparada" width="100%">
+                            <img src="/images/noticias.png" alt="Noticias" width="200" height="200">
                             <p>Póngase al día con las novedades y noticias sobre el mundo de la herramienta, eventos… </p>
                         </div>
                     </a>
                     <Link :href="areaTecnicaLink" class="flex-1">
                         <div class="areaTecnica">
                             <h3>AREA TÉCNICA</h3>
-                            <img src="/images/areatecnica.png" alt="Fresa reparada" width="100%">
+                            <img src="/images/areatecnica.png" alt="Inicio Sesion" width="200" height="200">
                             <p>Acceda a su cuenta para gestionar sus pedidos, consultar precios y realizar sus compras </p>
                         </div>
                     </Link>
@@ -104,10 +104,10 @@ const areaTecnicaLink = computed(() => { return page.props.auth.user ? '/dashboa
             </div>
 
             <div class="imagenes">
-                <img src="/images/ayuda1.jpg" alt="Ayuda 1" class="h-20 object-contain">
-                <img src="/images/ayuda2.png" alt="Ayuda 2" class="h-20 object-contain">
-                <img src="/images/ayuda3.jpg" alt="Ayuda 3" class="h-20 object-contain">
-                <img src="/images/ayuda4.jpg" alt="Ayuda 4" class="h-20 object-contain">
+                <img src="/images/ayuda1.jpg" width="112" height="80" alt="Ayuda 1" class="h-20 object-contain">
+                <img src="/images/ayuda2.png" width="112" height="80" alt="Ayuda 2" class="h-20 object-contain">
+                <img src="/images/ayuda3.jpg" width="112" height="80" alt="Ayuda 3" class="h-20 object-contain">
+                <img src="/images/ayuda4.jpg" width="112" height="80" alt="Ayuda 4" class="h-20 object-contain">
             </div>
         </section>
     </MainLayout>
